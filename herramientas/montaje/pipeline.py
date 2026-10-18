@@ -18,12 +18,22 @@ import sys
 import numpy as np
 from PIL import Image
 
-# Paso 3 hará que el estilo salga de la identidad del canal; mientras tanto, el fondo y las escenas son los del estilo espacial.
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'animaciones', 'espacial'))
-import estilo
 from montar import IDENT, FPS, H, NEGRO, W, aparecer, clamp, envolver, reg, sprite_texto, ss, trocear_texto, HUESO, neg
 from ui import _contenido_rotulo, capitulo, credito, rotulo
-import escenas_base
+
+ANIMACIONES = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'animaciones')
+
+
+def cargar_estilo(animacion):
+    """Devuelve (estilo, escenas_base) de la animación elegida (animaciones/<id>/estilo.py y escenas_base.py).
+    Un estilo sin esos dos módulos (hoy, los que no están «disponibles») usa los del espacial."""
+    carpeta = os.path.join(ANIMACIONES, animacion or 'espacial')
+    if not all(os.path.exists(os.path.join(carpeta, m + '.py')) for m in ('estilo', 'escenas_base')):
+        carpeta = os.path.join(ANIMACIONES, 'espacial')
+    if carpeta not in sys.path:
+        sys.path.insert(0, carpeta)
+    import importlib
+    return importlib.import_module('estilo'), importlib.import_module('escenas_base')
 
 XF = 0.7   # fundido entre escenas, en segundos
 
@@ -54,7 +64,8 @@ class Proyecto:
         self.subs_quemados = os.environ.get('HE_SUBS', '0') == '1'
         self.animacion = cfg.get('animacion') or IDENT['animacion']
         self._revisar_animacion()
-        self.fondo = estilo.base
+        self.estilo, self.escenas_base = cargar_estilo(self.animacion)
+        self.fondo = self.estilo.base
         esc = _cargar(os.path.join(self.aqui, 'escenas.json'), [])
         for i, e in enumerate(esc):
             if i == len(esc) - 1 and self.duracion:
@@ -106,8 +117,8 @@ class Proyecto:
         if self._escenas is None:
             lista = []
             for e in self.escenas_def:
-                fn = self.propias.get(e['id']) or escenas_base.crear(e)
-                lista.append((e['ini'], e['fin'], (lambda f: (lambda t: estilo.bloom(f(t), 0.28)))(fn)))
+                fn = self.propias.get(e['id']) or self.escenas_base.crear(e)
+                lista.append((e['ini'], e['fin'], (lambda f: (lambda t: self.estilo.bloom(f(t), 0.28)))(fn)))
             self._escenas = lista
         return self._escenas
 
@@ -127,7 +138,7 @@ class Proyecto:
     def escena_sin_overlays(self, t):
         escenas = self.escenas()
         if not escenas:
-            return estilo.base(t)
+            return self.estilo.base(t)
         capas = []
         n = len(escenas)
         for i, (a, b, fn) in enumerate(escenas):
@@ -160,7 +171,7 @@ class Proyecto:
         return fr
 
     def _dibujar_subtitulo(self, fr, t):
-        from estilo import _mascara
+        _mascara = self.estilo._mascara
         from montar import pegar
         for txt_, a, b in self.subs:
             if a - 0.05 <= t <= b + 0.15:
