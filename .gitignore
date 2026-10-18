@@ -1,4 +1,4 @@
-# Medios y renders: pesan mucho y se respaldan con herramientas/respaldar.py
+# Medios y renders: pesan mucho y no se versionan
 *.mp4
 *.mov
 *.wav
