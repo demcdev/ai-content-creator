@@ -36,6 +36,9 @@ RAIZ = os.path.abspath(os.path.join(AQUI, '..', '..'))
 _WT = os.sep + os.path.join('.claude', 'worktrees') + os.sep
 RAIZ_PRINCIPAL = RAIZ.split(_WT)[0] if _WT in RAIZ else RAIZ
 MEMORIA = os.path.join(os.path.expanduser('~'), '.claude', 'projects', 'C--Users-USUARIO-Desktop-DemcDev-Proyectos-dev-Canal-de-youtube', 'memory')
+# Si el proyecto es un worktree (<principal>/.claude/worktrees/<nombre>), la carpeta principal del repositorio
+_wt = re.match(r'^(.*)[\\/]\.claude[\\/]worktrees[\\/][^\\/]+$', RAIZ)
+PRINCIPAL = _wt.group(1) if _wt else ''
 CFG = json.load(open(os.path.join(AQUI, 'config.json'), encoding='utf-8'))
 MARCA_IGNORAR = 'validar:ignorar'
 
@@ -225,6 +228,9 @@ def revisar_md(res, p, memoria=False):
                     destino = p
                 else:
                     destino = os.path.normpath(os.path.join(d, ruta))
+                    if not existe_exacto(destino) and PRINCIPAL and not memoria and not destino.startswith(RAIZ + os.sep):
+                        # en un worktree, un enlace que sale del repositorio se mira desde la carpeta principal
+                        destino = os.path.normpath(os.path.join(PRINCIPAL, os.path.relpath(d, RAIZ), ruta))
                     fuera = os.path.relpath(destino, RAIZ)
                     if fuera.startswith('..') and RAIZ_PRINCIPAL != RAIZ:
                         destino = os.path.normpath(os.path.join(RAIZ_PRINCIPAL, fuera))
