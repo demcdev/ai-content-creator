@@ -1,0 +1,183 @@
+ÍNDICE DE COPIAS · Registro de licencias · Video 1
+Hecho el 13-oct-2026 con una descarga directa de cada página (curl). Son copias del HTML original, NO capturas de pantalla.
+La huella SHA-256 demuestra que el archivo no se ha modificado desde que se guardó. Para reforzar la prueba, puedes añadir tu propio PDF (Ctrl+P en Chrome) de cada página.
+
+Archivo : V1-terminos-generales-2026-10-13.html
+Origen  : https://cloud.google.com/terms
+Qué es  : Términos generales de Google Cloud (propiedad de «Customer Data»)
+Tamaño  : 844667 bytes
+SHA-256 : 869f04f4768e88a2cc849272ad1cada213842d760d8453229a3f0c29e8e4f6b7
+
+Archivo : V1-terminos-especificos-2026-10-13.html
+Origen  : https://cloud.google.com/terms/service-terms
+Qué es  : Términos específicos de servicios («Generated Output»)
+Tamaño  : 1051955 bytes
+SHA-256 : eb556069a3600f5da6e27a9ef0e38ebeac14cb65dbe8bb549de1d535148cf943
+
+Archivo : V1-lista-de-servicios-2026-10-13.html
+Origen  : https://cloud.google.com/terms/services
+Qué es  : Lista de servicios de Google Cloud («Generative AI Services»)
+Tamaño  : 2439326 bytes
+SHA-256 : 84bd6e031cab2da9d6df5d3e37c6cf11270a81ea3703f668360924de6b05cec0
+
+Archivo : V1-precios-2026-10-13.html
+Origen  : https://cloud.google.com/text-to-speech/pricing
+Qué es  : Precios de Cloud Text-to-Speech (Chirp 3: HD: 0 a 1 millón de caracteres gratis; luego 30 USD por millón)
+Tamaño  : 2013958 bytes
+SHA-256 : 1c74e3b728dbd0eca5a14369a0d64b912cb7c963294ae6ba929c6aea2cbf50ac
+
+Archivo : V1-ajustes-voz-2026-10-13.txt
+Origen  : Video 01 - Voyager 1/Voz/ajustes.txt
+Qué es  : Ajustes con los que se generó el audio del video 1 (voz Iapetus, ritmo 0,95)
+Tamaño  : 132 bytes
+SHA-256 : f1aa9e7f8c190face0b55e766e23e65f897888fafd30c79ef9ae02819734b20b
+
+Archivo : M0-nasa-guia-uso-2026-10-13.html
+Origen  : https://www.nasa.gov/nasa-brand-center/images-and-media/
+Qué es  : Guía de uso de imágenes y medios de la NASA (secciones de uso no comercial y comercial)
+Tamaño  : 320655 bytes
+SHA-256 : 3ffd155078fa3ffc9a61b1a98908df3d4d91a90b08b80589a3eb69e8cf8ba359
+
+=== ORIGINALES Y FICHAS DESCARGADOS EL 13-oct-2026 (sección M) ===
+
+Archivo : originales\M01-PIA26353.jpg
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia26/pia26353/PIA26353.jpg
+Tamaño  : 113268 bytes · 1920x1080 px
+SHA-256 : 8d2b4eef31ea00189e5e89490e163849e7df04e46110d097c578069ae1d5db24
+
+Archivo : originales\M03-PIA00379.jpg
+Origen  : https://d2pn8kiwq2w21t.cloudfront.net/original_images/jpegPIA00379.jpg
+Tamaño  : 2809 bytes · 140x140 px
+SHA-256 : 090a33098a7e0c67aaca8d094e6b55e83dc8645d42f6ed2714a612040fb92af7
+
+Archivo : originales\M04-PIA02225.jpg
+Origen  : https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia02/pia02225/jpeg/PIA02225.jpg
+Tamaño  : 25101 bytes · 900x1000 px
+SHA-256 : 47cb962f8f2dd8cc44618057093372a4991b56da7e5f0dd295c9a7c36c14caac
+
+Archivo : originales\M06-PIA02238.jpg
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia02/pia02238/PIA02238.jpg
+Tamaño  : 14327 bytes · 485x580 px
+SHA-256 : 4b412692dcc6095a1eb32c152e850b16bfa55bcb3d5a1797a7ad9f883a652950
+
+Archivo : originales\M07-PIA00452.jpg
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00452/PIA00452.jpg
+Tamaño  : 30184 bytes · 453x614 px
+SHA-256 : 5209d4860851d82d9612744b9c141d4e8abc58317b31ca6bb685077d3af745bc
+
+Archivo : originales\M08-PIA00451.jpg
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00451/PIA00451.jpg
+Tamaño  : 166366 bytes · 4000x1200 px
+SHA-256 : 16757f10e631c43da3fe66ecf8ce941c9f41c7566cfbb598fe0f8b4b01333b50
+
+Archivo : originales\M09-dsn-canberra.jpg
+Origen  : https://spaceplace.nasa.gov/dsn-antennas/en/dsn-antennas1.en.jpg
+Tamaño  : 42201 bytes · 500x333 px
+SHA-256 : 226d1bdd9a6a4a0629c512fc534a54d1fa0dde41d0b4b2c9b541253b549c469a
+
+Archivo : originales\M09-dsn-goldstone-marte.png
+Origen  : https://spaceplace.nasa.gov/dsn-antennas/en/dsn-antennas4.en.png
+Tamaño  : 422920 bytes · 1041x1052 px
+SHA-256 : a728572f4220eb227f323e665fc0ef03df0730da50227bf33352d493d7ed24c1
+
+Archivo : originales\M09-dsn-mapa-3-sitios.jpg
+Origen  : https://spaceplace.nasa.gov/dsn-antennas/en/dsn-antennas2.en.jpg
+Tamaño  : 30522 bytes · 500x285 px
+SHA-256 : 60538433d3157027ea185ca2006343e1ee693605ad9c2d4a4e32fc5bb09e8ea7
+
+Archivo : originales\M10-PIA14113.jpg
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia14/pia14113/PIA14113.jpg
+Tamaño  : 38548 bytes · 981x552 px
+SHA-256 : 4c9addd7642cbd0fd8489e33d82fde590016c1a9f2b5841e5b2ee647f4a9794d
+
+Archivo : fichas\M01-ficha-2026-10-13.html
+Tamaño  : 266986 bytes
+SHA-256 : a617ea228b9a34442a1f2b4aa50e6c7067fa37d2b53d5f7935fb11688bd78496
+
+Archivo : fichas\M03-ficha-2026-10-13.html
+Tamaño  : 216153 bytes
+SHA-256 : d5ea762599e66ac56bf912b534812bef3c5d556d683a9abbf3d20d9d644562aa
+
+Archivo : fichas\M04-ficha-pia02225-2026-10-13.html
+Tamaño  : 266784 bytes
+SHA-256 : d202e571129cc316f2b4c15f73e55c42afd706604c6e47e040bad70ad4c4bb22
+
+Archivo : fichas\M05-ficha-pia01531-2026-10-13.html
+Tamaño  : 234915 bytes
+SHA-256 : bd7abe6fc3cf0ce092e378577dd100da2ca989aacec1034906beaba41395aaa7
+
+Archivo : fichas\M06-ficha-2026-10-13.html
+Tamaño  : 264815 bytes
+SHA-256 : dcdbd43142ee311df2963e7e6e4e0f4d0bd453eef21ad4db4ddf236eb7c32393
+
+Archivo : fichas\M07-ficha-pale-blue-dot-2026-10-13.html
+Tamaño  : 317567 bytes
+SHA-256 : 6f1bc784c990fc1d6c6507346afded96b0b793888844cd2cbd959a12beba60df
+
+Archivo : fichas\M09-ficha-spaceplace-2026-10-13.html
+Tamaño  : 22736 bytes
+SHA-256 : c5ed20108726f1749071db28ef0aadea9a160f50d1b4de6418a4912495994197
+
+Archivo : fichas\M10-ficha-2026-10-13.html
+Tamaño  : 266906 bytes
+SHA-256 : 7ecdb9f2c66947100ac9496b09e022a901071e91d1f7eed1946d29a0d9f991d7
+
+=== AÑADIDOS (segunda tanda, 13-oct-2026) ===
+
+Archivo : originales/M05-PIA01531.jpg
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia01/pia01531/PIA01531.jpg
+Tamaño  : 863226 bytes · 2090x2328 px
+SHA-256 : aca1929bce7e6806cd2779f91efd4240d3ec39e3a70318086ce9b9819f7459b0
+
+Archivo : fichas/M02-ficha-pia02855-2026-10-13.html
+Origen  : https://photojournal.jpl.nasa.gov/catalog/PIA02855 (redirige a https://science.nasa.gov/photojournal/voyager-1-blue-movie/)
+Tamaño  : 262355 bytes
+SHA-256 : 5f8d1f8e17e6fca4b0f5e72513ed29511ec1c1ea1bdd37ca809e9ba1d6e277f3
+
+=== AÑADIDOS (tercera tanda: alternativas de Ío, 13-oct-2026) ===
+
+Archivo : originales/M03b-PIA02308-galileo.jpg
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia02/pia02308/PIA02308.jpg
+Tamaño  : 789806 bytes · 2796x2796 px
+SHA-256 : ab639603fa8381f3c0d76b743c57e777518c5069233dd44a138908a2bc485583
+
+Archivo : originales/M03c-PIA00373.jpg
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00373/PIA00373.jpg
+Tamaño  : 11828 bytes · 325x400 px
+SHA-256 : d318416d0fd30e75cebd801b59c14e113a0a241587a7236a16745fe8953d7ae8
+
+Archivo : originales/M03c-PIA00373.tif
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00373/PIA00373.tif
+Tamaño  : 66678 bytes · 325x400 px
+SHA-256 : 9c950461dc7d7c125ded897ecbdd8b4969f2f4ebe0a06074e5393be94d86d4d4
+
+Archivo : originales/M03d-PIA00378.jpg
+Origen  : https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00378/PIA00378.jpg
+Tamaño  : 34448 bytes · 680x500 px
+SHA-256 : 0fdd917c29bc3acadfbbae8c65412a7bff1eea93b856862e1f43859cedbcfc52
+
+Archivo : fichas/M03b-ficha-pia02308-galileo-2026-10-13.html
+Origen  : https://science.nasa.gov/photojournal/global-image-of-io-true-color/
+Tamaño  : 271755 bytes
+SHA-256 : d75e30283f2679fb9108acc1edcc9771f4eac446e9c2ac5c88d02ffc98159da6
+
+Archivo : fichas/M03c-ficha-pia00373-2026-10-13.html
+Origen  : https://science.nasa.gov/photojournal/io-volcanic-eruption/
+Tamaño  : 265543 bytes
+SHA-256 : 98f0e7dfd9bdcb5f35372036b48be43524a9424710aa82efd55064d0220bca06
+
+Archivo : fichas/M03d-ficha-pia00378-2026-10-13.html
+Origen  : https://science.nasa.gov/photojournal/io-at-5-million-miles/
+Tamaño  : 265344 bytes
+SHA-256 : 871b3549b05ceccd26fe84aaff0a0e9ad91c1a4690f20121bd78241c43023eb4
+
+
+Archivo : originales/M12-diagrama-instrumentos.jpg
+Origen  : https://science.nasa.gov/mission/voyager/instruments/ (instruments-3.jpg)
+Tamaño  : 121388 bytes
+SHA-256 : 5f7e3c2c2b75537f4ecdbd9fdf1d5d8ceb2e67ffb5cdc08d426b5794410cf611
+
+Archivo : fichas/M12-ficha-instrumentos-2026-10-13.html
+Origen  : https://science.nasa.gov/mission/voyager/instruments/
+Tamaño  : 309336 bytes
+SHA-256 : 6e8f20e5a6685e5eb20bb9b94ae7f3c78d0935bdcf4393a90035601f5ee890cd

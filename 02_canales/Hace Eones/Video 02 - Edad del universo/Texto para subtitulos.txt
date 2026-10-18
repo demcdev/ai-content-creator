@@ -1,0 +1,93 @@
+Nadie estuvo allí cuando empezó el universo. Ni la Tierra, ni el Sol, ni una sola estrella.
+
+Y sin embargo, hoy se afirma que el universo tiene 13 797 millones de años, con un margen de error de apenas 23 millones. Eso es un error del 0,17 %.
+
+¿Cómo es posible? No se mide con un reloj. Se mide con tres. Tres maneras de calcular el tiempo del universo que no se conocen entre sí.
+
+Y aquí viene lo que tiene a los astrónomos discutiendo: cuando dos de esos relojes se afinan mucho, dejan de coincidir. Y una de las explicaciones posibles es que a nuestro modelo del universo le falte algo. Lo que está en juego, según cuál de las dos medidas valga, son casi mil millones de años.
+
+Vamos con el primer reloj. Te lo prometí al final del video anterior.
+
+Pero antes, un malentendido que casi todos tenemos. Cuando decimos «la edad del universo» no hablamos del momento en que «algo explotó en algún sitio». Hablamos del tiempo transcurrido desde un estado muy denso y muy caliente, el punto de partida del modelo del Big Bang.
+
+Y un detalle más, que conviene que guardes: todas las cifras de hoy asumen el modelo estándar de la cosmología, llamado ΛCDM. Si ese modelo estuviera equivocado en algo grande, la cifra cambiaría. Va a volver.
+
+El primer reloj es una luz. Y no una luz cualquiera: la más antigua que existe.
+
+Imagina estar dentro de una niebla tan densa que la luz no puede avanzar. Así fue el universo durante sus primeros 380 000 años: una niebla caliente de partículas. Hasta que, poco a poco, se enfrió: a unos 2 700 grados centígrados. Entonces los átomos pudieron formarse, y la niebla se despejó. La luz quedó libre.
+
+Esa luz sigue llegándonos hoy, desde todas las direcciones. Se llama fondo cósmico de microondas. Se ha enfriado tanto por el camino que hoy está a unos 2,7 kelvin, unos 270 grados bajo cero.
+
+La misión Planck, de la Agencia Espacial Europea, la estudió durante cuatro años y medio. Su mapa muestra diferencias mínimas de temperatura, y esas diferencias son las semillas de las estrellas y las galaxias.
+
+Al comparar ese patrón con el modelo estándar sale una edad. En 2013, los primeros datos dieron una edad de 13 820 millones de años. En 2018, con la misión completa, 13 797 millones de años, con un margen de error de 23 millones. Fíjate: casi no se movió.
+
+Pero, ¿y si Planck se hubiera equivocado? Antes, el satélite WMAP, de la NASA, midió esa misma luz con otro instrumento y otro equipo, y, combinando sus datos con otros, obtuvo 13 772 millones de años, con un margen de unos 59 millones.
+
+Dicho de otra forma: WMAP dice 13 772 millones de años. Y Planck, 13 797. La diferencia, de unos 25 millones, es menor que el margen de error de las dos mediciones juntas, de unos 63 millones. Son compatibles.
+
+Este primer reloj es el más preciso. Pero tiene una condición: depende del modelo. Acuérdate de eso. Porque el segundo reloj no mira el pasado: mira el presente… y es el que va a darnos problemas.
+
+El hombre que descubrió que el universo se expande se equivocó por un factor de siete.
+
+En 1929, Edwin Hubble publicó que las galaxias se alejan de nosotros, y más rápido cuanto más lejos están. Lo hizo con solo 24 galaxias cercanas. Pero sus distancias eran unas siete veces demasiado pequeñas, y el valor de la velocidad de expansión que calculó salió siete veces demasiado grande. Aun así, la idea central era correcta. Un siglo después, la ciencia corrige las cifras sin abandonar la idea.
+
+El espacio entre las galaxias se estira, como la masa de pan en el horno. Y si sabemos a qué velocidad se estira, podemos, en teoría, rebobinar la película y calcular cuánto tardó en llegar hasta hoy. Esa velocidad se llama constante de Hubble.
+
+¿Cómo se mide? Con una «escalera de distancias». Primero, estrellas que pulsan con un ritmo que revela su brillo real, las cefeidas. Después, supernovas, mucho más brillantes y visibles desde más lejos. Cada peldaño calibra al siguiente.
+
+El equipo SH0ES usó el telescopio Hubble con cefeidas en las galaxias de 42 supernovas y obtuvo 73,04 kilómetros por segundo y por megaparsec, con un margen de error de apenas 1,04.
+
+Ahora, el reloj al revés. Si la expansión hubiera ido siempre a esa velocidad, el tiempo transcurrido sería 1 ÷ H₀: unos 13 400 millones de años. Pero con la cifra que sale de Planck, 67,4, esa misma cuenta da unos 14 500 millones.
+
+No es la edad exacta, porque la expansión no ha sido constante. Pero el orden de magnitud sí está claro: entre 13 000 y 15 000 millones de años. NASA, con valores de la expansión entre 70 y 76, resume la edad en unos 13 800 millones.
+
+Fíjate en esas dos cifras, 73 y 67. Casi no se nota la diferencia. Pero guárdalas.
+
+Para el tercer reloj, olvida la luz primitiva y olvida la expansión. Solo queda un argumento, y es difícil de discutir: el universo no puede ser más joven que sus estrellas más viejas.
+
+¿Cómo se sabe la edad de una estrella? Las estrellas cambian con el tiempo de forma predecible: según su masa se van apagando, y su brillo y su color revelan cuánto llevan encendidas.
+
+En marzo de 2026, un equipo europeo publicó en la revista Astronomy & Astrophysics el análisis de 160 estrellas muy viejas, elegidas de unas 3 000 candidatas del satélite Gaia.
+
+Su edad media es de unos 13 600 millones de años. De ahí sale un límite inferior: el universo tiene, como mínimo, 13 800 millones de años, con un margen de unos 1 000 millones, más un error sistemático de unos 1 400 millones.
+
+Y un dato más. Con un 90 % de confianza, 70 de esas estrellas apuntan a una edad mayor de 13 000 millones de años, y ninguna supera los 14 100 millones. Estrellas casi tan viejas como el universo, y ninguna claramente más vieja. Justo lo que se esperaría si el universo tiene unos 13 800 millones.
+
+Este reloj es mucho menos preciso que Planck. Pero tiene una ventaja enorme: no usa ningún modelo cosmológico. Ni siquiera asume cómo se expande el universo. Es una comprobación completamente aparte.
+
+Tres relojes. Tres caminos distintos. Y ahora sí, toca mirar qué pasa cuando los ponemos juntos.
+
+Un reloj basado en la luz más antigua. Otro, en la velocidad de expansión. Otro, en las estrellas más viejas. Cada uno con su margen de error, y dos de ellos, la luz más antigua y las estrellas, apuntan a unos 13 800 millones de años; el de la expansión da entre 13 400 y 14 500, según el valor que se use.
+
+Pero hay un problema. Las dos cifras que te pedí que guardaras. Con la misma historia del universo, Planck predice una expansión actual de 67,4 kilómetros por segundo por megaparsec. Y las cefeidas dan 73,04. Esa diferencia es de un 8 %, y es muchísimo más grande que el margen de error de ambos juntos: unas cinco veces ese margen.
+
+Esto se llama la tensión de Hubble.
+
+Y lo importante es qué se está comparando. Uno de los investigadores lo explicó así: no son dos experimentos que discrepan; se está midiendo algo distinto. Una medición dice cuán rápido se expande el universo hoy. La otra es una predicción, basada en la física del universo temprano, de cuán rápido debería expandirse. Si no coinciden, no es que uno se haya equivocado en la regla: puede que algo del puente entre las dos épocas no esté bien.
+
+¿Un error de medición? Eso fue lo primero que se pensó. En 2024, con el telescopio Webb, el equipo concluyó que puede descartar con mucha confianza que sea un error de medición. Y en noviembre de 2025, los datos finales del telescopio ACT, en Chile, confirmaron el valor de Planck con una técnica distinta, haciendo la discrepancia aún más sólida.
+
+Y no todos los equipos están de acuerdo. Otro grupo, con otro tipo de estrellas, obtuvo 70,39, un valor intermedio entre los dos.
+
+¿Importa? Sí. Y se puede calcular. Con el mismo modelo estándar, si la expansión local fuera la que vale para todo el pasado, la edad bajaría a unos 12 700–12 900 millones de años. La diferencia es de cerca de mil millones de años.
+
+Entonces, ¿qué sabemos de verdad?
+
+Comprobado: tres métodos independientes dan una edad del orden de 13 000 a 15 000 millones de años, y las dos mediciones de la expansión difieren de verdad: lo han visto varios telescopios y equipos.
+
+Probable: que la edad sea cercana a 13 800 millones, si el modelo estándar es correcto.
+
+Sin resolver: por qué las dos mediciones no coinciden. ¿Un error que nadie ha encontrado? ¿Algo que le falta al modelo? El propio Riess lo resumió así: si los valores no coinciden, hay una probabilidad muy fuerte de que falte algo en el modelo que conecta las dos épocas.
+
+Entonces, ¿cómo sabemos la edad del universo si nadie estuvo allí?
+
+Nadie estuvo allí. Pero el universo dejó pruebas. Una luz que todavía nos llega. Una expansión que todavía podemos medir. Estrellas que todavía brillan. Tres relojes que no se hablan entre sí y señalan casi lo mismo.
+
+Y una discrepancia abierta que no es un fallo de la ciencia: es la forma en que la ciencia avanza.
+
+Y ahora una pregunta para ti. Si tuvieras que apostar: ¿hay un error de medición que nadie ha encontrado, o a nuestro modelo del universo le falta algo? Cuéntamelo en los comentarios.
+
+Todas las fuentes están en la descripción. Si hay una cifra que quieras que revisemos, escríbela también: la comprobamos y la anotamos.
+
+Y si te gustó, suscríbete, dale like y activa la campanita para que te avisemos de cada nuevo video: cada semana, una pregunta, con sus datos y de dónde salen.

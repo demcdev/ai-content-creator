@@ -1,0 +1,24 @@
+# Medios y renders: pesan mucho y se respaldan con herramientas/respaldar.py
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.ogg
+*.flac
+**/Voz/partes/
+**/Voz/polly/
+**/Montaje/salida/
+**/Montaje/cache*/
+**/Licencias/musica/
+
+# Python y editores
+__pycache__/
+*.pyc
+*.bak
+.vscode/
+.idea/
+
+# Secretos (nunca al repositorio)
+.env
+*.key
+.uso-*.json

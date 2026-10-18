@@ -1,0 +1,1 @@
+Guarda aquí las exportaciones de la app (`selector-nichos-AAAA-MM-DD.json`). Nombra la más reciente igual que la fecha de exportación y no borres las anteriores hasta confirmar que la nueva se importa bien.

@@ -1,0 +1,4 @@
+Condiciones de uso de imágenes y videos de la ESA (leídas el 13-oct-2026)
+Página: https://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website
+Extracto: «Images or videos available on the ESA Website shall not be used for a commercial purpose, such as but not limited to, entertainment, advertisement, merchandising, etc. A commercial use requires a separate written authorisation by ESA.» · «Some images or videos available on the ESA Website are licensed under Creative Commons (CC BY-SA 3.0 IGO) licence. Such images or videos shall be used in accordance with the terms and conditions of such licence.»
+Consecuencia: NO se usan imágenes de Planck de la ESA (solo piden citar «ESA and the Planck Collaboration», sin CC declarada). Sí se usa la de Gaia (CC BY-SA 3.0 IGO).

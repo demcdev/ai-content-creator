@@ -1,0 +1,846 @@
+1
+00:00:00,000 --> 00:00:05,136
+En 1977 lanzamos una nave cuyos
+ordenadores tienen, en total
+
+2
+00:00:05,136 --> 00:00:11,898
+unos 69 kilobytes de memoria: una sola foto de
+móvil ocupa decenas de veces más
+
+3
+00:00:11,898 --> 00:00:17,120
+y un portátil actual tiene más de
+cien mil veces esa memoria.
+
+4
+00:00:17,568 --> 00:00:22,581
+Hoy, casi cincuenta años después, sigue
+funcionando, y una orden de radio
+
+5
+00:00:22,581 --> 00:00:27,800
+viajando a la velocidad de la luz, tarda unas
+23 horas en llegar hasta ella.
+
+6
+00:00:28,704 --> 00:00:36,329
+El 18 de noviembre de este año se convertirá en el primer objeto
+construido por la humanidad a un día luz de la Tierra.
+
+7
+00:00:36,701 --> 00:00:38,867
+Pero lo más curioso no es lo lejos que está.
+
+8
+00:00:39,725 --> 00:00:42,878
+Es cómo seguimos hablando con ella,
+lo que no sabemos de ella
+
+9
+00:00:42,878 --> 00:00:47,014
+y una frase que se repite muchísimo sobre esta
+nave y que no es del todo cierta.
+
+10
+00:00:47,360 --> 00:00:48,946
+Al final del video te digo cuál.
+
+11
+00:00:50,170 --> 00:00:52,063
+Pero empecemos por el principio.
+
+12
+00:00:52,063 --> 00:00:53,834
+Esta nave se llama Voyager 1.
+
+13
+00:00:55,035 --> 00:01:02,010
+Se lanzó el 5 de septiembre de 1977, dieciséis
+días después de su gemela, Voyager 2.
+
+14
+00:01:02,497 --> 00:01:04,363
+Pero tomó un camino más rápido
+
+15
+00:01:04,363 --> 00:01:08,158
+y el 15 de diciembre de ese mismo año
+ya la había adelantado.
+
+16
+00:01:08,677 --> 00:01:10,782
+Nació para visitar Júpiter y Saturno.
+
+17
+00:01:11,203 --> 00:01:13,876
+Casi medio siglo después sigue enviando datos.
+
+18
+00:01:14,707 --> 00:01:21,644
+Desde el 17 de febrero de 1998 es el objeto más
+lejano que ha construido la humanidad
+
+19
+00:01:21,644 --> 00:01:24,909
+el día que superó a la sonda Pioneer 10.
+
+20
+00:01:25,265 --> 00:01:29,601
+Y no se detiene: se aleja del Sol a unos
+17 kilómetros por segundo.
+
+21
+00:01:30,008 --> 00:01:33,480
+Eso son casi un millón y medio de
+kilómetros más lejos cada día.
+
+22
+00:01:34,305 --> 00:01:37,544
+Hoy vamos a ver cinco cosas: lo que
+descubrió en su camino
+
+23
+00:01:37,544 --> 00:01:39,778
+una fotografía que cambió cómo nos vemos
+
+24
+00:01:39,778 --> 00:01:42,905
+cómo sabemos que cruzó la frontera
+de la burbuja del Sol
+
+25
+00:01:42,905 --> 00:01:46,535
+cómo se habla con una nave tan lejana,
+y qué le queda de energía.
+
+26
+00:01:48,065 --> 00:01:54,222
+La misión aprovechó una alineación de los planetas
+exteriores que se repite solo cada unos 175 años:
+
+27
+00:01:54,222 --> 00:01:59,886
+usar la gravedad de cada planeta como una honda para
+ganar velocidad sin gastar combustible.
+
+28
+00:02:00,793 --> 00:02:02,119
+Al acercarse a Júpiter
+
+29
+00:02:02,119 --> 00:02:06,941
+la nave tomó una imagen cada 96 segundos para
+montar una película de su llegada.
+
+30
+00:02:08,108 --> 00:02:12,873
+El 5 de marzo de 1979 pasó a unos 280
+000 kilómetros del planeta
+
+31
+00:02:12,873 --> 00:02:18,978
+y descubrió un anillo tenue alrededor de Júpiter
+y dos lunas nuevas, Tebe y Metis.
+
+32
+00:02:19,952 --> 00:02:23,244
+Tres días después, alguien vio algo
+que no debía estar ahí.
+
+33
+00:02:24,442 --> 00:02:29,415
+Linda Morabito, ingeniera de navegación de la
+misión, procesaba una imagen de Ío
+
+34
+00:02:29,415 --> 00:02:31,155
+una de las lunas de Júpiter.
+
+35
+00:02:31,499 --> 00:02:33,954
+En el borde de la luna… había una nube.
+
+36
+00:02:34,629 --> 00:02:36,704
+Una nube donde no debería haber nada.
+
+37
+00:02:37,640 --> 00:02:38,383
+¿Qué podía ser?
+
+38
+00:02:40,451 --> 00:02:41,244
+Era un volcán.
+
+39
+00:02:41,889 --> 00:02:42,964
+En plena erupción.
+
+40
+00:02:43,918 --> 00:02:47,899
+Y era la primera erupción volcánica que
+alguien observaba fuera de la Tierra.
+
+41
+00:02:48,796 --> 00:02:52,141
+El 12 de noviembre de 1980 llegó a Saturno
+
+42
+00:02:52,141 --> 00:02:55,724
+y pasó a unos 126 000 kilómetros del planeta.
+
+43
+00:02:56,536 --> 00:02:59,969
+Encontró cinco lunas nuevas y un
+anillo nuevo, el anillo G
+
+44
+00:02:59,969 --> 00:03:02,455
+y vio en los anillos estructuras complejas
+
+45
+00:03:02,455 --> 00:03:06,421
+con «lunas pastoras» que mantienen bien
+definidos algunos de ellos.
+
+46
+00:03:07,393 --> 00:03:11,047
+Pero la gran apuesta era Titán, la
+luna más grande de Saturno
+
+47
+00:03:11,047 --> 00:03:14,522
+cuya atmósfera espesa ocultaba por
+completo la superficie.
+
+48
+00:03:15,416 --> 00:03:21,484
+La nave descubrió que esa atmósfera es un 90 % nitrógeno y
+que lleva metano y otros hidrocarburos complejos
+
+49
+00:03:21,484 --> 00:03:27,892
+ingredientes que hacían pensar que allí podrían darse
+reacciones químicas parecidas a las que preceden a la vida.
+
+50
+00:03:28,772 --> 00:03:33,139
+Para verla de cerca, la nave hizo
+una maniobra arriesgada:
+
+51
+00:03:33,139 --> 00:03:35,924
+pasó a unos 6 500 kilómetros de Titán
+
+52
+00:03:35,924 --> 00:03:40,366
+y esa trayectoria la lanzó fuera del
+plano de los planetas.
+
+53
+00:03:40,644 --> 00:03:42,897
+Ya no visitaría ningún otro.
+
+54
+00:03:43,310 --> 00:03:47,979
+Urano y Neptuno los visitaría su gemela:
+Urano en 1986 y Neptuno en 1989.
+
+55
+00:03:48,955 --> 00:03:52,731
+El único destino de Voyager 1 sería el
+espacio entre las estrellas.
+
+56
+00:03:54,481 --> 00:03:58,811
+El 14 de febrero de 1990, con su
+misión planetaria terminada
+
+57
+00:03:58,811 --> 00:04:01,192
+la nave recibió una última orden.
+
+58
+00:04:01,588 --> 00:04:02,655
+Mirar hacia atrás.
+
+59
+00:04:03,207 --> 00:04:08,745
+Desde unos 6 000 millones de kilómetros del Sol,
+fotografiar la familia de planetas.
+
+60
+00:04:09,043 --> 00:04:11,142
+Fue idea del astrónomo Carl Sagan.
+
+61
+00:04:12,291 --> 00:04:16,708
+En una de esas imágenes hay un punto de
+luz pálido, de apenas un píxel
+
+62
+00:04:16,708 --> 00:04:19,358
+dentro de un rayo de luz solar dispersada.
+
+63
+00:04:20,184 --> 00:04:21,886
+Ese punto… es la Tierra.
+
+64
+00:04:22,593 --> 00:04:24,832
+Sagan lo llamó el «punto azul pálido».
+
+65
+00:04:26,949 --> 00:04:31,021
+No fue una sola foto: fue un mosaico
+de unas sesenta imágenes
+
+66
+00:04:31,021 --> 00:04:35,426
+el primer retrato de familia del sistema
+solar, con seis planetas.
+
+67
+00:04:36,466 --> 00:04:38,828
+Mercurio estaba demasiado cerca del Sol
+
+68
+00:04:38,828 --> 00:04:42,220
+y Marte quedó oculto por la luz
+dispersada en la cámara.
+
+69
+00:04:43,290 --> 00:04:47,416
+Fueron las últimas de las 67 000 imágenes
+que tomaron las dos Voyager.
+
+70
+00:04:48,257 --> 00:04:50,657
+No es una foto bonita en términos técnicos.
+
+71
+00:04:51,547 --> 00:04:54,103
+Es importante por lo que muestra: la escala.
+
+72
+00:04:54,419 --> 00:04:56,558
+Todo lo que conocemos cabe en ese punto.
+
+73
+00:04:57,262 --> 00:05:01,716
+Y 34 minutos después de tomarla, las
+cámaras se apagaron para siempre.
+
+74
+00:05:02,441 --> 00:05:05,390
+Había que ahorrar energía para el
+largo viaje que quedaba.
+
+75
+00:05:07,066 --> 00:05:10,663
+El Sol emite un flujo constante de
+partículas, el viento solar
+
+76
+00:05:10,663 --> 00:05:14,492
+que sopla en todas direcciones y forma
+una burbuja: la heliosfera.
+
+77
+00:05:15,304 --> 00:05:17,343
+Su borde se llama heliopausa.
+
+78
+00:05:17,743 --> 00:05:20,950
+Y más allá de ese borde está el
+espacio interestelar.
+
+79
+00:05:21,853 --> 00:05:26,293
+Antes de llegar a ese borde, hay otra
+frontera, el choque de terminación
+
+80
+00:05:26,293 --> 00:05:28,760
+donde el viento solar se frena de golpe.
+
+81
+00:05:29,635 --> 00:05:32,922
+Voyager 1 lo cruzó el 16 de diciembre de 2004.
+
+82
+00:05:33,690 --> 00:05:36,614
+¿Cómo se sabe en qué momento se cruza
+un límite que no se ve?
+
+83
+00:05:36,950 --> 00:05:39,698
+Lo ideal era medir directamente el plasma
+
+84
+00:05:39,698 --> 00:05:44,456
+pero el instrumento de Voyager 1 que lo
+hacía dejó de funcionar en 1980
+
+85
+00:05:44,456 --> 00:05:46,131
+justo después de Saturno.
+
+86
+00:05:46,787 --> 00:05:48,310
+Hubo que esperar una casualidad.
+
+87
+00:05:48,971 --> 00:05:49,398
+En 2012
+
+88
+00:05:49,398 --> 00:05:55,254
+las partículas del Sol casi desaparecieron de los
+detectores y subieron las de origen galáctico.
+
+89
+00:05:56,108 --> 00:05:58,129
+Pero eso no bastaba para estar seguros.
+
+90
+00:05:58,513 --> 00:06:02,954
+La confirmación llegó meses después, y de una
+forma que nadie había planeado.
+
+91
+00:06:04,546 --> 00:06:09,247
+El 9 de abril de 2013, el instrumento de
+ondas de plasma captó algo:
+
+92
+00:06:09,247 --> 00:06:12,357
+el plasma que rodeaba la nave estaba vibrando
+
+93
+00:06:12,357 --> 00:06:16,436
+probablemente por una erupción solar
+ocurrida un año antes.
+
+94
+00:06:17,025 --> 00:06:24,307
+Por esa vibración se pudo calcular su densidad… más de 40 veces
+la que había medido Voyager 2 dentro de la burbuja.
+
+95
+00:06:24,790 --> 00:06:26,063
+No era plasma del Sol.
+
+96
+00:06:26,624 --> 00:06:27,971
+Era plasma interestelar.
+
+97
+00:06:28,378 --> 00:06:30,026
+Y al retroceder los datos
+
+98
+00:06:30,026 --> 00:06:35,565
+concluyeron que la nave lo había encontrado por
+primera vez el 25 de agosto de 2012.
+
+99
+00:06:36,410 --> 00:06:39,466
+Seis años después, Voyager 2 repitió el cruce
+
+100
+00:06:39,466 --> 00:06:42,861
+y esta vez su instrumento de
+plasma sí funcionaba.
+
+101
+00:06:43,424 --> 00:06:49,660
+El 5 de noviembre de 2018 vio caer las partículas
+energéticas del Sol y desaparecer el viento solar
+
+102
+00:06:49,660 --> 00:06:53,440
+y se convirtió en la segunda nave en
+salir de la heliosfera.
+
+103
+00:06:54,309 --> 00:06:55,494
+Y aún hay sorpresas.
+
+104
+00:06:55,980 --> 00:06:56,436
+En 2021
+
+105
+00:06:56,436 --> 00:07:03,671
+un equipo de la Universidad de Cornell revisó los datos del
+instrumento de ondas de plasma y encontró algo más:
+
+106
+00:07:03,671 --> 00:07:06,930
+un zumbido débil y constante del
+gas interestelar.
+
+107
+00:07:07,489 --> 00:07:11,865
+Hasta entonces solo se medía ese gas cuando
+una erupción del Sol lo agitaba.
+
+108
+00:07:12,773 --> 00:07:17,615
+Ahora la nave nos dice, día tras día, la
+densidad del medio por el que flota
+
+109
+00:07:17,615 --> 00:07:19,717
+sin esperar a ninguna casualidad.
+
+110
+00:07:21,423 --> 00:07:25,558
+Voyager 1 se comunica con una
+antena de 3,7 metros
+
+111
+00:07:25,558 --> 00:07:29,445
+y normalmente transmite a 160
+bits por segundo.
+
+112
+00:07:30,316 --> 00:07:31,982
+Para ponerlo en escala:
+
+113
+00:07:31,982 --> 00:07:36,982
+una foto de tu móvil de 3 megabytes
+tardaría unas 42 horas en llegar.
+
+114
+00:07:37,994 --> 00:07:43,437
+Y la nave recibe las órdenes todavía más
+despacio: a 16 bits por segundo.
+
+115
+00:07:44,236 --> 00:07:45,564
+Cuando la señal llega
+
+116
+00:07:45,564 --> 00:07:54,546
+es tan débil que la potencia que reciben las antenas es 20 mil millones de
+veces menor que la necesaria para hacer funcionar un reloj digital.
+
+117
+00:07:55,150 --> 00:07:58,674
+Para captarla se usa la Red de
+Espacio Profundo de la NASA
+
+118
+00:07:58,674 --> 00:08:03,777
+con tres complejos de antenas: en Canberra, en
+Madrid y en Goldstone, en California.
+
+119
+00:08:04,517 --> 00:08:08,252
+Están repartidos casi a la misma
+distancia alrededor del planeta.
+
+120
+00:08:08,252 --> 00:08:12,394
+Así, mientras la Tierra gira, siempre hay
+una antena que puede ver la nave.
+
+121
+00:08:13,042 --> 00:08:17,184
+Cada complejo tiene una antena enorme,
+de 70 metros de diámetro.
+
+122
+00:08:18,294 --> 00:08:23,698
+Y hay un detalle que se pasa por alto: si una
+orden tarda unas 23 horas en llegar
+
+123
+00:08:23,698 --> 00:08:25,767
+la respuesta tarda otras tantas
+
+124
+00:08:25,767 --> 00:08:29,703
+así que cada pregunta cuesta casi
+dos días de ida y vuelta.
+
+125
+00:08:30,434 --> 00:08:32,192
+Aquí no existe el «reintentar».
+
+126
+00:08:32,593 --> 00:08:35,074
+Cada orden se prepara con muchísimo cuidado.
+
+127
+00:08:36,006 --> 00:08:42,330
+Voyager 1 no tiene paneles solares; allí el
+Sol es solo una estrella más.
+
+128
+00:08:43,064 --> 00:08:50,470
+Funciona con tres generadores que convierten en
+electricidad el calor del plutonio al desintegrarse.
+
+129
+00:08:50,859 --> 00:08:53,933
+Al lanzarse, cada uno daba unos 158 vatios.
+
+130
+00:08:54,188 --> 00:08:57,712
+Hoy la nave pierde unos cuatro
+vatios de potencia por año.
+
+131
+00:08:58,430 --> 00:09:04,424
+Por eso los ingenieros han ido apagando calentadores e
+instrumentos para que lo esencial siga funcionando.
+
+132
+00:09:04,932 --> 00:09:08,150
+El 17 de abril de este año
+apagaron otro instrumento
+
+133
+00:09:08,150 --> 00:09:10,687
+el de partículas cargadas de baja energía
+
+134
+00:09:10,687 --> 00:09:16,319
+para evitar que un nuevo descenso de potencia
+activara el sistema de protección de la nave.
+
+135
+00:09:16,319 --> 00:09:19,663
+Hoy le quedan dos instrumentos
+científicos funcionando:
+
+136
+00:09:19,663 --> 00:09:22,278
+el que escucha el plasma y el magnetómetro.
+
+137
+00:09:23,152 --> 00:09:24,709
+Y no es la primera crisis.
+
+138
+00:09:25,010 --> 00:09:29,971
+El 14 de noviembre de 2023, la nave
+empezó a enviar algo extraño:
+
+139
+00:09:29,971 --> 00:09:32,108
+datos que no tenían sentido.
+
+140
+00:09:32,397 --> 00:09:37,067
+Seguía recibiendo las órdenes… pero lo que
+devolvía era ininteligible.
+
+141
+00:09:37,547 --> 00:09:40,345
+Los ingenieros, a casi un día luz de distancia
+
+142
+00:09:40,345 --> 00:09:42,596
+tardaron meses en encontrar la causa:
+
+143
+00:09:42,596 --> 00:09:47,524
+un solo chip de memoria de uno de sus tres
+ordenadores había dejado de funcionar.
+
+144
+00:09:47,788 --> 00:09:52,007
+La solución: dividir el código y
+reubicarlo en otras zonas de memoria
+
+145
+00:09:52,007 --> 00:09:56,470
+mandando las órdenes por radio, con un día
+de espera para cada respuesta.
+
+146
+00:09:56,915 --> 00:10:02,285
+El 20 de abril de 2024 volvió a enviar datos
+de su estado, y el 22 de mayo
+
+147
+00:10:02,285 --> 00:10:05,042
+datos científicos de dos instrumentos.
+
+148
+00:10:05,294 --> 00:10:10,615
+Ahí hay un ordenador de los años setenta que se
+reparó a miles de millones de kilómetros.
+
+149
+00:10:10,943 --> 00:10:12,848
+Eso también es ciencia.
+
+150
+00:10:13,900 --> 00:10:16,864
+Y ahora, la frase que te prometí al principio.
+
+151
+00:10:17,383 --> 00:10:21,597
+Se repite muchísimo: «Voyager 1
+salió del Sistema Solar».
+
+152
+00:10:22,381 --> 00:10:23,245
+No es exacta.
+
+153
+00:10:23,503 --> 00:10:26,744
+Salió de la heliosfera, la
+burbuja del viento solar.
+
+154
+00:10:27,502 --> 00:10:31,153
+Pero el Sistema Solar sigue mucho
+más allá: la nube de Oort
+
+155
+00:10:31,153 --> 00:10:39,383
+un enorme reservorio de cometas que empieza a unas mil veces la distancia
+entre la Tierra y el Sol y se extiende hasta unas cien mil.
+
+156
+00:10:39,820 --> 00:10:40,653
+Según la NASA
+
+157
+00:10:40,653 --> 00:10:47,192
+la nave tardará unos 300 años en llegar a su borde
+interior y posiblemente unos 30 000 en atravesarla.
+
+158
+00:10:47,477 --> 00:10:49,480
+La gravedad del Sol sigue mandando.
+
+159
+00:10:49,781 --> 00:10:50,976
+Y mucho antes de salir
+
+160
+00:10:50,976 --> 00:10:56,191
+la nave se habrá quedado sin energía y sin el
+combustible que la mantiene apuntando a la Tierra.
+
+161
+00:10:56,552 --> 00:10:59,113
+Seguirá viajando… pero en silencio.
+
+162
+00:10:59,589 --> 00:11:02,403
+Entonces, ¿qué sabemos de
+verdad sobre su futuro?
+
+163
+00:11:03,316 --> 00:11:04,554
+Lo que está comprobado:
+
+164
+00:11:04,554 --> 00:11:08,591
+sus instrumentos miden las condiciones del
+medio interestelar cerca del Sol
+
+165
+00:11:08,591 --> 00:11:11,283
+una región que solo las dos
+Voyager han explorado.
+
+166
+00:11:12,165 --> 00:11:12,872
+Lo probable:
+
+167
+00:11:12,872 --> 00:11:18,818
+que siga enviando datos algo más de tiempo gracias a un
+plan de ahorro de energía llamado «Big Bang».
+
+168
+00:11:19,316 --> 00:11:21,200
+En agosto funcionó en Voyager 2
+
+169
+00:11:21,200 --> 00:11:25,089
+y el equipo planea repetirlo en Voyager
+1 en los próximos meses.
+
+170
+00:11:26,180 --> 00:11:29,877
+Y lo que nadie sabe todavía: cuándo
+dejará de funcionar.
+
+171
+00:11:30,225 --> 00:11:35,862
+NASA no da una fecha; el equipo busca mantener las
+dos sondas el mayor tiempo posible.
+
+172
+00:11:36,267 --> 00:11:39,129
+Y lleva consigo un mensaje: el disco de oro
+
+173
+00:11:39,129 --> 00:11:43,589
+un disco de cobre bañado en oro de 30
+centímetros, con 115 imágenes
+
+174
+00:11:43,589 --> 00:11:45,120
+35 sonidos de la Tierra
+
+175
+00:11:45,120 --> 00:11:49,513
+90 minutos de música de distintas
+culturas y saludos en 55 idiomas
+
+176
+00:11:49,513 --> 00:11:56,036
+además de un mensaje del entonces presidente de Estados
+Unidos y del secretario general de la ONU.
+
+177
+00:11:56,036 --> 00:12:04,204
+En la cubierta lleva grabado un mapa con la posición de la Tierra
+respecto a varios púlsares y las instrucciones para reproducirlo.
+
+178
+00:12:04,463 --> 00:12:08,186
+Solo se escuchará si alguna
+civilización avanzada lo encuentra.
+
+179
+00:12:08,545 --> 00:12:17,306
+Voyager 1 pasará a 1,7 años luz de la
+estrella AC +79 3888 en el año 40 272
+
+180
+00:12:17,306 --> 00:12:20,460
+dentro de unos 38 000 años.
+
+181
+00:12:21,137 --> 00:12:23,819
+Todas las fuentes de este video
+están en la descripción.
+
+182
+00:12:24,080 --> 00:12:27,775
+Si hay una cifra que quieras que revise,
+escríbela en los comentarios.
+
+183
+00:12:28,165 --> 00:12:32,592
+Y si te preguntas cómo sabemos la edad del
+universo sin que nadie estuviera allí
+
+184
+00:12:32,592 --> 00:12:33,920
+ese es el próximo video.
+

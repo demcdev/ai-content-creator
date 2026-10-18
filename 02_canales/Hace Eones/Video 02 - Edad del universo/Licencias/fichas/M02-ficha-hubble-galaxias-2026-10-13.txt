@@ -1,0 +1,8 @@
+FICHA M02 · Collage de 36 galaxias de Hubble que albergan cefeidas y supernovas (STScI-01G2QQ61NVW9P1JC4EYYVYKJXG, heic2208a)
+Leída el 13-oct-2026 por Claude en las páginas oficiales (lectura propia, no dictamen legal).
+Fichas: https://science.nasa.gov/asset/hubble/a-dazzling-hubble-collection-of-supernova-host-galaxies/ (publicada 19-may-2022) · https://esahubble.org/news/heic2208/
+Archivos descargados: ../originales/M02-hubble-host-galaxies-nasa-2000.jpg (JPEG 2000×892, de assets.science.nasa.gov) y ../originales/M02-hubble-host-galaxies-esa-large.jpg (JPEG 5760×2572, de cdn.esahubble.org/archives/images/large/heic2208a.jpg)
+Crédito (ficha NASA): «NASA, ESA, Adam Riess (STScI, JHU)»
+Licencia ESA/Hubble (https://esahubble.org/copyright/, leída el 13-oct-2026): «ESA/Hubble images, videos and web texts are released under the Creative Commons Attribution 4.0 International license and may on a non-exclusive basis be reproduced without fee provided they are clearly and visibly credited.» · «ESA/Hubble materials may not be used to state or imply the endorsement by ESA/Hubble or any ESA/Hubble employee of a commercial product or service.»
+Revisión visual: cuadrícula de 36 galaxias; sin personas, logos ni texto.
+Rótulo en pantalla: «NASA, ESA, Adam G. Riess (STScI, JHU)» (crédito tal cual de la ficha)

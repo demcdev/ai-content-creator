@@ -1,0 +1,4 @@
+{
+  "_ayuda": "Pronunciaciones propias (IPA o X-SAMPA). Formato: \"frase exacta\": { \"ipa\": \"...\" }  o  { \"xsampa\": \"...\" } (solo una). La frase debe aparecer IGUAL en el texto, después de aplicar sustituciones.json. Las claves que empiezan con guion bajo se ignoran. Está vacío a propósito: añade una palabra solo cuando la oigas mal y compruebes de oído que mejora.",
+  "_ejemplo": { "Canberra": { "ipa": "kamˈbeɾa" } }
+}

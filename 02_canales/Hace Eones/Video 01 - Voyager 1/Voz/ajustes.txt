@@ -1,0 +1,7 @@
+voz=es-US-Chirp3-HD-Iapetus
+ritmo=1
+formato=wav
+pausa=0.6
+pausa-parrafo=ninguna
+pronunciaciones=0
+fecha=2026-10-13T09:55:07.749Z

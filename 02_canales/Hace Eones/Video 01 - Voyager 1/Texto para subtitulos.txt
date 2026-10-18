@@ -1,0 +1,73 @@
+En 1977 lanzamos una nave cuyos ordenadores tienen, en total, unos 70 kilobytes de memoria: una sola foto de móvil, de unos 3 megas, ocupa decenas de veces más, y un portátil actual, de 8 gigas, tiene más de cien mil veces esa memoria. Hoy, casi cincuenta años después, sigue funcionando, y una orden de radio, viajando a la velocidad de la luz, tarda unas 23 horas en llegar hasta ella.
+
+El 18 de noviembre de este año se convertirá en el primer objeto construido por la humanidad a un día luz de la Tierra. Pero lo más curioso no es lo lejos que está. Es cómo seguimos hablando con ella, lo que no sabemos de ella, y una frase que se repite muchísimo sobre esta nave y que no es del todo cierta. Más adelante te digo cuál.
+
+Pero empecemos por el principio. Esta nave se llama Voyager 1. Se lanzó el 5 de septiembre de 1977, dieciséis días después de su gemela, Voyager 2. Pero tomó un camino más rápido, y el 15 de diciembre de ese mismo año ya la había adelantado. Nació para visitar Júpiter y Saturno. Casi medio siglo después sigue enviando datos.
+
+Desde el 17 de febrero de 1998 es el objeto más lejano que ha construido la humanidad, el día que superó a la sonda Pioneer 10. Y no se detiene: se aleja del Sol a unos 17 kilómetros por segundo. Eso son casi un millón y medio de kilómetros más lejos cada día.
+
+Hoy vamos a ver cinco cosas: lo que descubrió en su camino, una fotografía que cambió cómo nos vemos, cómo sabemos que cruzó la frontera de la burbuja del Sol, cómo se habla con una nave tan lejana, y qué le queda de energía.
+
+La misión aprovechó una alineación de los planetas exteriores que se repite solo cada unos 175 años: usar la gravedad de cada planeta como una honda para ganar velocidad sin gastar combustible.
+
+Al acercarse a Júpiter, la nave tomó una imagen cada 96 segundos para montar una película de su llegada. El 5 de marzo de 1979 pasó a unos 280 000 kilómetros del planeta, y descubrió un anillo tenue alrededor de Júpiter y dos lunas nuevas, Tebe y Metis.
+
+Tres días después, alguien vio algo que no debía estar ahí.
+
+Linda Morabito, ingeniera de navegación de la misión, procesaba una imagen de Ío, una de las lunas de Júpiter. En el borde de la luna… había una nube. Una nube donde no debería haber nada.
+
+¿Qué podía ser?
+
+Era un volcán. En plena erupción. Y era la primera erupción volcánica que alguien observaba fuera de la Tierra.
+
+El 12 de noviembre de 1980 llegó a Saturno, y pasó a unos 126 000 kilómetros del planeta. Encontró cinco lunas nuevas y un anillo nuevo, el anillo G, y vio en los anillos estructuras complejas, con «lunas pastoras» que mantienen bien definidos algunos de ellos.
+
+Pero la gran apuesta era Titán, la luna más grande de Saturno, cuya atmósfera espesa ocultaba por completo la superficie. La nave descubrió que esa atmósfera es un 90 % nitrógeno y que lleva metano y otros hidrocarburos complejos, ingredientes que hacían pensar que allí podrían darse reacciones químicas parecidas a las que preceden a la vida.
+
+Para verla de cerca, la nave hizo una maniobra arriesgada: pasó a unos 6 500 kilómetros de Titán, y esa trayectoria la lanzó fuera del plano de los planetas. Ya no visitaría ningún otro. Urano y Neptuno los visitaría su gemela: Urano en 1986 y Neptuno en 1989. El único destino de Voyager 1 sería el espacio entre las estrellas.
+
+El 14 de febrero de 1990, con su misión planetaria terminada, la nave recibió una última orden. Mirar hacia atrás. Desde unos 6 000 millones de kilómetros del Sol, fotografiar la familia de planetas. Fue idea del astrónomo Carl Sagan.
+
+En una de esas imágenes hay un punto de luz pálido, de apenas un píxel, dentro de un rayo de luz solar dispersada. Ese punto… es la Tierra. Sagan lo llamó el «punto azul pálido».
+
+No fue una sola foto: fue un mosaico de unas sesenta imágenes, el primer retrato de familia del sistema solar, con seis planetas. Mercurio estaba demasiado cerca del Sol, y Marte quedó oculto por la luz dispersada en la cámara. Fueron las últimas de las 67 000 imágenes que tomaron las dos Voyager.
+
+No es una foto bonita en términos técnicos. Es importante por lo que muestra: la escala. Todo lo que conocemos cabe en ese punto. Y 34 minutos después de tomarla, las cámaras se apagaron para siempre. Había que ahorrar energía para el largo viaje que quedaba.
+
+El Sol emite un flujo constante de partículas, el viento solar, que sopla en todas direcciones y forma una burbuja: la heliosfera. Su borde se llama heliopausa. Y más allá de ese borde está el espacio interestelar. Antes de llegar a ese borde, hay otra frontera, el choque de terminación, donde el viento solar se frena de golpe. Voyager 1 lo cruzó el 16 de diciembre de 2004.
+
+¿Cómo se sabe en qué momento se cruza un límite que no se ve? Lo ideal era medir directamente el plasma, pero el instrumento de Voyager 1 que lo hacía dejó de funcionar en 1980, justo después de Saturno. Hubo que esperar una casualidad.
+
+En 2012, las partículas del Sol casi desaparecieron de los detectores y subieron las de origen galáctico. Pero eso no bastaba para estar seguros. La confirmación llegó meses después, y de una forma que nadie había planeado. El 9 de abril de 2013, el instrumento de ondas de plasma captó algo: el plasma que rodeaba la nave estaba vibrando, probablemente por una erupción solar ocurrida un año antes. Por esa vibración se pudo calcular su densidad… más de 40 veces la que había medido Voyager 2 dentro de la burbuja. No era plasma del Sol. Era plasma interestelar. Y al retroceder los datos, concluyeron que la nave lo había encontrado por primera vez el 25 de agosto de 2012.
+
+Seis años después, Voyager 2 repitió el cruce, y esta vez su instrumento de plasma sí funcionaba. El 5 de noviembre de 2018 vio caer las partículas energéticas del Sol y desaparecer el viento solar, y se convirtió en la segunda nave en salir de la heliosfera.
+
+Y aún hay sorpresas. En 2021, un equipo de la Universidad de Cornell revisó los datos del instrumento de ondas de plasma y encontró algo más: un zumbido débil y constante del gas interestelar. Hasta entonces solo se medía ese gas cuando una erupción del Sol lo agitaba. Ahora la nave nos dice, día tras día, la densidad del medio por el que flota, sin esperar a ninguna casualidad.
+
+Voyager 1 se comunica con una antena de 3,7 metros, y normalmente transmite a 160 bits por segundo. Para ponerlo en escala: una foto de tu móvil de 3 megabytes tardaría unas 42 horas en llegar. Y la nave recibe las órdenes todavía más despacio: a 16 bits por segundo.
+
+Cuando la señal llega, es tan débil que la potencia que reciben las antenas es 20 mil millones de veces menor que la necesaria para hacer funcionar un reloj digital. Para captarla se usa la Red de Espacio Profundo de la NASA, con tres complejos de antenas: en Canberra, en Madrid y en Goldstone, en California. Están repartidos casi a la misma distancia alrededor del planeta. Así, mientras la Tierra gira, siempre hay una antena que puede ver la nave. Cada complejo tiene una antena enorme, de 70 metros de diámetro.
+
+Y hay un detalle que se pasa por alto: si una orden tarda unas 23 horas en llegar, la respuesta tarda otras tantas, así que cada pregunta cuesta casi dos días de ida y vuelta. Aquí no existe el «reintentar». Cada orden se prepara con muchísimo cuidado.
+
+Voyager 1 no tiene paneles solares; allí el Sol es solo una estrella más. Funciona con tres generadores que convierten en electricidad el calor del plutonio al desintegrarse. Al lanzarse, cada uno daba unos 158 vatios. Hoy la nave pierde unos cuatro vatios de potencia por año. Por eso los ingenieros han ido apagando calentadores e instrumentos para que lo esencial siga funcionando.
+
+El 17 de abril de este año apagaron otro instrumento, el de partículas cargadas de baja energía, para evitar que un nuevo descenso de potencia activara el sistema de protección de la nave. Hoy le quedan dos instrumentos científicos funcionando: el que escucha el plasma y el magnetómetro.
+
+Y no es la primera crisis. El 14 de noviembre de 2023, la nave empezó a enviar algo extraño: datos que no tenían sentido. Seguía recibiendo las órdenes… pero lo que devolvía era ininteligible. Los ingenieros, a casi un día luz de distancia, tardaron meses en encontrar la causa: un solo chip de memoria de uno de sus tres ordenadores había dejado de funcionar. La solución: dividir el código y reubicarlo en otras zonas de memoria, mandando las órdenes por radio, con un día de espera para cada respuesta. El 20 de abril de 2024 volvió a enviar datos de su estado, y el 22 de mayo, datos científicos de dos instrumentos.
+
+Ahí hay un ordenador de los años setenta que se reparó a miles de millones de kilómetros. Eso también es ciencia.
+
+Y ahora, la frase que te prometí al principio. Se repite muchísimo: «Voyager 1 salió del Sistema Solar». No es exacta. Salió de la heliosfera, la burbuja del viento solar. Pero el Sistema Solar sigue mucho más allá: la nube de Oort, un enorme reservorio de cometas que empieza a unas mil veces la distancia entre la Tierra y el Sol y se extiende hasta unas cien mil. Según la NASA, la nave tardará unos 300 años en llegar a su borde interior y posiblemente unos 30 000 en atravesarla. La gravedad del Sol sigue mandando. Y mucho antes de salir, la nave se habrá quedado sin energía y sin el combustible que la mantiene apuntando a la Tierra. Seguirá viajando… pero en silencio.
+
+Entonces, ¿qué sabemos de verdad sobre su futuro?
+
+Lo que está comprobado: sus instrumentos miden las condiciones del medio interestelar cerca del Sol, una región que solo las dos Voyager han explorado.
+
+Lo probable: que siga enviando datos algo más de tiempo gracias a un plan de ahorro de energía llamado «Big Bang». En agosto funcionó en Voyager 2, y el equipo planea repetirlo en Voyager 1 en los próximos meses.
+
+Y lo que nadie sabe todavía: cuándo dejará de funcionar. NASA no da una fecha; el equipo busca mantener las dos sondas el mayor tiempo posible.
+
+Y lleva consigo un mensaje: el disco de oro, un disco de cobre bañado en oro de 30 centímetros, con 115 imágenes, 35 sonidos de la Tierra, 90 minutos de música de distintas culturas y saludos en 55 idiomas, además de un mensaje del entonces presidente de Estados Unidos y del secretario general de la ONU. En la cubierta lleva grabado un mapa con la posición de la Tierra respecto a varios púlsares y las instrucciones para reproducirlo. Solo se escuchará si alguna civilización avanzada lo encuentra. Voyager 1 pasará a 1,7 años luz de la estrella AC +79 3888 en el año 40 272, dentro de unos 38 000 años.
+
+Todas las fuentes de este video están en la descripción. Si hay una cifra que quieras que revise, escríbela en los comentarios. Y si te preguntas cómo sabemos la edad del universo sin que nadie estuviera allí, ese es el próximo video. Y si te gustó este, suscríbete, dale like y activa la campanita para no perdértelo.
