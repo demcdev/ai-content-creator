@@ -1,0 +1,257 @@
+{
+  "_nota": "Fuente única de las instrucciones de cada paso: las ve el panel (para copiar) y las usa el servidor (para ejecutar). Marcadores: {ref} = canal/n, {carpeta} = ruta del video, {hoy} = fecha. Un paso solo se ejecuta desde el panel si trae «ejecutable»: modelo, minutos (tope), permisos (texto para el usuario), permitidas y prohibidas (lista cerrada; {canal} y {video} se rellenan). Para escribir archivos usar SIEMPRE Edit(ruta): cubre también a Write, mientras que Write(ruta) no concede nada en la práctica (probado). Una «/» inicial es la raíz del proyecto; «**» abarca una carpeta. Ningún paso puede sellar, aprobar, usar git ni servidores MCP. Los pasos con «tipo»: «comandos» no usan IA: ejecutan programas python/node de herramientas/ (origen «voz» = los comandos de voces.json para la identidad del video; claves_env = variables de entorno exigidas, nunca sus valores). No es ejecutable todavía metricas. El montaje se hace por DATOS (directivas «@tipo» en la escaleta + escenas --fusionar): Claude nunca escribe ni ejecuta código propio. Las miniaturas se dibujan por DATOS (miniaturas.json + herramientas/video/generar-miniaturas.py): Claude nunca escribe ni ejecuta código propio.",
+  "pasos": {
+    "investigacion": {
+      "instruccion": "Vamos a trabajar el video {ref}. La idea de partida está en {carpeta}/01-guion/idea.md. Investiga las cifras que necesitará el video con FUENTE PRIMARIA (artículo revisado por pares, agencia o institución oficial) y llena la tabla de {carpeta}/01-guion/verificacion-de-cifras.md: una fila por cifra, con el dato, el enlace exacto a la fuente y la fecha de consulta ({hoy}). No inventes cifras ni enlaces: si no encuentras fuente primaria, déjala marcada como «no verificada». Para el contexto mínimo ejecuta tal cual, sin «cd» ni «&&»: python herramientas/canal/canal.py contexto \"{ref}\" --para guion. Escribe SOLO en 01-guion/verificacion-de-cifras.md y no escribas el guion todavía.",
+      "ejecutable": {
+        "modelo": "sonnet",
+        "minutos": 25,
+        "permisos": "buscar en la web, leer el proyecto y editar únicamente 01-guion/verificacion-de-cifras.md de este video (nada más, sin git, sin servidores externos)",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "WebSearch",
+          "WebFetch",
+          "Edit(/02-canales/{canal}/videos/{video}/01-guion/verificacion-de-cifras.md)",
+          "Bash(python herramientas/canal/canal.py contexto *)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "guion": {
+      "instruccion": "Escribe el guion del video {ref} con la skill guionista-retencion, a partir de {carpeta}/01-guion/idea.md y la tabla de cifras. Escríbelo en {carpeta}/01-guion/guion.md. Conserva las marcas [✔ n], {pausa} y [Pantalla: …]; repasa 00-contexto/produccion/checklist-escritura-guion.md y corre python herramientas/canal/canal.py validar \"{ref}\" (tal cual, sin «cd» ni «&&») hasta que pase. Mandan las políticas del canal. No inventes cifras: usa solo las de la tabla y, si falta una, añádela a la tabla con su fuente primaria.",
+      "ejecutable": {
+        "modelo": "opus",
+        "minutos": 30,
+        "permisos": "usar la skill de guion, leer el proyecto y editar únicamente 01-guion/guion.md y 01-guion/verificacion-de-cifras.md de este video (sin web, sin git)",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "Skill(guionista-retencion)",
+          "Edit(/02-canales/{canal}/videos/{video}/01-guion/guion.md)",
+          "Edit(/02-canales/{canal}/videos/{video}/01-guion/verificacion-de-cifras.md)",
+          "Bash(python herramientas/canal/canal.py validar *)",
+          "Bash(python herramientas/canal/canal.py contexto *)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "rev-guion": {
+      "instruccion": "Revisa el guion del video {ref} con el flujo del proyecto: lint con canal.py, luego los subagentes auditor (modo guion) y verificador (antes corre herramientas/video/verificar-cifras.py). Deja los informes con ESTOS nombres exactos: {carpeta}/02-revision/informe-auditor-guion.md y {carpeta}/02-revision/informe-verificador.md, cada uno con una línea «Veredicto: PASA» o «Veredicto: FALLA»; corrige en el guion lo que encuentren. Un comando por llamada, tal cual, con rutas relativas a la raíz del proyecto: sin «cd», sin variables y sin «&&». No selles ni apruebes: lo hago yo desde el panel.",
+      "ejecutable": {
+        "modelo": "sonnet",
+        "minutos": 40,
+        "permisos": "usar los agentes auditor y verificador, buscar en la web, correr las validaciones y editar únicamente los informes de 02-revision/ y el guion y la tabla de cifras de este video (no puede sellar ni aprobar; sin git)",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "WebSearch",
+          "WebFetch",
+          "Agent",
+          "Edit(/02-canales/{canal}/videos/{video}/02-revision/**)",
+          "Edit(/02-canales/{canal}/videos/{video}/01-guion/guion.md)",
+          "Edit(/02-canales/{canal}/videos/{video}/01-guion/verificacion-de-cifras.md)",
+          "Bash(python herramientas/canal/canal.py validar *)",
+          "Bash(python herramientas/video/validar-video.py *)",
+          "Bash(python herramientas/video/verificar-cifras.py *)",
+          "Bash(python herramientas/video/estado-video.py * --revisar *)",
+          "Bash(python herramientas/video/estado-video.py * --diff *)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "escaleta": {
+      "instruccion": "Genera la escaleta técnica del video {ref} con la skill escaleta-audiovisual ({carpeta}/03-escaleta/escaleta-audiovisual.md), indicando origen y fila de licencia por escena. Antes lee: python herramientas/canal/canal.py contexto \"{ref}\" --para escaleta (tal cual, sin «cd» ni «&&»). Escribe solo en 03-escaleta/.",
+      "ejecutable": {
+        "modelo": "sonnet",
+        "minutos": 30,
+        "permisos": "usar la skill de escaleta, leer el proyecto y editar únicamente la carpeta 03-escaleta/ de este video (sin web, sin git)",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "Skill(escaleta-audiovisual)",
+          "Edit(/02-canales/{canal}/videos/{video}/03-escaleta/**)",
+          "Bash(python herramientas/canal/canal.py contexto *)",
+          "Bash(python herramientas/montaje/catalogo/*)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "planilla": {
+      "instruccion": "Completa la «Planilla de producción» (3 columnas) de {carpeta}/03-escaleta/escaleta-audiovisual.md del video {ref} con la skill guionista-retencion, a partir del guion aprobado ({carpeta}/01-guion/guion.md). Escribe solo en ese archivo.",
+      "ejecutable": {
+        "modelo": "sonnet",
+        "minutos": 25,
+        "permisos": "usar la skill de guion, leer el proyecto y editar únicamente 03-escaleta/escaleta-audiovisual.md de este video (sin web, sin git)",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "Skill(guionista-retencion)",
+          "Edit(/02-canales/{canal}/videos/{video}/03-escaleta/escaleta-audiovisual.md)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "voz": {
+      "instruccion": "Genera la voz del video {ref}: ejecuta python herramientas/canal/canal.py voz \"{ref}\" para ver los comandos de la voz de su identidad y sintetiza el guion (las claves solo por variable de entorno; no me las pidas).",
+      "ejecutable": {
+        "tipo": "comandos",
+        "origen": "voz",
+        "minutos": 30,
+        "permisos": "ejecutar directamente (sin IA) los comandos de la voz de la identidad de este video, tal como los define herramientas/voz/voces.json; usa las claves que tengas en tu entorno y puede tener costo (Polly: gratis 12 meses, luego ≈1 USD por video; Google: gratis hasta 1 000 000 de caracteres al mes)"
+      }
+    },
+    "miniaturas": {
+      "instruccion": "Prepara las miniaturas del video {ref}. ANTES de decidir nada, lee 00-contexto/produccion/guia-de-miniaturas.md (reglas con fuente y nivel de evidencia) y la idea, el guion y la tabla de cifras del video ({carpeta}/01-guion/). Sigue el método de la sección 4 de la guía: extrae la pregunta o promesa, el objeto central, la emoción honesta y el dato más llamativo; elige TRES conceptos distintos y, para cada uno, una paleta derivada del tema (no uses por defecto los colores del canal: como mucho una de las tres), una composición, un motivo, un fondo y un estilo de texto diferentes; el generador rechaza variantes parecidas y textos con contraste menor de 4,5:1. (1) Escribe el encargo en {carpeta}/07-miniaturas/encargo-de-miniaturas.md con la plantilla de la sección 6 de la guía, justificando cada decisión con las reglas D/R y la hipótesis de cada variante. (2) Escribe las variantes en {carpeta}/07-miniaturas/miniaturas.json con el formato de la sección 5 de la guía. Usa una imagen solo si ya está en 05-licencias/originales/ y figura en registro-de-licencias.md; no generes imágenes con IA ni uses personas reconocibles. (3) Ejecuta tal cual, sin «cd» ni «&&»: python herramientas/video/generar-miniaturas.py \"{ref}\" ; corrige el JSON según los errores y avisos (sobre todo los de solape motivo-texto) hasta que salgan las tres miniaturas, y míralas con Read (los archivos -320x180.png) para comprobar que se leen y se ven bien. Escribe SOLO esos dos archivos.",
+      "ejecutable": {
+        "modelo": "sonnet",
+        "minutos": 25,
+        "permisos": "leer el proyecto (incluida la guía de miniaturas y las imágenes que se generan), editar únicamente 07-miniaturas/encargo-de-miniaturas.md y 07-miniaturas/miniaturas.json de este video y ejecutar el generador de miniaturas (que dibuja por datos: Claude no escribe ni ejecuta código propio); sin IA de imágenes, sin web, sin git",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "Edit(/02-canales/{canal}/videos/{video}/07-miniaturas/encargo-de-miniaturas.md)",
+          "Edit(/02-canales/{canal}/videos/{video}/07-miniaturas/miniaturas.json)",
+          "Bash(python herramientas/video/generar-miniaturas.py *)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "licencias": {
+      "instruccion": "Actualiza el registro de licencias del video {ref} ({carpeta}/05-licencias/registro-de-licencias.md). (1) Lista en la tabla cada imagen, voz, música y tipografía que usa la escaleta ({carpeta}/03-escaleta/escaleta-audiovisual.md), con su fuente y licencia, comprobando la licencia en la página oficial de cada fuente. (2) Si la licencia se lee en una página web y aún no hay captura, guarda una FICHA DE TEXTO como prueba en {carpeta}/05-licencias/fichas/<codigo-en-minusculas>-<tema>-<AAAA-MM-DD>.txt con: la URL, la fecha de consulta ({hoy}) y el extracto literal mínimo (máximo 15 líneas) donde la página dice la licencia o la política; escribe esa ruta en la columna «Captura». Si la ficha de la fuente NO declara licencia y solo se infiere de una política general, déjalo escrito así en la columna «Licencia» («inferida de la política general de …»). (3) En la columna Estado de cada fila usa SOLO: ✅ si la licencia está leída en la fuente oficial Y el archivo de la columna «Captura» existe de verdad (compruébalo con Glob o Read dentro de {carpeta}/05-licencias/ o en la carpeta del video del que se reutiliza); 🔎 si falta el archivo o la licencia es solo una inferencia que yo debo confirmar; ⏳ si no puedes comprobarla (por ejemplo, fuentes que exigen iniciar sesión); ❌ si se descarta. No inventes licencias y no marques ✅ sin el archivo. No hace falta la tabla «0. Resumen de estado»: el panel cuenta los estados de la tabla principal. (4) Termina resumiendo en pocas líneas qué falta que haga yo (capturas de pantalla, descargas, decisiones) para que todas las filas queden en ✅.",
+      "ejecutable": {
+        "modelo": "sonnet",
+        "minutos": 25,
+        "permisos": "buscar en la web, leer el proyecto y editar únicamente 05-licencias/registro-de-licencias.md y crear fichas de texto en 05-licencias/fichas/ de este video (las capturas de pantalla y las descargas las guardas tú; sin git)",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "WebSearch",
+          "WebFetch",
+          "Edit(/02-canales/{canal}/videos/{video}/05-licencias/registro-de-licencias.md)",
+          "Edit(/02-canales/{canal}/videos/{video}/05-licencias/fichas/**)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "montaje": {
+      "instruccion": "Monta el video {ref} por DATOS, sin escribir código: diseña sus escenas con directivas «@tipo» en la escaleta y deja el montaje listo para renderizar. Pasos: (1) Lee, tal cual y sin «cd» ni «&&»: python herramientas/canal/canal.py contexto \"{ref}\" --para escaleta ; la sección «Composición» del CLAUDE.md (nada se tapa con nada, zona segura, texto dentro de su caja, cierre con suscribirse, like y campanita); y los tipos de escena con python herramientas/montaje/catalogo/escenas.py (y python herramientas/montaje/catalogo/escenas.py <tipo> para ver sus parámetros). (2) Si {carpeta}/01-guion/texto-para-subtitulos.txt está vacío o no existe, escríbelo: es el texto mostrado en los subtítulos, la misma locución que se grabó (los textos hablados exactos están en {carpeta}/04-voz/polly/parte-NN.txt, con las cifras en letras) pero con las cifras y fechas en dígitos (p. ej. «el 10 de abril de 2019»), una frase tras otra, con los mismos párrafos separados por una línea en blanco y exactamente la MISMA cantidad de frases que el texto hablado (el alineador las empareja 1 a 1 y falla si no coinciden); sin marcas del guion ([✔ n], {pausa}, [Pantalla: …]) ni cabeceras. Ejecuta python herramientas/canal/canal.py alinear \"{ref}\" para obtener {carpeta}/06-montaje/tiempos.json con la duración real de la voz; si falla, dilo y no inventes tiempos. (3) En {carpeta}/03-escaleta/escaleta-audiovisual.md corrige los tiempos «mm:ss–mm:ss» de las filas de escena (`| **E07 · Nombre** | 03:12–03:40 | …`, NO la planilla) para que coincidan con las frases reales de tiempos.json, y añade a cada fila una directiva entre comillas invertidas, p. ej. `@cifra valor=...; unidad=\"...\"; rotulo=\"...\"; fuente=\"...\"; fila=N` (valores con «;» o «|» dentro: entre comillas; sin «|» fuera de las comillas porque rompe la tabla). Elige el tipo que mejor cuente lo que dice el guion en esa escena (portada, texto, cifra, comparacion, barras, linea_tiempo, lista, imagen, cita, mapa, cierre). Reglas de contenido: usa solo textos y cifras que estén en el guion ({carpeta}/01-guion/guion.md) y cifras con su `fila` real de 01-guion/verificacion-de-cifras.md; no inventes datos, citas ni fuentes; usa `imagen` solo con un archivo que ya exista en 05-licencias/originales/ y figure en registro-de-licencias.md (con su `credito`); sin personas reales ni imágenes de IA; no pongas rótulo «Dato verificado» sin fila que lo respalde; mantén los textos cortos para que quepan en su caja. Si una escena no se puede contar con ningún tipo del catálogo sin falsear lo que pide la escaleta, déjala sin directiva (queda placeholder) y anótala. La última escena debe ser tipo `cierre`. (4) Ejecuta python herramientas/canal/canal.py escenas \"{ref}\" --fusionar y luego python herramientas/montaje/catalogo/escenas.py --validar \"{ref}\" ; corrige las directivas hasta que no haya errores. (5) En {carpeta}/06-montaje/montaje.json (solo ahí) rellena: `nombre` (déjalo como está), `musica.pistas` SOLO con nombres de pistas que existan de verdad en {carpeta}/06-montaje/musica/ y estén en el registro de licencias (si no hay archivos, déjalas vacías: el video saldrá solo con voz; no inventes pistas), y `rotulos`/`creditos`/`capitulos` solo si la escaleta los pide (formatos en herramientas/montaje/tuberia/pipeline.py). (6) Ejecuta python herramientas/canal/canal.py montar \"{ref}\" --verificar (comprueba que nada se tape) y corrige directivas hasta que pase. No renderices el video: lo hace el paso siguiente. Termina con un resumen corto: cuántas escenas quedaron diseñadas y cuáles siguen placeholder y por qué (tipo de escena que faltaría en herramientas/montaje/catalogo), qué pistas de música faltan y qué cambió en los tiempos de la escaleta (para que se actualicen la planilla y los capítulos de la descripción).",
+      "ejecutable": {
+        "modelo": "sonnet",
+        "minutos": 30,
+        "permisos": "leer el proyecto, editar únicamente el texto de subtítulos (01-guion/texto-para-subtitulos.txt, si falta), la escaleta (03-escaleta/escaleta-audiovisual.md: tiempos y directivas «@tipo» de las escenas) y 06-montaje/montaje.json de este video, y ejecutar alinear, escenas --fusionar, la validación de escenas y montar --verificar (Claude no escribe ni ejecuta código propio, no renderiza el video; sin web, sin git)",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "Edit(/02-canales/{canal}/videos/{video}/03-escaleta/escaleta-audiovisual.md)",
+          "Edit(/02-canales/{canal}/videos/{video}/01-guion/texto-para-subtitulos.txt)",
+          "Edit(/02-canales/{canal}/videos/{video}/06-montaje/montaje.json)",
+          "Bash(python herramientas/canal/canal.py contexto *)",
+          "Bash(python herramientas/canal/canal.py alinear *)",
+          "Bash(python herramientas/canal/canal.py escenas *)",
+          "Bash(python herramientas/canal/canal.py montar * --verificar)",
+          "Bash(python herramientas/montaje/catalogo/escenas.py)",
+          "Bash(python herramientas/montaje/catalogo/escenas.py *)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "video": {
+      "instruccion": "Renderiza el video {ref}: python herramientas/canal/canal.py montar \"{ref}\"",
+      "ejecutable": {
+        "tipo": "comandos",
+        "minutos": 90,
+        "comandos": [
+          "python herramientas/canal/canal.py montar \"{ref}\""
+        ],
+        "permisos": "ejecutar directamente (sin IA) canal.py montar: alinea la voz, genera las escenas, comprueba solapes, renderiza el .mp4 con tu script de 06-montaje/ y lo copia a 08-entregables/; puede tardar y usar mucho el procesador"
+      }
+    },
+    "rev-final": {
+      "instruccion": "Control final del video {ref}: corre python herramientas/canal/canal.py validar \"{ref}\" --etapa final y luego el subagente auditor en modo final. Deja el informe con este nombre exacto: {carpeta}/02-revision/informe-auditor-final.md, con una línea «Veredicto: PASA» o «Veredicto: FALLA». Un comando por llamada, tal cual, con rutas relativas a la raíz del proyecto: sin «cd», sin variables y sin «&&». Las variantes de miniatura son candidatas al test A/B: no exijas una elegida. Indícaselo igual al subagente auditor.",
+      "ejecutable": {
+        "modelo": "sonnet",
+        "minutos": 20,
+        "permisos": "usar el agente auditor, correr las validaciones y editar únicamente los informes de 02-revision/ de este video (no puede sellar; sin git)",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "Agent",
+          "Edit(/02-canales/{canal}/videos/{video}/02-revision/**)",
+          "Bash(python herramientas/canal/canal.py validar *)",
+          "Bash(python herramientas/video/validar-video.py *)",
+          "Bash(python herramientas/video/estado-video.py * --revisar *)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "descripcion": {
+      "instruccion": "Escribe los capítulos y la descripción del video {ref} en {carpeta}/09-publicacion/capitulos-y-descripcion.md, con la transparencia (voz con IA, imágenes, música) y sin clickbait ni promesas que el video no cumple. Usa el guion ({carpeta}/01-guion/guion.md) y el registro de licencias.",
+      "ejecutable": {
+        "modelo": "sonnet",
+        "minutos": 15,
+        "permisos": "leer el proyecto y editar únicamente 09-publicacion/capitulos-y-descripcion.md de este video (sin web, sin git)",
+        "permitidas": [
+          "Read",
+          "Glob",
+          "Grep",
+          "Edit(/02-canales/{canal}/videos/{video}/09-publicacion/capitulos-y-descripcion.md)"
+        ],
+        "prohibidas": [
+          "Bash(git *)",
+          "Read(**/.env*)"
+        ]
+      }
+    },
+    "subtitulos": {
+      "instruccion": "Genera los subtítulos del video {ref}: python herramientas/montaje/tuberia/exportar-srt.py \"{ref}\" (salen de tiempos.json y se copian a {carpeta}/08-entregables/).",
+      "ejecutable": {
+        "tipo": "comandos",
+        "minutos": 5,
+        "comandos": [
+          "python herramientas/montaje/tuberia/exportar-srt.py \"{ref}\""
+        ],
+        "permisos": "ejecutar directamente (sin IA) exportar-srt.py: convierte las frases alineadas (06-montaje/tiempos.json) en el .srt y lo copia a 08-entregables/; no renderiza ni gasta nada"
+      }
+    },
+    "metricas": {
+      "instruccion": "Ayúdame a anotar las métricas del video {ref} en {carpeta}/09-publicacion/metricas-y-seguimiento.md con vidIQ y a decidir qué cambiar."
+    }
+  }
+}
