@@ -5,7 +5,9 @@
     "01-nicho",
     "02-canales",
     "herramientas",
-    ".claude"
+    ".claude",
+    ".agents",
+    ".gemini"
   ],
   "excluir_carpetas": [
     ".git",
@@ -81,7 +83,9 @@
   ],
   "nombres_permitidos": [
     "LEEME.md",
+    "AGENTS.md",
     "CLAUDE.md",
+    "GEMINI.md",
     "README.md",
     ".gitignore",
     "SKILL.md"
@@ -90,6 +94,8 @@
     "05-licencias",
     "fuentes",
     ".claude",
+    ".agents",
+    ".gemini",
     "datos"
   ],
   "solo_leeme_en_la_raiz": [

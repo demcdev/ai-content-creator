@@ -568,7 +568,9 @@ def instalar_git():
     with open(gancho, 'w', encoding='utf-8', newline='\n') as f:
         f.write('#!/bin/sh\n# Valida referencias, enlaces y nombres antes de cada commit (herramientas/validacion/).\n'
                 'cd "$(git rev-parse --show-toplevel)" || exit 1\n'
-                'python herramientas/validacion/validar-proyecto.py || { echo "Commit cancelado: arregla lo anterior (o usa --no-verify bajo tu responsabilidad)."; exit 1; }\n')
+                'python herramientas/validacion/validar-proyecto.py || { echo "Commit cancelado: arregla lo anterior (o usa --no-verify bajo tu responsabilidad)."; exit 1; }\n'
+                '# Los subagentes de .claude/ y .gemini/ se generan desde .agents/ (herramientas/sync/).\n'
+                'python herramientas/sync/sync-agentes.py --revisar || { echo "Commit cancelado: corre «python herramientas/sync/sync-agentes.py» para regenerar los subagentes."; exit 1; }\n')
     try:
         os.chmod(gancho, 0o755)
     except OSError:

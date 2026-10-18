@@ -11,6 +11,7 @@ En la raíz solo está este `LEEME.md`; cada programa vive en la carpeta de su t
 | [voz/](voz/LEEME.md) | Sintetizador de voz | `voces.py`, `sintetizar*.py/.mjs` |
 | [montaje/](montaje/LEEME.md) | Render del video: librerías, tubería, catálogo de animaciones | `tuberia/alinear.py`, `catalogo/animaciones.py` |
 | [panel/](panel/LEEME.md) | Servidor local para la pantalla «Producción» del selector de nichos (lee estado; crea videos, elige identidad, aprueba puertas y sella) | `servidor.py`, `iniciar-panel.cmd` (arranque con las claves de voz cifradas), `probar-servidor.py` |
+| [sync/](sync/LEEME.md) | Genera los subagentes de Claude Code y Gemini CLI desde una sola fuente (`.agents/subagents/`) | `sync-agentes.py` |
 | [nucleo/](nucleo/LEEME.md) | Biblioteca compartida por los programas anteriores | `_comun.py` |
 
 Nombres y carpetas: [convencion-de-nombres.md](../00-contexto/produccion/convencion-de-nombres.md).

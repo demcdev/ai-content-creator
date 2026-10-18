@@ -22,10 +22,12 @@ nicho → guion → revisión (políticas + cifras) → escaleta → voz → mon
 | `00-contexto/` | Políticas de YouTube, guías de producción e investigación |
 | `01-nicho/` | Análisis de nichos |
 | `02-canales/` | Un canal por carpeta (`identidad/`, `estrategia/`, `videos/`) |
-| `herramientas/` | Programas compartidos: `canal`, `video`, `voz`, `montaje`, `identidad`, `validacion`, `panel`, `nucleo` |
-| `.claude/agents/` | Subagentes de revisión |
+| `herramientas/` | Programas compartidos: `canal`, `video`, `voz`, `montaje`, `identidad`, `validacion`, `panel`, `sync`, `nucleo` |
+| `.agents/` | Fuente única de los subagentes de revisión; `.claude/agents/` y `.gemini/agents/` se generan de aquí |
 
 Cada video vive en `02-canales/<canal>/videos/NN-nombre/` con una carpeta por etapa (`01-guion` … `09-publicacion`).
+
+Las instrucciones para los agentes de IA (Claude Code, Gemini CLI y otros) están en [`AGENTS.md`](AGENTS.md); `CLAUDE.md` y `GEMINI.md` solo lo importan y añaden lo propio de cada herramienta.
 
 ## Uso
 

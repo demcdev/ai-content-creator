@@ -2,3 +2,5 @@
 # Valida referencias, enlaces y nombres antes de cada commit (herramientas/validacion/).
 cd "$(git rev-parse --show-toplevel)" || exit 1
 python herramientas/validacion/validar-proyecto.py || { echo "Commit cancelado: arregla lo anterior (o usa --no-verify bajo tu responsabilidad)."; exit 1; }
+# Los subagentes de .claude/ y .gemini/ se generan desde .agents/ (herramientas/sync/).
+python herramientas/sync/sync-agentes.py --revisar || { echo "Commit cancelado: corre «python herramientas/sync/sync-agentes.py» para regenerar los subagentes."; exit 1; }

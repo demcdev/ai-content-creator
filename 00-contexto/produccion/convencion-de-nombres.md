@@ -27,7 +27,8 @@ Una sola regla de nombres para carpetas y archivos, y un lugar fijo para cada co
 | `01-nicho/` | Decisión de nicho. `analisis/` y `datos/` |
 | `02-canales/` | Un canal por carpeta |
 | `herramientas/` | Programas que sirven a todos los canales: `voz/`, `montaje/` y los scripts de estado, validación e identidad |
-| `.claude/agents/` | Subagentes del proyecto (`auditor`, `verificador`) |
+| `.agents/` | Fuente única de los subagentes (`subagents/`) y de las skills (`skills/`); se editan aquí |
+| `.claude/agents/` y `.gemini/agents/` | Copias generadas desde `.agents/subagents/` (`herramientas/sync/sync-agentes.py`); no se editan a mano |
 
 ## Estructura de un canal (`02-canales/<canal>/`)
 | Carpeta | Qué contiene |
