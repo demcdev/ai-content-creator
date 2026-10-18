@@ -1,0 +1,6 @@
+URL: https://github.com/rsms/inter/blob/master/LICENSE.txt
+Fecha de consulta: 2026-10-18
+Extracto literal mínimo:
+  "Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter)"
+  "SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007"
+  "Permission is hereby granted, free of charge, to any person obtaining"

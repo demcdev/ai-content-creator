@@ -1,0 +1,18 @@
+{
+ "nombre": "video-03-completo",
+ "rotulos": [],
+ "creditos": [],
+ "capitulos": [
+  [52.4, 1, "EL PROBLEMA"],
+  [113.2, 2, "UN PLANETA, UN TELESCOPIO"],
+  [228.2, 3, "LO QUE SE VE"],
+  [339.4, 4, "¿TENÍA RAZÓN EINSTEIN?"],
+  [395.0, 5, "LA FOTO MÁS DIFÍCIL"],
+  [481.4, 6, "LA COINCIDENCIA"],
+  [542.7, 7, "LO QUE NO SABEMOS"]
+ ],
+ "musica": {
+  "pistas": [],
+  "cambio": 0
+ }
+}

@@ -1,0 +1,727 @@
+[
+ {
+  "id": "E01",
+  "nombre": "Gancho: el anillo",
+  "ini": 0.0,
+  "fin": 8.6,
+  "tipo": "texto",
+  "lineas": [
+   "Un agujero negro no deja escapar la luz",
+   "Por definición, es imposible verlo"
+  ]
+ },
+ {
+  "id": "E02",
+  "nombre": "«El mundo vio esta imagen»",
+  "ini": 8.6,
+  "fin": 14.8,
+  "tipo": "cifra",
+  "valor": "10 de abril de 2019",
+  "etiqueta": "El mundo vio esta imagen",
+  "unidad": "Anuncio de la primera imagen",
+  "rotulo": "Anuncio: 10-abr-2019, seis artículos",
+  "fuente": "ESO, eso1907",
+  "fila": 5
+ },
+ {
+  "id": "E03",
+  "nombre": "M87* a 55 millones de años",
+  "ini": 14.8,
+  "fin": 30.2,
+  "tipo": "cifra",
+  "valor": 55,
+  "unidad": "millones de años luz",
+  "etiqueta": "M87*, el agujero negro de la imagen",
+  "detalle": "Su luz salió hace unos 55 millones de años",
+  "rotulo": "M87*: a unos 55 millones de años luz",
+  "fuente": "ESO, eso1907",
+  "fila": 4
+ },
+ {
+  "id": "E04",
+  "nombre": "«El planeta entero»",
+  "ini": 30.2,
+  "fin": 37.6,
+  "tipo": "texto",
+  "lineas": [
+   "No bastó con un telescopio",
+   "Hizo falta convertir el planeta entero en uno"
+  ]
+ },
+ {
+  "id": "E05",
+  "nombre": "Las tres promesas",
+  "ini": 37.6,
+  "fin": 52.4,
+  "tipo": "lista",
+  "titulo": "En este video",
+  "puntos": [
+   {
+    "texto": "Cómo se fotografía algo que no se puede ver",
+    "frase": "En este video"
+   },
+   {
+    "texto": "Por qué la foto de nuestra galaxia costó más",
+    "frase": "Por qué la foto"
+   },
+   {
+    "texto": "Una coincidencia en las cifras",
+    "frase": "Y una coincidencia"
+   }
+  ]
+ },
+ {
+  "id": "E06",
+  "nombre": "Es el tamaño",
+  "ini": 52.4,
+  "fin": 57.5,
+  "tipo": "texto",
+  "lineas": [
+   "El problema no es la oscuridad",
+   "Es el tamaño"
+  ]
+ },
+ {
+  "id": "E07",
+  "nombre": "Masa de M87\\*",
+  "ini": 57.5,
+  "fin": 71.6,
+  "tipo": "cifra",
+  "valor": 6500,
+  "unidad": "millones de soles",
+  "etiqueta": "Masa de M87*",
+  "detalle": "Con un margen de unos 700 millones",
+  "rotulo": "Masa de M87*: 6 500 ± 700 millones de soles",
+  "fuente": "Colaboración EHT, ApJL 875 L1 (2019)",
+  "fila": 2
+ },
+ {
+  "id": "E08",
+  "nombre": "La rosquilla en la Luna",
+  "ini": 71.6,
+  "fin": 89.5,
+  "tipo": "texto",
+  "lineas": [
+   "Una rosquilla sobre la superficie de la Luna",
+   "Así de pequeño se ve el agujero negro de nuestra galaxia"
+  ],
+  "rotulo": "Comparación de ESO: una rosquilla en la Luna",
+  "fuente": "ESO, eso2208",
+  "fila": 21
+ },
+ {
+  "id": "E09",
+  "nombre": "Más grande, más detalle",
+  "ini": 89.5,
+  "fin": 100.6,
+  "tipo": "texto",
+  "lineas": [
+   "Cuanto más grande el telescopio, más detalle",
+   "Como la pupila de tu ojo, pero a lo bestia"
+  ]
+ },
+ {
+  "id": "E10",
+  "nombre": "«Tan grande como la Tierra»",
+  "ini": 100.6,
+  "fin": 113.2,
+  "tipo": "texto",
+  "lineas": [
+   "Para ver esa rosquilla, un telescopio como la Tierra",
+   "Nadie puede construirlo",
+   "Pero sí se puede hacer trampa"
+  ]
+ },
+ {
+  "id": "E11",
+  "nombre": "El EHT",
+  "ini": 113.2,
+  "fin": 122.8,
+  "tipo": "texto",
+  "lineas": [
+   "Telescopio del Horizonte de Sucesos",
+   "Una red de radiotelescopios del tamaño del planeta"
+  ]
+ },
+ {
+  "id": "E12",
+  "nombre": "Ocho observatorios",
+  "ini": 122.8,
+  "fin": 128.9,
+  "tipo": "cifra",
+  "valor": 8,
+  "unidad": "observatorios",
+  "etiqueta": "La red en 2017",
+  "detalle": "Repartidos por distintos continentes",
+  "rotulo": "Ocho observatorios en 2017",
+  "fuente": "ESO, eso2208",
+  "fila": 18
+ },
+ {
+  "id": "E13",
+  "nombre": "El espejo roto",
+  "ini": 128.9,
+  "fin": 151.3,
+  "tipo": "texto",
+  "lineas": [
+   "Un espejo gigante del tamaño de la Tierra",
+   "Lo rompes en pedazos",
+   "Te quedas con unos pocos trozos, muy separados",
+   "Juntas lo que vio cada uno y reconstruyes parte de la imagen"
+  ]
+ },
+ {
+  "id": "E14",
+  "nombre": "La Tierra gira",
+  "ini": 151.3,
+  "fin": 163.1,
+  "tipo": "texto",
+  "lineas": [
+   "La Tierra gira",
+   "Cada telescopio ve el objetivo desde otro ángulo",
+   "Se rellenan más huecos del espejo"
+  ]
+ },
+ {
+  "id": "E15",
+  "nombre": "El coro sincronizado",
+  "ini": 163.1,
+  "fin": 187.4,
+  "tipo": "lista",
+  "titulo": "La condición: al mismo tiempo",
+  "eyebrow": "SINCRONÍA",
+  "numerada": false,
+  "puntos": [
+   {
+    "texto": "Ocho cantantes, cada uno a su ritmo: ruido",
+    "frase": "Piensa en un coro"
+   },
+   {
+    "texto": "Cada telescopio graba con la hora de un reloj atómico",
+    "frase": "Por eso cada telescopio"
+   },
+   {
+    "texto": "Así se alinean las grabaciones con gran precisión",
+    "frase": "Así, después"
+   }
+  ],
+  "rotulo": "Relojes atómicos (máseres de hidrógeno)",
+  "fuente": "ESO, eso1907",
+  "fila": 12
+ },
+ {
+  "id": "E16",
+  "nombre": "1,3 milímetros",
+  "ini": 187.4,
+  "fin": 191.5,
+  "tipo": "cifra",
+  "valor": "1,3",
+  "unidad": "milímetros",
+  "etiqueta": "Longitud de onda observada",
+  "rotulo": "Ondas de radio de 1,3 mm",
+  "fuente": "Colaboración EHT, ApJL 875 L1 (2019)",
+  "fila": 6
+ },
+ {
+  "id": "E17",
+  "nombre": "350 terabytes",
+  "ini": 191.5,
+  "fin": 209.4,
+  "tipo": "cifra",
+  "valor": 350,
+  "unidad": "terabytes por día, por telescopio",
+  "etiqueta": "Datos grabados",
+  "detalle": "Como 350 portátiles de 1 TB (cuenta propia)",
+  "rotulo": "Unos 350 terabytes por día y telescopio",
+  "fuente": "ESO, eso1907",
+  "fila": 10
+ },
+ {
+  "id": "E18",
+  "nombre": "No es una foto",
+  "ini": 209.4,
+  "fin": 228.2,
+  "tipo": "texto",
+  "lineas": [
+   "Esos datos no son una foto",
+   "Son grabaciones de ondas",
+   "La imagen hay que reconstruirla después",
+   "¿Qué iba a aparecer?"
+  ]
+ },
+ {
+  "id": "E19",
+  "nombre": "Los datos se condensan",
+  "ini": 228.2,
+  "fin": 235.8,
+  "tipo": "cifra",
+  "valor": "Abril de 2017",
+  "etiqueta": "Datos de M87* tomados en",
+  "unidad": "Después, dos años de análisis",
+  "rotulo": "Datos de M87* tomados en abril de 2017",
+  "fuente": "ESO, eso1907",
+  "fila": 7
+ },
+ {
+  "id": "E20",
+  "nombre": "El anuncio",
+  "ini": 235.8,
+  "fin": 243.0,
+  "tipo": "linea_tiempo",
+  "titulo": "Del dato al resultado",
+  "eventos": [
+   {
+    "fecha": "Abril 2017",
+    "texto": "Se toman los datos"
+   },
+   {
+    "fecha": "2017–2019",
+    "texto": "Dos años de análisis"
+   },
+   {
+    "fecha": "10-abr-2019",
+    "texto": "Seis artículos a la vez"
+   }
+  ]
+ },
+ {
+  "id": "E21",
+  "nombre": "Un anillo brillante",
+  "ini": 243.0,
+  "fin": 246.4,
+  "tipo": "texto",
+  "lineas": [
+   "Un anillo brillante, con el centro oscuro"
+  ]
+ },
+ {
+  "id": "E22",
+  "nombre": "Lo que brilla no es el agujero",
+  "ini": 246.4,
+  "fin": 262.9,
+  "tipo": "texto",
+  "lineas": [
+   "Lo que brilla no es el agujero negro",
+   "Es el gas que lo rodea, muy caliente",
+   "Su gravedad curva la luz, como una lupa deformada"
+  ]
+ },
+ {
+  "id": "E23",
+  "nombre": "La sombra",
+  "ini": 262.9,
+  "fin": 272.1,
+  "tipo": "texto",
+  "lineas": [
+   "¿Y el centro oscuro?",
+   "Es la sombra"
+  ]
+ },
+ {
+  "id": "E24",
+  "nombre": "42 microsegundos de arco",
+  "ini": 272.1,
+  "fin": 295.9,
+  "tipo": "cifra",
+  "valor": 42,
+  "unidad": "microsegundos de arco",
+  "etiqueta": "Diámetro del anillo de M87*",
+  "detalle": "Margen de 3 · brilla unas 10 veces más que el centro",
+  "ayuda": "Un microsegundo de arco es una porción diminuta del cielo",
+  "rotulo": "Anillo de 42 ± 3 microsegundos de arco",
+  "fuente": "Colaboración EHT, ApJL 875 L1 (2019)",
+  "fila": 1
+ },
+ {
+  "id": "E25",
+  "nombre": "Anillo, sombra y horizonte",
+  "ini": 295.9,
+  "fin": 315.2,
+  "tipo": "cifra",
+  "valor": "2,5",
+  "unidad": "veces menor que la sombra",
+  "etiqueta": "El horizonte de sucesos es",
+  "detalle": "Mide poco menos de 40 000 millones de km",
+  "rotulo": "Horizonte: unas 2,5 veces menor que la sombra",
+  "fuente": "ESO, eso1907",
+  "fila": 13
+ },
+ {
+  "id": "E26",
+  "nombre": "Un día y medio de luz",
+  "ini": 315.2,
+  "fin": 319.7,
+  "tipo": "cifra",
+  "valor": "Día y medio",
+  "unidad": "para que la luz cruce el horizonte",
+  "detalle": "Cuenta propia: unas 37 horas",
+  "rotulo": "Cuenta propia: 40 000 millones km a 299 792 km/s",
+  "fuente": "BIPM (velocidad de la luz)",
+  "fila": 24
+ },
+ {
+  "id": "E27",
+  "nombre": "La sombra agrandada por la gravedad",
+  "ini": 319.7,
+  "fin": 339.4,
+  "tipo": "texto",
+  "lineas": [
+   "¿Por qué la sombra se ve más grande que el agujero?",
+   "La gravedad dobla la luz que pasa cerca",
+   "Como una lupa que agranda una mancha en el papel",
+   "Lo vemos aumentado por su propia gravedad"
+  ]
+ },
+ {
+  "id": "E28",
+  "nombre": "El examen",
+  "ini": 339.4,
+  "fin": 364.8,
+  "tipo": "texto",
+  "lineas": [
+   "Lo que vemos es su sombra",
+   "Pero tenía que pasar un examen",
+   "La relatividad general predice su forma y su tamaño"
+  ]
+ },
+ {
+  "id": "E29",
+  "nombre": "Cuatro días, un anillo",
+  "ini": 364.8,
+  "fin": 379.4,
+  "tipo": "lista",
+  "titulo": "¿Y qué salió?",
+  "eyebrow": "EL EXAMEN",
+  "numerada": false,
+  "puntos": [
+   {
+    "texto": "El anillo se mantuvo estable en cuatro días distintos",
+    "frase": "El equipo observó"
+   },
+   {
+    "texto": "Compatible con la sombra de un agujero negro en rotación",
+    "frase": "Y lo que se ve"
+   }
+  ],
+  "rotulo": "Anillo estable en cuatro observaciones",
+  "fuente": "Colaboración EHT, ApJL 875 L1 (2019)",
+  "fila": 3
+ },
+ {
+  "id": "E30",
+  "nombre": "Un siglo después",
+  "ini": 379.4,
+  "fin": 395.0,
+  "tipo": "texto",
+  "lineas": [
+   "Un siglo después, la teoría pasó una prueba nueva",
+   "M87* tenía una ventaja: se mueve despacio",
+   "El agujero negro de nuestra galaxia… no"
+  ]
+ },
+ {
+  "id": "E31",
+  "nombre": "Sagitario A\\*",
+  "ini": 395.0,
+  "fin": 403.9,
+  "tipo": "cifra",
+  "valor": 27000,
+  "unidad": "años luz",
+  "etiqueta": "Sagitario A*, centro de la Vía Láctea",
+  "rotulo": "Sagitario A*: a unos 27 000 años luz",
+  "fuente": "ESO, eso2208",
+  "fila": 16
+ },
+ {
+  "id": "E32",
+  "nombre": "Más cerca, pero más pequeño",
+  "ini": 403.9,
+  "fin": 411.8,
+  "tipo": "comparacion",
+  "titulo": "Más cerca, pero más pequeño",
+  "items": [
+   {
+    "rotulo": "M87*",
+    "valor": "6 500 millones",
+    "unidad": "masas solares",
+    "color": "ambar"
+   },
+   {
+    "rotulo": "Sagitario A*",
+    "valor": "4 millones",
+    "unidad": "masas solares",
+    "color": "hielo"
+   }
+  ],
+  "rotulo": "Sagitario A*: unos 4 millones de masas solares",
+  "fuente": "Colaboración EHT, ApJL 930 L12 (2022)",
+  "fila": 15
+ },
+ {
+  "id": "E33",
+  "nombre": "Tres años después",
+  "ini": 411.8,
+  "fin": 426.9,
+  "tipo": "linea_tiempo",
+  "titulo": "Mismos datos, tres años de diferencia",
+  "eventos": [
+   {
+    "fecha": "2017",
+    "texto": "Datos de ambos, con ocho observatorios"
+   },
+   {
+    "fecha": "10-abr-2019",
+    "texto": "Imagen de M87*"
+   },
+   {
+    "fecha": "12-may-2022",
+    "texto": "Imagen de Sagitario A*"
+   }
+  ],
+  "rotulo": "Imagen de Sagitario A*: 12-may-2022",
+  "fuente": "ESO, eso2208",
+  "fila": 17
+ },
+ {
+  "id": "E34",
+  "nombre": "«Si está más cerca, ¿no es más fácil?»",
+  "ini": 426.9,
+  "fin": 443.0,
+  "tipo": "texto",
+  "lineas": [
+   "Si está más cerca, ¿no es más fácil?",
+   "Pues no",
+   "Cerca no sirve si también es mucho más pequeño"
+  ]
+ },
+ {
+  "id": "E35",
+  "nombre": "El niño que no se queda quieto",
+  "ini": 443.0,
+  "fin": 454.7,
+  "tipo": "comparacion",
+  "titulo": "Una foto con mucha exposición",
+  "items": [
+   {
+    "rotulo": "Una montaña",
+    "valor": "Sale nítida",
+    "color": "hielo"
+   },
+   {
+    "rotulo": "Un niño que no se queda quieto",
+    "valor": "Sale borrosa",
+    "color": "rojo"
+   }
+  ]
+ },
+ {
+  "id": "E36",
+  "nombre": "Días vs minutos",
+  "ini": 454.7,
+  "fin": 467.3,
+  "tipo": "comparacion",
+  "titulo": "Cuánto tarda el gas en dar una vuelta",
+  "items": [
+   {
+    "rotulo": "Alrededor de M87*",
+    "valor": "Días a semanas",
+    "color": "hielo"
+   },
+   {
+    "rotulo": "Alrededor de Sagitario A*",
+    "valor": "Minutos",
+    "color": "rojo"
+   }
+  ],
+  "rotulo": "La imagen de Sgr A* cambiaba mientras se observaba",
+  "fuente": "ESO, eso2208",
+  "fila": 20
+ },
+ {
+  "id": "E37",
+  "nombre": "Promediar",
+  "ini": 467.3,
+  "fin": 481.4,
+  "tipo": "cifra",
+  "valor": "51,8",
+  "unidad": "microsegundos de arco",
+  "etiqueta": "Anillo de Sagitario A*",
+  "detalle": "Margen de 2,3 · promedio de muchas imágenes posibles",
+  "rotulo": "Anillo de Sgr A*: 51,8 ± 2,3 microsegundos de arco",
+  "fuente": "Colaboración EHT, ApJL 930 L12 (2022)",
+  "fila": 14
+ },
+ {
+  "id": "E38",
+  "nombre": "Los dos anillos",
+  "ini": 481.4,
+  "fin": 496.1,
+  "tipo": "comparacion",
+  "titulo": "Los dos anillos",
+  "items": [
+   {
+    "rotulo": "M87*",
+    "valor": 42,
+    "unidad": "microsegundos de arco",
+    "color": "ambar"
+   },
+   {
+    "rotulo": "Sagitario A*",
+    "valor": "51,8",
+    "unidad": "microsegundos de arco",
+    "color": "hielo"
+   }
+  ],
+  "ayuda": "Casi del mismo tamaño en el cielo, pero son objetos completamente distintos"
+ },
+ {
+  "id": "E39",
+  "nombre": "Masa y distancia",
+  "ini": 496.1,
+  "fin": 516.2,
+  "tipo": "comparacion",
+  "titulo": "Una cosa casi compensa la otra",
+  "items": [
+   {
+    "rotulo": "Masa de M87*",
+    "valor": "≈ 1 600×",
+    "unidad": "la de Sagitario A*",
+    "color": "ambar"
+   },
+   {
+    "rotulo": "Distancia a M87*",
+    "valor": "≈ 2 000×",
+    "unidad": "la de Sagitario A*",
+    "color": "hielo"
+   }
+  ],
+  "separador": "y",
+  "ayuda": "Cuenta propia: 6 500 millones ÷ 4 millones ≈ 1 600 · 55 millones ÷ 27 000 ≈ 2 000"
+ },
+ {
+  "id": "E40",
+  "nombre": "0,80 y 0,81",
+  "ini": 516.2,
+  "fin": 542.7,
+  "tipo": "comparacion",
+  "titulo": "Las dos proporciones",
+  "items": [
+   {
+    "rotulo": "Masa entre distancia",
+    "valor": "0,80",
+    "color": "ambar"
+   },
+   {
+    "rotulo": "Anillos medidos: 42 ÷ 51,8",
+    "valor": "0,81",
+    "color": "hielo"
+   }
+  ],
+  "separador": "≈",
+  "ayuda": "Cuenta propia, con cifras redondeadas y más de un 10 % de error en la masa. No demuestra nada por sí sola"
+ },
+ {
+  "id": "E41",
+  "nombre": "Lo que sabemos",
+  "ini": 542.7,
+  "fin": 553.9,
+  "tipo": "texto",
+  "lineas": [
+   "¿Qué sabemos de verdad?",
+   "Comprobado: un anillo con una sombra en el centro, estable varios días"
+  ]
+ },
+ {
+  "id": "E42",
+  "nombre": "Probable: un promedio",
+  "ini": 553.9,
+  "fin": 571.7,
+  "tipo": "texto",
+  "lineas": [
+   "Probable: los detalles finos de la imagen de nuestra galaxia",
+   "Es un promedio de muchas imágenes posibles, no una sola foto",
+   "El anillo, casi seguro. Cada mancha, con más cautela"
+  ],
+  "rotulo": "Imagen de Sgr A*: promedio de varias imágenes",
+  "fuente": "ESO, eso2208",
+  "fila": 19
+ },
+ {
+  "id": "E43",
+  "nombre": "Reconstrucciones, no fotos",
+  "ini": 571.7,
+  "fin": 588.9,
+  "tipo": "comparacion",
+  "titulo": "Qué son estas imágenes",
+  "items": [
+   {
+    "rotulo": "No son",
+    "valor": "Fotos",
+    "unidad": "como las de tu móvil",
+    "color": "rojo"
+   },
+   {
+    "rotulo": "Son",
+    "valor": "Reconstrucciones",
+    "unidad": "con margen de error",
+    "color": "ambar"
+   }
+  ],
+  "separador": ""
+ },
+ {
+  "id": "E44",
+  "nombre": "Sin resolver",
+  "ini": 588.9,
+  "fin": 610.4,
+  "tipo": "cifra",
+  "valor": 3,
+  "unidad": "observatorios más",
+  "etiqueta": "Sin resolver: el borde, cerca del horizonte",
+  "detalle": "Con ocho, el «espejo roto» tiene muchos huecos",
+  "rotulo": "Se añadieron 3 observatorios después de 2017",
+  "fuente": "ESO, eso2208",
+  "fila": 18
+ },
+ {
+  "id": "E45",
+  "nombre": "Cierre: se fotografía la sombra",
+  "ini": 610.4,
+  "fin": 625.8,
+  "tipo": "texto",
+  "lineas": [
+   "¿Cómo se fotografía algo que no deja escapar la luz?",
+   "No se fotografía el agujero",
+   "Se fotografía su sombra",
+   "Un planeta entero mirando al mismo sitio, al mismo tiempo"
+  ]
+ },
+ {
+  "id": "E46",
+  "nombre": "Pregunta y fuentes",
+  "ini": 625.8,
+  "fin": 635.7,
+  "tipo": "texto",
+  "lineas": [
+   "Si pudieras apuntar esta red a cualquier lugar del universo",
+   "¿Qué fotografiarías?",
+   "Cuéntamelo en los comentarios"
+  ]
+ },
+ {
+  "id": "E47",
+  "nombre": "Pantalla final",
+  "ini": 635.7,
+  "fin": 654.2,
+  "tipo": "cierre",
+  "fuentes": [
+   "ESO, eso1907 (10-abr-2019)",
+   "ESO, eso2208 (12-may-2022)",
+   "Colaboración EHT, ApJL 875 L1 (2019)",
+   "Colaboración EHT, ApJL 930 L12 (2022)",
+   "NSF: primera imagen de un agujero negro",
+   "BIPM: velocidad de la luz"
+  ],
+  "mensaje": "Cada semana, una pregunta del universo, con sus datos y de dónde salen"
+ }
+]
