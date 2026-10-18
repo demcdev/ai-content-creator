@@ -1,6 +1,6 @@
 # Librerías de montaje (compartidas por todos los videos)
 
-> **Cómo está organizado (13-oct-2026):** aquí quedan solo las **librerías comunes** (`montar.py`, `estilo.py`, `ui.py`, `aa.py`, `globo.py`, `fuentes/`, `datos/`).
+> **Cómo está organizado (17-oct-2026):** aquí quedan las **librerías comunes** (`montar.py`, `ui.py`, `aa.py`, `pipeline.py`, `fuentes/`) y, en `animaciones/<id>/`, **un estilo por carpeta** con el mismo id que `animaciones.json`: `espacial/` (`estilo.py`, `escenas_base.py`, `globo.py`, `datos/`) y `papel-recortado/` (`papel.py`, `pintura.py`). `ui.py` es común: sus cajas y rótulos valen para cualquier estilo. Los scripts de video añaden la carpeta de su estilo a `sys.path` (ver `plantilla_video.py`).
 > Los **scripts de cada video** (guion de escenas, tiempos, música, render, miniaturas) viven en la carpeta de ese video: `Video NN - Nombre/Montaje/`. Allí se ejecutan; ellos importan estas librerías solos.
 > Ejemplo, video 1: `Video 01 - <nombre>/Montaje/video01.py`. Los archivos que se citan abajo sin ruta (`video01.py`, `alinear.py`, `miniaturas.py`, `capitulos.py`, `tiempos.json`, `musica/`, `salida/`) están en esa carpeta.
 > Rutas del video en curso: `montar.py` lee `HE_VIDEO` (o deduce la carpeta del video desde el script que se ejecuta) para encontrar `Licencias/originales/` y la identidad del canal.
@@ -56,7 +56,7 @@ Requisitos: Python 3, `Pillow`, `numpy` y `ffmpeg` en el PATH. Tipografía: Inte
 - Es un borrador: se revisa siempre antes de publicar (reglas 6 y 17) y las imágenes siguen en el registro de licencias.
 
 ## Estilo espacial (v2 del video 1)
-- `estilo.py`: fondo (nebulosa + estrellas), brillo (`bloom`), marco HUD, paneles de cristal (`panel`), etiquetas con pastilla (`etq`, para que ninguna línea pase bajo el texto), texto/líneas con resplandor, planetas procedurales (`dibujar_planeta`) y vista oblicua del sistema solar (`Vista`).
+- `animaciones/espacial/estilo.py`: fondo (nebulosa + estrellas), brillo (`bloom`), marco HUD, paneles de cristal (`panel`), etiquetas con pastilla (`etq`, para que ninguna línea pase bajo el texto), texto/líneas con resplandor, planetas procedurales (`dibujar_planeta`) y vista oblicua del sistema solar (`Vista`).
 - `video01.py` usa esos módulos. La escena de instrumentos usa el diagrama oficial de la NASA (`originales/M12-diagrama-instrumentos.jpg`, convertido a tema oscuro). `video01_v1.py` es la primera versión (plana), `video01_v2.py` copia de la versión actual.
 - Fotograma suelto para revisar: `python video01.py --frame 232 salida/prueba/f.png`.
 - Regla de montaje: ningún texto debe quedar debajo de una línea; si hay riesgo, usar `etq` o mover el texto.
@@ -71,5 +71,5 @@ Requisitos: Python 3, `Pillow`, `numpy` y `ffmpeg` en el PATH. Tipografía: Inte
 
 ## Tipografía, globo y datos (13-oct-2026)
 - **Tipografía:** Inter (SIL OFL), en `fuentes/inter/`. `montar.py` elige la familia con la variable de entorno `HE_FUENTE` (`inter` por defecto, `montserrat`, `space`). Las otras dos fuentes abiertas se dejaron en `fuentes/` por si se quiere comparar.
-- **Globo de la Red de Espacio Profundo:** `globo.py` dibuja la Tierra giratoria con los continentes de Natural Earth (`datos/ne_110m_land.geojson`, dominio público, descargado el 13-oct-2026 de github.com/nvkelso/natural-earth-vector). La dirección de Voyager 1 es aproximada (ascensión recta ≈ 17 h 14 m, declinación ≈ +12°); por eso la escena lleva la etiqueta «ESQUEMA · POSICIÓN APROXIMADA».
+- **Globo de la Red de Espacio Profundo:** `animaciones/espacial/globo.py` dibuja la Tierra giratoria (general) con los continentes de Natural Earth (`animaciones/espacial/datos/ne_110m_land.geojson`, dominio público, descargado el 13-oct-2026 de github.com/nvkelso/natural-earth-vector). Las estaciones y la dirección de Voyager 1 (parámetros de esa escena) están en `Video 01/Montaje/dsn_voyager.py`. La dirección de Voyager 1 es aproximada (ascensión recta ≈ 17 h 14 m, declinación ≈ +12°); por eso la escena lleva la etiqueta «ESQUEMA · POSICIÓN APROXIMADA».
 - El video ya no lleva logo ni nombre del canal en la esquina (aparecen bajo el video y en la marca de agua de Studio).

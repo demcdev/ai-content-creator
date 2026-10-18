@@ -19,8 +19,10 @@ import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje')))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje', 'animaciones', 'espacial'))
 import aa as trazo
 import globo
+import dsn_voyager as dsn
 
 from estilo import (FONDO_ULT, Vista, base, bloom, capa_orbitas, dibujar_planeta, etq, hud, linea_glow, panel, txt_glow, _mascara)  # noqa
 from ui import (capitulo, cta, _contenido_rotulo, HIELO, anillo_arco, caja, credito, ease_in, ease_out, etiqueta_esquema, icono_hex, logo, pastilla, rotulo, sl, titulo)  # noqa
@@ -682,8 +684,8 @@ def esc_mapa(t):
     fi = math.radians(-20 + 20.0 * max(0.0, t - 484.0))              # la Tierra, acelerada (≈ 20° por segundo)
     ga = ss((t - 483.8) / 1.0)
     globo.dibujar_globo(fr, cx, cy, R, fi, ga)
-    d = globo.direccion_sonda()
-    est = globo.estado(fi)
+    d = dsn.direccion_sonda()
+    est = dsn.estado(fi)
     t_pin = {'Canberra': 485.3, 'Madrid': 486.7, 'Goldstone': 488.5}
     # rayos (todos paralelos: la sonda está tan lejos que su dirección es la misma desde las tres estaciones)
     for nombre, rx, ry, vis, act, el in est:

@@ -20,6 +20,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 VIDEO = os.path.abspath(os.path.join(AQUI, '..'))
 os.environ['HE_VIDEO'] = VIDEO          # montar.py lee las imágenes de «Licencias/originales» de ESTE video
 sys.path.insert(0, os.path.abspath(os.path.join(AQUI, '..', '..', '..', '..', 'herramientas', 'montaje')))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje', 'animaciones', 'espacial'))
 
 import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter

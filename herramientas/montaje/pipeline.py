@@ -18,6 +18,8 @@ import sys
 import numpy as np
 from PIL import Image
 
+# Paso 3 hará que el estilo salga de la identidad del canal; mientras tanto, el fondo y las escenas son los del estilo espacial.
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'animaciones', 'espacial'))
 import estilo
 from montar import IDENT, FPS, H, NEGRO, W, aparecer, clamp, envolver, reg, sprite_texto, ss, trocear_texto, HUESO, neg
 from ui import _contenido_rotulo, capitulo, credito, rotulo

@@ -26,6 +26,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 V2 = os.path.dirname(AQUI)
 HERR = os.path.normpath(os.path.join(V2, '..', '..', '..', 'herramientas', 'montaje'))
 sys.path.insert(0, HERR)
+sys.path.insert(0, os.path.join(HERR, 'animaciones', 'papel-recortado'))
 import papel as PP      # noqa: E402
 import pintura as P     # noqa: E402
 

@@ -10,8 +10,8 @@
       "descripcion": "Fondo con nebulosa y estrellas en paralaje, paneles de cristal, planetas procedurales, brillo (bloom) y texto con resplandor.",
       "cuando_usar": "Temas de espacio y exploración; es el estilo de los videos 1 y 2.",
       "como_se_hace": [
-        "Fondo: estilo.base(t) en herramientas/montaje/estilo.py.",
-        "Escenas genéricas (portada, texto, imagen, cierre): herramientas/montaje/escenas_base.py; las demás se registran con Proyecto.registrar('E07', fn).",
+        "Fondo: estilo.base(t) en herramientas/montaje/animaciones/espacial/estilo.py.",
+        "Escenas genéricas (portada, texto, imagen, cierre): herramientas/montaje/animaciones/espacial/escenas_base.py; las demás se registran con Proyecto.registrar('E07', fn).",
         "Rótulos «Dato verificado», créditos y capítulos: ui.py. Colores y logo: <canal>/identidad.json.",
         "Ejemplos completos: Video 01/Montaje/video01.py y Video 02/Montaje/video02.py."
       ],
@@ -28,7 +28,7 @@
       "descripcion": "Cada elemento es una pieza de papel con borde cortado o rasgado, fibras, bisel y sombra; los planos se apilan y la cámara los mueve con paralaje (multiplano).",
       "cuando_usar": "Cuando se quiere un estilo de autor que convive bien con fotos reales (entran como recortes impresos) y que evita rostros: las personas son siluetas de papel.",
       "como_se_hace": [
-        "Librerías: herramientas/montaje/papel.py (piezas y planos) y pintura.py (texturas y volumen).",
+        "Librerías: herramientas/montaje/animaciones/papel-recortado/papel.py (piezas y planos) y pintura.py (texturas y volumen).",
         "No hay fondo ni escenas genéricas de este estilo en la tubería: cada escena se diseña y se registra con Proyecto.registrar().",
         "Ejemplo: Video 02/Montaje/video02_papel.py (1 774 líneas; era una versión alternativa del Video 2 y su render se borró).",
         "Animación «a dos» (movimiento escalonado) y cámara multiplano son parte del estilo."
@@ -47,7 +47,7 @@
       "cuando_usar": "Videos con muchas gráficas, líneas de tiempo o comparaciones.",
       "como_se_hace": [
         "No existe todavía. Habría que crear un módulo de formas planas y una paleta propia, y escenas genéricas para gráficas.",
-        "Reutilizar ui.py para rótulos y escenas_base.py como punto de partida."
+        "Reutilizar ui.py para rótulos y espacial/escenas_base.py como punto de partida."
       ],
       "usada_en": [],
       "puntuacion": {"T": 4, "F": 3, "C": 5, "E": 5, "D": 2, "R": 5, "total": 24},
@@ -62,7 +62,7 @@
       "descripcion": "Páginas de cuaderno antiguo con tinta, márgenes iluminados y pinceladas.",
       "cuando_usar": "Acento para historia de la ciencia (cuadernos de Galileo o Copérnico); poco útil para temas modernos.",
       "como_se_hace": [
-        "No existe todavía. La pintura por código (pintura.py: pinceladas, empaste, textura de papel) es el punto de partida.",
+        "No existe todavía. La pintura por código (animaciones/papel-recortado/pintura.py: pinceladas, empaste, textura de papel) es el punto de partida.",
         "Se usaría como secuencia corta dentro de otro estilo, no para un video entero."
       ],
       "usada_en": [],
@@ -90,7 +90,7 @@
       "estado": "por construir",
       "descripcion": "Texturas de tinta flotante.",
       "cuando_usar": "Textura de acento para gigantes gaseosos y nebulosas.",
-      "como_se_hace": ["No existe todavía. Ruido con dominio deformado sobre una paleta; ya hay ruido en pintura.py."],
+      "como_se_hace": ["No existe todavía. Ruido con dominio deformado sobre una paleta; ya hay ruido en animaciones/papel-recortado/pintura.py."],
       "usada_en": [],
       "puntuacion": {"T": 3, "F": 3, "C": 4, "E": 2, "D": 4, "R": 5, "total": 21},
       "riesgo": "Bajo."

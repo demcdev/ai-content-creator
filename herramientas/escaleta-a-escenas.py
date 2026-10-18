@@ -8,7 +8,7 @@ Convierte la escaleta técnica de un video en Montaje/escenas.json (la lista de 
 Lee las filas de la parte «escaleta técnica» de `Escaleta audiovisual.md` (no la planilla) con el formato
 `| **E07 · Nombre de la escena** | 03:12–03:40 | descripción | ... |` y deja, por escena:
 {id, nombre, ini, fin, tipo: "placeholder", descripcion}. Cambia el `tipo` a portada, texto, imagen o cierre
-(ver herramientas/montaje/escenas_base.py) o registra una escena propia en Montaje/video.py.
+(ver herramientas/montaje/animaciones/espacial/escenas_base.py) o registra una escena propia en Montaje/video.py.
 No usa IA y no gasta tokens.
 """
 import argparse

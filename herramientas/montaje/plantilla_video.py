@@ -13,6 +13,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje')))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje', 'animaciones', 'espacial'))
 
 from pipeline import Proyecto  # noqa: E402
 
@@ -20,7 +21,7 @@ P = Proyecto(__file__)
 
 # Escenas propias, una por una (ejemplo):
 #   def esc_gancho(t):
-#       fr = estilo.base(t)                      # fondo; helpers en montar.py, estilo.py y ui.py
+#       fr = estilo.base(t)                      # fondo; helpers en montar.py, ui.py y animaciones/espacial/estilo.py
 #       return fr
 #   P.registrar('E01', esc_gancho)
 

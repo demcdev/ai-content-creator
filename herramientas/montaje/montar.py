@@ -4,7 +4,7 @@ Librería común de montaje: fuentes, utilidades de dibujo, fondo de estrellas, 
 
 Toma la identidad del video en curso (colores, nombre, logo y fuente) de <canal>/identidad.json; el video en curso es
 HE_VIDEO o la carpeta que contiene la carpeta «Montaje» del script que se ejecuta. No tiene escenas propias: las escenas
-viven en cada video (Video NN/Montaje/) o salen de pipeline.py y escenas_base.py.
+viven en cada video (Video NN/Montaje/) o salen de pipeline.py y animaciones/<estilo>/escenas_base.py.
 """
 import json
 import math
