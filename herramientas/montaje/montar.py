@@ -18,7 +18,6 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 W, H, FPS = 1920, 1080, 30
-FUENTES = 'C:/Windows/Fonts/'
 
 # Carpeta del video en curso: la variable de entorno HE_VIDEO, o si no, la carpeta que contiene la carpeta «Montaje»
 # del script que se está ejecutando (video01.py, video02.py...). El canal es la carpeta que contiene al video.
@@ -41,17 +40,9 @@ ORIG = os.path.join(VIDEO, 'Licencias', 'originales')
 _fuentes = {}
 
 
-def fuente(nombre, tam):
-    k = (nombre, tam)
-    if k not in _fuentes:
-        _fuentes[k] = ImageFont.truetype(FUENTES + nombre, tam)
-    return _fuentes[k]
-
-
-# Familia tipográfica: HE_FUENTE = inter (por defecto, elegida el 13-oct-2026) | montserrat | space (Space Grotesk) | segoe (fuente de Windows).
-# Las tres últimas son de licencia abierta (SIL OFL) y están en «fuentes/».
+# Familia tipográfica: la de identidad.json (inter, montserrat o space) o la variable de entorno HE_FUENTE.
+# Las tres son de licencia abierta (SIL OFL) y están en «fuentes/».
 FAMILIA = os.environ.get('HE_FUENTE', IDENT['fuente'])
-_SEGOE = {'light': 'segoeuisl.ttf', 'reg': 'segoeui.ttf', 'bold': 'segoeuib.ttf', 'black': 'seguibl.ttf'}
 _VF = {'montserrat': 'montserrat/Montserrat-VF.ttf', 'inter': 'inter/Inter-VF.ttf', 'space': 'spacegrotesk/SpaceGrotesk-VF.ttf'}
 _PESOS = {'light': 300, 'reg': 400, 'bold': 700, 'black': 900}
 
@@ -59,19 +50,16 @@ _PESOS = {'light': 300, 'reg': 400, 'bold': 700, 'black': 900}
 def fuente_peso(peso, tam):
     k = (FAMILIA, peso, tam)
     if k not in _fuentes:
-        if FAMILIA == 'segoe':
-            _fuentes[k] = ImageFont.truetype(FUENTES + _SEGOE[peso], tam)
-        else:
-            f = ImageFont.truetype(os.path.join(AQUI, 'fuentes', _VF[FAMILIA]), tam)
-            vals = []
-            for ax in f.get_variation_axes():
-                nom = ax['name'] if isinstance(ax['name'], str) else ax['name'].decode()
-                if 'eight' in nom:
-                    vals.append(max(ax['minimum'], min(ax['maximum'], _PESOS[peso])))
-                else:
-                    vals.append(ax['default'])
-            f.set_variation_by_axes(vals)
-            _fuentes[k] = f
+        f = ImageFont.truetype(os.path.join(AQUI, 'fuentes', _VF[FAMILIA]), tam)
+        vals = []
+        for ax in f.get_variation_axes():
+            nom = ax['name'] if isinstance(ax['name'], str) else ax['name'].decode()
+            if 'eight' in nom:
+                vals.append(max(ax['minimum'], min(ax['maximum'], _PESOS[peso])))
+            else:
+                vals.append(ax['default'])
+        f.set_variation_by_axes(vals)
+        _fuentes[k] = f
     return _fuentes[k]
 
 

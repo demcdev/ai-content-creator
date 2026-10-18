@@ -11,7 +11,7 @@ Identidad de cada canal (colores, voz, animación, nombre, logo, fuente) y la de
 Archivos: <canal>/identidad.json (la del canal) y <video>/identidad.json ({"base": "canal"} o {"base": "propia", ...lo que cambia}).
 Con base «propia» solo se cambian los valores indicados; el resto sigue siendo el del canal.
 Opciones válidas de --voz: ids de herramientas/voz/voces.json. De --animacion: ids de herramientas/montaje/animaciones.json.
---fuente: inter, montserrat, space o segoe. --musica: nombres de pista separados por coma («Singularity,Event Horizon»; se buscan en
+--fuente: inter, montserrat o space (las tres con licencia abierta). --musica: nombres de pista separados por coma («Singularity,Event Horizon»; se buscan en
 Montaje/musica/ de cada video). --efectos: si o no (los efectos de sonido aún no los mezcla la tubería: solo quedan declarados).
 `resumen <canal|video>` imprime una frase con voz, animación, fuente, colores (en hex), música y efectos: es el texto que Claude usa
 al preguntar «¿identidad del canal o propia?». Nunca nombra la marca del canal.
@@ -33,7 +33,7 @@ def ids(ruta, clave):
     return [x['id'] for x in _json(ruta).get(clave, [])]
 
 
-FUENTES = ['inter', 'montserrat', 'space', 'segoe']
+FUENTES = ['inter', 'montserrat', 'space']
 VOCES = ids(os.path.join(AQUI, 'voz', 'voces.json'), 'voces')
 ANIMACIONES = ids(os.path.join(AQUI, 'montaje', 'animaciones.json'), 'animaciones')
 

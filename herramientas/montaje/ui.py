@@ -155,10 +155,6 @@ def barrido(fr, x, y0, y1, a=1.0, color=HUESO):
 # ------------------------------------------------------------------------------ iconos
 
 
-def _s3(w, h):
-    return Image.new('L', (w * 3, h * 3), 0)
-
-
 def icono_hex(fr, cx, cy, r, color, a=1.0, glifo='check', ancho=2):
     """Hexágono con un símbolo dentro (check, igual, reloj de arena…)."""
     s = 3

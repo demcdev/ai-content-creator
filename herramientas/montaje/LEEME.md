@@ -12,13 +12,13 @@ Genera un video MP4 1080p a 30 fps a partir de:
 - **rótulos «Dato verificado»** y **subtítulos**, sincronizados con los silencios del audio.
 
 ## Identidad del canal (`identidad.json`)
-Las librerías no llevan marca propia: leen la identidad del video (`herramientas/_comun.py: identidad_efectiva`): `<canal>/identidad.json` (nombre, colores `BG/AMBAR/HUESO/TIERRA`, `logo` relativo al canal, `fuente` —inter, montserrat, space o segoe—, `voz`, `animacion`, `musica` con sus pistas y `efectos`) y, si el video declara base «propia», lo que cambie `<video>/identidad.json`. El canal se deduce de la carpeta del video (`HE_VIDEO`, o la carpeta que contiene `Montaje/` del script que se ejecuta). Sin archivo valen unos colores por defecto; sin logo se dibuja un disco ámbar.
+Las librerías no llevan marca propia: leen la identidad del video (`herramientas/_comun.py: identidad_efectiva`): `<canal>/identidad.json` (nombre, colores `BG/AMBAR/HUESO/TIERRA`, `logo` relativo al canal, `fuente` —inter, montserrat o space—, `voz`, `animacion`, `musica` con sus pistas y `efectos`) y, si el video declara base «propia», lo que cambie `<video>/identidad.json`. El canal se deduce de la carpeta del video (`HE_VIDEO`, o la carpeta que contiene `Montaje/` del script que se ejecuta). Sin archivo valen unos colores por defecto; sin logo se dibuja un disco ámbar.
 
 ## Animación (`animaciones.json`)
 Catálogo de estilos con su estado (`disponible`, `parcial`, `por construir`), puntuación, riesgo de políticas y cómo se hace; salió del análisis del video B20 del resumen. `python herramientas/montaje/animaciones.py` lista las ofrecidas, `animaciones.py <id>` explica una y `animaciones.py <id> "<video>" --aplicar` la guarda en la identidad propia del video. Normalmente la animación sale de la identidad del canal o del video (`herramientas/identidad.py`). Hoy solo `espacial` está lista del todo; `papel-recortado` tiene librerías (`papel.py`, `pintura.py`) pero sus escenas se diseñan una a una.
 
 ## Un video nuevo (tubería común)
-`nuevo-video.py` deja en `Video NN/Montaje/` un `video.py` y un `montaje.json`. Flujo: guion → voz → `python herramientas/montaje/alinear.py "<video>"` (deja `tiempos.json`) → `python herramientas/escaleta-a-escenas.py "<video>"` (deja `escenas.json`) → `python video.py --frame 60 f.png`. Todo lo común vive en `pipeline.py` (fotogramas, rótulos, subtítulos, música, verificación «nada se tapa con nada», render en partes); las escenas pendientes salen como tarjetas de `escenas_base.py` y se reemplazan registrando una función por id. `montaje.json` admite `rotulos` (por frase del guion), `creditos`, `capitulos`, `musica` y `nombre`. `alinear.py` es único: detecta solo si la voz es de Polly (`Voz/polly/parte-NN.txt`) o de Google y pesa las frases en consecuencia; admite `kmax` y `correcciones` en `montaje.json`. Los videos 1 y 2 conservan sus `alinear.py` originales; el unificado da los mismos tiempos con los mismos textos.
+`nuevo-video.py` deja en `Video NN/Montaje/` un `video.py` y un `montaje.json`. Flujo: guion → voz → `python herramientas/montaje/alinear.py "<video>"` (deja `tiempos.json`) → `python herramientas/escaleta-a-escenas.py "<video>"` (deja `escenas.json`) → `python video.py --frame 60 f.png`. Todo lo común vive en `pipeline.py` (fotogramas, rótulos, subtítulos, música, verificación «nada se tapa con nada», render en partes); las escenas pendientes salen como tarjetas de `escenas_base.py` y se reemplazan registrando una función por id. `montaje.json` admite `rotulos` (por frase del guion), `creditos`, `capitulos`, `musica` y `nombre`. `alinear.py` es único: detecta solo si la voz es de Polly (`Voz/polly/parte-NN.txt`) o de Google y pesa las frases en consecuencia; admite `kmax` y `correcciones` en `montaje.json`.
 
 ## Video completo (13-oct-2026)
 - `alinear.py` mide los silencios del audio y deja en `tiempos.json` el inicio y el fin de cada una de las **120 frases** del guion (validado a mano en el borrador).
@@ -37,7 +37,7 @@ cd "02_canales\<canal>\Video 01 - <nombre>\Montaje"
 python borrador.py                          # render del borrador -> salida\video-01-borrador-0-2min.mp4 (+ .srt)
 python borrador.py --frame 25.0 prueba.png  # solo un fotograma
 ```
-Requisitos: Python 3, `Pillow`, `numpy` y `ffmpeg` en el PATH. Tipografía: Segoe UI de Windows (**solo para el borrador**; la licencia para video monetizado está sin verificar, fila F1 del registro).
+Requisitos: Python 3, `Pillow`, `numpy` y `ffmpeg` en el PATH. Tipografía: Inter (licencia abierta SIL OFL), en `fuentes/inter/`.
 
 ## Qué hay hecho
 - **Borrador de 2 minutos** (0:00–1:59): gancho, presentación de la nave y primera parte del Acto 1.
@@ -70,6 +70,6 @@ Requisitos: Python 3, `Pillow`, `numpy` y `ffmpeg` en el PATH. Tipografía: Sego
 - `miniaturas.py`: miniaturas A, B y C en `../Miniaturas/` (dentro de la carpeta del video).
 
 ## Tipografía, globo y datos (13-oct-2026)
-- **Tipografía:** Inter (SIL OFL), en `fuentes/inter/`. `montar.py` elige la familia con la variable de entorno `HE_FUENTE` (`inter` por defecto, `montserrat`, `space`, `segoe`). Las otras dos fuentes abiertas se dejaron en `fuentes/` por si se quiere comparar.
+- **Tipografía:** Inter (SIL OFL), en `fuentes/inter/`. `montar.py` elige la familia con la variable de entorno `HE_FUENTE` (`inter` por defecto, `montserrat`, `space`). Las otras dos fuentes abiertas se dejaron en `fuentes/` por si se quiere comparar.
 - **Globo de la Red de Espacio Profundo:** `globo.py` dibuja la Tierra giratoria con los continentes de Natural Earth (`datos/ne_110m_land.geojson`, dominio público, descargado el 13-oct-2026 de github.com/nvkelso/natural-earth-vector). La dirección de Voyager 1 es aproximada (ascensión recta ≈ 17 h 14 m, declinación ≈ +12°); por eso la escena lleva la etiqueta «ESQUEMA · POSICIÓN APROXIMADA».
 - El video ya no lleva logo ni nombre del canal en la esquina (aparecen bajo el video y en la marca de agua de Studio).
