@@ -1,0 +1,11 @@
+FICHA L06 · Tipografía Inter · licencia en el repositorio oficial
+URL: https://raw.githubusercontent.com/rsms/inter/master/LICENSE.txt (página: https://github.com/rsms/inter/blob/master/LICENSE.txt)
+Fecha de consulta: 2026-10-18 (lectura propia, no dictamen legal)
+
+Extracto literal:
+- "Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter)"
+- "This Font Software is licensed under the SIL Open Font License, Version 1.1."
+- "SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007"
+- "to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the Font Software"
+
+Nota: la copia local herramientas/montaje/fuentes/inter/OFL.txt dice "Copyright 2020 The Inter Project Authors"; el año del aviso difiere del leído hoy (2016), pero la licencia es la misma (OFL 1.1).

@@ -1,0 +1,10 @@
+URL: https://www.eso.org/public/outreach/copyright/
+Fecha de consulta: 2026-10-18
+Extracto literal mínimo (aplica a L01 y L02 solo por inferencia):
+  "Unless specifically noted, the images, videos, and music distributed on the public ESO website,"
+  "are licensed under a Creative Commons Attribution 4.0 International License"
+  "the full image or footage credit must be presented in a clear and readable manner to all users, with the wording unaltered"
+  "The credit should not be hidden or disassociated from the image footage."
+  "The license allows to modify ESO material, provided that you indicate what those modifications are."
+  "this general permission does not extend to the use of ESO's logo, which shall remain protected"
+  "may not be used or reproduced without prior and individual written consent of ESO"

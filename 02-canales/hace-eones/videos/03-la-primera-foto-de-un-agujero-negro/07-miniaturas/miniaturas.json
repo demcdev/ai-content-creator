@@ -1,0 +1,20 @@
+{"variantes": [
+  {"id": "A", "concepto": "el objeto: el anillo de luz que rodea a un agujero negro",
+   "texto": ["SOLO SU", "SOMBRA"],
+   "paleta": {"fondo": "#07070C", "texto": "#FFF1DC", "acento": "#FF8A1F"},
+   "composicion": "texto-izquierda",
+   "motivo": {"tipo": "anillo", "posicion": [0.80, 0.45], "tamano": 0.34},
+   "estilo_texto": "brillo", "fondo": "estrellas", "fuente": "montserrat"},
+  {"id": "B", "concepto": "la pregunta: cómo se ve lo que no deja escapar la luz (señal de radio)",
+   "texto": ["¿VER LO", "INVISIBLE?"],
+   "paleta": {"fondo": "#0B1F22", "texto": "#0B1F22", "acento": "#4DE3C8"},
+   "composicion": "texto-derecha",
+   "motivo": {"tipo": "ondas", "posicion": [0.18, 0.5], "tamano": 0.30},
+   "estilo_texto": "caja", "fondo": "degradado", "fuente": "space"},
+  {"id": "C", "concepto": "el dato: un planeta entero funcionando como un solo telescopio",
+   "texto": ["PLANETA", "TELESCOPIO"],
+   "paleta": {"fondo": "#0B5BD3", "texto": "#FFFFFF", "acento": "#3FD08A"},
+   "composicion": "texto-abajo",
+   "motivo": {"tipo": "esfera", "posicion": [0.67, 0.30], "tamano": 0.32},
+   "estilo_texto": "plano", "fondo": "radial", "fuente": "inter"}
+]}

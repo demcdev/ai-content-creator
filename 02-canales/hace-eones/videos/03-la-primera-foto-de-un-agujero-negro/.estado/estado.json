@@ -1,0 +1,21 @@
+{
+  "puertas": {
+    "idea": "2026-10-18",
+    "guion": "2026-10-18",
+    "corte": "2026-10-18"
+  },
+  "sellos": {
+    "auditor-guion": {
+      "firma": "c574181e8c3ef7c1",
+      "fecha": "2026-10-18"
+    },
+    "verificador": {
+      "firma": "c574181e8c3ef7c1",
+      "fecha": "2026-10-18"
+    },
+    "auditor-final": {
+      "firma": "video-03-completo.mp4:387500490:1792360775",
+      "fecha": "2026-10-18"
+    }
+  }
+}

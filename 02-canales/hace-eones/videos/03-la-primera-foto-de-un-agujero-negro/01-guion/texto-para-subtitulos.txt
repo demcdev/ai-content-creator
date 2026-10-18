@@ -1,0 +1,97 @@
+Un agujero negro no deja escapar la luz. Nada. Ni un solo rayo. Por definición, es imposible verlo.
+
+Y sin embargo, el 10 de abril de 2019, el mundo vio esta imagen.
+
+Es un agujero negro de verdad, en el centro de una galaxia que está a unos 55 millones de años luz. O sea: la luz de esta imagen salió de allí hace unos 55 millones de años, y acaba de llegar. Y para sacar esta imagen no bastó con un telescopio. Hizo falta convertir el planeta entero en uno.
+
+En este video vas a ver cómo se fotografía algo que no se puede ver. Por qué la foto del agujero negro de nuestra propia galaxia costó mucho más. Y una coincidencia en las cifras que, cuando la ves, ya no se te olvida.
+
+Empecemos por el problema. Y no es la oscuridad. Es el tamaño.
+
+Este agujero negro es enorme. Tiene una masa de unos 6 500 millones de soles, con un margen de unos 700 millones. Pero está tan lejos que, visto desde aquí, es diminuto.
+
+Para hacerte una idea: el agujero negro de nuestra galaxia, que se ve un poco más grande en el cielo, es como una rosquilla sobre la superficie de la Luna, según la comparación del Observatorio Europeo Austral. Y el de M87* se ve un poco más pequeño todavía.
+
+Aquí va una regla de los telescopios que conviene que guardes: cuanto más grande es el telescopio, más detalle ve. Es como la pupila de tu ojo, pero a lo bestia. Para ver esa rosquilla en la Luna, haría falta un telescopio de radio tan grande como… bueno, como la Tierra.
+
+Nadie puede construir eso. Pero sí se puede hacer trampa.
+
+La trampa se llama Telescopio del Horizonte de Sucesos. No es un telescopio. Es una red de radiotelescopios del tamaño del planeta. En 2017 eran ocho observatorios, repartidos por distintos continentes.
+
+La idea es esta. Imagina un espejo gigante del tamaño de la Tierra… y que lo rompes en pedazos. Te quedas solo con unos pocos trozos, muy separados entre sí. Si cada trozo apunta al mismo sitio, al mismo tiempo, y luego juntas lo que vio cada uno, puedes reconstruir parte de lo que habría visto el espejo entero.
+
+Y la Tierra ayuda: como gira, cada telescopio va viendo el objetivo desde un ángulo un poco distinto a lo largo de la noche, y se rellenan más huecos del espejo.
+
+Pero hay una condición durísima: al mismo tiempo. Piensa en un coro con ocho cantantes en lugares distintos del mundo. Si cada uno empieza a su ritmo, sale ruido. Por eso cada telescopio graba la señal junto con la hora de un reloj atómico, un máser de hidrógeno. Así, después, se pueden alinear las grabaciones con una precisión enorme.
+
+Todos observaron ondas de radio de 1,3 milímetros. Y lo que grabaron fue una montaña de datos: unos 350 terabytes por día, por cada telescopio.
+
+Si un portátil típico tiene un disco de 1 terabyte, eso son 350 portátiles llenos al día, solo en uno de los telescopios.
+
+Esos datos no son una foto. Son grabaciones de ondas. La imagen hay que reconstruirla después, con ordenadores, combinando las señales de cada pareja de telescopios. Y aquí viene la pregunta que se hacía todo el mundo: después de todo eso… ¿qué iba a aparecer?
+
+Los datos de M87* se tomaron en abril de 2017. Hubo que esperar dos años de análisis. Y el 10 de abril de 2019 se presentó el resultado, en seis artículos científicos a la vez.
+
+Un anillo brillante, con el centro oscuro.
+
+Ahora, lo importante. Lo que brilla no es el agujero negro. Es el gas que lo rodea, calentado a temperaturas enormes. Su gravedad es tan fuerte que curva la luz de ese gas, y la dobla a su alrededor, como una lupa deformada.
+
+¿Y el centro oscuro? Es la sombra. La zona de donde no nos llega luz, porque el agujero negro se la ha tragado.
+
+El anillo mide 42 microsegundos de arco, con un margen de 3. Es una porción ridícula del cielo: más o menos como esa rosquilla sobre la Luna, la comparación que ESO hace para el agujero negro de nuestra galaxia, de tamaño parecido. Y el anillo brilla unas diez veces más que el centro, según el artículo de la Colaboración.
+
+Y aquí hay un detalle que casi nadie cuenta. El borde sin retorno, el horizonte de sucesos, es unas 2,5 veces más pequeño que la sombra. Y aun siendo más pequeño, según el Observatorio Europeo Austral, mide poco menos de 40 000 millones de kilómetros. La luz tardaría alrededor de un día y medio en cruzarlo.
+
+¿Y por qué la sombra se ve más grande que el propio agujero? Por la misma lupa de antes. La gravedad dobla la luz que pasa cerca, y eso agranda en el cielo la zona oscura, igual que una lupa agranda una mancha en el papel. Vemos el agujero negro aumentado por su propia gravedad.
+
+Un monstruo de ese tamaño… y lo que vemos es su sombra. Pero esa sombra tenía que pasar un examen.
+
+La teoría de la gravedad de Einstein, la relatividad general, predice cómo debería verse la sombra de un agujero negro: su forma y su tamaño, según su masa. Si la sombra hubiera salido torcida, o del tamaño equivocado, habría un problema serio.
+
+¿Y qué salió? El equipo observó el anillo en cuatro días distintos, y se mantuvo estable. Y lo que se ve es compatible con la sombra de un agujero negro en rotación, tal como lo describe la relatividad general.
+
+Un siglo después, la teoría pasó una prueba nueva, vista directamente en una imagen. Pero M87* tenía una ventaja: es un gigante que se mueve despacio. El agujero negro de nuestra propia galaxia… no.
+
+En el centro de la Vía Láctea hay otro agujero negro: Sagitario A*. Está a unos 27 000 años luz. Mucho más cerca. Pero también es mucho más pequeño: unos 4 millones de veces la masa del Sol.
+
+Sus datos se tomaron el mismo año, 2017, con la misma red de ocho observatorios. Y aun así, su imagen no llegó hasta el 12 de mayo de 2022. Tres años después que la de M87*.
+
+¿Por qué? Si está mucho más cerca, debería ser más fácil, ¿no? Pues no. Que esté cerca no sirve de mucho si también es mucho más pequeño. Y eso, por cierto, esconde una sorpresa que vemos en un momento. El problema de verdad era otro.
+
+Imagina que quieres sacar una foto con mucho tiempo de exposición. Si fotografías una montaña, perfecto. Si fotografías a un niño que no se queda quieto, sale borroso.
+
+Alrededor de M87*, el gas tarda de días a semanas en dar una vuelta. Alrededor de Sagitario A*, minutos. La imagen cambiaba mientras se observaba.
+
+La solución fue sacar muchas imágenes posibles a partir de los datos y promediarlas. El resultado: otro anillo, de 51,8 microsegundos de arco, con un margen de 2,3.
+
+Y aquí está la coincidencia que te prometí.
+
+Mira los dos anillos. En el cielo se ven casi del mismo tamaño: 42 y 51,8. Pero son objetos completamente distintos.
+
+M87* tiene unas 1 600 veces más masa que el nuestro. Pero también está unas 2 000 veces más lejos. Una cosa casi compensa la otra.
+
+Y si el tamaño de la sombra depende de la masa como dice Einstein, la proporción entre los dos anillos debería ser la de masa entre distancia.
+
+Hagamos la cuenta: 0,80. Y la proporción entre los anillos medidos: 0,81.
+
+Es una cuenta nuestra, sencilla, con distancias redondeadas y con márgenes de error de más del 10 % en la masa. No demuestra nada por sí sola. Pero dos agujeros negros, uno con más de mil veces la masa del otro, encajan en la misma regla.
+
+Entonces, ¿qué sabemos de verdad?
+
+Comprobado: hay un anillo con una sombra en el centro, del tamaño esperado, y se mantuvo estable varios días.
+
+Probable: que los detalles finos de la imagen de nuestra galaxia se parezcan a lo que vemos. Es un promedio de muchas imágenes posibles, no una sola foto. El anillo, casi seguro. Cada mancha y cada zona más brillante, con más cautela.
+
+Y otra cosa que conviene tener clara: estas imágenes no son fotos como las de tu móvil. Son reconstrucciones hechas a partir de datos incompletos. Eso no las hace falsas. Las hace imágenes con margen de error, igual que cualquier otra medida de la ciencia.
+
+Sin resolver: lo que pasa justo en el borde, muy cerca del horizonte. Con ocho observatorios, el «espejo roto» tiene muchos huecos, y, dicho de forma simple, los programas de reconstrucción tienen que suponer lo que falta. Por eso la red ha crecido: se le añadieron tres observatorios más.
+
+Entonces, ¿cómo se fotografía algo que no deja escapar la luz?
+
+No se fotografía el agujero. Se fotografía su sombra. Y para verla hizo falta que un planeta entero mirara al mismo sitio, al mismo tiempo.
+
+Y ahora una pregunta para ti. Si pudieras apuntar esa red a cualquier lugar del universo, ¿qué fotografiarías? Cuéntamelo en los comentarios.
+
+Todas las fuentes están en la descripción. Si hay una cifra que quieras que revisemos, escríbela: la comprobamos y la anotamos.
+
+Y si te gustó, suscríbete, dale like y activa la campanita: cada semana, una pregunta del universo, con sus datos y de dónde salen.

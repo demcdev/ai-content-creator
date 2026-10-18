@@ -1,0 +1,815 @@
+{
+ "total": 654.24,
+ "frases": [
+  {
+   "par": 0,
+   "texto": "Un agujero negro no deja escapar la luz.",
+   "ini": 0.0,
+   "fin": 2.711
+  },
+  {
+   "par": 0,
+   "texto": "Nada.",
+   "ini": 3.306,
+   "fin": 3.628
+  },
+  {
+   "par": 0,
+   "texto": "Ni un solo rayo.",
+   "ini": 4.23,
+   "fin": 5.067
+  },
+  {
+   "par": 0,
+   "texto": "Por definición, es imposible verlo.",
+   "ini": 5.584,
+   "fin": 7.481
+  },
+  {
+   "par": 1,
+   "texto": "Y sin embargo, el 10 de abril de 2019, el mundo vio esta imagen.",
+   "ini": 8.633,
+   "fin": 13.872
+  },
+  {
+   "par": 2,
+   "texto": "Es un agujero negro de verdad, en el centro de una galaxia que está a unos 55 millones de años luz.",
+   "ini": 14.842,
+   "fin": 21.499
+  },
+  {
+   "par": 2,
+   "texto": "O sea: la luz de esta imagen salió de allí hace unos 55 millones de años, y acaba de llegar.",
+   "ini": 22.511,
+   "fin": 29.218
+  },
+  {
+   "par": 2,
+   "texto": "Y para sacar esta imagen no bastó con un telescopio.",
+   "ini": 30.181,
+   "fin": 32.96
+  },
+  {
+   "par": 2,
+   "texto": "Hizo falta convertir el planeta entero en uno.",
+   "ini": 34.026,
+   "fin": 36.454
+  },
+  {
+   "par": 3,
+   "texto": "En este video vas a ver cómo se fotografía algo que no se puede ver.",
+   "ini": 37.57,
+   "fin": 40.877
+  },
+  {
+   "par": 3,
+   "texto": "Por qué la foto del agujero negro de nuestra propia galaxia costó mucho más.",
+   "ini": 42.148,
+   "fin": 46.122
+  },
+  {
+   "par": 3,
+   "texto": "Y una coincidencia en las cifras que, cuando la ves, ya no se te olvida.",
+   "ini": 47.063,
+   "fin": 51.468
+  },
+  {
+   "par": 4,
+   "texto": "Empecemos por el problema.",
+   "ini": 52.403,
+   "fin": 53.634
+  },
+  {
+   "par": 4,
+   "texto": "Y no es la oscuridad.",
+   "ini": 54.115,
+   "fin": 55.177
+  },
+  {
+   "par": 4,
+   "texto": "Es el tamaño.",
+   "ini": 56.004,
+   "fin": 56.753
+  },
+  {
+   "par": 5,
+   "texto": "Este agujero negro es enorme.",
+   "ini": 57.485,
+   "fin": 59.138
+  },
+  {
+   "par": 5,
+   "texto": "Tiene una masa de unos 6 500 millones de soles, con un margen de unos 700 millones.",
+   "ini": 60.052,
+   "fin": 66.102
+  },
+  {
+   "par": 5,
+   "texto": "Pero está tan lejos que, visto desde aquí, es diminuto.",
+   "ini": 67.018,
+   "fin": 70.148
+  },
+  {
+   "par": 6,
+   "texto": "Para hacerte una idea: el agujero negro de nuestra galaxia, que se ve un poco más grande en el cielo, es como una rosquilla sobre la superficie de la Luna, según la comparación del Observatorio Europeo Austral.",
+   "ini": 71.648,
+   "fin": 84.494
+  },
+  {
+   "par": 6,
+   "texto": "Y el de M87* se ve un poco más pequeño todavía.",
+   "ini": 85.323,
+   "fin": 88.234
+  },
+  {
+   "par": 7,
+   "texto": "Aquí va una regla de los telescopios que conviene que guardes: cuanto más grande es el telescopio, más detalle ve.",
+   "ini": 89.485,
+   "fin": 96.205
+  },
+  {
+   "par": 7,
+   "texto": "Es como la pupila de tu ojo, pero a lo bestia.",
+   "ini": 97.292,
+   "fin": 99.887
+  },
+  {
+   "par": 7,
+   "texto": "Para ver esa rosquilla en la Luna, haría falta un telescopio de radio tan grande como… bueno, como la Tierra.",
+   "ini": 100.639,
+   "fin": 107.508
+  },
+  {
+   "par": 8,
+   "texto": "Nadie puede construir eso.",
+   "ini": 108.408,
+   "fin": 109.794
+  },
+  {
+   "par": 8,
+   "texto": "Pero sí se puede hacer trampa.",
+   "ini": 110.769,
+   "fin": 112.072
+  },
+  {
+   "par": 9,
+   "texto": "La trampa se llama Telescopio del Horizonte de Sucesos.",
+   "ini": 113.17,
+   "fin": 116.196
+  },
+  {
+   "par": 9,
+   "texto": "No es un telescopio.",
+   "ini": 117.187,
+   "fin": 118.146
+  },
+  {
+   "par": 9,
+   "texto": "Es una red de radiotelescopios del tamaño del planeta.",
+   "ini": 118.718,
+   "fin": 121.678
+  },
+  {
+   "par": 9,
+   "texto": "En 2017 eran ocho observatorios, repartidos por distintos continentes.",
+   "ini": 122.764,
+   "fin": 127.764
+  },
+  {
+   "par": 10,
+   "texto": "La idea es esta.",
+   "ini": 128.886,
+   "fin": 129.917
+  },
+  {
+   "par": 10,
+   "texto": "Imagina un espejo gigante del tamaño de la Tierra… y que lo rompes en pedazos.",
+   "ini": 130.554,
+   "fin": 135.606
+  },
+  {
+   "par": 10,
+   "texto": "Te quedas solo con unos pocos trozos, muy separados entre sí.",
+   "ini": 136.271,
+   "fin": 139.684
+  },
+  {
+   "par": 10,
+   "texto": "Si cada trozo apunta al mismo sitio, al mismo tiempo, y luego juntas lo que vio cada uno, puedes reconstruir parte de lo que habría visto el espejo entero.",
+   "ini": 140.672,
+   "fin": 150.167
+  },
+  {
+   "par": 11,
+   "texto": "Y la Tierra ayuda: como gira, cada telescopio va viendo el objetivo desde un ángulo un poco distinto a lo largo de la noche, y se rellenan más huecos del espejo.",
+   "ini": 151.292,
+   "fin": 161.863
+  },
+  {
+   "par": 12,
+   "texto": "Pero hay una condición durísima: al mismo tiempo.",
+   "ini": 163.05,
+   "fin": 165.75
+  },
+  {
+   "par": 12,
+   "texto": "Piensa en un coro con ocho cantantes en lugares distintos del mundo.",
+   "ini": 166.691,
+   "fin": 170.348
+  },
+  {
+   "par": 12,
+   "texto": "Si cada uno empieza a su ritmo, sale ruido.",
+   "ini": 171.179,
+   "fin": 173.728
+  },
+  {
+   "par": 12,
+   "texto": "Por eso cada telescopio graba la señal junto con la hora de un reloj atómico, un máser de hidrógeno.",
+   "ini": 174.302,
+   "fin": 180.348
+  },
+  {
+   "par": 12,
+   "texto": "Así, después, se pueden alinear las grabaciones con una precisión enorme.",
+   "ini": 181.451,
+   "fin": 185.609
+  },
+  {
+   "par": 13,
+   "texto": "Todos observaron ondas de radio de 1,3 milímetros.",
+   "ini": 187.384,
+   "fin": 190.741
+  },
+  {
+   "par": 13,
+   "texto": "Y lo que grabaron fue una montaña de datos: unos 350 terabytes por día, por cada telescopio.",
+   "ini": 191.522,
+   "fin": 198.436
+  },
+  {
+   "par": 14,
+   "texto": "Si un portátil típico tiene un disco de 1 terabyte, eso son 350 portátiles llenos al día, solo en uno de los telescopios.",
+   "ini": 199.838,
+   "fin": 208.396
+  },
+  {
+   "par": 15,
+   "texto": "Esos datos no son una foto.",
+   "ini": 209.397,
+   "fin": 210.67
+  },
+  {
+   "par": 15,
+   "texto": "Son grabaciones de ondas.",
+   "ini": 211.514,
+   "fin": 212.792
+  },
+  {
+   "par": 15,
+   "texto": "La imagen hay que reconstruirla después, con ordenadores, combinando las señales de cada pareja de telescopios.",
+   "ini": 213.413,
+   "fin": 220.053
+  },
+  {
+   "par": 15,
+   "texto": "Y aquí viene la pregunta que se hacía todo el mundo: después de todo eso… ¿qué iba a aparecer?",
+   "ini": 221.414,
+   "fin": 227.276
+  },
+  {
+   "par": 16,
+   "texto": "Los datos de M87* se tomaron en abril de 2017.",
+   "ini": 228.184,
+   "fin": 231.863
+  },
+  {
+   "par": 16,
+   "texto": "Hubo que esperar dos años de análisis.",
+   "ini": 233.132,
+   "fin": 234.983
+  },
+  {
+   "par": 16,
+   "texto": "Y el 10 de abril de 2019 se presentó el resultado, en seis artículos científicos a la vez.",
+   "ini": 235.768,
+   "fin": 241.74
+  },
+  {
+   "par": 17,
+   "texto": "Un anillo brillante, con el centro oscuro.",
+   "ini": 243.04,
+   "fin": 245.535
+  },
+  {
+   "par": 18,
+   "texto": "Ahora, lo importante.",
+   "ini": 246.421,
+   "fin": 247.418
+  },
+  {
+   "par": 18,
+   "texto": "Lo que brilla no es el agujero negro.",
+   "ini": 247.855,
+   "fin": 249.834
+  },
+  {
+   "par": 18,
+   "texto": "Es el gas que lo rodea, calentado a temperaturas enormes.",
+   "ini": 250.612,
+   "fin": 253.965
+  },
+  {
+   "par": 18,
+   "texto": "Su gravedad es tan fuerte que curva la luz de ese gas, y la dobla a su alrededor, como una lupa deformada.",
+   "ini": 254.966,
+   "fin": 261.347
+  },
+  {
+   "par": 19,
+   "texto": "¿Y el centro oscuro?",
+   "ini": 262.941,
+   "fin": 263.914
+  },
+  {
+   "par": 19,
+   "texto": "Es la sombra.",
+   "ini": 264.983,
+   "fin": 265.606
+  },
+  {
+   "par": 19,
+   "texto": "La zona de donde no nos llega luz, porque el agujero negro se la ha tragado.",
+   "ini": 266.596,
+   "fin": 271.054
+  },
+  {
+   "par": 20,
+   "texto": "El anillo mide 42 microsegundos de arco, con un margen de 3.",
+   "ini": 272.093,
+   "fin": 276.534
+  },
+  {
+   "par": 20,
+   "texto": "Es una porción ridícula del cielo: más o menos como esa rosquilla sobre la Luna, la comparación que ESO hace para el agujero negro de nuestra galaxia, de tamaño parecido.",
+   "ini": 277.373,
+   "fin": 288.05
+  },
+  {
+   "par": 20,
+   "texto": "Y el anillo brilla unas diez veces más que el centro, según el artículo de la Colaboración.",
+   "ini": 289.371,
+   "fin": 294.463
+  },
+  {
+   "par": 21,
+   "texto": "Y aquí hay un detalle que casi nadie cuenta.",
+   "ini": 295.906,
+   "fin": 298.297
+  },
+  {
+   "par": 21,
+   "texto": "El borde sin retorno, el horizonte de sucesos, es unas 2,5 veces más pequeño que la sombra.",
+   "ini": 299.364,
+   "fin": 305.814
+  },
+  {
+   "par": 21,
+   "texto": "Y aun siendo más pequeño, según el Observatorio Europeo Austral, mide poco menos de 40 000 millones de kilómetros.",
+   "ini": 306.784,
+   "fin": 314.006
+  },
+  {
+   "par": 21,
+   "texto": "La luz tardaría alrededor de un día y medio en cruzarlo.",
+   "ini": 315.183,
+   "fin": 318.353
+  },
+  {
+   "par": 22,
+   "texto": "¿Y por qué la sombra se ve más grande que el propio agujero?",
+   "ini": 319.745,
+   "fin": 322.517
+  },
+  {
+   "par": 22,
+   "texto": "Por la misma lupa de antes.",
+   "ini": 323.254,
+   "fin": 324.711
+  },
+  {
+   "par": 22,
+   "texto": "La gravedad dobla la luz que pasa cerca, y eso agranda en el cielo la zona oscura, igual que una lupa agranda una mancha en el papel.",
+   "ini": 325.76,
+   "fin": 334.492
+  },
+  {
+   "par": 22,
+   "texto": "Vemos el agujero negro aumentado por su propia gravedad.",
+   "ini": 335.586,
+   "fin": 338.262
+  },
+  {
+   "par": 23,
+   "texto": "Un monstruo de ese tamaño… y lo que vemos es su sombra.",
+   "ini": 339.422,
+   "fin": 342.898
+  },
+  {
+   "par": 23,
+   "texto": "Pero esa sombra tenía que pasar un examen.",
+   "ini": 343.81,
+   "fin": 345.943
+  },
+  {
+   "par": 24,
+   "texto": "La teoría de la gravedad de Einstein, la relatividad general, predice cómo debería verse la sombra de un agujero negro: su forma y su tamaño, según su masa.",
+   "ini": 347.188,
+   "fin": 357.5
+  },
+  {
+   "par": 24,
+   "texto": "Si la sombra hubiera salido torcida, o del tamaño equivocado, habría un problema serio.",
+   "ini": 358.548,
+   "fin": 363.585
+  },
+  {
+   "par": 25,
+   "texto": "¿Y qué salió?",
+   "ini": 364.849,
+   "fin": 365.379
+  },
+  {
+   "par": 25,
+   "texto": "El equipo observó el anillo en cuatro días distintos, y se mantuvo estable.",
+   "ini": 366.204,
+   "fin": 370.008
+  },
+  {
+   "par": 25,
+   "texto": "Y lo que se ve es compatible con la sombra de un agujero negro en rotación, tal como lo describe la relatividad general.",
+   "ini": 370.902,
+   "fin": 377.592
+  },
+  {
+   "par": 26,
+   "texto": "Un siglo después, la teoría pasó una prueba nueva, vista directamente en una imagen.",
+   "ini": 379.36,
+   "fin": 384.643
+  },
+  {
+   "par": 26,
+   "texto": "Pero M87* tenía una ventaja: es un gigante que se mueve despacio.",
+   "ini": 385.539,
+   "fin": 390.159
+  },
+  {
+   "par": 26,
+   "texto": "El agujero negro de nuestra propia galaxia… no.",
+   "ini": 391.061,
+   "fin": 394.33
+  },
+  {
+   "par": 27,
+   "texto": "En el centro de la Vía Láctea hay otro agujero negro: Sagitario A*.",
+   "ini": 395.022,
+   "fin": 399.786
+  },
+  {
+   "par": 27,
+   "texto": "Está a unos 27 000 años luz.",
+   "ini": 400.74,
+   "fin": 402.786
+  },
+  {
+   "par": 27,
+   "texto": "Mucho más cerca.",
+   "ini": 403.85,
+   "fin": 404.676
+  },
+  {
+   "par": 27,
+   "texto": "Pero también es mucho más pequeño: unos 4 millones de veces la masa del Sol.",
+   "ini": 405.192,
+   "fin": 410.564
+  },
+  {
+   "par": 28,
+   "texto": "Sus datos se tomaron el mismo año, 2017, con la misma red de ocho observatorios.",
+   "ini": 411.808,
+   "fin": 417.815
+  },
+  {
+   "par": 28,
+   "texto": "Y aun así, su imagen no llegó hasta el 12 de mayo de 2022.",
+   "ini": 418.614,
+   "fin": 422.889
+  },
+  {
+   "par": 28,
+   "texto": "Tres años después que la de M87*.",
+   "ini": 423.606,
+   "fin": 425.873
+  },
+  {
+   "par": 29,
+   "texto": "¿Por qué?",
+   "ini": 426.926,
+   "fin": 427.265
+  },
+  {
+   "par": 29,
+   "texto": "Si está mucho más cerca, debería ser más fácil, ¿no?",
+   "ini": 427.856,
+   "fin": 430.311
+  },
+  {
+   "par": 29,
+   "texto": "Pues no.",
+   "ini": 431.271,
+   "fin": 431.607
+  },
+  {
+   "par": 29,
+   "texto": "Que esté cerca no sirve de mucho si también es mucho más pequeño.",
+   "ini": 432.263,
+   "fin": 435.462
+  },
+  {
+   "par": 29,
+   "texto": "Y eso, por cierto, esconde una sorpresa que vemos en un momento.",
+   "ini": 436.327,
+   "fin": 439.546
+  },
+  {
+   "par": 29,
+   "texto": "El problema de verdad era otro.",
+   "ini": 440.459,
+   "fin": 441.911
+  },
+  {
+   "par": 30,
+   "texto": "Imagina que quieres sacar una foto con mucho tiempo de exposición.",
+   "ini": 442.967,
+   "fin": 446.141
+  },
+  {
+   "par": 30,
+   "texto": "Si fotografías una montaña, perfecto.",
+   "ini": 447.018,
+   "fin": 449.56
+  },
+  {
+   "par": 30,
+   "texto": "Si fotografías a un niño que no se queda quieto, sale borroso.",
+   "ini": 450.156,
+   "fin": 453.592
+  },
+  {
+   "par": 31,
+   "texto": "Alrededor de M87*, el gas tarda de días a semanas en dar una vuelta.",
+   "ini": 454.735,
+   "fin": 459.277
+  },
+  {
+   "par": 31,
+   "texto": "Alrededor de Sagitario A*, minutos.",
+   "ini": 460.417,
+   "fin": 463.585
+  },
+  {
+   "par": 31,
+   "texto": "La imagen cambiaba mientras se observaba.",
+   "ini": 464.336,
+   "fin": 466.399
+  },
+  {
+   "par": 32,
+   "texto": "La solución fue sacar muchas imágenes posibles a partir de los datos y promediarlas.",
+   "ini": 467.286,
+   "fin": 473.269
+  },
+  {
+   "par": 32,
+   "texto": "El resultado: otro anillo, de 51,8 microsegundos de arco, con un margen de 2,3.",
+   "ini": 473.812,
+   "fin": 480.16
+  },
+  {
+   "par": 33,
+   "texto": "Y aquí está la coincidencia que te prometí.",
+   "ini": 481.378,
+   "fin": 483.378
+  },
+  {
+   "par": 34,
+   "texto": "Mira los dos anillos.",
+   "ini": 484.799,
+   "fin": 485.9
+  },
+  {
+   "par": 34,
+   "texto": "En el cielo se ven casi del mismo tamaño: 42 y 51,8.",
+   "ini": 486.504,
+   "fin": 492.329
+  },
+  {
+   "par": 34,
+   "texto": "Pero son objetos completamente distintos.",
+   "ini": 493.05,
+   "fin": 495.089
+  },
+  {
+   "par": 35,
+   "texto": "M87* tiene unas 1 600 veces más masa que el nuestro.",
+   "ini": 496.059,
+   "fin": 500.03
+  },
+  {
+   "par": 35,
+   "texto": "Pero también está unas 2 000 veces más lejos.",
+   "ini": 500.889,
+   "fin": 503.238
+  },
+  {
+   "par": 35,
+   "texto": "Una cosa casi compensa la otra.",
+   "ini": 503.981,
+   "fin": 505.762
+  },
+  {
+   "par": 36,
+   "texto": "Y si el tamaño de la sombra depende de la masa como dice Einstein, la proporción entre los dos anillos debería ser la de masa entre distancia.",
+   "ini": 506.776,
+   "fin": 514.863
+  },
+  {
+   "par": 37,
+   "texto": "Hagamos la cuenta: 0,80.",
+   "ini": 516.163,
+   "fin": 518.486
+  },
+  {
+   "par": 37,
+   "texto": "Y la proporción entre los anillos medidos: 0,81.",
+   "ini": 519.279,
+   "fin": 523.171
+  },
+  {
+   "par": 38,
+   "texto": "Es una cuenta nuestra, sencilla, con distancias redondeadas y con márgenes de error de más del 10 % en la masa.",
+   "ini": 524.62,
+   "fin": 531.925
+  },
+  {
+   "par": 38,
+   "texto": "No demuestra nada por sí sola.",
+   "ini": 532.718,
+   "fin": 534.238
+  },
+  {
+   "par": 38,
+   "texto": "Pero dos agujeros negros, uno con más de mil veces la masa del otro, encajan en la misma regla.",
+   "ini": 535.378,
+   "fin": 541.476
+  },
+  {
+   "par": 39,
+   "texto": "Entonces, ¿qué sabemos de verdad?",
+   "ini": 542.701,
+   "fin": 544.827
+  },
+  {
+   "par": 40,
+   "texto": "Comprobado: hay un anillo con una sombra en el centro, del tamaño esperado, y se mantuvo estable varios días.",
+   "ini": 545.918,
+   "fin": 552.82
+  },
+  {
+   "par": 41,
+   "texto": "Probable: que los detalles finos de la imagen de nuestra galaxia se parezcan a lo que vemos.",
+   "ini": 553.904,
+   "fin": 558.925
+  },
+  {
+   "par": 41,
+   "texto": "Es un promedio de muchas imágenes posibles, no una sola foto.",
+   "ini": 559.801,
+   "fin": 563.633
+  },
+  {
+   "par": 41,
+   "texto": "El anillo, casi seguro.",
+   "ini": 564.494,
+   "fin": 565.967
+  },
+  {
+   "par": 41,
+   "texto": "Cada mancha y cada zona más brillante, con más cautela.",
+   "ini": 566.523,
+   "fin": 569.906
+  },
+  {
+   "par": 42,
+   "texto": "Y otra cosa que conviene tener clara: estas imágenes no son fotos como las de tu móvil.",
+   "ini": 571.733,
+   "fin": 576.75
+  },
+  {
+   "par": 42,
+   "texto": "Son reconstrucciones hechas a partir de datos incompletos.",
+   "ini": 577.688,
+   "fin": 580.654
+  },
+  {
+   "par": 42,
+   "texto": "Eso no las hace falsas.",
+   "ini": 581.478,
+   "fin": 582.631
+  },
+  {
+   "par": 42,
+   "texto": "Las hace imágenes con margen de error, igual que cualquier otra medida de la ciencia.",
+   "ini": 583.185,
+   "fin": 587.584
+  },
+  {
+   "par": 43,
+   "texto": "Sin resolver: lo que pasa justo en el borde, muy cerca del horizonte.",
+   "ini": 588.858,
+   "fin": 593.587
+  },
+  {
+   "par": 43,
+   "texto": "Con ocho observatorios, el «espejo roto» tiene muchos huecos, y, dicho de forma simple, los programas de reconstrucción tienen que suponer lo que falta.",
+   "ini": 594.375,
+   "fin": 603.952
+  },
+  {
+   "par": 43,
+   "texto": "Por eso la red ha crecido: se le añadieron tres observatorios más.",
+   "ini": 605.008,
+   "fin": 608.987
+  },
+  {
+   "par": 44,
+   "texto": "Entonces, ¿cómo se fotografía algo que no deja escapar la luz?",
+   "ini": 610.365,
+   "fin": 614.038
+  },
+  {
+   "par": 45,
+   "texto": "No se fotografía el agujero.",
+   "ini": 615.357,
+   "fin": 616.782
+  },
+  {
+   "par": 45,
+   "texto": "Se fotografía su sombra.",
+   "ini": 617.402,
+   "fin": 618.762
+  },
+  {
+   "par": 45,
+   "texto": "Y para verla hizo falta que un planeta entero mirara al mismo sitio, al mismo tiempo.",
+   "ini": 619.696,
+   "fin": 624.537
+  },
+  {
+   "par": 46,
+   "texto": "Y ahora una pregunta para ti.",
+   "ini": 625.762,
+   "fin": 627.033
+  },
+  {
+   "par": 46,
+   "texto": "Si pudieras apuntar esa red a cualquier lugar del universo, ¿qué fotografiarías?",
+   "ini": 627.915,
+   "fin": 632.398
+  },
+  {
+   "par": 46,
+   "texto": "Cuéntamelo en los comentarios.",
+   "ini": 633.311,
+   "fin": 634.78
+  },
+  {
+   "par": 47,
+   "texto": "Todas las fuentes están en la descripción.",
+   "ini": 635.672,
+   "fin": 637.699
+  },
+  {
+   "par": 47,
+   "texto": "Si hay una cifra que quieras que revisemos, escríbela: la comprobamos y la anotamos.",
+   "ini": 638.473,
+   "fin": 643.431
+  },
+  {
+   "par": 48,
+   "texto": "Y si te gustó, suscríbete, dale like y activa la campanita: cada semana, una pregunta del universo, con sus datos y de dónde salen.",
+   "ini": 644.554,
+   "fin": 654.24
+  }
+ ]
+}
