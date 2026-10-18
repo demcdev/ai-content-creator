@@ -110,9 +110,9 @@ Carpeta: `hace-eones/videos/01-voyager-1/05-licencias/`. Nombre del archivo: **`
 
 | Cód. | Pista | Autor | Origen y enlace | Licencia y condiciones | Dónde suena | Captura | Fecha | Estado |
 |---|---|---|---|---|---|---|---|---|
-| **♪1** | **False Vacuum Decay** · The Grey Room / Density & Time · Ambiental · Dramático · 3:45 | | Biblioteca de audio de YouTube (Studio, canal Hace Eones) | Tooltip leído el 13-oct-2026: «Puedes usar esta pista de audio en cualquiera de tus vídeos, incluso en los que monetices. No tienes que atribuir la propiedad a nadie.» (captura guardada: `capturas-musica/♪1-false-vacuum-decay-licencia-2026-10-13.jpg`) | 0:00 – ≈ 3:45 | `♪1-false-vacuum-decay-…png` | | ☐ |
-| **♪2** | **Rapid Unscheduled Disassembly** · The Grey Room / Density & Time · Ambiental · Dramático · 5:37 | | Ídem | Ídem (captura: `capturas-musica/♪2-rapid-unscheduled-disassembly-licencia-2026-10-13.jpg`) | ≈ 3:45 – 9:15 | `♪2-rapid-unscheduled-disassembly-…png` | | ☐ |
-| **♪3** | **Spaghettification** · The Grey Room / Density & Time · Ambiental · Inspirador · 5:51 | | Ídem | Ídem (captura: `capturas-musica/♪3-spaghettification-licencia-2026-10-13.jpg`) | ≈ 9:15 – final (se corta con fundido de 4 s) | `♪3-spaghettification-…png` | | ☐ |
+| **♪1** | **False Vacuum Decay** · The Grey Room / Density & Time · Ambiental · Dramático · 3:45 | | Biblioteca de audio de YouTube (Studio, canal Hace Eones) | Tooltip leído el 13-oct-2026: «Puedes usar esta pista de audio en cualquiera de tus vídeos, incluso en los que monetices. No tienes que atribuir la propiedad a nadie.» (captura guardada: `capturas-musica/musica-1-false-vacuum-decay-licencia-2026-10-13.jpg`) | 0:00 – ≈ 3:45 | `musica-1-false-vacuum-decay-…png` | | ☐ |
+| **♪2** | **Rapid Unscheduled Disassembly** · The Grey Room / Density & Time · Ambiental · Dramático · 5:37 | | Ídem | Ídem (captura: `capturas-musica/musica-2-rapid-unscheduled-disassembly-licencia-2026-10-13.jpg`) | ≈ 3:45 – 9:15 | `musica-2-rapid-unscheduled-disassembly-…png` | | ☐ |
+| **♪3** | **Spaghettification** · The Grey Room / Density & Time · Ambiental · Inspirador · 5:51 | | Ídem | Ídem (captura: `capturas-musica/musica-3-spaghettification-licencia-2026-10-13.jpg`) | ≈ 9:15 – final (se corta con fundido de 4 s) | `musica-3-spaghettification-…png` | | ☐ |
 
 > **No usar** música ni efectos de la biblioteca de CapCut (licencia no verificada para YouTube monetizado) ni pistas «sin copyright» sin licencia escrita.
 

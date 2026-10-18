@@ -82,6 +82,7 @@
     "]"
   ],
   "nombres_permitidos": [
+    "requirements.txt",
     "LEEME.md",
     "AGENTS.md",
     "CLAUDE.md",

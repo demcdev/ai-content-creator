@@ -7,7 +7,7 @@ Catálogo de animaciones (animaciones.json): listar, explicar una y aplicarla a 
   python herramientas/montaje/catalogo/animaciones.py papel-recortado          # cómo se hace, riesgos y ejemplos
   python herramientas/montaje/catalogo/animaciones.py papel-recortado "<canal>/3" --aplicar   # la guarda en la identidad propia del video
 
-Claude pregunta al usuario cuál usar antes de montar (regla del CLAUDE.md) y después ejecuta --aplicar con la elegida.
+El agente pregunta al usuario cuál usar antes de montar (regla del AGENTS.md) y después ejecuta --aplicar con la elegida.
 No genera video ni usa IA.
 """
 import argparse

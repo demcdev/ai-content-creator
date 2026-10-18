@@ -67,4 +67,4 @@ Público y tono · objetivo del video · duración real (o estimada a 150 ppm) �
 9. **Un solo estilo para toda caja de texto:** toda caja, etiqueta o chip de texto usa el estilo de los rótulos «Dato verificado» (cristal oscuro con esquina cortada, barra lateral de color e icono hexagonal). No se usan cápsulas redondeadas con borde ni otras variantes. En el código compartido, `ui.caja` y `ui.pastilla` ya lo cumplen; hay que usarlas siempre y no dibujar cajas por cuenta propia.
 
 ## 5. ENTREGA
-Guarda la escaleta como archivo del video (p. ej. `Escaleta audiovisual.md` en la carpeta del video) y úsala como **fuente de verdad del montaje**: los nombres de escena de la tabla son los que se usan en el script de montaje.
+Guarda la escaleta como archivo del video (p. ej. `03-escaleta/escaleta-audiovisual.md` dentro de la carpeta del video) y úsala como **fuente de verdad del montaje**: los nombres de escena de la tabla son los que se usan en el script de montaje.

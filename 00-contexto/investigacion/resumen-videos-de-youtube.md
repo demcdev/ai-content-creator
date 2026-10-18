@@ -2,7 +2,7 @@
 
 > **Archivo unificado** (11-oct-2026): reúne en un solo documento el resumen del curso de 5 horas (Parte A), el de los videos analizados después (Parte B, en crecimiento: cada video nuevo se agrega ahí) y una síntesis conjunta con el plan de acción (Parte C).
 > Fuente: descripción + transcripción automática en español de cada video (puede haber errores de transcripción en cifras).
-> Todo se evalúa contra [politicas-youtube-cumplimiento.md](../politicas/politicas-youtube-cumplimiento.md) y las reglas del [CLAUDE.md](../../CLAUDE.md).
+> Todo se evalúa contra [politicas-youtube-cumplimiento.md](../politicas/politicas-youtube-cumplimiento.md) y las reglas del [AGENTS.md](../../AGENTS.md).
 
 ## Índice y veredicto
 

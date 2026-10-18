@@ -7,7 +7,7 @@ Lista las voces configuradas (voces.json) y muestra los comandos para generar la
   python herramientas/voz/voces.py --video "<canal>/3"       # los de la voz de la identidad de ese video
 
 No genera audio ni usa claves: solo imprime lo que hay que ejecutar. Claude pregunta al usuario cuál voz usar
-antes de este paso (regla del CLAUDE.md); para añadir una voz, editar voces.json.
+antes de este paso (regla del AGENTS.md); para añadir una voz, editar voces.json.
 """
 import json
 import os

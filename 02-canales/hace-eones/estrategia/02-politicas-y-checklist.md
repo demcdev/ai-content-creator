@@ -1,6 +1,6 @@
 # Políticas y checklist del canal «Hace Eones» (12-oct-2026)
 
-> Basado en [politicas-youtube-cumplimiento.md](../../../00-contexto/politicas/politicas-youtube-cumplimiento.md) y las reglas del [CLAUDE.md](../../../CLAUDE.md). Úsalo **antes de grabar** y **antes de subir** cada video.
+> Basado en [politicas-youtube-cumplimiento.md](../../../00-contexto/politicas/politicas-youtube-cumplimiento.md) y las reglas del [AGENTS.md](../../../AGENTS.md). Úsalo **antes de grabar** y **antes de subir** cada video.
 
 ## 1. Las 7 compuertas del selector para este nicho
 

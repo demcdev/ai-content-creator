@@ -15,7 +15,7 @@ Opciones válidas de --voz: ids de herramientas/voz/voces.json. De --animacion: 
 06-montaje/musica/ de cada video). --efectos: si o no (los efectos de sonido aún no los mezcla la tubería: solo quedan declarados).
 `resumen <canal|video>` imprime una frase con voz, animación, fuente, colores (en hex), música y efectos: es el texto que Claude usa
 al preguntar «¿identidad del canal o propia?». Nunca nombra la marca del canal.
-Claude pregunta «¿identidad del canal o propia?» al crear cada video (regla del CLAUDE.md) y después ejecuta esto.
+El agente pregunta «¿identidad del canal o propia?» al crear cada video (regla del AGENTS.md) y después ejecuta esto.
 No usa IA ni claves.
 """
 import argparse

@@ -9,4 +9,4 @@ Mismo modelo que Hace Eones; ver [estructura-de-un-canal.md](../../00-contexto/p
 - Videos: `python herramientas/video/nuevo-video.py "archivo-aracne" 1 "Nombre corto"` desde la raíz del proyecto.
 - Voz: `herramientas/voz/` (global). Montaje: `herramientas/montaje/` (global).
 
-Antes de crear contenido: reglas en `../../CLAUDE.md` y políticas en `../../00-contexto/politicas/politicas-youtube-cumplimiento.md`.
+Antes de crear contenido: reglas en `../../AGENTS.md` y políticas en `../../00-contexto/politicas/politicas-youtube-cumplimiento.md`.

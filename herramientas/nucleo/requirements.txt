@@ -1,0 +1,13 @@
+# Dependencias de Python de las herramientas del canal.
+# Instalar:  pip install -r herramientas/nucleo/requirements.txt
+# Los mínimos son conservadores; para fijar EXACTAMENTE tu entorno actual, corre
+# `pip freeze | findstr /i "pillow numpy scipy boto3"` y reemplaza los «>=» por «==».
+
+Pillow>=10.0      # montaje: dibujo de escenas, miniaturas, animaciones
+numpy>=1.26       # montaje: cálculo de fotogramas
+scipy>=1.11       # montaje: animaciones (espacial, papel recortado)
+boto3>=1.34       # voz: Amazon Polly (sintetizar-polly.py)
+
+# No son paquetes de pip, pero hacen falta en el PATH:
+#   ffmpeg y ffprobe  (montaje y unión de partes de voz)
+#   Node.js 20+       (herramientas/voz/*.mjs)

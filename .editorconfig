@@ -1,0 +1,21 @@
+# https://editorconfig.org — lo leen VS Code, Cursor y la mayoría de editores.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{md,json,yml,yaml,mjs,js}]
+indent_size = 2
+
+# En Markdown dos espacios al final de línea son un salto de línea: no recortarlos.
+[*.md]
+trim_trailing_whitespace = false
+
+# Archivos que ya viven en CRLF en el repositorio: se respetan tal cual.
+[{AGENTS.md,herramientas/LEEME.md,.agents/skills/**,.claude/skills/**}]
+end_of_line = crlf
