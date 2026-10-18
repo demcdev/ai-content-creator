@@ -25,7 +25,7 @@ import shutil
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'nucleo'))
-from _comun import (RAIZ, ENTREGABLES, F_CAPITULOS, F_CIFRAS, F_ESCALETA, F_GUION, F_LICENCIAS, F_METRICAS, F_SUBTITULOS, MINIATURAS, MONTAJE,
+from _comun import (RAIZ, ENTREGABLES, F_CAPITULOS, F_CIFRAS, F_ESCALETA, F_GUION, F_LICENCIAS, F_METRICAS, MINIATURAS, MONTAJE,
                     VOZ, archivos, consola, filas_datos, identidad_efectiva, leer, resolver_video, resumen_licencias, ruta, sha,
                     seccion_h2, sin_seccion, tamano)
 
@@ -72,6 +72,25 @@ def vigencia(carpeta, datos, rol):
     return 'vigente' if sello['firma'] == firma_actual(carpeta, rol) else 'cambiado'
 
 
+def escenas_sin_disenar(carpeta):
+    """(escenas «placeholder», total) si el video usa escenas.json con el video.py de la plantilla SIN modificar; (0, 0) si no aplica.
+    Con un video.py propio se asume que el script resuelve sus escenas (videos 1 y 2), así que no se cuenta."""
+    arch = ruta(carpeta, MONTAJE + '/escenas.json')
+    script = ruta(carpeta, MONTAJE + '/video.py')
+    plantilla = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'montaje', 'plantillas', 'plantilla_video.py')
+    try:
+        with open(arch, encoding='utf-8') as fh:
+            datos = json.load(fh)
+        if not (os.path.exists(script) and os.path.exists(plantilla) and sha(script) == sha(plantilla)):
+            return 0, 0
+    except (OSError, ValueError):
+        return 0, 0
+    esc = datos.get('escenas') if isinstance(datos, dict) else datos
+    if not isinstance(esc, list) or not esc:
+        return 0, 0
+    return sum(1 for e in esc if isinstance(e, dict) and e.get('tipo') == 'placeholder'), len(esc)
+
+
 def etapas(carpeta, datos):
     """Lista de (clave, nombre, ok, detalle, quien_la_hace)."""
     f = lambda n: ruta(carpeta, n)
@@ -101,20 +120,31 @@ def etapas(carpeta, datos):
     add('miniaturas', 'Miniaturas', n > 0, '%d imágenes' % n, 'subagente miniaturas')
     lic = resumen_licencias(leer(f(F_LICENCIAS)))
     if lic and lic[0] > 0:
-        add('licencias', 'Licencias', lic[2] == 0, '%d de %d listas (resumen manual)' % (lic[1], lic[0]), 'tú, con las fichas')
+        add('licencias', 'Licencias', lic[2] == 0, '%d de %d listas' % (lic[1], lic[0]), 'tú, con las fichas')
     else:
         add('licencias', 'Licencias', False, 'sin filas', 'tú, con las fichas')
     n = len([x for x in archivos(f(MONTAJE), ('.py', '.json', '.mp4', '.mov', '.png')) if not os.path.basename(x).startswith('_')])
-    add('montaje', 'Montaje', n > 0, '%d archivos' % n, 'animación de la identidad del video (montaje/catalogo/animaciones.json) y scripts de montaje')
+    sin_disenar, total_escenas = escenas_sin_disenar(carpeta)
+    if sin_disenar:
+        # escenas.json con escenas «placeholder» y el video.py de la plantilla sin tocar: el montaje todavía no está hecho
+        add('montaje', 'Montaje', False, '%d de %d escenas sin diseñar (placeholder)' % (sin_disenar, total_escenas),
+            'diseñar las escenas (directivas «@tipo» en la escaleta y «canal.py escenas --fusionar») o escribir el script propio en 06-montaje/')
+    else:
+        add('montaje', 'Montaje', n > 0, '%d archivos' % n, 'animación de la identidad del video (montaje/catalogo/animaciones.json) y scripts de montaje')
     firma = firma_final(carpeta)
-    add('video', 'Video final (.mp4)', firma is not None, firma.split(':')[0] if firma else '', 'scripts de montaje')
+    # un .mp4 renderizado con escenas sin diseñar (tarjetas placeholder) no es un video final: sería un falso positivo
+    add('video', 'Video final (.mp4)', firma is not None and not sin_disenar, (firma.split(':')[0] if firma else '') + (' (montaje sin terminar)' if firma and sin_disenar else ''), 'scripts de montaje')
+    # La descripción y los subtítulos van ANTES del control final: el auditor en modo final comprueba la transparencia de IA, las
+    # fuentes y los capítulos de capitulos-y-descripcion.md y los subtítulos; con la ficha vacía el control final nunca puede pasar.
+    ok = tamano(f(F_CAPITULOS)) > 800
+    add('descripcion', 'Capítulos y descripción', ok, '', 'skill SEO')
+    # los subtítulos son el .srt que deja el render: vacío (0 bytes) no cuenta; el texto del guion para subtitular no es un subtítulo
+    srts = archivos(f(ENTREGABLES), ('.srt',), recursivo=False)
+    ok = any(tamano(x) > 200 for x in srts)
+    add('subtitulos', 'Subtítulos', ok, ('.srt vacío' if srts and not ok else '%d .srt' % len(srts) if srts else ''), 'el render (canal.py montar) los deja en 08-entregables/')
     v = vigencia(carpeta, datos, ROL_FINAL)
     add('rev-final', 'Control final (sello)', v == 'vigente', v, 'validar-video.py --etapa final y luego auditor')
     add('p-corte', 'Puerta: corte final', 'corte' in datos['puertas'], datos['puertas'].get('corte', ''), 'tú: --aprobar corte')
-    ok = tamano(f(F_CAPITULOS)) > 800
-    add('descripcion', 'Capítulos y descripción', ok, '', 'skill SEO')
-    ok = tamano(f(F_SUBTITULOS)) > 200 or bool(archivos(f(ENTREGABLES), ('.srt',), recursivo=False))
-    add('subtitulos', 'Subtítulos', ok, '', 'herramientas de voz')
     n = filas_datos(leer(f(F_METRICAS)))
     add('metricas', 'Métricas publicadas', n > 0, '%d registros' % n, 'analista (vidIQ)')
     return res
