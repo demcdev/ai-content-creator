@@ -47,6 +47,8 @@ class Proyecto:
         self.audio = cfg.get('audio') or self._buscar_audio()
         self.rotulos = [r for r in (self._rotulo(r) for r in cfg.get('rotulos', [])) if r[1] > r[0]]
         self.subs_quemados = os.environ.get('HE_SUBS', '0') == '1'
+        self.animacion = cfg.get('animacion', '')
+        self._revisar_animacion()
         self.fondo = estilo.base
         esc = _cargar(os.path.join(self.aqui, 'escenas.json'), [])
         for i, e in enumerate(esc):
@@ -58,6 +60,17 @@ class Proyecto:
         self.subs = self._construir_subtitulos()
 
     # ------------------------------------------------------------------ datos
+    def _revisar_animacion(self):
+        ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'animaciones.json')
+        catalogo = {a['id']: a for a in _cargar(ruta, {'animaciones': []})['animaciones']}
+        if not self.animacion:
+            return
+        if self.animacion not in catalogo:
+            sys.exit('La animación «%s» no está en animaciones.json. Disponibles: %s' % (self.animacion, ', '.join(catalogo)))
+        estado = catalogo[self.animacion]['estado']
+        if estado != 'disponible':
+            print('Aviso: la animación «%s» está en estado «%s»: las escenas pendientes salen en estilo espacial; diseña las propias con registrar().' % (self.animacion, estado), file=sys.stderr)
+
     def _buscar_audio(self):
         carpeta = os.path.join(self.video, 'Voz')
         wavs = [os.path.join(carpeta, f) for f in os.listdir(carpeta) if f.lower().endswith('.wav')] if os.path.isdir(carpeta) else []
@@ -272,6 +285,8 @@ class Proyecto:
             return
         if not self.audio:
             raise SystemExit('No hay audio en Voz/ (o indica "audio" en montaje.json).')
+        if not self.animacion:
+            raise SystemExit('Falta elegir la animación. Mira las opciones con: python herramientas/montaje/animaciones.py y aplica una con: python herramientas/montaje/animaciones.py <id> "<video>" --aplicar')
         lista = os.path.join(tmp, 'lista.txt')
         final = os.path.join(self.salida, self.nombre + '.mp4')
         if a and a[0] == '--solo-audio':

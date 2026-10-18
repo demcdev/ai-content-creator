@@ -1,0 +1,133 @@
+{
+  "_ayuda": "Catálogo de estilos de animación del proyecto. Al llegar al paso de montaje, Claude pregunta al usuario cuál usar (los de «ofrecer: true», por orden). Para añadir uno: agrega una entrada con id, nombre, estado, como_se_hace, riesgo y orden. estado: disponible (hay código y escenas genéricas), parcial (hay librerías pero las escenas se diseñan una a una) o por construir (solo hay dirección de arte). La puntuación viene del análisis del video B20 en 00_contexto/Resumen - Videos de YouTube.md: T tema, F convive con fotos reales, C hecho por código, E sostenible cada semana, D diferencia, R riesgo de políticas (5 = bajo).",
+  "animaciones": [
+    {
+      "id": "espacial",
+      "nombre": "Espacial propio (Hace Eones)",
+      "orden": 1,
+      "ofrecer": true,
+      "estado": "disponible",
+      "descripcion": "Fondo con nebulosa y estrellas en paralaje, paneles de cristal, planetas procedurales, brillo (bloom) y texto con resplandor.",
+      "cuando_usar": "Temas de espacio y exploración; es el estilo de los videos 1 y 2.",
+      "como_se_hace": [
+        "Fondo: estilo.base(t) en herramientas/montaje/estilo.py.",
+        "Escenas genéricas (portada, texto, imagen, cierre): herramientas/montaje/escenas_base.py; las demás se registran con Proyecto.registrar('E07', fn).",
+        "Rótulos «Dato verificado», créditos y capítulos: ui.py. Colores y logo: <canal>/identidad.json.",
+        "Ejemplos completos: Video 01/Montaje/video01.py y Video 02/Montaje/video02.py."
+      ],
+      "usada_en": ["Hace Eones · Video 01", "Hace Eones · Video 02"],
+      "puntuacion": null,
+      "riesgo": "Bajo: todo es material propio por código; las fotos reales llevan su licencia registrada."
+    },
+    {
+      "id": "papel-recortado",
+      "nombre": "Papel recortado en capas",
+      "orden": 2,
+      "ofrecer": true,
+      "estado": "parcial",
+      "descripcion": "Cada elemento es una pieza de papel con borde cortado o rasgado, fibras, bisel y sombra; los planos se apilan y la cámara los mueve con paralaje (multiplano).",
+      "cuando_usar": "Cuando se quiere un estilo de autor que convive bien con fotos reales (entran como recortes impresos) y que evita rostros: las personas son siluetas de papel.",
+      "como_se_hace": [
+        "Librerías: herramientas/montaje/papel.py (piezas y planos) y pintura.py (texturas y volumen).",
+        "No hay fondo ni escenas genéricas de este estilo en la tubería: cada escena se diseña y se registra con Proyecto.registrar().",
+        "Ejemplo: Video 02/Montaje/video02_papel.py (1 774 líneas; era una versión alternativa del Video 2 y su render se borró).",
+        "Animación «a dos» (movimiento escalonado) y cámara multiplano son parte del estilo."
+      ],
+      "usada_en": ["Hace Eones · Video 02 (versión alternativa, no publicada)"],
+      "puntuacion": {"T": 5, "F": 5, "C": 5, "E": 5, "D": 4, "R": 5, "total": 29},
+      "riesgo": "Bajo. Fotos reales como recortes impresos sin alterarlas; personas solo como siluetas."
+    },
+    {
+      "id": "editorial-2d",
+      "nombre": "2D editorial de mediados de siglo",
+      "orden": 3,
+      "ofrecer": true,
+      "estado": "por construir",
+      "descripcion": "Formas planas, paleta limitada, grano de impresión y tipografía de cartel; ideal para gráficas y diagramas.",
+      "cuando_usar": "Videos con muchas gráficas, líneas de tiempo o comparaciones.",
+      "como_se_hace": [
+        "No existe todavía. Habría que crear un módulo de formas planas y una paleta propia, y escenas genéricas para gráficas.",
+        "Reutilizar ui.py para rótulos y escenas_base.py como punto de partida."
+      ],
+      "usada_en": [],
+      "puntuacion": {"T": 4, "F": 3, "C": 5, "E": 5, "D": 2, "R": 5, "total": 24},
+      "riesgo": "Bajo en políticas; como estilo principal se parece demasiado a Kurzgesagt (poca diferencia)."
+    },
+    {
+      "id": "pergamino",
+      "nombre": "Pergamino iluminado",
+      "orden": 4,
+      "ofrecer": true,
+      "estado": "por construir",
+      "descripcion": "Páginas de cuaderno antiguo con tinta, márgenes iluminados y pinceladas.",
+      "cuando_usar": "Acento para historia de la ciencia (cuadernos de Galileo o Copérnico); poco útil para temas modernos.",
+      "como_se_hace": [
+        "No existe todavía. La pintura por código (pintura.py: pinceladas, empaste, textura de papel) es el punto de partida.",
+        "Se usaría como secuencia corta dentro de otro estilo, no para un video entero."
+      ],
+      "usada_en": [],
+      "puntuacion": {"T": 4, "F": 3, "C": 4, "E": 3, "D": 5, "R": 5, "total": 24},
+      "riesgo": "Bajo."
+    },
+    {
+      "id": "serigrafia",
+      "nombre": "Cartel serigrafiado",
+      "orden": 5,
+      "ofrecer": false,
+      "estado": "por construir",
+      "descripcion": "Carteles de pocas tintas planas, como los de la NASA y el JPL.",
+      "cuando_usar": "Miniaturas, portadillas y cierre; no para 12 minutos seguidos.",
+      "como_se_hace": ["No existe todavía. Capas de color plano con desregistro y grano; se haría como acento."],
+      "usada_en": [],
+      "puntuacion": {"T": 5, "F": 2, "C": 4, "E": 3, "D": 4, "R": 5, "total": 23},
+      "riesgo": "Bajo."
+    },
+    {
+      "id": "marmolado",
+      "nombre": "Papel marmolado",
+      "orden": 6,
+      "ofrecer": false,
+      "estado": "por construir",
+      "descripcion": "Texturas de tinta flotante.",
+      "cuando_usar": "Textura de acento para gigantes gaseosos y nebulosas.",
+      "como_se_hace": ["No existe todavía. Ruido con dominio deformado sobre una paleta; ya hay ruido en pintura.py."],
+      "usada_en": [],
+      "puntuacion": {"T": 3, "F": 3, "C": 4, "E": 2, "D": 4, "R": 5, "total": 21},
+      "riesgo": "Bajo."
+    },
+    {
+      "id": "carboncillo",
+      "nombre": "Carboncillo noir",
+      "orden": 7,
+      "ofrecer": false,
+      "estado": "por construir",
+      "descripcion": "Trazos de carbón en blanco y negro.",
+      "cuando_usar": "Misterios y extinciones; el monocromo apaga los planetas.",
+      "como_se_hace": ["No existe todavía. Trazos con textura de grano sobre papel."],
+      "usada_en": [],
+      "puntuacion": {"T": 3, "F": 2, "C": 4, "E": 3, "D": 4, "R": 5, "total": 21},
+      "riesgo": "Bajo."
+    },
+    {
+      "id": "vidrio",
+      "nombre": "Pintura sobre vidrio",
+      "orden": 8,
+      "ofrecer": false,
+      "estado": "por construir",
+      "descripcion": "Pintura fluida y translúcida.",
+      "cuando_usar": "Transiciones cósmicas; demasiado caótico para explicar.",
+      "como_se_hace": ["No existe todavía."],
+      "usada_en": [],
+      "puntuacion": {"T": 3, "F": 2, "C": 3, "E": 2, "D": 5, "R": 5, "total": 20},
+      "riesgo": "Bajo."
+    }
+  ],
+  "descartadas": [
+    {"ids": "27 y 09 · CGI pintado y óleo 3D", "motivo": "Exigen video de IA, que choca con la regla de producción del canal; solo para un tráiler o Short experimental y declarado (reglas 1 y 4). Puntuación 18."},
+    {"ids": "20, 21, 24, 25 · plastilina, lana, bordado, papel maché", "motivo": "Tono infantil: riesgo de que se lea como «para niños» (regla 18). Puntuación 16."},
+    {"ids": "01, 02–05, 11, 12, 15, 18, 30, 31 · estilos de estudios, series o épocas con nombre", "motivo": "Imitan obras concretas (regla 5) o tienen tono cómico; solo factibles con IA. Puntuación 9."},
+    {"ids": "16 y 19 · personajes animados sobre imagen real", "motivo": "Mezclan lo inventado con lo que parece real (reglas 4 y 9)."},
+    {"ids": "06, 07 · sumi-e y seda", "motivo": "Remiten a lo asiático y no encajan con la marca. Puntuación 19."},
+    {"ids": "13, 14, 17, 29, 33 · figuras de acción, marionetas, smear, tokusatsu, CRT", "motivo": "No encajan o fingen imagen real. Puntuación 11 o menos."}
+  ]
+}

@@ -5,7 +5,7 @@ Montaje de este video. Se ejecuta desde esta carpeta (Montaje/), con tiempos.jso
   python video.py --verificar          regla «nada se tapa con nada» (rótulos, créditos, capítulos)
   python video.py                      render completo en 4 procesos -> salida/<nombre>.mp4 y .srt
 
-Todo lo común está en herramientas/montaje/pipeline.py. Las escenas salen de escenas.json (se generan desde la
+La animación elegida va en montaje.json ("animacion"; catálogo en herramientas/montaje/animaciones.json). Todo lo común está en herramientas/montaje/pipeline.py. Las escenas salen de escenas.json (se generan desde la
 escaleta con `python herramientas/escaleta-a-escenas.py "<video>"`); las que aún no tienen diseño aparecen como
 tarjetas. Para diseñar una: define una función fn(t) que devuelva un fotograma y regístrala con su id.
 """

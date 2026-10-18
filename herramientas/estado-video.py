@@ -101,7 +101,7 @@ def etapas(carpeta, datos):
     else:
         add('licencias', 'Licencias', False, 'sin filas', 'tú, con las fichas')
     n = len([x for x in archivos(f('Montaje'), ('.py', '.json', '.mp4', '.mov', '.png')) if not os.path.basename(x).startswith('_')])
-    add('montaje', 'Montaje', n > 0, '%d archivos' % n, 'scripts de montaje')
+    add('montaje', 'Montaje', n > 0, '%d archivos' % n, 'preguntar la animación (animaciones.json) y scripts de montaje')
     firma = firma_final(carpeta)
     add('video', 'Video final (.mp4)', firma is not None, firma.split(':')[0] if firma else '', 'scripts de montaje')
     v = vigencia(carpeta, datos, ROL_FINAL)
