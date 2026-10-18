@@ -6,8 +6,8 @@
 > |---|---|
 > | `comun/` | Librerías que usan todos los estilos: `montar.py` (fuentes, imágenes, texto), `ui.py` (cajas, rótulos, créditos, capítulos) y `aa.py` (dibujo suavizado) |
 > | `tuberia/` | `pipeline.py` (escenas → fotogramas → mp4) y `alinear.py` (voz → `tiempos.json`) |
-> | `catalogo/` | `animaciones.json` (catálogo de estilos) y `animaciones.py` (lista y aplica un estilo) |
-> | `plantillas/` | `plantilla_video.py`, la que copia `nuevo-video.py` a cada video |
+> | `catalogo/` | `animaciones.json` (catálogo de estilos) y `animaciones.py` (lista y aplica un estilo); `escenas.json` (tipos de escena por datos) y `escenas.py` (lista, explica y valida) |
+> | `plantillas/` | `plantilla_video.py`, la que copia `nuevo-video.py` a cada video, y `escenas-ejemplo.json` (un caso de cada tipo de escena) |
 > | `animaciones/<id>/` | Un estilo por carpeta, con el mismo id que el catálogo: `espacial/` (`estilo.py`, `escenas_base.py`, `globo.py`, `datos/`) y `papel-recortado/` (`papel.py`, `pintura.py`) |
 > | `fuentes/` | Tipografías de licencia abierta |
 >
@@ -30,7 +30,42 @@ Las librerías no llevan marca propia: leen la identidad del video (`herramienta
 Catálogo de estilos con su estado (`disponible`, `parcial`, `por construir`), puntuación, riesgo de políticas y cómo se hace; salió del análisis del video B20 del [resumen unificado](../../00-contexto/investigacion/resumen-videos-de-youtube.md). `python herramientas/montaje/catalogo/animaciones.py` lista las ofrecidas, `animaciones.py <id>` explica una y `animaciones.py <id> "<canal>/<n>" --aplicar` la guarda en la identidad propia del video. Normalmente la animación sale de la identidad del canal o del video (`herramientas/identidad/identidad.py`). Hoy solo `espacial` está lista del todo; `papel-recortado` tiene librerías (`papel.py`, `pintura.py`) pero sus escenas se diseñan una a una.
 
 ## Un video nuevo (tubería común)
-`nuevo-video.py` deja en `videos/NN-nombre/06-montaje/` un `video.py` y un `montaje.json`. Flujo: guion → voz → `python herramientas/montaje/tuberia/alinear.py "<canal>/<n>"` (deja `tiempos.json`) → `python herramientas/video/escaleta-a-escenas.py "<canal>/<n>"` (deja `escenas.json`) → `python video.py --frame 60 f.png` desde `06-montaje/`. Todo lo común vive en `tuberia/pipeline.py` (fotogramas, rótulos, subtítulos, música, verificación «nada se tapa con nada», render en partes); las escenas pendientes salen como tarjetas de `animaciones/espacial/escenas_base.py` y se reemplazan registrando una función por id. `montaje.json` admite `rotulos` (por frase del guion), `creditos`, `capitulos`, `musica` y `nombre`. `alinear.py` es único: detecta solo si la voz es de Polly (`04-voz/polly/parte-NN.txt`) o de Google y pesa las frases en consecuencia; admite `kmax` y `correcciones` en `montaje.json`.
+`nuevo-video.py` deja en `videos/NN-nombre/06-montaje/` un `video.py` y un `montaje.json`. Flujo: guion → voz → `python herramientas/montaje/tuberia/alinear.py "<canal>/<n>"` (deja `tiempos.json`) → `python herramientas/video/escaleta-a-escenas.py "<canal>/<n>"` (deja `escenas.json`) → `python video.py --frame 60 f.png` desde `06-montaje/`. Todo lo común vive en `tuberia/pipeline.py` (fotogramas, rótulos, subtítulos, música, verificación «nada se tapa con nada», render en partes); las escenas pendientes salen como tarjetas de `animaciones/espacial/escenas_base.py`, las que traen tipo y datos se dibujan solas (ver «Escenas por datos») y cualquiera se reemplaza registrando una función por id. `montaje.json` admite `rotulos` (por frase del guion), `creditos`, `capitulos`, `musica` y `nombre`. `alinear.py` es único: detecta solo si la voz es de Polly (`04-voz/polly/parte-NN.txt`) o de Google y pesa las frases en consecuencia; admite `kmax` y `correcciones` en `montaje.json`.
+
+## Escenas por datos (sin escribir código)
+Un video nuevo se monta declarando sus escenas en `06-montaje/escenas.json`: cada una es un objeto `{id, nombre, ini, fin, tipo, …parámetros}` y la tubería la dibuja con las fábricas de `animaciones/espacial/escenas_datos.py` (el tipo `placeholder`, por defecto, deja una tarjeta pendiente). El esquema de cada tipo (parámetros, ejemplo) está en `catalogo/escenas.json`; `python herramientas/montaje/catalogo/escenas.py` lista los tipos, `escenas.py <tipo>` explica uno y `escenas.py --validar "<canal>/<n>"` revisa el `escenas.json` de un video. Un ejemplo completo, con un caso de cada tipo, está en [`plantillas/escenas-ejemplo.json`](plantillas/escenas-ejemplo.json) (los nombres de imagen son de ejemplo: guarda las tuyas en `05-licencias/originales/`).
+
+| Tipo | Qué dibuja | Requeridos | Opcionales |
+|---|---|---|---|
+| `placeholder` | Tarjeta con id, nombre y descripción | — | `descripcion` |
+| `portada` | Título grande y subtítulo | — | `titulo`, `subtitulo` |
+| `texto` | Líneas grandes que aparecen una a una | `lineas` | — |
+| `cifra` | Cifra grande con su unidad; con `rotulo`/`fuente` lleva el sello «Dato verificado» | `valor` | `unidad`, `etiqueta`, `detalle`, `color`, `eyebrow`, `titulo`, `ayuda` |
+| `comparacion` | 2 o 3 valores en tarjetas de cristal | `items` `[{rotulo, valor, unidad?, detalle?, color?, t?}]` | `separador`, `eyebrow`, `titulo`, `ayuda` |
+| `barras` | Barras horizontales que crecen desde 0, con eje y unidad | `items` `[{rotulo, valor, color?, t?}]` (2–8) | `unidad`, `sufijo`, `maximo`, `eyebrow`, `titulo`, `ayuda` |
+| `linea_tiempo` | 2–7 hitos equiespaciados, con la etiqueta «ESQUEMA · SIN ESCALA» | `eventos` `[{fecha, texto, color?, t?}]` | `con_etiqueta_escala`, `eyebrow`, `titulo`, `ayuda` |
+| `lista` | Panel con puntos que se encienden al ritmo de la voz | `puntos` (2–6 textos o `{texto, t?}`) | `titulo`, `eyebrow`, `numerada` |
+| `imagen` | Imagen oficial con zoom lento: a pantalla completa o en marco redondeado (`marco: true`) sobre su fondo desenfocado | `archivo` | `zoom0`, `zoom1`, `centro0`, `centro1`, `marco`, `pie`, `credito` |
+| `cita` | Cita textual con autor y fuente | `texto`, `autor` | `fuente`, `eyebrow`, `titulo`, `color` |
+| `mapa` | Globo giratorio con 1–5 lugares numerados y su lista | `puntos` `[{nombre, lat, lon, detalle?, t?}]` | `titulo`, `eyebrow`, `giro` |
+| `cierre` | Título (o lista de fuentes) y los botones suscribirse, me gusta y campanita | — | `titulo`, `subtitulo`, `fuentes`, `mensaje` |
+
+**Claves comunes a todos los tipos**
+- `rotulo` + `fuente` + `fila`: la escena muestra el rótulo «Dato verificado» (abajo a la izquierda) con la fuente como segunda línea; `fila` es el número de la cifra en `01-guion/verificacion-de-cifras.md` (la tubería avisa si esa fila no existe). `rotulo` puede ser un objeto `{l1, l2, estilo: "dato"|"calculo", desde, dur, frase}`; con estilo `calculo` sale «Cálculo propio». Una cifra, una fuente.
+- `credito`: crédito de la imagen (arriba a la derecha) durante toda la escena.
+- `t` (segundos desde el inicio de la escena) o `frase` (el comienzo de una frase del guion que está en `tiempos.json`, con `n` si se repite y `desde` para desplazarla): marca cuándo aparece la escena o cada elemento de una lista; así las animaciones siguen a la voz sin calcular tiempos. Sin ellos, los elementos se reparten parejo.
+- Los números se escriben tal cual (`13.797`) y salen con formato español (`13,797`; `13797` → «13 797»); un texto se muestra como está. Los colores son `ambar`, `hielo`, `verde`, `rojo`, `hueso` o `[r, g, b]`.
+
+**Reglas de composición que ya cumplen** (no hay que cuidarlas a mano): contenido en la zona segura, texto que baja de tamaño si no cabe en su caja, cajas con `ui.caja`, imágenes con esquinas redondeadas y borde suave, movimiento continuo, y nada bajo el rótulo, el crédito ni el capítulo (`python video.py --verificar` lo comprueba). Una imagen a pantalla completa con foto clara choca con el crédito y el rótulo: usa `marco: true`, o una foto oscura y sin rótulo. Las citas deben ser cortas y con comentario propio (regla 2 de políticas).
+
+**Desde la escaleta.** `python herramientas/video/escaleta-a-escenas.py "<canal>/<n>"` lee la escaleta técnica y, si la fila de una escena trae una directiva entre comillas invertidas `` `@tipo clave=valor; clave=valor` ``, deja la escena ya diseñada; sin directiva queda como `placeholder`. Los valores son JSON si lo son (números, `true`, listas `[...]`, objetos `{...}`) o texto; el separador es `;` (nunca `|`, que rompe la tabla):
+
+```
+| **E03 · La cifra** | 00:16–00:28 | Cifra grande. `@cifra valor=13.797; unidad="miles de millones de años"; rotulo="Edad del universo (ΛCDM)"; fuente="Planck 2018"; fila=1` | Voz | Propio |
+| **E07 · Hoy veremos** | 01:16–01:30 | `@lista titulo="Hoy vamos a ver tres cosas"; puntos=[{"texto":"El primer reloj","frase":"Vamos con el primero"},"El segundo","El tercero"]` | Voz | Propio |
+```
+
+Flujo sin código: `nuevo-video.py` → guion → voz → `alinear.py` → escaleta con directivas → `escaleta-a-escenas.py` → `python video.py --frame 60 f.png` y `--verificar`. Lo que un tipo no pueda hacer se diseña aparte con `P.registrar('E05', mi_funcion)` (ver `plantillas/plantilla_video.py`). Los videos 1 y 2 conservan sus scripts propios y no usan estos tipos.
 
 ## Ejemplos completos: videos 1 y 2
 Los dos videos publicados conservan scripts propios, anteriores a la tubería común, en su carpeta `06-montaje/`:

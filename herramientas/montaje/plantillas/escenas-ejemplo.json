@@ -1,0 +1,180 @@
+[
+ {
+  "id": "E01",
+  "nombre": "Portada",
+  "ini": 0.0,
+  "fin": 14.0,
+  "tipo": "portada",
+  "titulo": "Nadie estuvo allí",
+  "subtitulo": "La edad del universo"
+ },
+ {
+  "id": "E02",
+  "nombre": "La cifra",
+  "ini": 14.0,
+  "fin": 28.0,
+  "tipo": "cifra",
+  "valor": 13.797,
+  "unidad": "miles de millones de años",
+  "etiqueta": "Edad del universo según Planck",
+  "detalle": "± 0,023",
+  "rotulo": "Edad del universo (modelo ΛCDM)",
+  "fuente": "Planck 2018 (A&A 641)",
+  "fila": 1
+ },
+ {
+  "id": "E03",
+  "nombre": "Dos medidas",
+  "ini": 28.0,
+  "fin": 42.0,
+  "tipo": "comparacion",
+  "titulo": "¿Dicen lo mismo?",
+  "items": [
+   {
+    "rotulo": "Con cefeidas",
+    "valor": 73.04,
+    "unidad": "km/s por megaparsec",
+    "color": "ambar"
+   },
+   {
+    "rotulo": "Con el fondo cósmico",
+    "valor": 67.4,
+    "unidad": "km/s por megaparsec",
+    "color": "hielo"
+   }
+  ],
+  "ayuda": "Una expansión más rápida hoy significa un universo más joven."
+ },
+ {
+  "id": "E04",
+  "nombre": "Velocidades",
+  "ini": 42.0,
+  "fin": 56.0,
+  "tipo": "barras",
+  "titulo": "Quién va más rápido",
+  "unidad": "kilómetros por segundo",
+  "items": [
+   {
+    "rotulo": "Voyager 1",
+    "valor": 17
+   },
+   {
+    "rotulo": "Tierra en su órbita",
+    "valor": 29.8,
+    "color": "hielo"
+   },
+   {
+    "rotulo": "Luz (1 % de su velocidad)",
+    "valor": 3000,
+    "color": "verde"
+   }
+  ]
+ },
+ {
+  "id": "E05",
+  "nombre": "Cronología",
+  "ini": 56.0,
+  "fin": 70.0,
+  "tipo": "linea_tiempo",
+  "titulo": "Cuarenta y cinco años de viaje",
+  "eventos": [
+   {
+    "fecha": "1977",
+    "texto": "Lanzamiento"
+   },
+   {
+    "fecha": "1979",
+    "texto": "Júpiter"
+   },
+   {
+    "fecha": "1980",
+    "texto": "Saturno"
+   },
+   {
+    "fecha": "2012",
+    "texto": "Cruza la heliopausa"
+   }
+  ]
+ },
+ {
+  "id": "E06",
+  "nombre": "Hoy veremos",
+  "ini": 70.0,
+  "fin": 84.0,
+  "tipo": "lista",
+  "titulo": "Hoy vamos a ver tres cosas",
+  "puntos": [
+   "El primer reloj",
+   "El segundo reloj",
+   "El tercer reloj"
+  ]
+ },
+ {
+  "id": "E07",
+  "nombre": "Mapa del fondo cósmico",
+  "ini": 84.0,
+  "fin": 98.0,
+  "tipo": "imagen",
+  "archivo": "M01-wmap.jpg",
+  "zoom0": 1.0,
+  "zoom1": 1.15,
+  "centro0": [
+   0.5,
+   0.5
+  ],
+  "centro1": [
+   0.4,
+   0.5
+  ],
+  "marco": true,
+  "pie": "Fondo cósmico de microondas",
+  "credito": "NASA / WMAP Science Team"
+ },
+ {
+  "id": "E08",
+  "nombre": "Cita",
+  "ini": 98.0,
+  "fin": 112.0,
+  "tipo": "cita",
+  "texto": "Somos una forma en que el cosmos se conoce a sí mismo.",
+  "autor": "Carl Sagan",
+  "fuente": "Cosmos, 1980"
+ },
+ {
+  "id": "E09",
+  "nombre": "Antenas",
+  "ini": 112.0,
+  "fin": 126.0,
+  "tipo": "mapa",
+  "titulo": "Tres antenas, una por continente",
+  "puntos": [
+   {
+    "nombre": "Goldstone",
+    "lat": 35.4,
+    "lon": -116.9,
+    "detalle": "California, EE. UU."
+   },
+   {
+    "nombre": "Madrid",
+    "lat": 40.4,
+    "lon": -4.2,
+    "detalle": "España"
+   },
+   {
+    "nombre": "Canberra",
+    "lat": -35.4,
+    "lon": 149.0,
+    "detalle": "Australia"
+   }
+  ]
+ },
+ {
+  "id": "E10",
+  "nombre": "Cierre",
+  "ini": 126.0,
+  "fin": 140.0,
+  "tipo": "cierre",
+  "titulo": "Nadie estuvo allí, pero dejó pruebas",
+  "mensaje": "Cada semana, una pregunta, con sus datos y de dónde salen"
+ }
+]

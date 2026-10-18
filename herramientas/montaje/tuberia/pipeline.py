@@ -5,13 +5,17 @@ Es la parte común de video01.py y video02.py, sin sus escenas propias. Un video
 de 10 líneas (ver plantilla_video.py) y estos archivos en su carpeta 06-montaje/:
 
   tiempos.json   {"total": s, "frases": [{"texto", "ini", "fin"}]}   (lo deja alinear.py)
-  escenas.json   lista de {id, nombre, ini, fin, tipo, ...}          (lo deja herramientas/video/escaleta-a-escenas.py)
+  escenas.json   lista de {id, nombre, ini, fin, tipo, ...}          (lo deja herramientas/video/escaleta-a-escenas.py; tipos y
+                 parámetros en herramientas/montaje/catalogo/escenas.json; `rotulo`, `fuente`, `fila` y `credito` de cada escena
+                 pasan solos a los rótulos y créditos)
   montaje.json   opcional: rotulos, creditos, capitulos, musica, cola, nombre, audio
 
 Uso (desde 06-montaje/):  python video.py --frame 60 f.png | --verificar | --rango 0 300 parte.mp4 | --solo-audio | [n_partes]
 """
+import copy
 import json
 import os
+import re
 import subprocess
 import sys
 
@@ -73,6 +77,13 @@ class Proyecto:
             if i == len(esc) - 1 and self.duracion:
                 e['fin'] = max(e['fin'], self.duracion)
         self.escenas_def = esc
+        self._revisar_escenas(esc)
+        for e in esc:                                   # crédito y rótulo «Dato verificado» declarados en la propia escena
+            if e.get('credito'):
+                self.creditos.append((e['ini'], e['fin'], e['credito']))
+            r = self._rotulo_escena(e)
+            if r and r[1] > r[0]:
+                self.rotulos.append(r)
         self.propias = {}
         self._escenas = None
         self.subs = self._construir_subtitulos()
@@ -110,6 +121,57 @@ class Proyecto:
         fin = ini + r['dur'] if 'dur' in r else r['fin']
         return (ini, fin, r['l1'], r.get('l2', ''), r.get('estilo', 'dato'))
 
+    def _revisar_escenas(self, esc):
+        """Avisa (sin detener el montaje) de tipos o parámetros que no existen y de filas de cifra que no están en la hoja de verificación."""
+        sys.path.insert(0, os.path.join(MONTAJE, 'catalogo'))
+        import escenas as catalogo
+        cat = catalogo.cargar()
+        hoja = ''
+        ruta = os.path.join(self.video, '01-guion', 'verificacion-de-cifras.md')
+        if os.path.exists(ruta):
+            hoja = open(ruta, encoding='utf-8').read()
+        for e in esc:
+            for problema in catalogo.revisar(e, cat):
+                print('Aviso escenas.json:', problema, file=sys.stderr)
+            fila = e.get('fila')
+            if fila is not None and hoja and not re.search(r'\|\s*\**%s\**\s*\|' % re.escape(str(fila)), hoja):
+                print('Aviso escenas.json: %s cita la fila %s, que no está en 01-guion/verificacion-de-cifras.md' % (e['id'], fila), file=sys.stderr)
+
+    def _rotulo_escena(self, e):
+        """Rótulo «Dato verificado» de una escena: `rotulo` (texto o {l1, l2, estilo, desde, dur, frase}) y `fuente`."""
+        r = e.get('rotulo')
+        if not r:
+            return None
+        if isinstance(r, str):
+            r = {'l1': r}
+        l2 = r.get('l2') or ('Fuente: ' + e['fuente'] if e.get('fuente') else '')
+        if 'frase' in r:
+            ini = self.tiempo(r['frase'], r.get('n', 0)) + r.get('desde', 0.3)
+        else:
+            ini = e['ini'] + r.get('desde', min(1.2, 0.2 * (e['fin'] - e['ini'])))
+        dur = r.get('dur', max(2.0, min(8.0, e['fin'] - ini - 0.6)))
+        return (ini, ini + dur, r['l1'], l2, r.get('estilo', 'dato'))
+
+    def _resolver_frases(self, e):
+        """Copia de la escena donde cada `frase` (comienzo de una frase del guion) pasa a ser `t`: segundos desde el inicio de la escena."""
+        e = copy.deepcopy(e)
+
+        def recorrer(x):
+            if isinstance(x, dict):
+                if 'frase' in x:
+                    try:
+                        x['t'] = round(self.tiempo(x['frase'], x.get('n', 0)) + x.get('desde', 0.0) - e['ini'], 3)
+                    except KeyError:
+                        sys.exit('Escena %s: no encuentro en tiempos.json ninguna frase que empiece por «%s»' % (e['id'], x['frase']))
+                for k, v in x.items():
+                    if k != 'rotulo':
+                        recorrer(v)
+            elif isinstance(x, list):
+                for v in x:
+                    recorrer(v)
+        recorrer(e)
+        return e
+
     def registrar(self, id_, fn):
         """Reemplaza la escena `id_` de escenas.json por una función propia fn(t) -> fotograma."""
         self.propias[id_] = fn
@@ -119,7 +181,7 @@ class Proyecto:
         if self._escenas is None:
             lista = []
             for e in self.escenas_def:
-                fn = self.propias.get(e['id']) or self.escenas_base.crear(e)
+                fn = self.propias.get(e['id']) or self.escenas_base.crear(self._resolver_frases(e))
                 lista.append((e['ini'], e['fin'], (lambda f: (lambda t: self.estilo.bloom(f(t), 0.28)))(fn)))
             self._escenas = lista
         return self._escenas
