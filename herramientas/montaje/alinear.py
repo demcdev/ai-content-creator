@@ -2,9 +2,9 @@
 """
 Alinea cada frase del guion con el audio real usando los silencios (programación dinámica) y escribe tiempos.json.
 
-  python herramientas/montaje/alinear.py "Hace Eones/Video 03"
-  python herramientas/montaje/alinear.py "Hace Eones/3" --ver 10          # además imprime las 10 primeras frases
-  python herramientas/montaje/alinear.py "Hace Eones/3" --salida prueba.json
+  python herramientas/montaje/alinear.py "<canal>/Video 03"
+  python herramientas/montaje/alinear.py "<canal>/3" --ver 10          # además imprime las 10 primeras frases
+  python herramientas/montaje/alinear.py "<canal>/3" --salida prueba.json
 
 Entradas (dentro de la carpeta del video):
   Voz/*.wav                 el audio completo (si hay varios, el más grande)

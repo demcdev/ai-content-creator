@@ -1,5 +1,5 @@
 """
-Estilo espacial de Hace Eones: fondo con nebulosa y estrellas, brillo (bloom), paneles de cristal, texto con resplandor
+Estilo espacial: fondo con nebulosa y estrellas, brillo (bloom), paneles de cristal, texto con resplandor
 y planetas realistas dibujados por código (esferas con textura procedural e iluminación). Todo es material propio.
 """
 import math

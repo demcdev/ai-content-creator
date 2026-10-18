@@ -1,7 +1,7 @@
 """
 Une en un solo WAV los audios que descargaste de la consola de Amazon Polly (un archivo por parte).
 
-  python unir-partes.py "..\\..\\02_canales\\Hace Eones\\Video 02 - Edad del universo\\Voz\\polly" "..\\..\\02_canales\\Hace Eones\\Video 02 - Edad del universo\\Voz\\video2-raul.wav"
+  python unir-partes.py "..\\..\\02_canales\\<canal>\\Video NN - Nombre\\Voz\\polly" "..\\..\\02_canales\\<canal>\\Video NN - Nombre\\Voz\\voz-polly.wav"
 
 - Toma los archivos .mp3 / .wav / .ogg de la carpeta, en orden alfabético (parte-01…, parte-02…; renómbralos así al descargar).
 - Entre partes deja una pausa de 0,6 s (cámbiala con --pausa 0.8).

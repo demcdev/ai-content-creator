@@ -15,7 +15,7 @@
         "Rótulos «Dato verificado», créditos y capítulos: ui.py. Colores y logo: <canal>/identidad.json.",
         "Ejemplos completos: Video 01/Montaje/video01.py y Video 02/Montaje/video02.py."
       ],
-      "usada_en": ["Hace Eones · Video 01", "Hace Eones · Video 02"],
+      "usada_en": ["primer y segundo video publicados"],
       "puntuacion": null,
       "riesgo": "Bajo: todo es material propio por código; las fotos reales llevan su licencia registrada."
     },
@@ -33,7 +33,7 @@
         "Ejemplo: Video 02/Montaje/video02_papel.py (1 774 líneas; era una versión alternativa del Video 2 y su render se borró).",
         "Animación «a dos» (movimiento escalonado) y cámara multiplano son parte del estilo."
       ],
-      "usada_en": ["Hace Eones · Video 02 (versión alternativa, no publicada)"],
+      "usada_en": ["versión alternativa del segundo video (no publicada)"],
       "puntuacion": {"T": 5, "F": 5, "C": 5, "E": 5, "D": 4, "R": 5, "total": 29},
       "riesgo": "Bajo. Fotos reales como recortes impresos sin alterarlas; personas solo como siluetas."
     },

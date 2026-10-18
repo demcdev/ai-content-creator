@@ -2,8 +2,8 @@
 """
 Convierte la escaleta técnica de un video en Montaje/escenas.json (la lista de escenas que lee el montaje).
 
-  python herramientas/escaleta-a-escenas.py "Hace Eones/Video 03"
-  python herramientas/escaleta-a-escenas.py "Hace Eones/3" --forzar     # sobrescribe un escenas.json existente
+  python herramientas/escaleta-a-escenas.py "<canal>/Video 03"
+  python herramientas/escaleta-a-escenas.py "<canal>/3" --forzar     # sobrescribe un escenas.json existente
 
 Lee las filas de la parte «escaleta técnica» de `Escaleta audiovisual.md` (no la planilla) con el formato
 `| **E07 · Nombre de la escena** | 03:12–03:40 | descripción | ... |` y deja, por escena:

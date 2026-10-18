@@ -1,7 +1,7 @@
 # Checklist de escritura de guion (todos los canales)
 
 Se repasa **mientras se escribe** el guion y **antes** de llamar al auditor o al verificador (gratis, no gasta tokens). No sustituye a la revisión con IA: cubre lo que el lint no detecta, que es criterio.
-Origen: hallazgos del auditor y el verificador sobre el Video 02 de Hace Eones (oct-2026). Cuando un agente encuentre un fallo nuevo, **añadir aquí una línea** con su ejemplo.
+Origen: hallazgos del auditor y el verificador sobre un video ya publicado (oct-2026). Cuando un agente encuentre un fallo nuevo, **añadir aquí una línea** con su ejemplo.
 
 ## Cifras y cálculos
 - [ ] **Rangos = cuenta.** El rango que dice el guion coincide con el resultado de las cuentas de la hoja de cifras. *(V02: decía «13 000–14 000» y su cuenta daba 14 500.)*

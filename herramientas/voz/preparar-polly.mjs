@@ -2,7 +2,7 @@
 /**
  * Prepara el guion para pegarlo en la consola de Amazon Polly (Long-Form, Raul): sin claves ni llamadas a la red.
  *
- *   node preparar-polly.mjs "..\..\02_canales\Hace Eones\Video 02 - Edad del universo\Guion.md" --salida "..\..\02_canales\Hace Eones\Video 02 - Edad del universo\Voz\polly"
+ *   node preparar-polly.mjs "..\..\02_canales\<canal>\Video NN - Nombre\Guion.md" --salida "..\..\02_canales\<canal>\Video NN - Nombre\Voz\polly"
  *
  * Crea en la carpeta de salida:
  *   parte-01.txt, parte-02.txt …       texto limpio para pegar (sin marcas de pausa), con las sustituciones aplicadas

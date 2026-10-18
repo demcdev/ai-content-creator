@@ -1,5 +1,5 @@
 """
-Trazos con suavizado (antialiasing) y transparencia real para Hace Eones.
+Trazos con suavizado (antialiasing) y transparencia real.
 
 Antes las líneas se dibujaban con PIL directamente y con un color ya mezclado con el azul de fondo: salían con
 escalones y, sobre la nebulosa, MÁS OSCURAS que el cielo. Aquí cada trazo se dibuja en una máscara de mayor

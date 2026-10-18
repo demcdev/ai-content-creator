@@ -2,9 +2,9 @@
 """
 Lint gratis de un video (no usa IA, no gasta tokens). Se corre ANTES de llamar a un agente revisor.
 
-  python herramientas/validar-video.py "Hace Eones/Video 02"            # etapa guion (por defecto)
-  python herramientas/validar-video.py "Hace Eones/Video 02" --etapa montaje
-  python herramientas/validar-video.py "Hace Eones/Video 02" --etapa final
+  python herramientas/validar-video.py "<canal>/Video 02"            # etapa guion (por defecto)
+  python herramientas/validar-video.py "<canal>/Video 02" --etapa montaje
+  python herramientas/validar-video.py "<canal>/Video 02" --etapa final
 
 La primera línea de la salida es siempre «ESTADO: PASA ...» o «ESTADO: FALLA ...».
 Códigos de salida: 0 = sin errores (puede haber avisos), 1 = hay errores.

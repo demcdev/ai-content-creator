@@ -2,12 +2,12 @@
 """
 Estado de un video leyendo sus archivos (no usa IA, no gasta tokens) y sellos de revisión.
 
-  python herramientas/estado-video.py "Hace Eones/Video 02"                 # imprime el estado
-  python herramientas/estado-video.py "Hace Eones/Video 02" --escribir      # además guarda Estado.md
-  python herramientas/estado-video.py "Hace Eones/2" --aprobar idea guion corte
-  python herramientas/estado-video.py "Hace Eones/2" --sellar auditor-guion verificador
-  python herramientas/estado-video.py "Hace Eones/2" --revisar auditor-guion   # ¿cambió el guion desde el sello?
-  python herramientas/estado-video.py "Hace Eones/2" --diff auditor-guion      # solo lo que cambió
+  python herramientas/estado-video.py "<canal>/Video 02"                 # imprime el estado
+  python herramientas/estado-video.py "<canal>/Video 02" --escribir      # además guarda Estado.md
+  python herramientas/estado-video.py "<canal>/2" --aprobar idea guion corte
+  python herramientas/estado-video.py "<canal>/2" --sellar auditor-guion verificador
+  python herramientas/estado-video.py "<canal>/2" --revisar auditor-guion   # ¿cambió el guion desde el sello?
+  python herramientas/estado-video.py "<canal>/2" --diff auditor-guion      # solo lo que cambió
 
 Qué guarda: <video>/.estado/estado.json (puertas aprobadas y sellos) y una copia del guion por sello,
 para poder mostrar solo el cambio. Códigos de --revisar: 0 sin cambios · 3 cambió · 4 nunca sellado.

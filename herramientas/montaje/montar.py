@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Montador automático de Hace Eones (borrador del video 1).
+Montador automático (librería común; incluye el borrador del primer video).
 
 Genera un MP4 1080p a partir del audio real, las imágenes oficiales ya descargadas y esquemas animados hechos con código.
 Todo lo que sale en pantalla viene de la guía de montaje (07) y la hoja de cifras (01b).

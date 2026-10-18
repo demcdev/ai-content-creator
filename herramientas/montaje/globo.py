@@ -1,5 +1,5 @@
 """
-Globo terrestre giratorio para la escena de la Red de Espacio Profundo (Hace Eones).
+Globo terrestre giratorio para la escena de la Red de Espacio Profundo.
 
 Los continentes salen de Natural Earth (ne_110m_land.geojson, dominio público). El globo se dibuja por código con
 proyección ortográfica, luz y atmósfera; las tres estaciones (Goldstone, Madrid y Canberra) se colocan por su latitud

@@ -7,7 +7,7 @@
       "motor": "google",
       "voz": "es-US-Chirp3-HD-Iapetus",
       "ritmo": 1.0,
-      "usada_en": ["Hace Eones · Video 01"],
+      "usada_en": ["primer video publicado"],
       "clave": "GOOGLE_TTS_API_KEY (variable de entorno; nunca en un archivo ni en el chat)",
       "costo": "Gratis hasta 1 000 000 de caracteres al mes; un video gasta unos 6 000 a 12 000",
       "pasos": [
@@ -22,7 +22,7 @@
       "motor": "polly",
       "voz": "Raul",
       "idioma": "es-ES",
-      "usada_en": ["Hace Eones · Video 02"],
+      "usada_en": ["segundo video publicado"],
       "clave": "AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY y AWS_DEFAULT_REGION (variables de entorno)",
       "costo": "Gratis 12 meses (500 000 caracteres al mes); después, cerca de 1 USD por video",
       "pasos": [

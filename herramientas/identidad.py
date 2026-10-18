@@ -2,11 +2,11 @@
 """
 Identidad de cada canal (colores, voz, animación, nombre, logo, fuente) y la de cada video (la del canal o una propia).
 
-  python herramientas/identidad.py mostrar "Hace Eones"                 # identidad del canal
-  python herramientas/identidad.py mostrar "Hace Eones/Video 03"        # la que vale para ese video y de dónde sale cada valor
-  python herramientas/identidad.py canal "Hace Eones" --voz polly-raul --animacion espacial --color AMBAR=242,184,75
-  python herramientas/identidad.py video "Hace Eones/3" --base canal    # el video usa la identidad del canal
-  python herramientas/identidad.py video "Hace Eones/3" --base propia --voz google-iapetus --animacion papel-recortado
+  python herramientas/identidad.py mostrar "<canal>"                 # identidad del canal
+  python herramientas/identidad.py mostrar "<canal>/Video 03"        # la que vale para ese video y de dónde sale cada valor
+  python herramientas/identidad.py canal "<canal>" --voz polly-raul --animacion espacial --color AMBAR=242,184,75
+  python herramientas/identidad.py video "<canal>/3" --base canal    # el video usa la identidad del canal
+  python herramientas/identidad.py video "<canal>/3" --base propia --voz google-iapetus --animacion papel-recortado
 
 Archivos: <canal>/identidad.json (la del canal) y <video>/identidad.json ({"base": "canal"} o {"base": "propia", ...lo que cambia}).
 Con base «propia» solo se cambian los valores indicados; el resto sigue siendo el del canal.

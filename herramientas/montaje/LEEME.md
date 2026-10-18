@@ -2,7 +2,7 @@
 
 > **Cómo está organizado (13-oct-2026):** aquí quedan solo las **librerías comunes** (`montar.py`, `estilo.py`, `ui.py`, `aa.py`, `globo.py`, `fuentes/`, `datos/`).
 > Los **scripts de cada video** (guion de escenas, tiempos, música, render, miniaturas) viven en la carpeta de ese video: `Video NN - Nombre/Montaje/`. Allí se ejecutan; ellos importan estas librerías solos.
-> Ejemplo, video 1: `Video 01 - Voyager 1/Montaje/video01.py`. Los archivos que se citan abajo sin ruta (`video01.py`, `alinear.py`, `miniaturas.py`, `capitulos.py`, `tiempos.json`, `musica/`, `salida/`) están en esa carpeta.
+> Ejemplo, video 1: `Video 01 - <nombre>/Montaje/video01.py`. Los archivos que se citan abajo sin ruta (`video01.py`, `alinear.py`, `miniaturas.py`, `capitulos.py`, `tiempos.json`, `musica/`, `salida/`) están en esa carpeta.
 > Rutas del video en curso: `montar.py` lee `HE_VIDEO` (carpeta del video; por defecto el video 1) para encontrar `Voz/` y `Licencias/originales/`.
 
 Genera un video MP4 1080p a 30 fps a partir de:
@@ -12,7 +12,7 @@ Genera un video MP4 1080p a 30 fps a partir de:
 - **rótulos «Dato verificado»** y **subtítulos**, sincronizados con los silencios del audio.
 
 ## Identidad del canal (`identidad.json`)
-Las librerías no llevan marca propia: leen la identidad del video (`herramientas/_comun.py: identidad_efectiva`): `<canal>/identidad.json` (nombre, colores `BG/AMBAR/HUESO/TIERRA`, `logo` relativo al canal, `fuente` —inter, montserrat, space o segoe—, `voz`, `animacion`, `musica` con sus pistas y `efectos`) y, si el video declara base «propia», lo que cambie `<video>/identidad.json`. El canal se deduce de la carpeta del video (`HE_VIDEO`, o la carpeta que contiene `Montaje/` del script que se ejecuta). Sin archivo valen los valores de Hace Eones; sin logo se dibuja un disco ámbar.
+Las librerías no llevan marca propia: leen la identidad del video (`herramientas/_comun.py: identidad_efectiva`): `<canal>/identidad.json` (nombre, colores `BG/AMBAR/HUESO/TIERRA`, `logo` relativo al canal, `fuente` —inter, montserrat, space o segoe—, `voz`, `animacion`, `musica` con sus pistas y `efectos`) y, si el video declara base «propia», lo que cambie `<video>/identidad.json`. El canal se deduce de la carpeta del video (`HE_VIDEO`, o la carpeta que contiene `Montaje/` del script que se ejecuta). Sin archivo valen unos colores por defecto; sin logo se dibuja un disco ámbar.
 
 ## Animación (`animaciones.json`)
 Catálogo de estilos con su estado (`disponible`, `parcial`, `por construir`), puntuación, riesgo de políticas y cómo se hace; salió del análisis del video B20 del resumen. `python herramientas/montaje/animaciones.py` lista las ofrecidas, `animaciones.py <id>` explica una y `animaciones.py <id> "<video>" --aplicar` la guarda en la identidad propia del video. Normalmente la animación sale de la identidad del canal o del video (`herramientas/identidad.py`). Hoy solo `espacial` está lista del todo; `papel-recortado` tiene librerías (`papel.py`, `pintura.py`) pero sus escenas se diseñan una a una.

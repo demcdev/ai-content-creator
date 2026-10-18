@@ -1,5 +1,5 @@
 """
-Interfaz espacial de Hace Eones (v3): marca, rótulos «Dato verificado», tarjetas, títulos y etiquetas.
+Interfaz espacial (v3): marca, rótulos «Dato verificado», tarjetas, títulos y etiquetas.
 
 Estilo: vidrio oscuro con esquinas cortadas, bordes con degradado, textos con letra espaciada y entradas con barrido
 de luz. Es sobrio a propósito: pocos elementos, mucho contraste y nada que tape el contenido.
@@ -210,7 +210,7 @@ def anillo_arco(fr, cx, cy, r, color, frac=1.0, a=1.0, ancho=4, inicio=-90, rell
 
 
 def _marca(n=40):
-    """Logo real del canal (Identidad visual/logo-hace-eones-800.png: anillos concéntricos, planetas y punto ámbar),
+    """Logo real del canal (el PNG que indica `logo` en identidad.json),
     recortado en círculo, igual que se ve el avatar en YouTube."""
     k = ('marca', n)
     if k in _c:

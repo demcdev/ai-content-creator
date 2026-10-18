@@ -5,7 +5,7 @@ Catálogo de animaciones (animaciones.json): listar, explicar una y aplicarla a 
   python herramientas/montaje/animaciones.py                          # lista las ofrecidas, con su estado
   python herramientas/montaje/animaciones.py --todas                  # también las no ofrecidas y las descartadas
   python herramientas/montaje/animaciones.py papel-recortado          # cómo se hace, riesgos y ejemplos
-  python herramientas/montaje/animaciones.py papel-recortado "Hace Eones/3" --aplicar   # la guarda en la identidad propia del video
+  python herramientas/montaje/animaciones.py papel-recortado "<canal>/3" --aplicar   # la guarda en la identidad propia del video
 
 Claude pregunta al usuario cuál usar antes de montar (regla del CLAUDE.md) y después ejecuta --aplicar con la elegida.
 No genera video ni usa IA.

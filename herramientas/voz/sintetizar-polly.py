@@ -7,11 +7,11 @@ Una vez por sesión de PowerShell (las claves son tuyas; nunca van en el chat ni
   $env:AWS_DEFAULT_REGION = "us-east-1"
 
 1) Preparar el texto (sin red):
-  node preparar-polly.mjs "..\\..\\02_canales\\Hace Eones\\Video 02 - Edad del universo\\Guion.md" --salida "..\\..\\02_canales\\Hace Eones\\Video 02 - Edad del universo\\Voz\\polly" --sustituciones-extra "..\\..\\02_canales\\Hace Eones\\Video 02 - Edad del universo\\Voz\\sustituciones-video2.json"
+  node preparar-polly.mjs "..\\..\\02_canales\\<canal>\\Video NN - Nombre\\Guion.md" --salida "..\\..\\02_canales\\<canal>\\Video NN - Nombre\\Voz\\polly" --sustituciones-extra "..\\..\\02_canales\\<canal>\\Video NN - Nombre\\Voz\\sustituciones-video2.json"
 2) Ver qué se enviaría y cuánto consume (sin red ni claves):
-  python sintetizar-polly.py "..\\..\\02_canales\\Hace Eones\\Video 02 - Edad del universo\\Voz\\polly" --solo-texto
+  python sintetizar-polly.py "..\\..\\02_canales\\<canal>\\Video NN - Nombre\\Voz\\polly" --solo-texto
 3) Generar todo y unirlo:
-  python sintetizar-polly.py "..\\..\\02_canales\\Hace Eones\\Video 02 - Edad del universo\\Voz\\polly" --salida "..\\..\\02_canales\\Hace Eones\\Video 02 - Edad del universo\\Voz\\video2-raul.wav"
+  python sintetizar-polly.py "..\\..\\02_canales\\<canal>\\Video NN - Nombre\\Voz\\polly" --salida "..\\..\\02_canales\\<canal>\\Video NN - Nombre\\Voz\\voz-polly.wav"
 4) Repetir solo una parte (después se vuelve a unir con todas):  --solo 3
 
 Opciones: --ssml (usa parte-NN-ssml.txt), --voz Raul, --motor long-form, --pausa 0.6, --permitir-pago.

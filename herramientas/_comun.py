@@ -19,7 +19,7 @@ def consola():
 
 
 def resolver_video(arg):
-    """Acepta una ruta, o 'Hace Eones/Video 02', o 'Hace Eones/2'. Devuelve la carpeta del video."""
+    """Acepta una ruta, o '<canal>/Video 02', o '<canal>/2'. Devuelve la carpeta del video."""
     candidatos = [os.path.abspath(arg), os.path.join(CANALES, arg)]
     for c in candidatos:
         if os.path.isdir(c) and os.path.exists(os.path.join(c, 'Guion.md')):

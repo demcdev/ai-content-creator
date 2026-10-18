@@ -1,8 +1,8 @@
 """
 Crea la carpeta de un video nuevo con la estructura estándar de un canal (sirve para todos los canales).
 
-  python herramientas/nuevo-video.py "Hace Eones" 3 "Nombre corto del video"
-  -> 02_canales/Hace Eones/Video 03 - Nombre corto del video/
+  python herramientas/nuevo-video.py "<canal>" 3 "Nombre corto del video"
+  -> 02_canales/<canal>/Video 03 - Nombre corto del video/
 
 El canal debe existir como carpeta dentro de 02_canales/ (no se crea aquí).
 

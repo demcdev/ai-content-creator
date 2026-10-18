@@ -30,7 +30,7 @@ Operativas, consultar el detalle cuando el tema aparezca: 10 YPP · 11 strikes �
 - **Voz y narración:** tono cercano y dinámico (no solemne), narrativa explicativa con analogías cotidianas, estilo storytelling con misterio, hipótesis y resolución. Siguen mandando veracidad y voz IA declarada.
 
 ## Cómo trabajar sin gastar tokens de más
-- No leer `Resumen - Videos de YouTube.md` (178 KB) ni `Politicas-YouTube-Cumplimiento.md` (67 KB) enteros: buscar con Grep y leer solo la sección. Para revisar un guion, usar primero `Hace Eones/03 - Politicas y checklist.md` (6 KB).
+- No leer `Resumen - Videos de YouTube.md` (178 KB) ni `Politicas-YouTube-Cumplimiento.md` (67 KB) enteros: buscar con Grep y leer solo la sección. Para revisar un guion, usar primero `<canal>/03 - Politicas y checklist.md` (6 KB).
 - Antes de llamar a un agente revisor, correr `python herramientas/validar-video.py "<video>"`; solo si pasa se justifica la revisión con IA.
 - Para saber en qué etapa va un video: `python herramientas/estado-video.py "<video>"` (no gasta tokens). Si el guion no cambió desde la última revisión sellada, no se revisa de nuevo; si cambió, se revisa solo el `--diff`.
 - **Flujo de revisión de un guion:** checklist de escritura → `validar-video.py` → subagentes `auditor` (políticas y calidad; ruta + modo `guion` o `final`) y `verificador` (cifras contra fuentes; solo la ruta) → correcciones → el productor (la conversación principal) sella con `estado-video.py --sellar`. Cada agente corre el lint y consulta el sello; no editan nada. Informe en `<video>/Revision/` (veredicto `PASA` o `FALLA` en la primera línea, máximo 300 palabras, con archivo y línea de cada hallazgo).
@@ -46,5 +46,5 @@ Operativas, consultar el detalle cuando el tema aparezca: 10 YPP · 11 strikes �
 | `.claude/agents/` | Subagentes del proyecto (`auditor`, `verificador`) |
 | `herramientas/` | Sirven a todos los canales: `estado-video.py` (etapa y siguiente paso), `validar-video.py` (lint gratis), `nuevo-video.py <canal> <n> "<nombre>"` (crea la carpeta de un video), `identidad.py` (identidad del canal y de cada video), `voz/` (sintetizador de voz; `voces.json` lista las voces), `escaleta-a-escenas.py` (escaleta → `Montaje/escenas.json`) y `montaje/` (`alinear.py` voz → `tiempos.json`, `animaciones.json` catálogo de estilos, librerías y tubería de render; leen `<canal>/identidad.json`) |
 
-- Un canal nuevo va como carpeta hermana de `Hace Eones/` dentro de `02_canales/`; lo global del canal en su raíz y cada video en su propia carpeta (ver [Estructura-de-un-canal.md](00_contexto/Estructura-de-un-canal.md)).
+- Un canal nuevo va como carpeta nueva dentro de `02_canales/`, con la misma estructura que los demás; lo global del canal en su raíz y cada video en su propia carpeta (ver [Estructura-de-un-canal.md](00_contexto/Estructura-de-un-canal.md)).
 - Al mover algo, actualizar también los enlaces.
