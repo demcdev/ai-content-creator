@@ -13,7 +13,7 @@
 
 | Semana | Entregable | Revisión |
 |---|---|---|
-| **0** | Crear canal + identidad ([00](../identidad/identidad-del-canal.md)) · validar los 3 modelos con vidIQ ([04](03-modelos-de-referencia.md)) · crear tablero y registro de licencias · elegir herramienta de voz y confirmar licencia comercial · guion y fuentes del video 1 | Checklist de Studio |
+| **0** | Crear canal + identidad ([identidad](../identidad/identidad-del-canal.md)) · validar los 3 modelos con vidIQ ([modelos de referencia](03-modelos-de-referencia.md)) · crear tablero y registro de licencias · elegir herramienta de voz y confirmar licencia comercial · guion y fuentes del video 1 | Checklist de Studio |
 | **1** | Videos 1 y 2 listos y subidos ocultos; publicar tras las comprobaciones. **El video 1 (Voyager 1) debe salir antes del 18-nov-2026**, cuando NASA anuncia que la sonda llegará a 1 día luz: ahí está el pico de interés | — |
 | **2** | Video 3 · publicar | **No tocar** miniatura/título de los videos nuevos durante ~2 semanas ni antes de ~25 000 impresiones |
 | **3–5** | Videos 4, 5, 6 | Semana 4: primera lectura de impresiones / CTR |

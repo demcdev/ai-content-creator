@@ -131,7 +131,7 @@ Antes de aceptarlas, comprueba cada una:
 - [ ] No promete nada que el video no entregue
 - [ ] La esquina inferior derecha está **libre**
 - [ ] Ninguna persona reconocible, ningún logo de la NASA
-- [ ] Las licencias e imágenes están **registradas** en [03 - Politicas y checklist](../../../estrategia/02-politicas-y-checklist.md)
+- [ ] Las licencias e imágenes están **registradas** en [registro de licencias](../05-licencias/registro-de-licencias.md)
 
 ## 10. Test A/B en Studio
 

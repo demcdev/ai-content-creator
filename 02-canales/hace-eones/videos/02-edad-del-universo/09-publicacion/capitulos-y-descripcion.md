@@ -1,6 +1,6 @@
 # Video 2 · Capítulos, descripción y datos de subida (versión diorama, 16-oct-2026)
 
-> Video final: `06-montaje/salida/video-02-diorama-final.mp4` (11:53, 1080p, 24 fps). Los capítulos salen de los tiempos reales de la voz (`06-montaje/tiempos.json`); el diorama usa la misma pista, así que coinciden (margen ≈ ±1 s).
+> Video final: `08-entregables/video-02-v2-1080p.mp4` (11:53, 1080p; el render `video-02-diorama-final.mp4` de esta versión ya no existe). Los capítulos salen de los tiempos reales de la voz (`06-montaje/tiempos.json`); el diorama usa la misma pista, así que coinciden (margen ≈ ±1 s).
 > Cifras: [Verificacion de cifras](../01-guion/verificacion-de-cifras.md) · Licencias: [Registro de licencias](../05-licencias/registro-de-licencias.md).
 
 ## 1. Título

@@ -23,7 +23,7 @@
 
 Carpeta: `hace-eones/videos/01-voyager-1/05-licencias/`. Nombre del archivo: **`<código>-<descripción corta>-<AAAA-MM-DD>.png`**. Ejemplos: `M06-titan-neblina-2026-10-13.png`, `V1-google-tts-terminos-2026-10-13.png`.
 - La captura debe mostrar **la página entera de la ficha con la dirección (URL) visible y la fecha del sistema**. Si la página es larga, haz varias.
-- Guarda también la **imagen original descargada** (con su nombre original) en `…/video-01/originales/`.
+- Guarda también la **imagen original descargada** (con su nombre original) en `05-licencias/originales/`.
 
 ## 2. Cómo comprobar una ficha (6 pasos, 3 minutos por imagen)
 
@@ -69,7 +69,7 @@ Carpeta: `hace-eones/videos/01-voyager-1/05-licencias/`. Nombre del archivo: **`
 
 ## 3b. Archivos guardados el 13-oct-2026 (originales y fichas)
 
-> Descargados **por Claude con tu permiso**, de las fichas oficiales. Las huellas SHA-256 están en `videos/01-voyager-1/05-licencias/indice-de-copias-2026-10-13.txt`. Las fichas HTML están en `…/05-licencias/fichas/` y los originales en `…/video-01/originales/`. **Falta que tú abras cada ficha y des el visto bueno.**
+> Descargados **por Claude con tu permiso**, de las fichas oficiales. Las huellas SHA-256 están en `videos/01-voyager-1/05-licencias/indice-de-copias-2026-10-13.txt`. Las fichas HTML están en `…/05-licencias/fichas/` y los originales en `05-licencias/originales/`. **Falta que tú abras cada ficha y des el visto bueno.**
 
 | Archivo | Píxeles | Peso | Calidad para video 1080p |
 |---|---|---|---|

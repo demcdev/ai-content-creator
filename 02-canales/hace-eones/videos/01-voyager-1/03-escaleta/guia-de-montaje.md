@@ -1,6 +1,6 @@
 # Guía de montaje · Video 1 (Voyager 1) · v1, 13-oct-2026
 
-> Qué es: el plano de montaje del video, sección por sección, escrito **sin depender de un programa**. Las notas de **CapCut** están al final (sección 9). Se corresponde con el guion v3.1 ([01](../01-guion/guion.md)), la hoja de cifras ([01b](../01-guion/verificacion-de-cifras.md)) y los capítulos ([Capitulos y descripcion](../09-publicacion/capitulos-y-descripcion.md)).
+> Qué es: el plano de montaje del video, sección por sección, escrito **sin depender de un programa**. Las notas de **CapCut** están al final (sección 9). Se corresponde con el guion v3.1 ([guion](../01-guion/guion.md)), la hoja de cifras ([hoja de cifras](../01-guion/verificacion-de-cifras.md)) y los capítulos ([Capitulos y descripcion](../09-publicacion/capitulos-y-descripcion.md)).
 > **Los tiempos son estimados** (±15 s): salen del audio real y de cuánto texto hay en cada parte. Cuando tengas el audio en la línea de tiempo, **ajusta cada tiempo a la onda de sonido**.
 > Las miniaturas van en un documento aparte, como encargo: [Encargo de miniaturas](../07-miniaturas/encargo-de-miniaturas.md).
 
@@ -19,7 +19,7 @@
 
 ## 2. Reglas del montaje (políticas del canal)
 
-1. **Cada imagen real tiene su ficha comprobada y registrada** (URL, crédito, captura, fecha) **antes de usarla**. Sin registro, no entra (regla 3). El registro está en [03](../../../estrategia/02-politicas-y-checklist.md), sección 3.
+1. **Cada imagen real tiene su ficha comprobada y registrada** (URL, crédito, captura, fecha) **antes de usarla**. Sin registro, no entra (regla 3). El registro está en [registro-de-licencias.md](../05-licencias/registro-de-licencias.md).
 2. **NASA:** sus imágenes «generalmente no están sujetas a derechos de autor en EE. UU.» y se pueden usar de forma editorial, **sin dar a entender que la NASA respalda el canal** y **sin su logo** (el «meatball» ni el «worm»). Cada ficha puede traer excepciones: léela. Fuente: [Guidelines for using NASA Images and Media](https://www.nasa.gov/nasa-brand-center/images-and-media/) (consultada el 13-oct-2026).
 3. **Personas identificables:** si una imagen de la NASA muestra a una persona reconocible, **el uso comercial puede exigir su permiso** (así lo dice esa misma guía). **No uses fotos de Linda Morabito, de Carl Sagan, ni del equipo del JPL**; para Morabito y Sagan, solo su nombre en la voz y los rótulos. El canal está monetizado, así que cuenta como uso comercial.
 4. **Imágenes de IA:** ninguna presentada como real (regla 4). Los esquemas y animaciones propios se ven claramente como gráficos.
@@ -161,7 +161,7 @@
 
 ## 7. Material real (imágenes)
 
-> **Estado:** todas empiezan en ☐. Antes de usarlas: abre la ficha, **comprueba el crédito y si hay excepciones**, descarga la versión original, y anota URL, crédito y fecha en el registro de licencias ([03](../../../estrategia/02-politicas-y-checklist.md)). Los identificadores PIA salen de las páginas oficiales consultadas el 12–13-oct-2026.
+> **Estado:** todas empiezan en ☐. Antes de usarlas: abre la ficha, **comprueba el crédito y si hay excepciones**, descarga la versión original, y anota URL, crédito y fecha en el registro de licencias ([registro-de-licencias.md](../05-licencias/registro-de-licencias.md)). Los identificadores PIA salen de las páginas oficiales consultadas el 12–13-oct-2026.
 
 | Cód. | Uso | Ficha oficial | Crédito esperado | Notas | Estado |
 |---|---|---|---|---|---|

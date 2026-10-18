@@ -1,7 +1,7 @@
 # Identidad del canal (borrador · 12-oct-2026)
 
-> **Decisión (12-oct-2026):** el canal pasa de «Construir con IA» (Andamio IA, archivado en `02-canales/_archivo/Andamio IA/`) a **Ciencia y universo en español**: astronomía y exploración espacial como eje (≈70 %) y prehistoria / «tiempo profundo» como segundo eje (≈30 %). Motivo y datos: [Analisis de nicho - octubre 2026.md](../../../01-nicho/analisis/analisis-de-nicho-2026-10.md) y la pestaña **Canales** del selector.
-> **Objetivo:** **probar en 90 días (12 videos) que el modelo funciona**, con las reglas del proyecto. Ver [05 - Plan de 90 dias.md](../estrategia/04-plan-de-90-dias.md).
+> **Decisión (12-oct-2026):** el canal pasa de «Construir con IA» (Andamio IA, carpeta borrada el 17-oct-2026) a **Ciencia y universo en español**: astronomía y exploración espacial como eje (≈70 %) y prehistoria / «tiempo profundo» como segundo eje (≈30 %). Motivo y datos: [Analisis de nicho - octubre 2026.md](../../../01-nicho/analisis/analisis-de-nicho-2026-10.md) y la pestaña **Canales** del selector.
+> **Objetivo:** **probar en 90 días (12 videos) que el modelo funciona**, con las reglas del proyecto. Ver [plan de 90 días](../estrategia/04-plan-de-90-dias.md).
 
 ## 1. Nombre
 
@@ -56,7 +56,7 @@
 3. Subir avatar y banner (versión sencilla; no perder tiempo en el logo, B8/B10).
 4. Aplicar el checklist de arriba.
 5. Crear el tablero de producción (Trello o Notion): **Idea → Fuentes → Título/miniatura → Guion → Voz → Material → Edición → Revisión de políticas → Subido (oculto) → Publicado**. Es también el **historial de producción** (regla 6).
-6. Abrir la carpeta de **registro de licencias** (ver [03](../estrategia/02-politicas-y-checklist.md)).
+6. Abrir la carpeta de **registro de licencias** (ver [políticas y checklist](../estrategia/02-politicas-y-checklist.md); en cada video, `05-licencias/registro-de-licencias.md`).
 
 ## 5. Voz (movido desde el antiguo documento 06)
 - **Comparativa de herramientas y reglas de voz (válidas para todos los canales):** [voz-ia-comparativa.md](../../../00-contexto/produccion/voz-ia-comparativa.md).

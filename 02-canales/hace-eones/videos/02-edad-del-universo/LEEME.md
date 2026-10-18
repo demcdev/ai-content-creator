@@ -19,7 +19,7 @@ Carpeta del video, una por etapa: `01-guion` → `02-revision` → `03-escaleta`
 | Voz | listo | 5 audios | voz de la identidad del video (voces.json) y herramientas/voz |
 | Miniaturas | listo | 8 imágenes | subagente miniaturas |
 | Licencias | pendiente | 1 de 12 listas (resumen manual) | tú, con las fichas |
-| Montaje | listo | 48 archivos | animación de la identidad del video (animaciones.json) y scripts de montaje |
+| Montaje | listo | 48 archivos | animación de la identidad del video (montaje/catalogo/animaciones.json) y scripts de montaje |
 | Video final (.mp4) | listo | video-02-v2-1080p.mp4 | scripts de montaje |
 | Control final (sello) | pendiente | nunca | validar-video.py --etapa final y luego auditor |
 | Puerta: corte final | pendiente |  | tú: --aprobar corte |

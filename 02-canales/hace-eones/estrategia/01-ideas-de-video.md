@@ -29,4 +29,4 @@
 ## Cómo elegir el orden real
 1. Valida con vidIQ las 3 que más te interesen (outliers y VPH del último mes).
 2. Empieza por **espacio** (más demanda en los modelos); la prehistoria entra en las semanas 3, 6 y 10 para probar el segundo eje.
-3. A las 6 semanas, ajusta el orden con lo que dijeron las métricas (ver [05](04-plan-de-90-dias.md)).
+3. A las 6 semanas, ajusta el orden con lo que dijeron las métricas (ver [plan de 90 días](04-plan-de-90-dias.md)).

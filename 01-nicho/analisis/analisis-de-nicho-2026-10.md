@@ -185,4 +185,4 @@ Origen: B17 (#5), un canal sin nombre “solo para dueños de jardines” (15 vi
 - **Riesgo principal del nicho elegido:** contenido inauténtico (voz IA + imágenes IA en serie). Mitigación: fuentes en pantalla, «Lo que no sabemos», material con licencia o propio, 1 video por semana.
 - **Límites:** las cifras son manuales, no de la API; en Abismo el 57 % del mes sale de un solo video (Titán); «rápido» no se puede prometer.
 
-**Materiales:** carpeta [Hace Eones/](../../02-canales/hace-eones/identidad/identidad-del-canal.md) (identidad, guion del video 1 sobre Voyager 1, 12 ideas, políticas y registro de licencias, modelos de referencia y plan de 90 días). La carpeta `Andamio IA/` quedó como archivo y se borró el 17-oct-2026; de la decisión anterior.
+**Materiales:** carpeta [hace-eones/](../../02-canales/hace-eones/LEEME.md) (identidad, guion del video 1 sobre Voyager 1, 12 ideas, políticas y registro de licencias, modelos de referencia y plan de 90 días). La carpeta `Andamio IA/` quedó como archivo y se borró el 17-oct-2026; de la decisión anterior.
