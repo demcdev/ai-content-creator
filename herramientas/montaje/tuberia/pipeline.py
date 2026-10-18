@@ -5,7 +5,7 @@ Es la parte común de video01.py y video02.py, sin sus escenas propias. Un video
 de 10 líneas (ver plantilla_video.py) y estos archivos en su carpeta 06-montaje/:
 
   tiempos.json   {"total": s, "frases": [{"texto", "ini", "fin"}]}   (lo deja alinear.py)
-  escenas.json   lista de {id, nombre, ini, fin, tipo, ...}          (lo deja herramientas/escaleta-a-escenas.py)
+  escenas.json   lista de {id, nombre, ini, fin, tipo, ...}          (lo deja herramientas/video/escaleta-a-escenas.py)
   montaje.json   opcional: rotulos, creditos, capitulos, musica, cola, nombre, audio
 
 Uso (desde 06-montaje/):  python video.py --frame 60 f.png | --verificar | --rango 0 300 parte.mp4 | --solo-audio | [n_partes]
@@ -304,9 +304,9 @@ class Proyecto:
         if not self.audio:
             raise SystemExit('No hay audio en 04-voz/ (o indica "audio" en montaje.json).')
         if IDENT['base'] not in ('canal', 'propia'):
-            raise SystemExit('Falta elegir la identidad del video (la del canal o una propia): python herramientas/identidad.py video "<video>" --base canal|propia')
+            raise SystemExit('Falta elegir la identidad del video (la del canal o una propia): python herramientas/identidad/identidad.py video "<video>" --base canal|propia')
         if not self.animacion:
-            raise SystemExit('Ni el canal ni el video tienen animación. Defínela con: python herramientas/identidad.py canal|video "<destino>" --animacion <id> (opciones: python herramientas/montaje/catalogo/animaciones.py)')
+            raise SystemExit('Ni el canal ni el video tienen animación. Defínela con: python herramientas/identidad/identidad.py canal|video "<destino>" --animacion <id> (opciones: python herramientas/montaje/catalogo/animaciones.py)')
         lista = os.path.join(tmp, 'lista.txt')
         final = os.path.join(self.salida, self.nombre + '.mp4')
         if a and a[0] == '--solo-audio':

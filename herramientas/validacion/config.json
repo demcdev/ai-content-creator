@@ -1,0 +1,170 @@
+{
+  "_ayuda": "Configuración de validar-proyecto.py. Se edita aquí, sin tocar el código.",
+  "raices_conocidas": [
+    "00-contexto",
+    "01-nicho",
+    "02-canales",
+    "herramientas",
+    ".claude"
+  ],
+  "excluir_carpetas": [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    "_archivo",
+    ".estado",
+    "fuentes",
+    "originales",
+    "fichas",
+    "capturas-musica",
+    "04-voz",
+    "salida",
+    "cache_papel",
+    "musica"
+  ],
+  "excluir_archivos_de_validacion": [
+    "herramientas/validacion/config.json"
+  ],
+  "ignorar_rutas_de_referencia": [
+    "salida/",
+    "partes/",
+    "polly/",
+    "cache",
+    "musica/",
+    "originales/",
+    "06-montaje/escenas.json",
+    "06-montaje/video.py",
+    "06-montaje/montaje.json",
+    "06-montaje/tiempos.json",
+    "Tarea-video/"
+  ],
+  "extensiones_medios_ignoradas": [
+    ".mp4",
+    ".wav",
+    ".mp3",
+    ".ogg",
+    ".flac",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".tif",
+    ".webp",
+    ".html",
+    ".pdf",
+    ".srt",
+    ".ttf",
+    ".mov"
+  ],
+  "marcadores_de_plantilla": [
+    "<",
+    ">",
+    "*",
+    "{",
+    "}",
+    "NN",
+    "AAAA",
+    "…",
+    "...",
+    "$",
+    "|",
+    "=",
+    "\"",
+    "'",
+    "(",
+    ")",
+    "[",
+    "]"
+  ],
+  "nombres_permitidos": [
+    "LEEME.md",
+    "CLAUDE.md",
+    ".gitignore",
+    "SKILL.md"
+  ],
+  "carpetas_con_nombres_libres": [
+    "05-licencias",
+    "fuentes",
+    ".claude",
+    "datos"
+  ],
+  "solo_leeme_en_la_raiz": [
+    "00-contexto",
+    "01-nicho",
+    "02-canales",
+    "herramientas",
+    "herramientas/montaje"
+  ],
+  "solo_leeme_en_cada_canal": [
+    "",
+    "videos"
+  ],
+  "solo_leeme_en_cada_video": [
+    ""
+  ],
+  "carpetas_obligatorias_de_video": [
+    "01-guion",
+    "02-revision",
+    "03-escaleta",
+    "04-voz",
+    "05-licencias",
+    "06-montaje",
+    "07-miniaturas",
+    "08-entregables",
+    "09-publicacion",
+    "identidad"
+  ],
+  "obsoletos": [
+    {
+      "patron": "02_canales|00_contexto|01_nicho",
+      "mensaje": "carpeta renombrada: usa 02-canales / 00-contexto / 01-nicho"
+    },
+    {
+      "patron": "Video \\d\\d - |Video NN - ",
+      "mensaje": "los videos son videos/NN-nombre/ (no «Video NN - Nombre»)"
+    },
+    {
+      "patron": "herramientas/(estado-video|validar-video|nuevo-video|escaleta-a-escenas)\\.py",
+      "mensaje": "ahora viven en herramientas/video/"
+    },
+    {
+      "patron": "herramientas/identidad\\.py",
+      "mensaje": "ahora es herramientas/identidad/identidad.py"
+    },
+    {
+      "patron": "herramientas/_comun\\.py",
+      "mensaje": "ahora es herramientas/nucleo/_comun.py"
+    },
+    {
+      "patron": "herramientas/montaje/(alinear|pipeline|montar|ui|aa|animaciones|plantilla_video)\\.(py|json)",
+      "mensaje": "movido a comun/, tuberia/, catalogo/ o plantillas/ dentro de herramientas/montaje/"
+    },
+    {
+      "patron": "herramientas/montaje/(estilo|escenas_base|globo|papel|pintura)\\.py",
+      "mensaje": "movido a herramientas/montaje/animaciones/<estilo>/"
+    },
+    {
+      "patron": "(Registro de licencias|Verificacion de cifras|Texto para subtitulos|Escaleta audiovisual|Capitulos y descripcion|Metricas y seguimiento|Guia de montaje|Encargo de miniaturas)\\.(md|txt)",
+      "mensaje": "archivo renombrado a kebab-case dentro de su carpeta de etapa"
+    },
+    {
+      "patron": "Informe (auditor-\\w+|verificador)\\.md",
+      "mensaje": "ahora es informe-auditor-… / informe-verificador.md dentro de 02-revision/"
+    },
+    {
+      "patron": "(Resumen - Videos de YouTube|Politicas-YouTube-Cumplimiento|Reglas-detalladas|Checklist-escritura-guion|Retencion-tecnicas-de-montaje|Voz-IA-comparativa|Estructura-de-un-canal)\\.md",
+      "mensaje": "archivo renombrado a kebab-case dentro de 00-contexto/<tema>/"
+    },
+    {
+      "patron": "0[0-5] - (Identidad|12 ideas|Politicas|Modelos|Plan)",
+      "mensaje": "los documentos del canal están en identidad/ y estrategia/ con nombres kebab-case"
+    },
+    {
+      "patron": "(\\\\|/)(Voz|Montaje|Licencias|Miniaturas|Entregables|Revision)(\\\\|/)",
+      "mensaje": "carpeta de video renombrada (04-voz, 06-montaje, 05-licencias, 07-miniaturas, 08-entregables, 02-revision)"
+    },
+    {
+      "patron": "Hace Eones/|Archivo Aracne/",
+      "mensaje": "las carpetas de canal son hace-eones/ y archivo-aracne/"
+    }
+  ]
+}

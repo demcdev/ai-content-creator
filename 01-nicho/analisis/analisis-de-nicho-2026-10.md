@@ -142,7 +142,7 @@ Antes de grabar, confirma con la extensión gratuita de vidIQ (sin herramientas 
 1. **Nicho confirmado:** n.º 1, "Construir con IA".
 2. **Audiencia:** **no programadores** (emprendedores, freelancers y profesionales), con algunos videos más técnicos.
 3. **Siguiente paso, ya preparado:**
-   - nombre, promesa, línea editorial, identidad visual y checklist de Studio en Andamio IA/00 - Identidad del canal.md (carpeta borrada el 17-oct-2026) (nombre recomendado: **Andamio IA**);
+   - nombre, promesa, línea editorial, identidad visual y checklist de Studio en Andamio IA/00 - Identidad del canal.md (carpeta borrada el 17-oct-2026) (nombre recomendado: **Andamio IA**);  <!-- validar:ignorar -->
    - guion del primer video en Andamio IA/01 - Video 1 - Web con IA (guion).md (carpeta borrada el 17-oct-2026).
 
 ---

@@ -27,7 +27,7 @@ CANAL = os.path.dirname(os.path.dirname(VIDEO))      # <canal>/videos/<video>
 RAIZ = CANAL
 
 # Identidad: la del canal (<canal>/identidad/identidad.json) y, si el video declara base «propia», lo que cambie su identidad/identidad.json.
-sys.path.insert(0, os.path.dirname(MONTAJE))      # herramientas/ (para _comun.py)
+sys.path.insert(0, os.path.join(os.path.dirname(MONTAJE), 'nucleo'))      # herramientas/nucleo (para _comun.py)
 from _comun import identidad_efectiva  # noqa: E402
 
 IDENT, _ORIGEN = identidad_efectiva(VIDEO)

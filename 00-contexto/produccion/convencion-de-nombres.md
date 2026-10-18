@@ -55,5 +55,8 @@ Una carpeta por etapa, en el orden del flujo de trabajo:
 | `09-publicacion/` | Publicar y medir | `capitulos-y-descripcion.md`, `metricas-y-seguimiento.md` |
 | `_archivo/` | Descartado | versiones anteriores |
 
+## Cómo se comprueba
+`python herramientas/validacion/validar-proyecto.py` revisa esta convención (como avisos) y que ningún enlace, ruta, comando o import se haya roto al renombrar o mover algo. Corre solo tras cada cambio (hook de Claude Code, pre-commit de git y modo `--vigilar`); ver `herramientas/validacion/LEEME.md`.
+
 ## Cómo se resuelve una ruta en los scripts
-Los nombres de carpetas y archivos de un video están definidos **una sola vez** en `herramientas/_comun.py` (`GUION`, `VOZ`, `F_GUION`, `F_LICENCIAS`…). Si un nombre cambia, se cambia allí y en esta tabla. Los programas aceptan el video como `<canal>/<n>` (por ejemplo `hace-eones/2`), con o sin la forma antigua (`"Hace Eones/Video 02"`).
+Los nombres de carpetas y archivos de un video están definidos **una sola vez** en `herramientas/nucleo/_comun.py` (`GUION`, `VOZ`, `F_GUION`, `F_LICENCIAS`…). Si un nombre cambia, se cambia allí y en esta tabla. Los programas aceptan el video como `<canal>/<n>` (por ejemplo `hace-eones/2`), con o sin la forma antigua (`"Hace Eones/Video 02"`).  <!-- validar:ignorar -->

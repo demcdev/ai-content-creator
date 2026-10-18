@@ -17,7 +17,7 @@ import sys
 
 sys.dont_write_bytecode = True
 AQUI = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.dirname(os.path.dirname(AQUI)))   # herramientas/
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(AQUI)), 'nucleo'))   # herramientas/nucleo
 from _comun import resolver_video  # noqa: E402
 
 
@@ -62,7 +62,7 @@ def aplicar(a, video):
     arch = os.path.join(carpeta, 'identidad', 'identidad.json')
     datos = json.load(open(arch, encoding='utf-8')) if os.path.exists(arch) else {}
     if datos.get('base') == 'canal':
-        print('Este video usa la identidad del canal (con su animación). Para una distinta: python herramientas/identidad.py video "%s" --base propia --animacion %s' % (video, a['id']))
+        print('Este video usa la identidad del canal (con su animación). Para una distinta: python herramientas/identidad/identidad.py video "%s" --base propia --animacion %s' % (video, a['id']))
         return 1
     datos['base'] = 'propia'
     datos['animacion'] = a['id']

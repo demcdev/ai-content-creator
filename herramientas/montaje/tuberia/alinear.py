@@ -28,7 +28,7 @@ import sys
 
 sys.dont_write_bytecode = True
 AQUI = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # herramientas/montaje
-sys.path.insert(0, os.path.dirname(AQUI))
+sys.path.insert(0, os.path.join(os.path.dirname(AQUI), 'nucleo'))
 from _comun import F_SUBTITULOS, MONTAJE, VOZ, identidad_efectiva, resolver_video, ruta as ruta_rel  # noqa: E402
 
 RUIDO = '-38dB'

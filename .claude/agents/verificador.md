@@ -14,10 +14,10 @@ Eres el verificador de cifras de un canal de YouTube de divulgación. Respondes 
 Recibes la ruta del video (por ejemplo `hace-eones/3`). Si falta, responde `FALLA: falta la ruta` y termina. Trabaja desde la raíz del proyecto (la carpeta con `herramientas/` y `02-canales/`). Usa `python` (o `python3` si no existe).
 
 ## Paso 1 · lint gratis
-Ejecuta `python herramientas/validar-video.py "<video>"`. Si hay errores sobre cifras (una `[✔ n]` sin fila en la tabla, o marcada ❌), **termina aquí** con `FALLA` y copia esos errores. Ignora los demás avisos: no son tu trabajo.
+Ejecuta `python herramientas/video/validar-video.py "<video>"`. Si hay errores sobre cifras (una `[✔ n]` sin fila en la tabla, o marcada ❌), **termina aquí** con `FALLA` y copia esos errores. Ignora los demás avisos: no son tu trabajo.
 
 ## Paso 2 · ¿qué toca verificar?
-Ejecuta `python herramientas/estado-video.py "<video>" --revisar verificador`.
+Ejecuta `python herramientas/video/estado-video.py "<video>" --revisar verificador`.
 - Código 0 (sin cambios): `PASA (sin cambios desde el sello)` y termina.
 - Código 3 (cambió): ejecuta `--diff verificador` y verifica **solo las cifras `[✔ n]` de las líneas que cambiaron**.
 - Código 4 (nunca sellado): verifica todas.

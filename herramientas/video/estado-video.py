@@ -2,12 +2,12 @@
 """
 Estado de un video leyendo sus archivos (no usa IA, no gasta tokens) y sellos de revisión.
 
-  python herramientas/estado-video.py "hace-eones/2"                 # imprime el estado
-  python herramientas/estado-video.py "hace-eones/2" --escribir      # además guarda el estado en LEEME.md
-  python herramientas/estado-video.py "hace-eones/2" --aprobar idea guion corte
-  python herramientas/estado-video.py "hace-eones/2" --sellar auditor-guion verificador
-  python herramientas/estado-video.py "hace-eones/2" --revisar auditor-guion   # ¿cambió el guion desde el sello?
-  python herramientas/estado-video.py "hace-eones/2" --diff auditor-guion      # solo lo que cambió
+  python herramientas/video/estado-video.py "hace-eones/2"                 # imprime el estado
+  python herramientas/video/estado-video.py "hace-eones/2" --escribir      # además guarda el estado en LEEME.md
+  python herramientas/video/estado-video.py "hace-eones/2" --aprobar idea guion corte
+  python herramientas/video/estado-video.py "hace-eones/2" --sellar auditor-guion verificador
+  python herramientas/video/estado-video.py "hace-eones/2" --revisar auditor-guion   # ¿cambió el guion desde el sello?
+  python herramientas/video/estado-video.py "hace-eones/2" --diff auditor-guion      # solo lo que cambió
 
 Qué guarda: <video>/.estado/estado.json (puertas aprobadas y sellos) y una copia del guion por sello,
 para poder mostrar solo el cambio. Códigos de --revisar: 0 sin cambios · 3 cambió · 4 nunca sellado.
@@ -24,7 +24,8 @@ import re
 import shutil
 import sys
 
-from _comun import (ENTREGABLES, F_CAPITULOS, F_CIFRAS, F_ESCALETA, F_GUION, F_LICENCIAS, F_METRICAS, F_SUBTITULOS, MINIATURAS, MONTAJE,
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'nucleo'))
+from _comun import (RAIZ, ENTREGABLES, F_CAPITULOS, F_CIFRAS, F_ESCALETA, F_GUION, F_LICENCIAS, F_METRICAS, F_SUBTITULOS, MINIATURAS, MONTAJE,
                     VOZ, archivos, consola, filas_datos, identidad_efectiva, leer, resolver_video, resumen_licencias, ruta, sha,
                     seccion_h2, sin_seccion, tamano)
 
@@ -120,14 +121,14 @@ def etapas(carpeta, datos):
 
 
 def render(carpeta, datos, markdown=False):
-    rel = os.path.relpath(carpeta, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    rel = os.path.relpath(carpeta, RAIZ)
     lista = etapas(carpeta, datos)
     sig = next((e for e in lista if not e[2]), None)
     out = []
     if markdown:
         out += ['# ' + os.path.basename(carpeta), '',
                 'Carpeta del video, una por etapa: `01-guion` → `02-revision` → `03-escaleta` → `04-voz` → `05-licencias` → `06-montaje` → `07-miniaturas` → `08-entregables` → `09-publicacion`; `identidad/` guarda la identidad propia del video.', '',
-                '> Generado por `herramientas/estado-video.py` el %s. No se edita a mano: se regenera.' % datetime.date.today().isoformat(), '',
+                '> Generado por `herramientas/video/estado-video.py` el %s. No se edita a mano: se regenera.' % datetime.date.today().isoformat(), '',
                 '**Siguiente paso:** ' + (('%s → %s' % (sig[1], sig[4])) if sig else 'todo completo'), '',
                 '| Etapa | Estado | Detalle | Quién |', '|---|---|---|---|']
         for c, nombre, ok, det, quien in lista:

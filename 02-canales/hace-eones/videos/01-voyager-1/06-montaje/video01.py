@@ -33,10 +33,10 @@ from borrador import AUDIO, a1_distancia, a2_trayectoria, dibujar_rotulo, escena
 
 AQUI = os.path.dirname(os.path.abspath(__file__))   # carpeta «06-montaje» de este video (tiempos, música, salida)
 
-# Las escenas están escritas con los tiempos del primer audio (ritmo 0,95): tiempos_095.json.
+# Las escenas están escritas con los tiempos del primer audio (ritmo 0,95): tiempos-095.json.
 # El audio definitivo (tiempos.json) tiene otro ritmo; t_viejo() traduce cada instante del video al del primer audio,
 # de modo que cada escena sigue clavada a su frase. Los subtítulos y la duración usan los tiempos nuevos.
-TIEMPOS = json.load(open(os.path.join(AQUI, 'tiempos_095.json'), encoding='utf8'))
+TIEMPOS = json.load(open(os.path.join(AQUI, 'tiempos-095.json'), encoding='utf8'))
 NUEVO = json.load(open(os.path.join(AQUI, 'tiempos.json'), encoding='utf8'))
 FRASES = TIEMPOS['frases']
 FRASES_N = NUEVO['frases']

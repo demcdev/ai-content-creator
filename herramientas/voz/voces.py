@@ -15,7 +15,7 @@ import sys
 
 sys.dont_write_bytecode = True
 AQUI = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.dirname(AQUI))
+sys.path.insert(0, os.path.join(os.path.dirname(AQUI), 'nucleo'))
 from _comun import identidad_efectiva, resolver_video  # noqa: E402
 
 
@@ -54,7 +54,7 @@ def main():
     if len(sys.argv) == 3 and sys.argv[1] == '--video':
         voz_id = identidad_efectiva(resolver_video(sys.argv[2]))[0]['voz']
         if not voz_id:
-            print('Ni el canal ni el video tienen voz definida. Usa: python herramientas/identidad.py canal|video "<destino>" --voz <id>')
+            print('Ni el canal ni el video tienen voz definida. Usa: python herramientas/identidad/identidad.py canal|video "<destino>" --voz <id>')
             return 1
         comandos([v for v in voces if v['id'] == voz_id][0], sys.argv[2])
         return 0

@@ -6,7 +6,7 @@ Montaje de este video. Se ejecuta desde esta carpeta (06-montaje/), con tiempos.
   python video.py                      render completo en 4 procesos -> salida/<nombre>.mp4 y .srt
 
 La animación elegida va en montaje.json ("animacion"; catálogo en herramientas/montaje/catalogo/animaciones.json). Todo lo común está en herramientas/montaje/tuberia/pipeline.py. Las escenas salen de escenas.json (se generan desde la
-escaleta con `python herramientas/escaleta-a-escenas.py "<video>"`); las que aún no tienen diseño aparecen como
+escaleta con `python herramientas/video/escaleta-a-escenas.py "<video>"`); las que aún no tienen diseño aparecen como
 tarjetas. Para diseñar una: define una función fn(t) que devuelva un fotograma y regístrala con su id.
 """
 import os

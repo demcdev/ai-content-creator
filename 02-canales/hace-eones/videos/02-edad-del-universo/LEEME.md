@@ -2,7 +2,7 @@
 
 Carpeta del video, una por etapa: `01-guion` → `02-revision` → `03-escaleta` → `04-voz` → `05-licencias` → `06-montaje` → `07-miniaturas` → `08-entregables` → `09-publicacion`; `identidad/` guarda la identidad propia del video.
 
-> Generado por `herramientas/estado-video.py` el 2026-10-17. No se edita a mano: se regenera.
+> Generado por `herramientas/video/estado-video.py` el 2026-10-17. No se edita a mano: se regenera.
 
 **Siguiente paso:** Puerta: idea y packaging → tú: --aprobar idea
 
