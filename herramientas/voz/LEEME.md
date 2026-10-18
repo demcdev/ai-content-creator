@@ -1,6 +1,6 @@
 # Voz del video con Google Cloud Text-to-Speech (Chirp 3: HD)
 
-Convierte el guion (`.md`) en un audio WAV listo para editar. Solo usa Node (sin instalar nada). Cuesta **0 USD** mientras no pases de **1 000 000 de caracteres al mes** (un video de este canal gasta ~6 000–12 000). Comparativa y motivos: [../../00_contexto/Voz-IA-comparativa.md](../../00_contexto/Voz-IA-comparativa.md).
+Convierte el guion (`.md`) en un audio WAV listo para editar. Solo usa Node (sin instalar nada). Cuesta **0 USD** mientras no pases de **1 000 000 de caracteres al mes** (un video de este canal gasta ~6 000–12 000). Comparativa y motivos: [../../00-contexto/produccion/voz-ia-comparativa.md](../../00-contexto/produccion/voz-ia-comparativa.md).
 
 ## Una sola vez: preparar Google Cloud (15 min)
 > Los nombres de los menús pueden variar un poco. Haz estos pasos tú: la clave es tuya y no debe pegarse en el chat.
@@ -18,9 +18,9 @@ $env:GOOGLE_TTS_API_KEY = "TU_CLAVE"
 
 ### 1. Ver qué leería la voz (no usa red ni clave)
 ```powershell
-node sintetizar.mjs "..\..\02_canales\<canal>\Video NN - Nombre\Guion.md" --solo-texto
+node sintetizar.mjs "..\..\02-canales\<canal>\videos\NN-nombre\01-guion\guion.md" --solo-texto
 ```
-(Ejemplo con el video 2. Cada video tiene su carpeta `Video NN - Nombre\` con su `Guion.md` y su carpeta `Voz\`.)
+(Ejemplo con el video 2. Cada video tiene su carpeta `videos\NN-nombre\` con su `01-guion\guion.md` y su carpeta `04-voz\`.)
 Muestra los párrafos que se leerán, los caracteres, las partes y la duración estimada. **Solo se lee la sección «## Guion»**: se quitan los encabezados, las indicaciones `[Pantalla: …]` y las marcas `[✔ n]` / `[REVISAR]`.
 
 ### 2. Listar las voces de español
@@ -30,9 +30,9 @@ node sintetizar.mjs --voces
 
 ### 3. Generar el audio
 ```powershell
-node sintetizar.mjs "..\..\02_canales\<canal>\Video NN - Nombre\Guion.md" --salida "..\..\02_canales\<canal>\Video NN - Nombre\Voz"
+node sintetizar.mjs "..\..\02-canales\<canal>\videos\NN-nombre\01-guion\guion.md" --salida "..\..\02-canales\<canal>\videos\NN-nombre\04-voz"
 ```
-Con `--salida` el resultado queda **dentro de la carpeta del video** (`Voz\`); sin ella iría a `herramientas\voz\salida\<nombre-del-guion>\` (solo para pruebas). Contenido:
+Con `--salida` el resultado queda **dentro de la carpeta del video** (`04-voz\`); sin ella iría a `herramientas\voz\salida\<nombre-del-guion>\` (solo para pruebas). Contenido:
 - `…wav` → el audio completo (con 0,6 s de pausa entre partes; se cambia con `--pausa`).
 - `partes\01.wav, 02.wav…` → cada parte por separado.
 - `ajustes.txt` → voz y ritmo usados (para repetir lo mismo en todos los videos).
@@ -40,7 +40,7 @@ Con `--salida` el resultado queda **dentro de la carpeta del video** (`Voz\`); s
 ### 4. Repetir solo una parte
 Si una parte suena mal, corrige el texto (o añade una línea en `sustituciones.json`) y repite solo esa:
 ```powershell
-node sintetizar.mjs "..\..\02_canales\<canal>\Video NN - Nombre\Guion.md" --salida "..\..\02_canales\<canal>\Video NN - Nombre\Voz" --solo 3
+node sintetizar.mjs "..\..\02-canales\<canal>\videos\NN-nombre\01-guion\guion.md" --salida "..\..\02-canales\<canal>\videos\NN-nombre\04-voz" --solo 3
 ```
 Usa **la misma voz y el mismo ritmo** que en el resto (los valores por defecto ya son los del canal: no pongas `--voz` ni `--ritmo`). El script vuelve a unir todo.
 

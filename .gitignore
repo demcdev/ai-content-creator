@@ -5,11 +5,11 @@
 *.mp3
 *.ogg
 *.flac
-**/Voz/partes/
-**/Voz/polly/
-**/Montaje/salida/
-**/Montaje/cache*/
-**/Licencias/musica/
+**/04-voz/partes/
+**/04-voz/polly/
+**/06-montaje/salida/
+**/06-montaje/cache*/
+**/05-licencias/musica/
 
 # Python y editores
 __pycache__/

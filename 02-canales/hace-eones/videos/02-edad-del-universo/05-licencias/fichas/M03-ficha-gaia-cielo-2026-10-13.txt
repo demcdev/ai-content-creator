@@ -1,0 +1,10 @@
+FICHA M03 · Mapa del cielo de Gaia (brillo y color, DR2), fondo negro
+Leída el 13-oct-2026 por Claude en la página oficial (lectura propia, no dictamen legal).
+Página: https://sci.esa.int/web/gaia/-/60169-gaia-s-sky-in-colour (fecha de la imagen: 25-abr-2018)
+Archivo descargado: ../originales/M03-gaia-allsky-4k.jpg (JPEG 4300×2708)
+Texto de la ficha: «Copyright: ESA/Gaia/DPAC, CC BY-SA 3.0 IGO»
+Licencia: Creative Commons Reconocimiento-CompartirIgual 3.0 IGO (https://creativecommons.org/licenses/by-sa/3.0/igo/). Condiciones: atribución (ESA/Gaia/DPAC), indicar la licencia y, si se crean obras derivadas, publicarlas bajo la misma licencia. Por eso se muestra SIN modificar (solo escalada) y se atribuye en pantalla y en la descripción.
+Condiciones de la ESA (https://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website, leídas el 13-oct-2026): las imágenes con CC BY-SA 3.0 IGO se usan según esa licencia; las demás no pueden usarse comercialmente sin autorización escrita. Esta lleva CC, así que cae en el primer caso.
+Revisión visual: mapa elíptico del cielo; sin personas, logos ni texto.
+Texto de descripción (copiar): Imagen: mapa del cielo de Gaia · ESA/Gaia/DPAC, CC BY-SA 3.0 IGO (https://creativecommons.org/licenses/by-sa/3.0/igo/).
+Rótulo en pantalla: «ESA/Gaia/DPAC · CC BY-SA 3.0 IGO»

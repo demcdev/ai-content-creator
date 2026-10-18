@@ -30,7 +30,7 @@
         "python herramientas/voz/sintetizar-polly.py \"{voz}/polly\" --solo-texto",
         "python herramientas/voz/sintetizar-polly.py \"{voz}/polly\" --salida \"{voz}/voz-polly.wav\""
       ],
-      "notas": "El texto se parte en partes (Voz/polly/parte-NN.txt). Para cambios de texto solo de este video, crea Voz/sustituciones-video.json y añade --sustituciones-extra \"{voz}/sustituciones-video.json\" al primer paso. No se clona ni se entrena con el audio de Polly (términos de AWS y regla 19)."
+      "notas": "El texto se parte en partes (04-voz/polly/parte-NN.txt). Para cambios de texto solo de este video, crea 04-voz/sustituciones-video.json y añade --sustituciones-extra \"{voz}/sustituciones-video.json\" al primer paso. No se clona ni se entrena con el audio de Polly (términos de AWS y regla 19)."
     }
   ]
 }

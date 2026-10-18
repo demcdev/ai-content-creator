@@ -2,21 +2,21 @@
 """
 Alinea cada frase del guion con el audio real usando los silencios (programación dinámica) y escribe tiempos.json.
 
-  python herramientas/montaje/tuberia/alinear.py "<canal>/Video 03"
+  python herramientas/montaje/tuberia/alinear.py "hace-eones/3"
   python herramientas/montaje/tuberia/alinear.py "<canal>/3" --ver 10          # además imprime las 10 primeras frases
   python herramientas/montaje/tuberia/alinear.py "<canal>/3" --salida prueba.json
 
 Entradas (dentro de la carpeta del video):
-  Voz/*.wav                 el audio completo (si hay varios, el más grande)
-  Texto para subtitulos.txt el texto mostrado; los párrafos se separan con una línea en blanco
-Salida: Montaje/tiempos.json  {"total": s, "frases": [{"par", "texto", "ini", "fin"}]}
+  04-voz/*.wav                 el audio completo (si hay varios, el más grande)
+  texto-para-subtitulos.txt el texto mostrado; los párrafos se separan con una línea en blanco
+Salida: 06-montaje/tiempos.json  {"total": s, "frases": [{"par", "texto", "ini", "fin"}]}
 
 Cómo se pesa cada frase según la voz (se detecta sola):
-  Polly   si existe Voz/polly/parte-NN.txt: el peso sale del texto realmente hablado (cifras en letras), emparejado
+  Polly   si existe 04-voz/polly/parte-NN.txt: el peso sale del texto realmente hablado (cifras en letras), emparejado
           1 a 1 con el texto mostrado, y las uniones de partes salen de las duraciones de parte-NN.mp3.
   Google  si no: el peso sale del texto mostrado con las sustituciones de herramientas/voz/sustituciones.json, y las
-          uniones salen de Voz/partes/*.wav (si existe).
-Ajustes opcionales en Montaje/montaje.json: "kmax" (frases por silencio, 3 por defecto) y
+          uniones salen de 04-voz/partes/*.wav (si existe).
+Ajustes opcionales en 06-montaje/montaje.json: "kmax" (frases por silencio, 3 por defecto) y
 "correcciones": {"<número de frase>": [ini, fin]} para tramos donde dos frases seguidas no tienen silencio.
 """
 import argparse
@@ -29,7 +29,7 @@ import sys
 sys.dont_write_bytecode = True
 AQUI = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # herramientas/montaje
 sys.path.insert(0, os.path.dirname(AQUI))
-from _comun import identidad_efectiva, resolver_video  # noqa: E402
+from _comun import F_SUBTITULOS, MONTAJE, VOZ, identidad_efectiva, resolver_video, ruta as ruta_rel  # noqa: E402
 
 RUIDO = '-38dB'
 DURACION_MIN_SILENCIO = '0.25'
@@ -73,12 +73,12 @@ class Entrada:
 
     def __init__(self, video):
         self.video = video
-        voz = os.path.join(video, 'Voz')
+        voz = os.path.join(video, VOZ)
         wavs = [os.path.join(voz, f) for f in os.listdir(voz) if f.lower().endswith('.wav')] if os.path.isdir(voz) else []
         if not wavs:
             sys.exit('No hay ningún .wav en %s' % voz)
         self.audio = max(wavs, key=os.path.getsize)
-        texto = os.path.join(video, 'Texto para subtitulos.txt')
+        texto = ruta_rel(video, F_SUBTITULOS)
         if not os.path.exists(texto):
             sys.exit('Falta %s' % texto)
         self.mostrado = dividir(open(texto, encoding='utf8').read())
@@ -199,16 +199,16 @@ def alinear(entrada, kmax=3, correcciones=None):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('video')
-    ap.add_argument('--salida', help='archivo de salida (por defecto Montaje/tiempos.json)')
+    ap.add_argument('--salida', help='archivo de salida (por defecto 06-montaje/tiempos.json)')
     ap.add_argument('--ver', type=int, default=0, help='imprime las primeras N frases')
     a = ap.parse_args()
     video = resolver_video(a.video)
-    cfg_ruta = os.path.join(video, 'Montaje', 'montaje.json')
+    cfg_ruta = os.path.join(video, MONTAJE, 'montaje.json')
     cfg = json.load(open(cfg_ruta, encoding='utf-8')) if os.path.exists(cfg_ruta) else {}
     corr = {int(k): v for k, v in cfg.get('correcciones', {}).items()}
     entrada = Entrada(video)
     res, total, r = alinear(entrada, cfg.get('kmax', 3), corr)
-    salida = a.salida or os.path.join(video, 'Montaje', 'tiempos.json')
+    salida = a.salida or os.path.join(video, MONTAJE, 'tiempos.json')
     os.makedirs(os.path.dirname(os.path.abspath(salida)), exist_ok=True)
     json.dump({'total': total, 'frases': res}, open(salida, 'w', encoding='utf8'), ensure_ascii=False, indent=1)
     print('voz %s · audio %s' % (entrada.modo, os.path.basename(entrada.audio)))
@@ -216,7 +216,7 @@ def main():
     ruta_voces = os.path.join(os.path.dirname(AQUI), 'voz', 'voces.json')
     motor = next((v['motor'] for v in json.load(open(ruta_voces, encoding='utf-8'))['voces'] if v['id'] == voz_id), '') if os.path.exists(ruta_voces) else ''
     if motor and motor != entrada.modo:
-        print('AVISO: la identidad del video declara la voz «%s» (motor %s) pero el audio se detectó como %s (¿falta Voz/polly/parte-NN.txt?).' % (voz_id, motor, entrada.modo))
+        print('AVISO: la identidad del video declara la voz «%s» (motor %s) pero el audio se detectó como %s (¿falta 04-voz/polly/parte-NN.txt?).' % (voz_id, motor, entrada.modo))
     print('total', round(total, 1), 's · frases', len(res), '· s/peso', round(r, 4), '->', salida)
     for f in res[:a.ver]:
         print('%7.2f–%7.2f  p%-2d %s' % (f['ini'], f['fin'], f['par'], f['texto'][:70]))

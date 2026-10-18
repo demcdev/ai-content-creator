@@ -1,0 +1,29 @@
+ÍNDICE DE COPIAS · Registro de licencias · Video 2 · 2026-10-13
+
+Archivo : originales/M01-wmap-9yr-cmb.png
+Tamaño  : 6474047 bytes
+SHA-256 : c72f4dba3e524c107d85a468f8164f703df89a4ac3a705d5ded66e44be32ec06
+
+Archivo : originales/M02-hubble-host-galaxies-esa-large.jpg
+Tamaño  : 4119279 bytes
+SHA-256 : c7d0926a239a05dd2c58c94613573f9af3e33f27b5c1162357833358be355e34
+
+Archivo : originales/M02-hubble-host-galaxies-nasa-2000.jpg
+Tamaño  : 255639 bytes
+SHA-256 : 54c8eda2e29735f95566bea91e5e3abb0e9093fd86896e1fd6678cd50ac45546
+
+Archivo : originales/M03-gaia-allsky-4k.jpg
+Tamaño  : 2816946 bytes
+SHA-256 : 47b0daff232d986251a380fe3db87e60144c0235f3f5492c24411687d01fbd36
+
+Ficha   : fichas/ESA-condiciones-de-uso-2026-10-13.txt
+SHA-256 : 2698fec0ed261aec41aeb321efe94417c4e373de3af16e081bfa3c5f2591f92e
+
+Ficha   : fichas/M01-ficha-wmap-nasa-2026-10-13.txt
+SHA-256 : f0171124c1d07fa0b9cbd48018913f8c349979574c1e279490a2cf72a5e24c96
+
+Ficha   : fichas/M02-ficha-hubble-galaxias-2026-10-13.txt
+SHA-256 : 0681acfc27783491faea77b2d045a7351832012055b7241c3ed34e08cf64b1c9
+
+Ficha   : fichas/M03-ficha-gaia-cielo-2026-10-13.txt
+SHA-256 : ffd2adfec14065694526922e945468a61b758fc590b1ccb21138805ff48c2b08

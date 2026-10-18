@@ -1,9 +1,0 @@
-FICHA M01 · Mapa del fondo cósmico de microondas, WMAP (9 años de datos)
-Leída el 13-oct-2026 por Claude en la página oficial (lectura propia, no dictamen legal).
-Página: https://science.nasa.gov/mission/wmap/wmap-overview/
-Archivo descargado: ../originales/M01-wmap-9yr-cmb.png (PNG 4096×2048) desde assets.science.nasa.gov (ilc_9yr_moll4096.png)
-Texto de la página (pie de la imagen): «This microwave radiation was released approximately 375,000 years after the birth of the universe. WMAP creates a full sky map of the microwave radiation… WMAP full Sky Image with Galaxy signal removed - 9 years of data used.»
-Crédito de la página: «Credit: NASA / WMAP Science Team»
-Condiciones: la página no declara restricciones; aplica la guía de uso de imágenes de la NASA (ver ../../Video 01 - Voyager 1/Licencias/M0-nasa-guia-uso-2026-10-13.html): reconocer a la NASA como fuente, no sugerir su respaldo, sin logos ni personas.
-Revisión visual del archivo: mapa a colores en proyección elíptica; sin personas, logos ni texto.
-Rótulo en pantalla: «WMAP (NASA): mapa del mismo fondo cósmico, no es Planck» · Crédito: NASA / WMAP Science Team

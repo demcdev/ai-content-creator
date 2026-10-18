@@ -2,7 +2,7 @@
 /**
  * Prepara el guion para pegarlo en la consola de Amazon Polly (Long-Form, Raul): sin claves ni llamadas a la red.
  *
- *   node preparar-polly.mjs "..\..\02_canales\<canal>\Video NN - Nombre\Guion.md" --salida "..\..\02_canales\<canal>\Video NN - Nombre\Voz\polly"
+ *   node preparar-polly.mjs "..\..\02-canales\<canal>\videos\NN-nombre\01-guion\guion.md" --salida "..\..\02-canales\<canal>\videos\NN-nombre\04-voz\polly"
  *
  * Crea en la carpeta de salida:
  *   parte-01.txt, parte-02.txt …       texto limpio para pegar (sin marcas de pausa), con las sustituciones aplicadas
@@ -72,7 +72,7 @@ function principal(argv) {
     else if (!a.archivo) a.archivo = argv[i]
   }
   if (!a.archivo || !a.salida) {
-    console.log('Uso: node preparar-polly.mjs <Guion.md> --salida <carpeta> [--sustituciones-extra <json>]')
+    console.log('Uso: node preparar-polly.mjs <guion.md> --salida <carpeta> [--sustituciones-extra <json>]')
     return 1
   }
   const md = fs.readFileSync(a.archivo, 'utf-8')

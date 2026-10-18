@@ -1,0 +1,725 @@
+{
+ "total": 776.86,
+ "frases": [
+  {
+   "par": 0,
+   "texto": "En 1977 lanzamos una nave cuyos ordenadores tienen, en total, unos 69 kilobytes de memoria.",
+   "ini": 0.0,
+   "fin": 8.352
+  },
+  {
+   "par": 0,
+   "texto": "Hoy, casi cincuenta años después, sigue funcionando, y una orden de radio, viajando a la velocidad de la luz, tarda unas 23 horas en llegar hasta ella.",
+   "ini": 9.144,
+   "fin": 19.514
+  },
+  {
+   "par": 1,
+   "texto": "El 18 de noviembre de este año se convertirá en el primer objeto construido por humanos a un día luz de la Tierra.",
+   "ini": 20.571,
+   "fin": 27.389
+  },
+  {
+   "par": 1,
+   "texto": "Pero lo más curioso no es lo lejos que está.",
+   "ini": 28.111,
+   "fin": 30.456
+  },
+  {
+   "par": 1,
+   "texto": "Es cómo seguimos hablando con ella, lo que no sabemos de ella, y una frase que se repite muchísimo sobre esta nave y que no es del todo cierta.",
+   "ini": 31.435,
+   "fin": 39.464
+  },
+  {
+   "par": 1,
+   "texto": "Al final del video te digo cuál.",
+   "ini": 39.934,
+   "fin": 41.633
+  },
+  {
+   "par": 2,
+   "texto": "Pero empecemos por el principio.",
+   "ini": 42.909,
+   "fin": 44.493
+  },
+  {
+   "par": 2,
+   "texto": "Esta nave se llama Voyager 1.",
+   "ini": 44.875,
+   "fin": 47.239
+  },
+  {
+   "par": 2,
+   "texto": "Se lanzó el 5 de septiembre de 1977, dieciséis días después de su gemela, Voyager 2.",
+   "ini": 48.511,
+   "fin": 54.652
+  },
+  {
+   "par": 2,
+   "texto": "Pero tomó un camino más rápido, y el 15 de diciembre de ese mismo año ya la había adelantado.",
+   "ini": 54.975,
+   "fin": 62.148
+  },
+  {
+   "par": 2,
+   "texto": "Nació para visitar Júpiter y Saturno.",
+   "ini": 62.813,
+   "fin": 65.117
+  },
+  {
+   "par": 2,
+   "texto": "Casi medio siglo después sigue enviando datos.",
+   "ini": 65.506,
+   "fin": 68.642
+  },
+  {
+   "par": 3,
+   "texto": "Desde el 17 de febrero de 1998 es el objeto más lejano que ha construido la humanidad, el día que superó a la sonda Pioneer 10.",
+   "ini": 69.45,
+   "fin": 79.73
+  },
+  {
+   "par": 3,
+   "texto": "Y no se detiene: se aleja del Sol a unos 17 kilómetros por segundo.",
+   "ini": 80.25,
+   "fin": 84.989
+  },
+  {
+   "par": 3,
+   "texto": "Eso son casi un millón y medio de kilómetros más lejos cada día.",
+   "ini": 85.6,
+   "fin": 89.363
+  },
+  {
+   "par": 4,
+   "texto": "Hoy vamos a ver cinco cosas: lo que descubrió en su camino, una fotografía que cambió cómo nos vemos, cómo sabemos que cruzó la frontera de la burbuja del Sol, cómo se habla con una nave tan lejana, y qué le queda de energía.",
+   "ini": 90.225,
+   "fin": 104.139
+  },
+  {
+   "par": 5,
+   "texto": "La misión aprovechó una alineación de los planetas exteriores que se repite solo cada unos 175 años: usar la gravedad de cada planeta como una honda para ganar velocidad sin gastar combustible.",
+   "ini": 105.638,
+   "fin": 118.008
+  },
+  {
+   "par": 6,
+   "texto": "Al acercarse a Júpiter, la nave tomó una imagen cada 96 segundos para montar una película de su llegada.",
+   "ini": 119.101,
+   "fin": 125.755
+  },
+  {
+   "par": 6,
+   "texto": "El 5 de marzo de 1979 pasó a unos 280 000 kilómetros del planeta, y descubrió un anillo tenue alrededor de Júpiter y dos lunas nuevas, Tebe y Metis.",
+   "ini": 126.951,
+   "fin": 139.696
+  },
+  {
+   "par": 7,
+   "texto": "Tres días después, alguien vio algo que no debía estar ahí.",
+   "ini": 140.938,
+   "fin": 144.554
+  },
+  {
+   "par": 8,
+   "texto": "Linda Morabito, ingeniera de navegación de la misión, procesaba una imagen de Ío, una de las lunas de Júpiter.",
+   "ini": 145.911,
+   "fin": 153.46
+  },
+  {
+   "par": 8,
+   "texto": "En el borde de la luna… había una nube.",
+   "ini": 153.815,
+   "fin": 156.448
+  },
+  {
+   "par": 8,
+   "texto": "Una nube donde no debería haber nada.",
+   "ini": 157.298,
+   "fin": 159.911
+  },
+  {
+   "par": 9,
+   "texto": "¿Qué podía ser?",
+   "ini": 160.673,
+   "fin": 161.533
+  },
+  {
+   "par": 10,
+   "texto": "Era un volcán.",
+   "ini": 163.307,
+   "fin": 164.107
+  },
+  {
+   "par": 10,
+   "texto": "En plena erupción.",
+   "ini": 164.636,
+   "fin": 165.824
+  },
+  {
+   "par": 10,
+   "texto": "Y era la primera erupción volcánica que alguien observaba fuera de la Tierra.",
+   "ini": 166.731,
+   "fin": 171.003
+  },
+  {
+   "par": 11,
+   "texto": "El 12 de noviembre de 1980 llegó a Saturno, y pasó a unos 126 000 kilómetros del planeta.",
+   "ini": 172.007,
+   "fin": 179.035
+  },
+  {
+   "par": 11,
+   "texto": "Encontró cinco lunas nuevas y un anillo nuevo, el anillo G, y vio en los anillos estructuras complejas, con «lunas pastoras» que mantienen bien definidos algunos de ellos.",
+   "ini": 179.477,
+   "fin": 190.722
+  },
+  {
+   "par": 12,
+   "texto": "Pero la gran apuesta era Titán, la luna más grande de Saturno, cuya atmósfera espesa ocultaba por completo la superficie.",
+   "ini": 191.629,
+   "fin": 198.974
+  },
+  {
+   "par": 12,
+   "texto": "La nave descubrió que esa atmósfera es un 90 % nitrógeno y que lleva metano y otros hidrocarburos complejos, ingredientes que hacían pensar que allí podrían darse reacciones químicas parecidas a las que preceden a la vida.",
+   "ini": 199.823,
+   "fin": 213.436
+  },
+  {
+   "par": 13,
+   "texto": "Para verla de cerca, la nave hizo una maniobra arriesgada: pasó a unos 6 500 kilómetros de Titán, y esa trayectoria la lanzó fuera del plano de los planetas.",
+   "ini": 214.503,
+   "fin": 226.937
+  },
+  {
+   "par": 13,
+   "texto": "Ya no visitaría ningún otro.",
+   "ini": 227.299,
+   "fin": 229.726
+  },
+  {
+   "par": 13,
+   "texto": "Urano y Neptuno los visitaría su gemela: Urano en 1986 y Neptuno en 1989.",
+   "ini": 230.007,
+   "fin": 235.128
+  },
+  {
+   "par": 13,
+   "texto": "El único destino de Voyager 1 sería el espacio entre las estrellas.",
+   "ini": 235.912,
+   "fin": 239.727
+  },
+  {
+   "par": 14,
+   "texto": "El 14 de febrero de 1990, con su misión planetaria terminada, la nave recibió una última orden.",
+   "ini": 241.377,
+   "fin": 248.492
+  },
+  {
+   "par": 14,
+   "texto": "Mirar hacia atrás.",
+   "ini": 248.922,
+   "fin": 250.0
+  },
+  {
+   "par": 14,
+   "texto": "Desde unos 6 000 millones de kilómetros del Sol, fotografiar la familia de planetas.",
+   "ini": 251.095,
+   "fin": 256.468
+  },
+  {
+   "par": 14,
+   "texto": "Fue idea del astrónomo Carl Sagan.",
+   "ini": 256.763,
+   "fin": 259.177
+  },
+  {
+   "par": 15,
+   "texto": "En una de esas imágenes hay un punto de luz pálido, de apenas un píxel, dentro de un rayo de luz solar dispersada.",
+   "ini": 259.99,
+   "fin": 267.124
+  },
+  {
+   "par": 15,
+   "texto": "Ese punto… es la Tierra.",
+   "ini": 267.89,
+   "fin": 269.61
+  },
+  {
+   "par": 15,
+   "texto": "Sagan lo llamó el «punto azul pálido».",
+   "ini": 270.476,
+   "fin": 272.662
+  },
+  {
+   "par": 16,
+   "texto": "No fue una sola foto: fue un mosaico de unas sesenta imágenes, el primer retrato de familia del sistema solar, con seis planetas.",
+   "ini": 273.425,
+   "fin": 281.264
+  },
+  {
+   "par": 16,
+   "texto": "Mercurio estaba demasiado cerca del Sol, y Marte quedó oculto por la luz dispersada en la cámara.",
+   "ini": 281.653,
+   "fin": 287.473
+  },
+  {
+   "par": 16,
+   "texto": "Fueron las últimas de las 67 000 imágenes que tomaron las dos Voyager.",
+   "ini": 288.258,
+   "fin": 292.614
+  },
+  {
+   "par": 17,
+   "texto": "No es una foto bonita en términos técnicos.",
+   "ini": 293.311,
+   "fin": 295.874
+  },
+  {
+   "par": 17,
+   "texto": "Es importante por lo que muestra: la escala.",
+   "ini": 296.248,
+   "fin": 298.778
+  },
+  {
+   "par": 17,
+   "texto": "Todo lo que conocemos cabe en ese punto.",
+   "ini": 299.038,
+   "fin": 301.244
+  },
+  {
+   "par": 17,
+   "texto": "Y 34 minutos después de tomarla, las cámaras se apagaron para siempre.",
+   "ini": 301.914,
+   "fin": 306.372
+  },
+  {
+   "par": 17,
+   "texto": "Había que ahorrar energía para el largo viaje que quedaba.",
+   "ini": 307.289,
+   "fin": 310.323
+  },
+  {
+   "par": 18,
+   "texto": "El Sol emite un flujo constante de partículas, el viento solar, que sopla en todas direcciones y forma una burbuja: la heliosfera.",
+   "ini": 311.927,
+   "fin": 320.926
+  },
+  {
+   "par": 18,
+   "texto": "Su borde se llama heliopausa.",
+   "ini": 321.737,
+   "fin": 323.776
+  },
+  {
+   "par": 18,
+   "texto": "Y más allá de ese borde está el espacio interestelar.",
+   "ini": 324.161,
+   "fin": 327.323
+  },
+  {
+   "par": 18,
+   "texto": "Antes de llegar a ese borde, hay otra frontera, el choque de terminación, donde el viento solar se frena de golpe.",
+   "ini": 327.704,
+   "fin": 334.937
+  },
+  {
+   "par": 18,
+   "texto": "Voyager 1 lo cruzó el 16 de diciembre de 2004.",
+   "ini": 335.193,
+   "fin": 338.958
+  },
+  {
+   "par": 19,
+   "texto": "¿Cómo se sabe en qué momento se cruza un límite que no se ve?",
+   "ini": 339.889,
+   "fin": 343.371
+  },
+  {
+   "par": 19,
+   "texto": "Lo ideal era medir directamente el plasma, pero el instrumento de Voyager 1 que lo hacía dejó de funcionar en 1980, justo después de Saturno.",
+   "ini": 344.212,
+   "fin": 353.775
+  },
+  {
+   "par": 19,
+   "texto": "Hubo que esperar una casualidad.",
+   "ini": 354.634,
+   "fin": 356.167
+  },
+  {
+   "par": 20,
+   "texto": "En 2012, las partículas del Sol casi desaparecieron de los detectores y subieron las de origen galáctico.",
+   "ini": 356.971,
+   "fin": 363.52
+  },
+  {
+   "par": 20,
+   "texto": "Pero eso no bastaba para estar seguros.",
+   "ini": 363.985,
+   "fin": 366.098
+  },
+  {
+   "par": 20,
+   "texto": "La confirmación llegó meses después, y de una forma que nadie había planeado.",
+   "ini": 366.526,
+   "fin": 370.93
+  },
+  {
+   "par": 20,
+   "texto": "El 9 de abril de 2013, el instrumento de ondas de plasma captó algo: el plasma que rodeaba la nave estaba vibrando, probablemente por una erupción solar ocurrida un año antes.",
+   "ini": 371.446,
+   "fin": 382.292
+  },
+  {
+   "par": 20,
+   "texto": "Por esa vibración se pudo calcular su densidad… más de 40 veces la que había medido Voyager 2 dentro de la burbuja.",
+   "ini": 382.689,
+   "fin": 390.192
+  },
+  {
+   "par": 20,
+   "texto": "No era plasma del Sol.",
+   "ini": 390.654,
+   "fin": 392.108
+  },
+  {
+   "par": 20,
+   "texto": "Era plasma interestelar.",
+   "ini": 392.666,
+   "fin": 393.978
+  },
+  {
+   "par": 20,
+   "texto": "Y al retroceder los datos, concluyeron que la nave lo había encontrado por primera vez el 25 de agosto de 2012.",
+   "ini": 394.406,
+   "fin": 401.698
+  },
+  {
+   "par": 21,
+   "texto": "Seis años después, Voyager 2 repitió el cruce, y esta vez su instrumento de plasma sí funcionaba.",
+   "ini": 402.713,
+   "fin": 409.137
+  },
+  {
+   "par": 21,
+   "texto": "El 5 de noviembre de 2018 vio caer las partículas energéticas del Sol y desaparecer el viento solar, y se convirtió en la segunda nave en salir de la heliosfera.",
+   "ini": 409.953,
+   "fin": 420.99
+  },
+  {
+   "par": 22,
+   "texto": "Y aún hay sorpresas.",
+   "ini": 421.904,
+   "fin": 423.207
+  },
+  {
+   "par": 22,
+   "texto": "En 2021, un equipo de la Universidad de Cornell revisó los datos del instrumento de ondas de plasma y encontró algo más: un zumbido débil y constante del gas interestelar.",
+   "ini": 423.693,
+   "fin": 435.171
+  },
+  {
+   "par": 22,
+   "texto": "Hasta entonces solo se medía ese gas cuando una erupción del Sol lo agitaba.",
+   "ini": 436.033,
+   "fin": 440.414
+  },
+  {
+   "par": 22,
+   "texto": "Ahora la nave nos dice, día tras día, la densidad del medio por el que flota, sin esperar a ninguna casualidad.",
+   "ini": 441.369,
+   "fin": 448.633
+  },
+  {
+   "par": 23,
+   "texto": "Voyager 1 se comunica con una antena de 3,7 metros, y normalmente transmite a 160 bits por segundo.",
+   "ini": 450.269,
+   "fin": 458.227
+  },
+  {
+   "par": 23,
+   "texto": "Para ponerlo en escala: una foto de tu móvil de 3 megabytes tardaría unas 42 horas en llegar.",
+   "ini": 459.078,
+   "fin": 465.423
+  },
+  {
+   "par": 23,
+   "texto": "Y la nave recibe las órdenes todavía más despacio: a 16 bits por segundo.",
+   "ini": 466.229,
+   "fin": 471.755
+  },
+  {
+   "par": 24,
+   "texto": "Cuando la señal llega, es tan débil que la potencia que reciben las antenas es 20 mil millones de veces menor que la necesaria para hacer funcionar un reloj digital.",
+   "ini": 472.834,
+   "fin": 482.549
+  },
+  {
+   "par": 24,
+   "texto": "Para captarla se usa la Red de Espacio Profundo de la NASA, con tres complejos de antenas: en Canberra, en Madrid y en Goldstone, en California.",
+   "ini": 483.45,
+   "fin": 492.17
+  },
+  {
+   "par": 24,
+   "texto": "Están repartidos casi a la misma distancia alrededor del planeta.",
+   "ini": 492.94,
+   "fin": 497.04
+  },
+  {
+   "par": 24,
+   "texto": "Así, mientras la Tierra gira, siempre hay una antena que puede ver la nave.",
+   "ini": 497.04,
+   "fin": 501.59
+  },
+  {
+   "par": 24,
+   "texto": "Cada complejo tiene una antena enorme, de 70 metros de diámetro.",
+   "ini": 502.436,
+   "fin": 506.529
+  },
+  {
+   "par": 25,
+   "texto": "Y hay un detalle que se pasa por alto: si una orden tarda unas 23 horas en llegar, la respuesta tarda otras tantas, así que cada pregunta cuesta casi dos días de ida y vuelta.",
+   "ini": 507.412,
+   "fin": 518.096
+  },
+  {
+   "par": 25,
+   "texto": "Aquí no existe el «reintentar».",
+   "ini": 518.945,
+   "fin": 520.777
+  },
+  {
+   "par": 25,
+   "texto": "Cada orden se prepara con muchísimo cuidado.",
+   "ini": 521.084,
+   "fin": 523.78
+  },
+  {
+   "par": 26,
+   "texto": "Voyager 1 no tiene paneles solares; allí el Sol es solo una estrella más.",
+   "ini": 525.776,
+   "fin": 530.868
+  },
+  {
+   "par": 26,
+   "texto": "Funciona con tres generadores que convierten en electricidad el calor del plutonio al desintegrarse.",
+   "ini": 531.229,
+   "fin": 536.855
+  },
+  {
+   "par": 26,
+   "texto": "Al lanzarse, cada uno daba unos 158 vatios.",
+   "ini": 537.369,
+   "fin": 541.501
+  },
+  {
+   "par": 26,
+   "texto": "Hoy la nave pierde unos cuatro vatios de potencia por año.",
+   "ini": 541.866,
+   "fin": 545.447
+  },
+  {
+   "par": 26,
+   "texto": "Por eso los ingenieros han ido apagando calentadores e instrumentos para que lo esencial siga funcionando.",
+   "ini": 545.832,
+   "fin": 552.22
+  },
+  {
+   "par": 27,
+   "texto": "El 17 de abril de este año apagaron otro instrumento, el de partículas cargadas de baja energía, para evitar que un nuevo descenso de potencia activara el sistema de protección de la nave.",
+   "ini": 553.058,
+   "fin": 564.616
+  },
+  {
+   "par": 27,
+   "texto": "Hoy le quedan dos instrumentos científicos funcionando: el que escucha el plasma y el magnetómetro.",
+   "ini": 565.007,
+   "fin": 570.515
+  },
+  {
+   "par": 28,
+   "texto": "Y no es la primera crisis.",
+   "ini": 571.247,
+   "fin": 572.81
+  },
+  {
+   "par": 28,
+   "texto": "El 14 de noviembre de 2023, la nave empezó a enviar algo extraño: datos que no tenían sentido.",
+   "ini": 573.292,
+   "fin": 580.32
+  },
+  {
+   "par": 28,
+   "texto": "Seguía recibiendo las órdenes… pero lo que devolvía era ininteligible.",
+   "ini": 581.127,
+   "fin": 585.163
+  },
+  {
+   "par": 28,
+   "texto": "Los ingenieros, a casi un día luz de distancia, tardaron meses en encontrar la causa: un solo chip de memoria de uno de sus tres ordenadores había dejado de funcionar.",
+   "ini": 586.244,
+   "fin": 596.096
+  },
+  {
+   "par": 28,
+   "texto": "La solución: dividir el código y reubicarlo en otras zonas de memoria, mandando las órdenes por radio, con un día de espera para cada respuesta.",
+   "ini": 597.154,
+   "fin": 605.97
+  },
+  {
+   "par": 28,
+   "texto": "El 20 de abril de 2024 volvió a enviar datos de su estado, y el 22 de mayo, datos científicos de dos instrumentos.",
+   "ini": 606.429,
+   "fin": 615.351
+  },
+  {
+   "par": 29,
+   "texto": "Ahí hay un ordenador de los años setenta que se reparó a miles de millones de kilómetros.",
+   "ini": 616.246,
+   "fin": 621.409
+  },
+  {
+   "par": 29,
+   "texto": "Eso también es ciencia.",
+   "ini": 621.931,
+   "fin": 623.531
+  },
+  {
+   "par": 30,
+   "texto": "Y ahora, la frase que te prometí al principio.",
+   "ini": 625.604,
+   "fin": 628.206
+  },
+  {
+   "par": 30,
+   "texto": "Se repite muchísimo: «Voyager 1 salió del Sistema Solar».",
+   "ini": 628.666,
+   "fin": 632.615
+  },
+  {
+   "par": 30,
+   "texto": "No es exacta.",
+   "ini": 634.159,
+   "fin": 635.096
+  },
+  {
+   "par": 30,
+   "texto": "Salió de la heliosfera, la burbuja del viento solar.",
+   "ini": 636.045,
+   "fin": 639.208
+  },
+  {
+   "par": 30,
+   "texto": "Pero el Sistema Solar sigue mucho más allá: la nube de Oort, un enorme reservorio de cometas que empieza a unas mil veces la distancia entre la Tierra y el Sol y se extiende hasta unas cien mil.",
+   "ini": 639.6,
+   "fin": 652.247
+  },
+  {
+   "par": 30,
+   "texto": "Según la NASA, la nave tardará unos 300 años en llegar a su borde interior y posiblemente unos 30 000 en atravesarla.",
+   "ini": 652.766,
+   "fin": 660.665
+  },
+  {
+   "par": 30,
+   "texto": "La gravedad del Sol sigue mandando.",
+   "ini": 661.083,
+   "fin": 663.505
+  },
+  {
+   "par": 30,
+   "texto": "Y mucho antes de salir, la nave se habrá quedado sin energía y sin el combustible que la mantiene apuntando a la Tierra.",
+   "ini": 663.866,
+   "fin": 670.727
+  },
+  {
+   "par": 30,
+   "texto": "Seguirá viajando… pero en silencio.",
+   "ini": 671.252,
+   "fin": 673.26
+  },
+  {
+   "par": 31,
+   "texto": "Entonces, ¿qué sabemos de verdad sobre su futuro?",
+   "ini": 674.199,
+   "fin": 676.915
+  },
+  {
+   "par": 32,
+   "texto": "Lo que está comprobado: sus instrumentos miden las condiciones del medio interestelar cerca del Sol, una región que solo las dos Voyager han explorado.",
+   "ini": 677.994,
+   "fin": 686.579
+  },
+  {
+   "par": 33,
+   "texto": "Lo probable: que siga enviando datos algo más de tiempo gracias a un plan de ahorro de energía llamado «Big Bang».",
+   "ini": 687.868,
+   "fin": 694.813
+  },
+  {
+   "par": 33,
+   "texto": "En agosto funcionó en Voyager 2, y el equipo planea repetirlo en Voyager 1 en los próximos meses.",
+   "ini": 696.07,
+   "fin": 702.336
+  },
+  {
+   "par": 34,
+   "texto": "Y lo que nadie sabe todavía: cuándo dejará de funcionar.",
+   "ini": 703.394,
+   "fin": 706.981
+  },
+  {
+   "par": 34,
+   "texto": "NASA no da una fecha; el equipo busca mantener las dos sondas el mayor tiempo posible.",
+   "ini": 708.33,
+   "fin": 713.434
+  },
+  {
+   "par": 35,
+   "texto": "Y lleva consigo un mensaje: el disco de oro, un disco de cobre bañado en oro de 30 centímetros, con 115 imágenes, 35 sonidos de la Tierra, 90 minutos de música de distintas culturas y saludos en 55 idiomas, además de un mensaje del entonces presidente de Estados Unidos y del secretario general de la ONU.",
+   "ini": 715.486,
+   "fin": 736.054
+  },
+  {
+   "par": 35,
+   "texto": "En la cubierta lleva grabado un mapa con la posición de la Tierra respecto a varios púlsares y las instrucciones para reproducirlo.",
+   "ini": 737.127,
+   "fin": 743.512
+  },
+  {
+   "par": 35,
+   "texto": "Solo se escuchará si alguna civilización avanzada lo encuentra.",
+   "ini": 744.417,
+   "fin": 747.939
+  },
+  {
+   "par": 35,
+   "texto": "Voyager 1 pasará a 1,7 años luz de la estrella AC +79 3888 en el año 40 272, dentro de unos 38 000 años.",
+   "ini": 748.784,
+   "fin": 760.342
+  },
+  {
+   "par": 36,
+   "texto": "Todas las fuentes de este video están en la descripción.",
+   "ini": 761.89,
+   "fin": 765.1
+  },
+  {
+   "par": 36,
+   "texto": "Si hay una cifra que quieras que revise, escríbela en los comentarios.",
+   "ini": 765.1,
+   "fin": 769.07
+  },
+  {
+   "par": 36,
+   "texto": "Y si te preguntas cómo sabemos la edad del universo sin que nadie estuviera allí, ese es el próximo video.",
+   "ini": 770.32,
+   "fin": 776.86
+  }
+ ]
+}

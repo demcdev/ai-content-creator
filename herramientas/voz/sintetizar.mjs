@@ -2,8 +2,8 @@
 /**
  * Convierte el guion de un video (Markdown) en audio con Google Cloud Text-to-Speech (voces Chirp 3: HD).
  *
- *   node sintetizar.mjs "<ruta>/Guion.md" --solo-texto      (no usa red ni clave)
- *   node sintetizar.mjs "<ruta>/Guion.md" --voz es-US-Chirp3-HD-Kore
+ *   node sintetizar.mjs "<ruta>/guion.md" --solo-texto      (no usa red ni clave)
+ *   node sintetizar.mjs "<ruta>/guion.md" --voz es-US-Chirp3-HD-Kore
  *   node sintetizar.mjs "<guion>" --solo 7                                              (repite solo la parte 7)
  *   node sintetizar.mjs --voces                                                         (lista las voces de español)
  *   node sintetizar.mjs "<guion>" --pausa-parrafo corta --pronunciaciones mis-palabras.json
@@ -301,7 +301,7 @@ export async function principal(argv, entorno = process.env, fetchFn = fetch, sa
     for (const v of await listarVoces(clave, fetchFn)) salidaTxt(v)
     return 0
   }
-  if (!o.archivo) throw new Error('Indica el archivo del guion. Ejemplo: node sintetizar.mjs "<ruta>/Guion.md" --solo-texto')
+  if (!o.archivo) throw new Error('Indica el archivo del guion. Ejemplo: node sintetizar.mjs "<ruta>/guion.md" --solo-texto')
   const md = fs.readFileSync(o.archivo, 'utf-8')
   const parrafos = aplicarSustituciones(extraerNarracion(md), cargarSustituciones(o.sustituciones))
   const trozos = trocear(parrafos)

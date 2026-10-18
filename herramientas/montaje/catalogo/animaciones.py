@@ -59,16 +59,16 @@ def explicar(a):
 
 def aplicar(a, video):
     carpeta = resolver_video(video)
-    ruta = os.path.join(carpeta, 'identidad.json')
-    datos = json.load(open(ruta, encoding='utf-8')) if os.path.exists(ruta) else {}
+    arch = os.path.join(carpeta, 'identidad', 'identidad.json')
+    datos = json.load(open(arch, encoding='utf-8')) if os.path.exists(arch) else {}
     if datos.get('base') == 'canal':
         print('Este video usa la identidad del canal (con su animación). Para una distinta: python herramientas/identidad.py video "%s" --base propia --animacion %s' % (video, a['id']))
         return 1
     datos['base'] = 'propia'
     datos['animacion'] = a['id']
-    with open(ruta, 'w', encoding='utf-8') as f:
+    with open(arch, 'w', encoding='utf-8') as f:
         json.dump(datos, f, ensure_ascii=False, indent=1)
-    print('Animación «%s» guardada en la identidad propia del video: %s' % (a['id'], ruta))
+    print('Animación «%s» guardada en la identidad propia del video: %s' % (a['id'], arch))
     return 0
 
 

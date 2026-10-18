@@ -1,5 +1,5 @@
 {
-  "_ayuda": "Catálogo de estilos de animación del proyecto. Al llegar al paso de montaje, Claude pregunta al usuario cuál usar (los de «ofrecer: true», por orden). Para añadir uno: agrega una entrada con id, nombre, estado, como_se_hace, riesgo y orden. estado: disponible (hay código y escenas genéricas), parcial (hay librerías pero las escenas se diseñan una a una) o por construir (solo hay dirección de arte). La puntuación viene del análisis del video B20 en 00_contexto/Resumen - Videos de YouTube.md: T tema, F convive con fotos reales, C hecho por código, E sostenible cada semana, D diferencia, R riesgo de políticas (5 = bajo).",
+  "_ayuda": "Catálogo de estilos de animación del proyecto. Al llegar al paso de montaje, Claude pregunta al usuario cuál usar (los de «ofrecer: true», por orden). Para añadir uno: agrega una entrada con id, nombre, estado, como_se_hace, riesgo y orden. estado: disponible (hay código y escenas genéricas), parcial (hay librerías pero las escenas se diseñan una a una) o por construir (solo hay dirección de arte). La puntuación viene del análisis del video B20 en 00-contexto/investigacion/resumen-videos-de-youtube.md: T tema, F convive con fotos reales, C hecho por código, E sostenible cada semana, D diferencia, R riesgo de políticas (5 = bajo).",
   "animaciones": [
     {
       "id": "espacial",
@@ -13,7 +13,7 @@
         "Fondo: estilo.base(t) en herramientas/montaje/animaciones/espacial/estilo.py.",
         "Escenas genéricas (portada, texto, imagen, cierre): herramientas/montaje/animaciones/espacial/escenas_base.py; las demás se registran con Proyecto.registrar('E07', fn).",
         "Rótulos «Dato verificado», créditos y capítulos: ui.py. Colores y logo: <canal>/identidad.json.",
-        "Ejemplos completos: Video 01/Montaje/video01.py y Video 02/Montaje/video02.py."
+        "Ejemplos completos: videos/01-voyager-1/06-montaje/video01.py y videos/02-edad-del-universo/06-montaje/video02.py."
       ],
       "usada_en": ["primer y segundo video publicados"],
       "puntuacion": null,
@@ -30,7 +30,7 @@
       "como_se_hace": [
         "Librerías: herramientas/montaje/animaciones/papel-recortado/papel.py (piezas y planos) y pintura.py (texturas y volumen).",
         "No hay fondo ni escenas genéricas de este estilo en la tubería: cada escena se diseña y se registra con Proyecto.registrar().",
-        "Ejemplo: Video 02/Montaje/video02_papel.py (1 774 líneas; era una versión alternativa del Video 2 y su render se borró).",
+        "Ejemplo: videos/02-edad-del-universo/06-montaje/video02_papel.py (1 774 líneas; era una versión alternativa del Video 2 y su render se borró).",
         "Animación «a dos» (movimiento escalonado) y cámara multiplano son parte del estilo."
       ],
       "usada_en": ["versión alternativa del segundo video (no publicada)"],

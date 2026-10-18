@@ -3,16 +3,16 @@
 Identidad de cada canal (colores, voz, animación, nombre, logo, fuente) y la de cada video (la del canal o una propia).
 
   python herramientas/identidad.py mostrar "<canal>"                 # identidad del canal
-  python herramientas/identidad.py mostrar "<canal>/Video 03"        # la que vale para ese video y de dónde sale cada valor
+  python herramientas/identidad.py mostrar "hace-eones/3"        # la que vale para ese video y de dónde sale cada valor
   python herramientas/identidad.py canal "<canal>" --voz polly-raul --animacion espacial --color AMBAR=242,184,75
   python herramientas/identidad.py video "<canal>/3" --base canal    # el video usa la identidad del canal
   python herramientas/identidad.py video "<canal>/3" --base propia --voz google-iapetus --animacion papel-recortado
 
-Archivos: <canal>/identidad.json (la del canal) y <video>/identidad.json ({"base": "canal"} o {"base": "propia", ...lo que cambia}).
+Archivos: <canal>/identidad/identidad.json (la del canal) y <video>/identidad/identidad.json ({"base": "canal"} o {"base": "propia", ...lo que cambia}).
 Con base «propia» solo se cambian los valores indicados; el resto sigue siendo el del canal.
 Opciones válidas de --voz: ids de herramientas/voz/voces.json. De --animacion: ids de herramientas/montaje/catalogo/animaciones.json.
 --fuente: inter, montserrat o space (las tres con licencia abierta). --musica: nombres de pista separados por coma («Singularity,Event Horizon»; se buscan en
-Montaje/musica/ de cada video). --efectos: si o no (los efectos de sonido aún no los mezcla la tubería: solo quedan declarados).
+06-montaje/musica/ de cada video). --efectos: si o no (los efectos de sonido aún no los mezcla la tubería: solo quedan declarados).
 `resumen <canal|video>` imprime una frase con voz, animación, fuente, colores (en hex), música y efectos: es el texto que Claude usa
 al preguntar «¿identidad del canal o propia?». Nunca nombra la marca del canal.
 Claude pregunta «¿identidad del canal o propia?» al crear cada video (regla del CLAUDE.md) y después ejecuta esto.
@@ -26,7 +26,8 @@ import sys
 sys.dont_write_bytecode = True
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
-from _comun import CANALES, CLAVES_IDENTIDAD, COLORES_DEFECTO, _json, identidad_efectiva, resolver_video  # noqa: E402
+from _comun import (CANALES, CLAVES_IDENTIDAD, COLORES_DEFECTO, F_IDENTIDAD, _json, identidad_efectiva, listar_canales, resolver_canal,  # noqa: E402
+                    resolver_video, ruta)
 
 
 def ids(ruta, clave):
@@ -39,11 +40,10 @@ ANIMACIONES = ids(os.path.join(AQUI, 'montaje', 'catalogo', 'animaciones.json'),
 
 
 def buscar_canal(nombre):
-    existentes = [d for d in sorted(os.listdir(CANALES)) if os.path.isdir(os.path.join(CANALES, d)) and not d.startswith('_')]
-    for d in existentes:
-        if d.lower() == nombre.strip().lower():
-            return os.path.join(CANALES, d)
-    sys.exit('No existe el canal «%s». Canales: %s' % (nombre, ', '.join(existentes)))
+    canal = resolver_canal(nombre)
+    if canal:
+        return canal
+    sys.exit('No existe el canal «%s». Canales: %s' % (nombre, ', '.join(listar_canales())))
 
 
 def valores(a):
@@ -77,14 +77,15 @@ def valores(a):
     return out
 
 
-def escribir(ruta, datos):
-    with open(ruta, 'w', encoding='utf-8') as f:
+def escribir(arch, datos):
+    os.makedirs(os.path.dirname(arch), exist_ok=True)
+    with open(arch, 'w', encoding='utf-8') as f:
         json.dump(datos, f, ensure_ascii=False, indent=1)
         f.write('\n')
 
 
 def mostrar(arg):
-    es_canal = any(d.lower() == arg.strip().lower() for d in os.listdir(CANALES) if not d.startswith('_'))
+    es_canal = resolver_canal(arg) is not None
     carpeta = None
     if not es_canal:
         try:
@@ -98,8 +99,8 @@ def mostrar(arg):
             print('  %-10s %-40s (%s)' % (k, ident[k] if ident[k] != '' else '—', origen[k]))
         return
     canal = buscar_canal(arg)
-    datos = _json(os.path.join(canal, 'identidad.json'))
-    print('Canal: %s%s' % (os.path.basename(canal), '' if datos else ' · sin identidad.json (crea uno con: identidad.py canal "%s" --voz ... --animacion ...)' % os.path.basename(canal)))
+    datos = _json(ruta(canal, F_IDENTIDAD))
+    print('Canal: %s%s' % (os.path.basename(canal), '' if datos else ' · sin identidad/identidad.json (crea uno con: identidad.py canal "%s" --voz ... --animacion ...)' % os.path.basename(canal)))
     for k, v in datos.items():
         print('  %-10s %s' % (k, v))
 
@@ -110,9 +111,9 @@ def hexa(rgb):
 
 def resumen(arg):
     """Frase de la identidad base (la del canal) para la pregunta de «¿canal o propia?»; sin el nombre de la marca."""
-    es_canal = any(d.lower() == arg.strip().lower() for d in os.listdir(CANALES) if not d.startswith('_'))
+    es_canal = resolver_canal(arg) is not None
     carpeta = buscar_canal(arg) if es_canal else resolver_video(arg)
-    video = carpeta if not es_canal else os.path.join(carpeta, 'Video 00 - resumen')
+    video = carpeta if not es_canal else os.path.join(carpeta, 'videos', '00-resumen')
     ident, _ = identidad_efectiva(video)
     base = ident['colores']
     colores = ', '.join('%s %s' % (n, hexa(base[k])) for n, k in (('fondo', 'BG'), ('acento', 'AMBAR'), ('texto', 'HUESO'), ('apoyo', 'TIERRA')))
@@ -154,30 +155,30 @@ def main():
     nuevos = valores(a)
     if a.orden == 'canal':
         canal = buscar_canal(a.destino)
-        ruta = os.path.join(canal, 'identidad.json')
-        datos = _json(ruta)
+        arch = ruta(canal, F_IDENTIDAD)
+        datos = _json(arch)
         colores = datos.get('colores', dict(COLORES_DEFECTO))
         colores.update(nuevos.pop('colores', {}))
         datos.update(nuevos)
         datos['colores'] = colores
         datos.setdefault('nombre', os.path.basename(canal).upper())
-        escribir(ruta, datos)
-        print('Identidad del canal guardada en %s' % ruta)
+        escribir(arch, datos)
+        print('Identidad del canal guardada en %s' % arch)
         return 0
     carpeta = resolver_video(a.destino)
-    ruta = os.path.join(carpeta, 'identidad.json')
+    arch = ruta(carpeta, F_IDENTIDAD)
     if a.base == 'canal':
-        escribir(ruta, {'base': 'canal'})
+        escribir(arch, {'base': 'canal'})
     else:
-        datos = _json(ruta)
+        datos = _json(arch)
         colores = datos.get('colores', {})
         colores.update(nuevos.pop('colores', {}))
         datos.update(nuevos)
         if colores:
             datos['colores'] = colores
         datos['base'] = 'propia'
-        escribir(ruta, datos)
-    print('Identidad del video guardada en %s (base: %s)' % (ruta, a.base))
+        escribir(arch, datos)
+    print('Identidad del video guardada en %s (base: %s)' % (arch, a.base))
     mostrar(carpeta)
     return 0
 

@@ -4,7 +4,7 @@ Globo terrestre giratorio (estilo espacial).
 Los continentes salen de Natural Earth (datos/ne_110m_land.geojson, dominio público). El globo se dibuja por código con
 proyección ortográfica, luz y atmósfera. Aquí solo está lo general: la orientación de la cámara (eje inclinado de la
 Tierra), el dibujo y la conversión de latitud/longitud a pantalla. Lo propio de cada escena (estaciones, dirección de
-una sonda, etc.) vive en el video que lo usa; ejemplo: Video 01/Montaje/dsn_voyager.py.
+una sonda, etc.) vive en el video que lo usa; ejemplo: videos/01-voyager-1/06-montaje/dsn_voyager.py.
 """
 import json
 import math

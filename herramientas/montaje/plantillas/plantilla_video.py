@@ -1,5 +1,5 @@
 """
-Montaje de este video. Se ejecuta desde esta carpeta (Montaje/), con tiempos.json y escenas.json al lado (tiempos.json: `python herramientas/montaje/tuberia/alinear.py "<video>"`):
+Montaje de este video. Se ejecuta desde esta carpeta (06-montaje/), con tiempos.json y escenas.json al lado (tiempos.json: `python herramientas/montaje/tuberia/alinear.py "<video>"`):
 
   python video.py --frame 60 f.png     un fotograma (segundo 60), para revisar el diseño
   python video.py --verificar          regla «nada se tapa con nada» (rótulos, créditos, capítulos)
@@ -12,9 +12,9 @@ tarjetas. Para diseñar una: define una función fn(t) que devuelva un fotograma
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje', 'comun')))
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje', 'tuberia')))
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje', 'animaciones', 'espacial'))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', '..', 'herramientas', 'montaje', 'comun')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', '..', 'herramientas', 'montaje', 'tuberia')))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', '..', 'herramientas', 'montaje', 'animaciones', 'espacial'))
 
 from pipeline import Proyecto  # noqa: E402
 

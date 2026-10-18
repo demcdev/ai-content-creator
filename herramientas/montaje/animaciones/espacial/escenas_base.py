@@ -7,7 +7,7 @@ propias (con `Proyecto.registrar('E07', mi_funcion)`). Tipos que entiende `escen
   placeholder  muestra el id, el nombre y la descripción de la escaleta (es el tipo por defecto)
   portada      titulo, subtitulo
   texto        lineas (lista de líneas grandes que aparecen una a una)
-  imagen       archivo (en Licencias/originales/), zoom0, zoom1
+  imagen       archivo (en 05-licencias/originales/), zoom0, zoom1
   cierre       tarjeta de suscribirse, like y campanita
 """
 import estilo

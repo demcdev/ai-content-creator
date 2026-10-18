@@ -33,8 +33,8 @@ def listar(voces):
 
 def comandos(voz, video):
     carpeta = resolver_video(video)
-    guion = os.path.join(carpeta, 'Guion.md')
-    salida = os.path.join(carpeta, 'Voz')
+    guion = os.path.join(carpeta, '01-guion', 'guion.md')
+    salida = os.path.join(carpeta, '04-voz')
     def sustituir(txt):
         return txt.replace('{guion}', guion).replace('{voz}', salida).replace('{video}', carpeta)
 
@@ -46,7 +46,7 @@ def comandos(voz, video):
         print('%d) %s' % (i, sustituir(paso)))
     print('')
     print('Notas: %s' % sustituir(voz['notas']))
-    print('Al terminar, anota la voz usada en Voz/ajustes.txt.')
+    print('Al terminar, anota la voz usada en 04-voz/ajustes.txt.')
 
 
 def main():

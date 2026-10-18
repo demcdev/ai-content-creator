@@ -2,9 +2,9 @@
 """
 Librería común de montaje: fuentes, utilidades de dibujo, fondo de estrellas, imágenes con zoom y texto para subtítulos.
 
-Toma la identidad del video en curso (colores, nombre, logo y fuente) de <canal>/identidad.json; el video en curso es
-HE_VIDEO o la carpeta que contiene la carpeta «Montaje» del script que se ejecuta. No tiene escenas propias: las escenas
-viven en cada video (Video NN/Montaje/) o salen de pipeline.py y animaciones/<estilo>/escenas_base.py.
+Toma la identidad del video en curso (colores, nombre, logo y fuente) de <canal>/identidad/identidad.json; el video en curso es
+HE_VIDEO o la carpeta que contiene la carpeta «06-montaje» del script que se ejecuta. No tiene escenas propias: las escenas
+viven en cada video (videos/NN-nombre/06-montaje/) o salen de pipeline.py y animaciones/<estilo>/escenas_base.py.
 """
 import json
 import math
@@ -20,13 +20,13 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 MONTAJE = os.path.dirname(AQUI)                      # herramientas/montaje (fuentes/ está aquí)
 W, H, FPS = 1920, 1080, 30
 
-# Carpeta del video en curso: la variable de entorno HE_VIDEO, o si no, la carpeta que contiene la carpeta «Montaje»
+# Carpeta del video en curso: la variable de entorno HE_VIDEO, o si no, la carpeta que contiene la carpeta «06-montaje»
 # del script que se está ejecutando (video01.py, video02.py...). El canal es la carpeta que contiene al video.
 VIDEO = os.environ.get('HE_VIDEO') or os.path.dirname(os.path.dirname(os.path.abspath(sys.argv[0])))
-CANAL = os.path.dirname(VIDEO)
+CANAL = os.path.dirname(os.path.dirname(VIDEO))      # <canal>/videos/<video>
 RAIZ = CANAL
 
-# Identidad: la del canal (<canal>/identidad.json) y, si el video declara base «propia», lo que cambie su identidad.json.
+# Identidad: la del canal (<canal>/identidad/identidad.json) y, si el video declara base «propia», lo que cambie su identidad/identidad.json.
 sys.path.insert(0, os.path.dirname(MONTAJE))      # herramientas/ (para _comun.py)
 from _comun import identidad_efectiva  # noqa: E402
 
@@ -34,7 +34,7 @@ IDENT, _ORIGEN = identidad_efectiva(VIDEO)
 NOMBRE = IDENT['nombre']
 LOGO = IDENT['logo_ruta']
 BG, AMBAR, HUESO, TIERRA = (tuple(IDENT['colores'][k]) for k in ('BG', 'AMBAR', 'HUESO', 'TIERRA'))
-ORIG = os.path.join(VIDEO, 'Licencias', 'originales')
+ORIG = os.path.join(VIDEO, '05-licencias', 'originales')
 
 # ---------------------------------------------------------------- utilidades
 

@@ -206,12 +206,12 @@ def anillo_arco(fr, cx, cy, r, color, frac=1.0, a=1.0, ancho=4, inicio=-90, rell
 
 
 def _marca(n=40):
-    """Logo real del canal (el PNG que indica `logo` en identidad.json),
+    """Logo real del canal (el PNG que indica `logo` en identidad/identidad.json),
     recortado en círculo, igual que se ve el avatar en YouTube."""
     k = ('marca', n)
     if k in _c:
         return _c[k]
-    if LOGO and os.path.exists(LOGO):                        # logo del canal (identidad.json); es un PNG de 800 px
+    if LOGO and os.path.exists(LOGO):                        # logo del canal (identidad/identidad.json); es un PNG de 800 px
         im = Image.open(LOGO).convert('RGB')
     else:                                                    # sin logo: disco ámbar liso
         im = Image.new('RGB', (800, 800), (242, 184, 75))

@@ -2,13 +2,13 @@
 Tubería de montaje para un video: escenas -> fotogramas -> mp4 con voz, música y subtítulos.
 
 Es la parte común de video01.py y video02.py, sin sus escenas propias. Un video nuevo solo necesita un script
-de 10 líneas (ver plantilla_video.py) y estos archivos en su carpeta Montaje/:
+de 10 líneas (ver plantilla_video.py) y estos archivos en su carpeta 06-montaje/:
 
   tiempos.json   {"total": s, "frases": [{"texto", "ini", "fin"}]}   (lo deja alinear.py)
   escenas.json   lista de {id, nombre, ini, fin, tipo, ...}          (lo deja herramientas/escaleta-a-escenas.py)
   montaje.json   opcional: rotulos, creditos, capitulos, musica, cola, nombre, audio
 
-Uso (desde Montaje/):  python video.py --frame 60 f.png | --verificar | --rango 0 300 parte.mp4 | --solo-audio | [n_partes]
+Uso (desde 06-montaje/):  python video.py --frame 60 f.png | --verificar | --rango 0 300 parte.mp4 | --solo-audio | [n_partes]
 """
 import json
 import os
@@ -90,7 +90,7 @@ class Proyecto:
             print('Aviso: la animación «%s» está en estado «%s»: las escenas pendientes salen en estilo espacial; diseña las propias con registrar().' % (self.animacion, estado), file=sys.stderr)
 
     def _buscar_audio(self):
-        carpeta = os.path.join(self.video, 'Voz')
+        carpeta = os.path.join(self.video, '04-voz')
         wavs = [os.path.join(carpeta, f) for f in os.listdir(carpeta) if f.lower().endswith('.wav')] if os.path.isdir(carpeta) else []
         return max(wavs, key=os.path.getsize) if wavs else ''
 
@@ -302,7 +302,7 @@ class Proyecto:
             self.render_rango(int(a[1]), int(a[2]), a[3])
             return
         if not self.audio:
-            raise SystemExit('No hay audio en Voz/ (o indica "audio" en montaje.json).')
+            raise SystemExit('No hay audio en 04-voz/ (o indica "audio" en montaje.json).')
         if IDENT['base'] not in ('canal', 'propia'):
             raise SystemExit('Falta elegir la identidad del video (la del canal o una propia): python herramientas/identidad.py video "<video>" --base canal|propia')
         if not self.animacion:
