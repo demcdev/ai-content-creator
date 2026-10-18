@@ -309,7 +309,7 @@ class Proyecto:
             p.wait()
             if p.returncode:
                 raise SystemExit('Falló una parte del render')
-        open(lista, 'w').write(''.join("file '{}'\n".format(x.replace(os.sep, '/')) for x in archivos))
+        open(lista, 'w', encoding='utf-8').write(''.join("file '{}'\n".format(x.replace(os.sep, '/')) for x in archivos))
         self._unir(lista, self.mezclar_musica(self.preparar_voz()), final)
         self.escribir_srt(os.path.join(self.salida, self.nombre + '.srt'))
         print('listo:', final)

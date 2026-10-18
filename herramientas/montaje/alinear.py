@@ -29,7 +29,7 @@ import sys
 sys.dont_write_bytecode = True
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(AQUI))
-from _comun import resolver_video  # noqa: E402
+from _comun import identidad_efectiva, resolver_video  # noqa: E402
 
 RUIDO = '-38dB'
 DURACION_MIN_SILENCIO = '0.25'
@@ -212,6 +212,11 @@ def main():
     os.makedirs(os.path.dirname(os.path.abspath(salida)), exist_ok=True)
     json.dump({'total': total, 'frases': res}, open(salida, 'w', encoding='utf8'), ensure_ascii=False, indent=1)
     print('voz %s · audio %s' % (entrada.modo, os.path.basename(entrada.audio)))
+    voz_id = identidad_efectiva(video)[0]['voz']
+    ruta_voces = os.path.join(os.path.dirname(AQUI), 'voz', 'voces.json')
+    motor = next((v['motor'] for v in json.load(open(ruta_voces, encoding='utf-8'))['voces'] if v['id'] == voz_id), '') if os.path.exists(ruta_voces) else ''
+    if motor and motor != entrada.modo:
+        print('AVISO: la identidad del video declara la voz «%s» (motor %s) pero el audio se detectó como %s (¿falta Voz/polly/parte-NN.txt?).' % (voz_id, motor, entrada.modo))
     print('total', round(total, 1), 's · frases', len(res), '· s/peso', round(r, 4), '->', salida)
     for f in res[:a.ver]:
         print('%7.2f–%7.2f  p%-2d %s' % (f['ini'], f['fin'], f['par'], f['texto'][:70]))
