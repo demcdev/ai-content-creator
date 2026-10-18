@@ -11,6 +11,9 @@ Genera un video MP4 1080p a 30 fps a partir de:
 - **esquemas animados** hechos con código (cifras de la hoja «Verificacion de cifras» del video),
 - **rótulos «Dato verificado»** y **subtítulos**, sincronizados con los silencios del audio.
 
+## Identidad del canal (`identidad.json`)
+Las librerías no llevan marca propia: leen `<canal>/identidad.json` (nombre, colores `BG/AMBAR/HUESO/TIERRA`, `logo` relativo al canal y `fuente`). El canal se deduce de la carpeta del video (`HE_VIDEO`, o la carpeta que contiene `Montaje/` del script que se ejecuta). Sin archivo valen los valores de Hace Eones; sin logo se dibuja un disco ámbar.
+
 ## Video completo (13-oct-2026)
 - `alinear.py` mide los silencios del audio y deja en `tiempos.json` el inicio y el fin de cada una de las **120 frases** del guion (validado a mano en el borrador).
 - `video01.py` dibuja las 28 escenas (fotos oficiales, esquemas animados, rótulos, subtítulos) y renderiza el video completo en **4 procesos en paralelo**:
@@ -23,7 +26,7 @@ Genera un video MP4 1080p a 30 fps a partir de:
 
 ## Uso (borrador de 2 minutos)
 ```powershell
-cd "02_canales\Hace Eones\montaje"
+cd "herramientas\montaje"   # el borrador del video 1; necesita HE_VIDEO con la carpeta del video
 python montar.py                          # video completo del borrador -> salida\video-01-borrador-0-2min.mp4 (+ .srt)
 python montar.py --frame 25.0 prueba.png  # solo un fotograma, para revisar el diseño sin renderizar todo
 ```
