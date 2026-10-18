@@ -136,3 +136,48 @@ def sin_seccion(texto, titulo):
     """El texto sin esa sección."""
     lineas, i, j = _limites_seccion(texto or '', titulo)
     return '\n'.join(lineas[:i] + lineas[j:]) if i is not None else (texto or '')
+
+
+# ------------------------------------------------------------------ identidad (canal + video)
+COLORES_DEFECTO = {'BG': [11, 16, 38], 'AMBAR': [242, 184, 75], 'HUESO': [245, 241, 232], 'TIERRA': [96, 158, 255]}
+CLAVES_IDENTIDAD = ('nombre', 'logo', 'fuente', 'voz', 'animacion')
+
+
+def _json(ruta):
+    if os.path.exists(ruta):
+        with open(ruta, encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+
+def identidad_efectiva(video):
+    """Identidad que vale para un video: la del canal (<canal>/identidad.json) y, si el video declara base «propia»,
+    lo que cambie su propio <video>/identidad.json. Devuelve (identidad, origen) con el origen de cada valor
+    («defecto», «canal» o «video»). La identidad lleva además 'base' del video ('', 'canal' o 'propia') y 'logo_ruta'."""
+    video = os.path.abspath(video)
+    canal = os.path.dirname(video)
+    ident = {'nombre': os.path.basename(canal).upper(), 'logo': '', 'fuente': 'inter', 'voz': '', 'animacion': '',
+             'colores': dict(COLORES_DEFECTO)}
+    origen = {k: 'defecto' for k in list(ident)}
+    c = _json(os.path.join(canal, 'identidad.json'))
+    for k in CLAVES_IDENTIDAD:
+        if c.get(k):
+            ident[k], origen[k] = c[k], 'canal'
+    if c.get('colores'):
+        ident['colores'].update(c['colores'])
+        origen['colores'] = 'canal'
+    v = _json(os.path.join(video, 'identidad.json'))
+    base = v.get('base', '')
+    logo_en = canal
+    if base == 'propia':
+        for k in CLAVES_IDENTIDAD:
+            if v.get(k):
+                ident[k], origen[k] = v[k], 'video'
+                if k == 'logo':
+                    logo_en = video
+        if v.get('colores'):
+            ident['colores'].update(v['colores'])
+            origen['colores'] = 'video'
+    ident['base'] = base
+    ident['logo_ruta'] = os.path.join(logo_en, ident['logo']) if ident['logo'] else ''
+    return ident, origen

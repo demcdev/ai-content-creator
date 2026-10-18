@@ -19,7 +19,7 @@ import numpy as np
 from PIL import Image
 
 import estilo
-from montar import FPS, H, NEGRO, W, aparecer, clamp, envolver, reg, sprite_texto, ss, trocear_texto, HUESO, neg
+from montar import IDENT, FPS, H, NEGRO, W, aparecer, clamp, envolver, reg, sprite_texto, ss, trocear_texto, HUESO, neg
 from ui import _contenido_rotulo, capitulo, credito, rotulo
 import escenas_base
 
@@ -47,7 +47,7 @@ class Proyecto:
         self.audio = cfg.get('audio') or self._buscar_audio()
         self.rotulos = [r for r in (self._rotulo(r) for r in cfg.get('rotulos', [])) if r[1] > r[0]]
         self.subs_quemados = os.environ.get('HE_SUBS', '0') == '1'
-        self.animacion = cfg.get('animacion', '')
+        self.animacion = cfg.get('animacion') or IDENT['animacion']
         self._revisar_animacion()
         self.fondo = estilo.base
         esc = _cargar(os.path.join(self.aqui, 'escenas.json'), [])
@@ -285,8 +285,10 @@ class Proyecto:
             return
         if not self.audio:
             raise SystemExit('No hay audio en Voz/ (o indica "audio" en montaje.json).')
+        if IDENT['base'] not in ('canal', 'propia'):
+            raise SystemExit('Falta elegir la identidad del video (la del canal o una propia): python herramientas/identidad.py video "<video>" --base canal|propia')
         if not self.animacion:
-            raise SystemExit('Falta elegir la animación. Mira las opciones con: python herramientas/montaje/animaciones.py y aplica una con: python herramientas/montaje/animaciones.py <id> "<video>" --aplicar')
+            raise SystemExit('Ni el canal ni el video tienen animación. Defínela con: python herramientas/identidad.py canal|video "<destino>" --animacion <id> (opciones: python herramientas/montaje/animaciones.py)')
         lista = os.path.join(tmp, 'lista.txt')
         final = os.path.join(self.salida, self.nombre + '.mp4')
         if a and a[0] == '--solo-audio':

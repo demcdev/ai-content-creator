@@ -1,0 +1,147 @@
+#!/usr/bin/env python3
+"""
+Identidad de cada canal (colores, voz, animación, nombre, logo, fuente) y la de cada video (la del canal o una propia).
+
+  python herramientas/identidad.py mostrar "Hace Eones"                 # identidad del canal
+  python herramientas/identidad.py mostrar "Hace Eones/Video 03"        # la que vale para ese video y de dónde sale cada valor
+  python herramientas/identidad.py canal "Hace Eones" --voz polly-raul --animacion espacial --color AMBAR=242,184,75
+  python herramientas/identidad.py video "Hace Eones/3" --base canal    # el video usa la identidad del canal
+  python herramientas/identidad.py video "Hace Eones/3" --base propia --voz google-iapetus --animacion papel-recortado
+
+Archivos: <canal>/identidad.json (la del canal) y <video>/identidad.json ({"base": "canal"} o {"base": "propia", ...lo que cambia}).
+Con base «propia» solo se cambian los valores indicados; el resto sigue siendo el del canal.
+Opciones válidas de --voz: ids de herramientas/voz/voces.json. De --animacion: ids de herramientas/montaje/animaciones.json.
+Claude pregunta «¿identidad del canal o propia?» al crear cada video (regla del CLAUDE.md) y después ejecuta esto.
+No usa IA ni claves.
+"""
+import argparse
+import json
+import os
+import sys
+
+sys.dont_write_bytecode = True
+AQUI = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, AQUI)
+from _comun import CANALES, CLAVES_IDENTIDAD, COLORES_DEFECTO, _json, identidad_efectiva, resolver_video  # noqa: E402
+
+
+def ids(ruta, clave):
+    return [x['id'] for x in _json(ruta).get(clave, [])]
+
+
+VOCES = ids(os.path.join(AQUI, 'voz', 'voces.json'), 'voces')
+ANIMACIONES = ids(os.path.join(AQUI, 'montaje', 'animaciones.json'), 'animaciones')
+
+
+def buscar_canal(nombre):
+    existentes = [d for d in sorted(os.listdir(CANALES)) if os.path.isdir(os.path.join(CANALES, d)) and not d.startswith('_')]
+    for d in existentes:
+        if d.lower() == nombre.strip().lower():
+            return os.path.join(CANALES, d)
+    sys.exit('No existe el canal «%s». Canales: %s' % (nombre, ', '.join(existentes)))
+
+
+def valores(a):
+    """Valores indicados en la línea de comandos, ya validados."""
+    out = {}
+    for k in CLAVES_IDENTIDAD:
+        v = getattr(a, k, None)
+        if v:
+            out[k] = v
+    if out.get('voz') and out['voz'] not in VOCES:
+        sys.exit('Voz «%s» no existe en voces.json. Opciones: %s' % (out['voz'], ', '.join(VOCES)))
+    if out.get('animacion') and out['animacion'] not in ANIMACIONES:
+        sys.exit('Animación «%s» no existe en animaciones.json. Opciones: %s' % (out['animacion'], ', '.join(ANIMACIONES)))
+    colores = {}
+    for c in a.color or []:
+        try:
+            k, rgb = c.split('=')
+            r, g, b = (int(x) for x in rgb.split(','))
+            assert k in COLORES_DEFECTO and all(0 <= x <= 255 for x in (r, g, b))
+            colores[k] = [r, g, b]
+        except Exception:
+            sys.exit('Color mal escrito: «%s». Formato: BG=11,16,38 (claves: %s)' % (c, ', '.join(COLORES_DEFECTO)))
+    if colores:
+        out['colores'] = colores
+    return out
+
+
+def escribir(ruta, datos):
+    with open(ruta, 'w', encoding='utf-8') as f:
+        json.dump(datos, f, ensure_ascii=False, indent=1)
+        f.write('\n')
+
+
+def mostrar(arg):
+    es_canal = any(d.lower() == arg.strip().lower() for d in os.listdir(CANALES) if not d.startswith('_'))
+    carpeta = None
+    if not es_canal:
+        try:
+            carpeta = resolver_video(arg)
+        except SystemExit:
+            carpeta = None
+    if carpeta:
+        ident, origen = identidad_efectiva(carpeta)
+        print('Video: %s · base: %s' % (os.path.basename(carpeta), ident['base'] or '(sin elegir)'))
+        for k in CLAVES_IDENTIDAD + ('colores',):
+            print('  %-10s %-40s (%s)' % (k, ident[k] if ident[k] != '' else '—', origen[k]))
+        return
+    canal = buscar_canal(arg)
+    datos = _json(os.path.join(canal, 'identidad.json'))
+    print('Canal: %s%s' % (os.path.basename(canal), '' if datos else ' · sin identidad.json (crea uno con: identidad.py canal "%s" --voz ... --animacion ...)' % os.path.basename(canal)))
+    for k, v in datos.items():
+        print('  %-10s %s' % (k, v))
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest='orden', required=True)
+    for nombre in ('mostrar', 'canal', 'video'):
+        p = sub.add_parser(nombre)
+        p.add_argument('destino')
+        if nombre != 'mostrar':
+            p.add_argument('--nombre')
+            p.add_argument('--logo')
+            p.add_argument('--fuente')
+            p.add_argument('--voz')
+            p.add_argument('--animacion')
+            p.add_argument('--color', action='append', help='BG=11,16,38 (se puede repetir)')
+        if nombre == 'video':
+            p.add_argument('--base', choices=['canal', 'propia'], required=True)
+    a = ap.parse_args()
+    if a.orden == 'mostrar':
+        mostrar(a.destino)
+        return 0
+    nuevos = valores(a)
+    if a.orden == 'canal':
+        canal = buscar_canal(a.destino)
+        ruta = os.path.join(canal, 'identidad.json')
+        datos = _json(ruta)
+        colores = datos.get('colores', dict(COLORES_DEFECTO))
+        colores.update(nuevos.pop('colores', {}))
+        datos.update(nuevos)
+        datos['colores'] = colores
+        datos.setdefault('nombre', os.path.basename(canal).upper())
+        escribir(ruta, datos)
+        print('Identidad del canal guardada en %s' % ruta)
+        return 0
+    carpeta = resolver_video(a.destino)
+    ruta = os.path.join(carpeta, 'identidad.json')
+    if a.base == 'canal':
+        escribir(ruta, {'base': 'canal'})
+    else:
+        datos = _json(ruta)
+        colores = datos.get('colores', {})
+        colores.update(nuevos.pop('colores', {}))
+        datos.update(nuevos)
+        if colores:
+            datos['colores'] = colores
+        datos['base'] = 'propia'
+        escribir(ruta, datos)
+    print('Identidad del video guardada en %s (base: %s)' % (ruta, a.base))
+    mostrar(carpeta)
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

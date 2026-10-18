@@ -10,7 +10,7 @@ Cada canal es una carpeta dentro de `02_canales/`. **Lo global del canal va en s
 | `03 - Politicas y checklist.md` | Checklist de políticas del nicho (lo lee el auditor) |
 | `04 - Modelos de referencia.md` | Canales que se estudian (patrones, no copias) |
 | `05 - Plan de 90 dias.md` | Calendario y metas |
-| `identidad.json` | Nombre, colores, logo y fuente del canal (lo leen las librerías de montaje; sin logo dibujan un disco ámbar) |
+| `identidad.json` | Identidad del canal: nombre, colores, logo, fuente, **voz** y **animación** (las librerías de montaje la leen; sin logo dibujan un disco ámbar) |
 | `Video NN - Nombre/` | Un video por carpeta |
 
 ## Un video = una carpeta
@@ -26,6 +26,7 @@ Cada canal es una carpeta dentro de `02_canales/`. **Lo global del canal va en s
 | `Registro de licencias.md` · `Licencias/` | Una fila por material; originales, fichas, música, capturas |
 | `Voz/` · `Montaje/` · `Entregables/` | Audio, scripts del video y video final con `.srt` |
 | `Metricas y seguimiento.md` | Números a 2–3, 7 y 28 días y decisiones |
+| `identidad.json` | Qué identidad usa este video: `{"base": "canal"}` o `{"base": "propia", ...lo que cambia}`; la pregunta se hace al crear el video |
 
 ## Crear un video nuevo
 ```bash
@@ -37,7 +38,7 @@ Crea la carpeta con todos los documentos de partida. No pisa nada y el canal deb
 checklist de escritura (`00_contexto/Checklist-escritura-guion.md`) → guion (`guionista-retencion`) → `validar-video.py` → `verificador` y `auditor` → sello → escaleta (`escaleta-audiovisual`) → voz → `alinear.py` → montaje → publicación → métricas.
 
 ## Herramientas globales (`herramientas/`)
-`nuevo-video.py`, `validar-video.py`, `estado-video.py`, `montaje/alinear.py` (tiempos de cada frase), `montaje/animaciones.json` (catálogo de estilos de animación: Claude pregunta cuál usar en cada video), `escaleta-a-escenas.py`, `voz/` (sintetizador de voz; `voces.json` lista las voces disponibles y Claude pregunta cuál usar en cada video) y `montaje/` (librerías de render y tubería de montaje). Las librerías de montaje son de todos los canales: toman nombre, colores, logo y fuente de `<canal>/identidad.json`; un video nuevo recibe de `nuevo-video.py` un `Montaje/video.py` de 10 líneas y un `montaje.json`; `escaleta-a-escenas.py` convierte la escaleta técnica en `Montaje/escenas.json` y `video.py --frame 60 f.png` ya muestra el video completo con tarjetas en las escenas pendientes, que se reemplazan una a una por escenas propias (`P.registrar('E07', fn)`). Los videos 1 y 2 conservan sus scripts propios (`video01.py`, `video02.py`).
+`nuevo-video.py`, `validar-video.py`, `estado-video.py`, `montaje/alinear.py` (tiempos de cada frase), `montaje/animaciones.json` (catálogo de estilos de animación), `identidad.py` (identidad del canal y del video: Claude pregunta al crear cada video si usa la del canal o una propia), `escaleta-a-escenas.py`, `voz/` (sintetizador de voz; `voces.json` lista las voces disponibles y Claude pregunta cuál usar en cada video) y `montaje/` (librerías de render y tubería de montaje). Las librerías de montaje son de todos los canales: toman nombre, colores, logo y fuente de `<canal>/identidad.json`; un video nuevo recibe de `nuevo-video.py` un `Montaje/video.py` de 10 líneas y un `montaje.json`; `escaleta-a-escenas.py` convierte la escaleta técnica en `Montaje/escenas.json` y `video.py --frame 60 f.png` ya muestra el video completo con tarjetas en las escenas pendientes, que se reemplazan una a una por escenas propias (`P.registrar('E07', fn)`). Los videos 1 y 2 conservan sus scripts propios (`video01.py`, `video02.py`).
 
 ## Técnica general (en `00_contexto/`)
 - `Retencion-tecnicas-de-montaje.md` · `Voz-IA-comparativa.md` · `Checklist-escritura-guion.md` · `Politicas-YouTube-Cumplimiento.md` · `Reglas-detalladas.md`.

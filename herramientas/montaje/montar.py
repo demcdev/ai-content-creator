@@ -31,17 +31,14 @@ VIDEO = os.environ.get('HE_VIDEO') or os.path.dirname(os.path.dirname(os.path.ab
 CANAL = os.path.dirname(VIDEO)
 RAIZ = CANAL
 
-# Identidad del canal: <canal>/identidad.json (nombre, colores, logo, fuente). Sin archivo, valen estos valores.
-_ID = {'nombre': 'HACE EONES', 'logo': '', 'fuente': 'inter',
-       'colores': {'BG': [11, 16, 38], 'AMBAR': [242, 184, 75], 'HUESO': [245, 241, 232], 'TIERRA': [96, 158, 255]}}
-_ruta_id = os.path.join(CANAL, 'identidad.json')
-if os.path.exists(_ruta_id):
-    _dato = json.load(open(_ruta_id, encoding='utf-8'))
-    _ID['colores'].update(_dato.pop('colores', {}))
-    _ID.update(_dato)
-NOMBRE = _ID['nombre']
-LOGO = os.path.join(CANAL, _ID['logo']) if _ID['logo'] else ''
-BG, AMBAR, HUESO, TIERRA = (tuple(_ID['colores'][k]) for k in ('BG', 'AMBAR', 'HUESO', 'TIERRA'))
+# Identidad: la del canal (<canal>/identidad.json) y, si el video declara base «propia», lo que cambie su identidad.json.
+sys.path.insert(0, os.path.dirname(AQUI))
+from _comun import identidad_efectiva  # noqa: E402
+
+IDENT, _ORIGEN = identidad_efectiva(VIDEO)
+NOMBRE = IDENT['nombre']
+LOGO = IDENT['logo_ruta']
+BG, AMBAR, HUESO, TIERRA = (tuple(IDENT['colores'][k]) for k in ('BG', 'AMBAR', 'HUESO', 'TIERRA'))
 AUDIO = os.path.join(VIDEO, 'Voz', '01-Video-1-Voyager-1-guion.wav')
 ORIG = os.path.join(VIDEO, 'Licencias', 'originales')
 DURACION = 119.1  # el borrador termina justo antes de «Al acercarse a Júpiter…»
@@ -60,7 +57,7 @@ def fuente(nombre, tam):
 
 # Familia tipográfica: HE_FUENTE = inter (por defecto, elegida el 13-oct-2026) | montserrat | space (Space Grotesk) | segoe (fuente de Windows).
 # Las tres últimas son de licencia abierta (SIL OFL) y están en «fuentes/».
-FAMILIA = os.environ.get('HE_FUENTE', _ID['fuente'])
+FAMILIA = os.environ.get('HE_FUENTE', IDENT['fuente'])
 _SEGOE = {'light': 'segoeuisl.ttf', 'reg': 'segoeui.ttf', 'bold': 'segoeuib.ttf', 'black': 'seguibl.ttf'}
 _VF = {'montserrat': 'montserrat/Montserrat-VF.ttf', 'inter': 'inter/Inter-VF.ttf', 'space': 'spacegrotesk/SpaceGrotesk-VF.ttf'}
 _PESOS = {'light': 300, 'reg': 400, 'bold': 700, 'black': 900}

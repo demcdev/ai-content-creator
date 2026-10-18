@@ -5,7 +5,7 @@ Catálogo de animaciones (animaciones.json): listar, explicar una y aplicarla a 
   python herramientas/montaje/animaciones.py                          # lista las ofrecidas, con su estado
   python herramientas/montaje/animaciones.py --todas                  # también las no ofrecidas y las descartadas
   python herramientas/montaje/animaciones.py papel-recortado          # cómo se hace, riesgos y ejemplos
-  python herramientas/montaje/animaciones.py papel-recortado "Hace Eones/3" --aplicar   # la guarda en Montaje/montaje.json
+  python herramientas/montaje/animaciones.py papel-recortado "Hace Eones/3" --aplicar   # la guarda en la identidad propia del video
 
 Claude pregunta al usuario cuál usar antes de montar (regla del CLAUDE.md) y después ejecuta --aplicar con la elegida.
 No genera video ni usa IA.
@@ -59,13 +59,17 @@ def explicar(a):
 
 def aplicar(a, video):
     carpeta = resolver_video(video)
-    ruta = os.path.join(carpeta, 'Montaje', 'montaje.json')
-    cfg = json.load(open(ruta, encoding='utf-8')) if os.path.exists(ruta) else {}
-    cfg['animacion'] = a['id']
-    os.makedirs(os.path.dirname(ruta), exist_ok=True)
+    ruta = os.path.join(carpeta, 'identidad.json')
+    datos = json.load(open(ruta, encoding='utf-8')) if os.path.exists(ruta) else {}
+    if datos.get('base') == 'canal':
+        print('Este video usa la identidad del canal (con su animación). Para una distinta: python herramientas/identidad.py video "%s" --base propia --animacion %s' % (video, a['id']))
+        return 1
+    datos['base'] = 'propia'
+    datos['animacion'] = a['id']
     with open(ruta, 'w', encoding='utf-8') as f:
-        json.dump(cfg, f, ensure_ascii=False, indent=1)
-    print('Animación «%s» guardada en %s' % (a['id'], ruta))
+        json.dump(datos, f, ensure_ascii=False, indent=1)
+    print('Animación «%s» guardada en la identidad propia del video: %s' % (a['id'], ruta))
+    return 0
 
 
 def main():
@@ -87,7 +91,7 @@ def main():
         if not a.video:
             print('Indica el video: animaciones.py <id> "<video>" --aplicar')
             return 1
-        aplicar(elegida[0], a.video)
+        return aplicar(elegida[0], a.video)
     else:
         explicar(elegida[0])
     return 0

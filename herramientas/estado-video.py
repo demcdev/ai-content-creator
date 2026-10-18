@@ -24,7 +24,7 @@ import re
 import shutil
 import sys
 
-from _comun import (archivos, consola, filas_datos, leer, resolver_video, resumen_licencias, sha,
+from _comun import (archivos, consola, filas_datos, identidad_efectiva, leer, resolver_video, resumen_licencias, sha,
                     seccion_h2, sin_seccion, tamano)
 
 ROLES_GUION = ('verificador', 'auditor-guion')
@@ -91,8 +91,10 @@ def etapas(carpeta, datos):
     add('escaleta', 'Escaleta audiovisual', n > 0, '%d escenas' % n, 'skill escaleta-audiovisual')
     n = filas_datos(seccion_h2(esc, 'Planilla de producción'))
     add('planilla', 'Planilla (sección de la escaleta)', n > 0, '%d filas' % n, 'skill guionista-retencion')
+    ident, _ = identidad_efectiva(carpeta)
+    add('identidad', 'Identidad del video', ident['base'] in ('canal', 'propia'), ident['base'] or '', 'preguntar: ¿identidad del canal o propia? (identidad.py)')
     n = len(archivos(f('Voz'), ('.mp3', '.wav', '.m4a', '.ogg', '.flac')))
-    add('voz', 'Voz', n > 0, '%d audios' % n, 'preguntar qué voz (voces.json) y herramientas/voz')
+    add('voz', 'Voz', n > 0, '%d audios' % n, 'voz de la identidad del video (voces.json) y herramientas/voz')
     n = len(archivos(f('Miniaturas'), ('.png', '.jpg', '.jpeg', '.webp'), ignorar_guion_bajo=True))
     add('miniaturas', 'Miniaturas', n > 0, '%d imágenes' % n, 'subagente miniaturas')
     lic = resumen_licencias(leer(f('Registro de licencias.md')))
@@ -101,7 +103,7 @@ def etapas(carpeta, datos):
     else:
         add('licencias', 'Licencias', False, 'sin filas', 'tú, con las fichas')
     n = len([x for x in archivos(f('Montaje'), ('.py', '.json', '.mp4', '.mov', '.png')) if not os.path.basename(x).startswith('_')])
-    add('montaje', 'Montaje', n > 0, '%d archivos' % n, 'preguntar la animación (animaciones.json) y scripts de montaje')
+    add('montaje', 'Montaje', n > 0, '%d archivos' % n, 'animación de la identidad del video (animaciones.json) y scripts de montaje')
     firma = firma_final(carpeta)
     add('video', 'Video final (.mp4)', firma is not None, firma.split(':')[0] if firma else '', 'scripts de montaje')
     v = vigencia(carpeta, datos, ROL_FINAL)

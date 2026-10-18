@@ -4,6 +4,7 @@ Lista las voces configuradas (voces.json) y muestra los comandos para generar la
 
   python herramientas/voz/voces.py                              # lista las voces y su costo
   python herramientas/voz/voces.py polly-raul "Hace Eones/3"    # comandos con las rutas de ese video
+  python herramientas/voz/voces.py --video "Hace Eones/3"       # los de la voz de la identidad de ese video
 
 No genera audio ni usa claves: solo imprime lo que hay que ejecutar. Claude pregunta al usuario cuál voz usar
 antes de este paso (regla del CLAUDE.md); para añadir una voz, editar voces.json.
@@ -15,7 +16,7 @@ import sys
 sys.dont_write_bytecode = True
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(AQUI))
-from _comun import resolver_video  # noqa: E402
+from _comun import identidad_efectiva, resolver_video  # noqa: E402
 
 
 def cargar():
@@ -50,6 +51,13 @@ def comandos(voz, video):
 
 def main():
     voces = cargar()
+    if len(sys.argv) == 3 and sys.argv[1] == '--video':
+        voz_id = identidad_efectiva(resolver_video(sys.argv[2]))[0]['voz']
+        if not voz_id:
+            print('Ni el canal ni el video tienen voz definida. Usa: python herramientas/identidad.py canal|video "<destino>" --voz <id>')
+            return 1
+        comandos([v for v in voces if v['id'] == voz_id][0], sys.argv[2])
+        return 0
     if len(sys.argv) == 1:
         listar(voces)
         return 0
