@@ -4,7 +4,7 @@ Video 1 completo (Voyager 1) · montador automático de Hace Eones.
 
 Lee tiempos.json (alineación de las 120 frases con el audio real) y dibuja cada escena con las imágenes oficiales
 guardadas en «Video 01 - Voyager 1/Licencias/originales» y esquemas animados con código.
-Este script vive en la carpeta del video; las librerías compartidas están en «Hace Eones/montaje».
+Este script vive en la carpeta del video; las librerías compartidas están en «herramientas/montaje».
 
   python video01.py --frame 150 f.png       un fotograma (segundo 150) para revisar el diseño
   python video01.py                         render completo en paralelo -> salida/video-01-completo.mp4 (+ .srt)
@@ -18,7 +18,7 @@ import sys
 import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'montaje')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje')))
 import aa as trazo
 import globo
 

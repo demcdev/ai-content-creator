@@ -24,7 +24,7 @@ from scipy import ndimage
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 V2 = os.path.dirname(AQUI)
-HERR = os.path.normpath(os.path.join(V2, '..', 'montaje'))
+HERR = os.path.normpath(os.path.join(V2, '..', '..', '..', 'herramientas', 'montaje'))
 sys.path.insert(0, HERR)
 import papel as PP      # noqa: E402
 import pintura as P     # noqa: E402

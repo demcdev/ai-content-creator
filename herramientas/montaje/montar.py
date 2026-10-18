@@ -11,6 +11,7 @@ Uso (desde esta carpeta):
 
 Requisitos: Python 3, Pillow, numpy y ffmpeg en el PATH. Fuentes: Segoe UI de Windows (para el borrador; ver registro F1).
 """
+import json
 import math
 import os
 import random
@@ -21,16 +22,26 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-RAIZ = os.path.abspath(os.path.join(AQUI, '..'))  # carpeta «Hace Eones»
 W, H, FPS = 1920, 1080, 30
-BG = (11, 16, 38)
-AMBAR = (242, 184, 75)
-HUESO = (245, 241, 232)
-TIERRA = (96, 158, 255)
 FUENTES = 'C:/Windows/Fonts/'
 
-# Carpeta del video en curso. Por defecto, el video 1; para otro video: variable de entorno HE_VIDEO con la ruta de su carpeta.
-VIDEO = os.environ.get('HE_VIDEO') or os.path.join(RAIZ, 'Video 01 - Voyager 1')
+# Carpeta del video en curso: la variable de entorno HE_VIDEO, o si no, la carpeta que contiene la carpeta «Montaje»
+# del script que se está ejecutando (video01.py, video02.py...). El canal es la carpeta que contiene al video.
+VIDEO = os.environ.get('HE_VIDEO') or os.path.dirname(os.path.dirname(os.path.abspath(sys.argv[0])))
+CANAL = os.path.dirname(VIDEO)
+RAIZ = CANAL
+
+# Identidad del canal: <canal>/identidad.json (nombre, colores, logo, fuente). Sin archivo, valen estos valores.
+_ID = {'nombre': 'HACE EONES', 'logo': '', 'fuente': 'inter',
+       'colores': {'BG': [11, 16, 38], 'AMBAR': [242, 184, 75], 'HUESO': [245, 241, 232], 'TIERRA': [96, 158, 255]}}
+_ruta_id = os.path.join(CANAL, 'identidad.json')
+if os.path.exists(_ruta_id):
+    _dato = json.load(open(_ruta_id, encoding='utf-8'))
+    _ID['colores'].update(_dato.pop('colores', {}))
+    _ID.update(_dato)
+NOMBRE = _ID['nombre']
+LOGO = os.path.join(CANAL, _ID['logo']) if _ID['logo'] else ''
+BG, AMBAR, HUESO, TIERRA = (tuple(_ID['colores'][k]) for k in ('BG', 'AMBAR', 'HUESO', 'TIERRA'))
 AUDIO = os.path.join(VIDEO, 'Voz', '01-Video-1-Voyager-1-guion.wav')
 ORIG = os.path.join(VIDEO, 'Licencias', 'originales')
 DURACION = 119.1  # el borrador termina justo antes de «Al acercarse a Júpiter…»
@@ -49,7 +60,7 @@ def fuente(nombre, tam):
 
 # Familia tipográfica: HE_FUENTE = inter (por defecto, elegida el 13-oct-2026) | montserrat | space (Space Grotesk) | segoe (fuente de Windows).
 # Las tres últimas son de licencia abierta (SIL OFL) y están en «fuentes/».
-FAMILIA = os.environ.get('HE_FUENTE', 'inter')
+FAMILIA = os.environ.get('HE_FUENTE', _ID['fuente'])
 _SEGOE = {'light': 'segoeuisl.ttf', 'reg': 'segoeui.ttf', 'bold': 'segoeuib.ttf', 'black': 'seguibl.ttf'}
 _VF = {'montserrat': 'montserrat/Montserrat-VF.ttf', 'inter': 'inter/Inter-VF.ttf', 'space': 'spacegrotesk/SpaceGrotesk-VF.ttf'}
 _PESOS = {'light': 300, 'reg': 400, 'bold': 700, 'black': 900}
@@ -460,7 +471,7 @@ def fotograma(t):
     fr = capas[0][1](t)
     for al, fn in capas[1:]:
         fr = Image.blend(fr, fn(t), al) if al < 1 else fn(t)
-    pegar(fr, sprite_texto('HACE EONES', neg(22), mezcla(BG, HUESO, 0.55)), 96, 50, 0.9)
+    pegar(fr, sprite_texto(NOMBRE, neg(22), mezcla(BG, HUESO, 0.55)), 96, 50, 0.9)
     for a, b, txt in CREDITOS:
         k = aparecer(t, a + 0.6, b - 0.2, 0.5)
         if k > 0:
@@ -481,12 +492,12 @@ def preparar_audio(destino):
 
 
 def main():
-    os.makedirs(os.path.join(AQUI, 'salida'), exist_ok=True)
+    os.makedirs(os.path.join(VIDEO, 'Montaje', 'salida'), exist_ok=True)
     if len(sys.argv) >= 4 and sys.argv[1] == '--frame':
         fotograma(float(sys.argv[2])).save(sys.argv[3])
         print('fotograma guardado', sys.argv[3])
         return
-    salida = os.path.join(AQUI, 'salida', 'video-01-borrador-0-2min.mp4')
+    salida = os.path.join(VIDEO, 'Montaje', 'salida', 'video-01-borrador-0-2min.mp4')
     wav = os.path.join(AQUI, 'salida', '_audio-borrador.wav')
     preparar_audio(wav)
     escribir_srt(os.path.join(AQUI, 'salida', 'video-01-borrador-0-2min.srt'))

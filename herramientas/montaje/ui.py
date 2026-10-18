@@ -6,12 +6,13 @@ de luz. Es sobrio a propósito: pocos elementos, mucho contraste y nada que tape
 Todo es código propio (sin plantillas ni recursos de terceros).
 """
 import math
+import os
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 import aa
-from montar import AMBAR, BG, H, HUESO, W, blk, clamp, fuente_peso, lerp, mezcla, neg, pegar, reg, sprite_texto, ss
+from montar import AMBAR, BG, H, HUESO, LOGO, NOMBRE, W, blk, clamp, fuente_peso, lerp, mezcla, neg, pegar, reg, sprite_texto, ss
 
 HIELO = (150, 190, 255)
 VERDE = (120, 205, 190)
@@ -214,11 +215,9 @@ def _marca(n=40):
     k = ('marca', n)
     if k in _c:
         return _c[k]
-    import os
-    ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'Identidad visual', 'logo-hace-eones-800.png')
-    if os.path.exists(ruta):
-        im = Image.open(ruta).convert('RGB')
-    else:                                                    # sin logo: disco ámbar liso (el logo ya no está en la carpeta)
+    if LOGO and os.path.exists(LOGO):                        # logo del canal (identidad.json); es un PNG de 800 px
+        im = Image.open(LOGO).convert('RGB')
+    else:                                                    # sin logo: disco ámbar liso
         im = Image.new('RGB', (800, 800), (242, 184, 75))
     im = im.crop((110, 110, 690, 690))                       # solo los anillos, sin el cielo de los bordes
     s = 4
@@ -235,7 +234,7 @@ def logo(fr, a=1.0):
     """Marca del canal: el logo real en círculo + el nombre con letra espaciada."""
     rgb, mk = _marca(42)
     x, y = 90, 34
-    txt = sprite_esp('HACE EONES', neg(19), mezcla(BG, HUESO, 0.80), 3.4)
+    txt = sprite_esp(NOMBRE, neg(19), mezcla(BG, HUESO, 0.80), 3.4)
     sombra = txt[1].filter(ImageFilter.GaussianBlur(3)).point(lambda v: int(v * 0.9))
     fr.paste(Image.new('RGB', sombra.size, (3, 5, 14)), (x + 54 - 2, y + 11), sombra)
     aa.elipse(fr, (x - 1, y - 1, x + 43, y + 43), AMBAR, 1, 0.55 * a)

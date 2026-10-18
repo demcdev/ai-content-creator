@@ -59,7 +59,7 @@ Las dos primeras ya están en `Video 01 - Voyager 1/Licencias/musica/` (no se us
 
 | Cód. | Qué | Condiciones | Estado |
 |---|---|---|---|
-| **F1** | **Inter** (SIL Open Font License 1.1) | Igual que el video 1; copia con licencia en `montaje/fuentes/inter/` | ✅ |
+| **F1** | **Inter** (SIL Open Font License 1.1) | Igual que el video 1; copia con licencia en `herramientas/montaje/fuentes/inter/` | ✅ |
 
 ## 5. Material propio (O)
 

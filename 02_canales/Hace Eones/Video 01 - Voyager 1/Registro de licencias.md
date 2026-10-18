@@ -120,7 +120,7 @@ Carpeta: `Hace Eones/Video 01 - Voyager 1/Licencias/`. Nombre del archivo: **`<c
 
 | Cód. | Qué | Uso | Condiciones | Captura | Fecha | Estado |
 |---|---|---|---|---|---|---|
-| **F1** | **Inter** (familia variable, pesos 300 a 900), de Rasmus Andersson · licencia **SIL Open Font License 1.1** (uso comercial permitido, incluido video monetizado; no se puede vender la fuente sola) | Rótulos, títulos, subtítulos y miniaturas | Descargada el 13-oct-2026 de https://github.com/google/fonts/tree/main/ofl/inter (archivo `Inter[opsz,wght].ttf`, 877 KB). Copia local con su licencia: `montaje/fuentes/inter/` (`Inter-VF.ttf` y `OFL.txt`). Se compararon también Montserrat y Space Grotesk (misma licencia) y se descartaron. **Segoe UI ya no se usa** | `fuentes/inter/OFL.txt` | | ✅ |
+| **F1** | **Inter** (familia variable, pesos 300 a 900), de Rasmus Andersson · licencia **SIL Open Font License 1.1** (uso comercial permitido, incluido video monetizado; no se puede vender la fuente sola) | Rótulos, títulos, subtítulos y miniaturas | Descargada el 13-oct-2026 de https://github.com/google/fonts/tree/main/ofl/inter (archivo `Inter[opsz,wght].ttf`, 877 KB). Copia local con su licencia: `herramientas/montaje/fuentes/inter/` (`Inter-VF.ttf` y `OFL.txt`). Se compararon también Montserrat y Space Grotesk (misma licencia) y se descartaron. **Segoe UI ya no se usa** | `fuentes/inter/OFL.txt` | | ✅ |
 | **S1** | **CapCut** (montaje) | Edición | Revisar sus términos para contenido comercial y que **no deje marca de agua ni final automático** en la exportación | Captura de los términos y de los ajustes de exportación | | ☐ |
 
 ## 7. Material propio (O)

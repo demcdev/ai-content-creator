@@ -11,7 +11,7 @@ import sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'montaje')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje')))
 from estilo import base, bloom, dibujar_planeta, linea_glow
 from montar import AMBAR, AQUI, BG, H, HUESO, W, blk, cargar, mezcla, neg, pegar, punto, reg, sprite_texto
 from ui import _marca

@@ -1,0 +1,11 @@
+{
+  "nombre": "HACE EONES",
+  "logo": "",
+  "fuente": "inter",
+  "colores": {
+    "BG": [11, 16, 38],
+    "AMBAR": [242, 184, 75],
+    "HUESO": [245, 241, 232],
+    "TIERRA": [96, 158, 255]
+  }
+}

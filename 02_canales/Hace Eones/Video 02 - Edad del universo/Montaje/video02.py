@@ -4,7 +4,7 @@ Video 2 completo (Edad del universo) · montador automático de Hace Eones.
 
 Sigue «Escaleta audiovisual.md» (44 escenas) con los tiempos reales de `tiempos.json` (alineación de las 134 frases con la voz).
 Imágenes reales: solo M01 (WMAP, NASA), M02 (collage de Hubble, NASA/ESA) y M03 (mapa de Gaia, ESA); el resto son animaciones propias.
-Este script vive en la carpeta del video; las librerías compartidas están en «Hace Eones/montaje».
+Este script vive en la carpeta del video; las librerías compartidas están en «herramientas/montaje».
 
   python video02.py --frame 150 f.png       un fotograma (segundo 150) para revisar el diseño
   python video02.py                         render completo en paralelo -> salida/video-02-completo.mp4 (+ .srt)
@@ -19,7 +19,7 @@ import sys
 AQUI = os.path.dirname(os.path.abspath(__file__))
 VIDEO = os.path.abspath(os.path.join(AQUI, '..'))
 os.environ['HE_VIDEO'] = VIDEO          # montar.py lee las imágenes de «Licencias/originales» de ESTE video
-sys.path.insert(0, os.path.abspath(os.path.join(AQUI, '..', '..', 'montaje')))
+sys.path.insert(0, os.path.abspath(os.path.join(AQUI, '..', '..', '..', '..', 'herramientas', 'montaje')))
 
 import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter

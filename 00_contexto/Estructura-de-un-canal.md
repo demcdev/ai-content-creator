@@ -10,7 +10,7 @@ Cada canal es una carpeta dentro de `02_canales/`. **Lo global del canal va en s
 | `03 - Politicas y checklist.md` | Checklist de políticas del nicho (lo lee el auditor) |
 | `04 - Modelos de referencia.md` | Canales que se estudian (patrones, no copias) |
 | `05 - Plan de 90 dias.md` | Calendario y metas |
-| `Identidad visual/` | Logo, banner, marca de agua, tipografías (opcional; Hace Eones la borró y el montaje funciona sin logo) |
+| `identidad.json` | Nombre, colores, logo y fuente del canal (lo leen las librerías de montaje; sin logo dibujan un disco ámbar) |
 | `Video NN - Nombre/` | Un video por carpeta |
 
 ## Un video = una carpeta
@@ -37,10 +37,10 @@ Crea la carpeta con todos los documentos de partida. No pisa nada y el canal deb
 checklist de escritura (`00_contexto/Checklist-escritura-guion.md`) → guion (`guionista-retencion`) → `validar-video.py` → `verificador` y `auditor` → sello → escaleta (`escaleta-audiovisual`) → voz → montaje → publicación → métricas.
 
 ## Herramientas globales (`herramientas/`)
-`nuevo-video.py`, `validar-video.py`, `estado-video.py` y `voz/` (sintetizador de voz). Las librerías de montaje (`02_canales/<canal>/montaje/`) llevan la marca de cada canal (logo, paleta), por eso viven en el canal.
+`nuevo-video.py`, `validar-video.py`, `estado-video.py`, `respaldar.py`, `voz/` (sintetizador de voz) y `montaje/` (librerías de render). Las librerías de montaje son de todos los canales: toman nombre, colores, logo y fuente de `<canal>/identidad.json`; el script de cada video (`Video NN/Montaje/videoNN.py`) las importa y se ejecuta desde su propia carpeta.
 
 ## Técnica general (en `00_contexto/`)
 - `Retencion-tecnicas-de-montaje.md` · `Voz-IA-comparativa.md` · `Checklist-escritura-guion.md` · `Politicas-YouTube-Cumplimiento.md` · `Reglas-detalladas.md`.
 
 ## Historial de la reorganización (17-oct-2026)
-Se archivó y borró lo exploratorio (Andamio IA, Tarea-video, mascota, intermedios de render), el sintetizador de voz pasó a `herramientas/voz/`, los informes de agentes a `Revision/`, los documentos 06 y 07 a `00_contexto/` y la plantilla de video quedó en 7 documentos (la planilla de producción pasó a ser una sección de la escaleta). Los documentos de producción se dejaron planos en la raíz del video porque pertenecen a etapas distintas y los leen el lint y el estado; el problema de «qué hago ahora» lo resuelve `estado-video.py`. Las librerías de montaje (`02_canales/<canal>/montaje/`) quedan en cada canal porque llevan su paleta y logo.
+Se archivó y borró lo exploratorio (Andamio IA, Tarea-video, mascota, intermedios de render), el sintetizador de voz pasó a `herramientas/voz/`, los informes de agentes a `Revision/`, los documentos 06 y 07 a `00_contexto/` y la plantilla de video quedó en 7 documentos (la planilla de producción pasó a ser una sección de la escaleta). Los documentos de producción se dejaron planos en la raíz del video porque pertenecen a etapas distintas y los leen el lint y el estado; el problema de «qué hago ahora» lo resuelve `estado-video.py`. Las librerías de montaje pasaron a `herramientas/montaje/` y la identidad de cada canal quedó en su `identidad.json`.
