@@ -7,12 +7,15 @@ propias (con `Proyecto.registrar('E07', mi_funcion)`). Tipos que entiende `escen
   placeholder  muestra el id, el nombre y la descripción de la escaleta (es el tipo por defecto)
   portada      titulo, subtitulo
   texto        lineas (lista de líneas grandes que aparecen una a una)
-  imagen       archivo (en 05-licencias/originales/), zoom0, zoom1
-  cierre       tarjeta de suscribirse, like y campanita
+  imagen       archivo (en 05-licencias/originales/), zoom, centro, marco, pie, credito (ver escenas_datos.py)
+  cifra, comparacion, barras, linea_tiempo, lista, cita, mapa, cierre   (en escenas_datos.py)
+
+El esquema de cada tipo (parámetros requeridos y opcionales, ejemplo) está en catalogo/escenas.json;
+`python herramientas/montaje/catalogo/escenas.py <tipo>` lo muestra.
 """
 import estilo
-from montar import AMBAR, BG, H, HUESO, W, aparecer, blk, envolver, neg, pegar, reg, sprite_texto, ss, escena_imagen
-from ui import cta
+from montar import AMBAR, BG, H, HUESO, W, aparecer, blk, envolver, neg, pegar, reg, sprite_texto, ss
+import escenas_datos as datos
 
 CX, CY = W // 2, 470
 
@@ -59,19 +62,7 @@ def texto(ini, fin, lineas):
     return fn
 
 
-def imagen(ini, fin, archivo, zoom0=1.0, zoom1=1.1):
-    def fn(t):
-        return escena_imagen(archivo, t, ini, fin, zoom0, zoom1, (0.5, 0.5), (0.5, 0.5), oscuro=0.15)
-    return fn
-
-
-def cierre(ini, fin):
-    def fn(t):
-        fr = estilo.base(t)
-        _texto(fr, 'Gracias por ver', blk(72), HUESO, CX, 300, aparecer(t, ini, fin, 0.8))
-        cta(fr, t, ini + 1.0, fin)
-        return fr
-    return fn
+TIPOS_DATOS = ('cifra', 'comparacion', 'barras', 'linea_tiempo', 'lista', 'cita', 'mapa', 'cierre')
 
 
 def crear(esc):
@@ -83,7 +74,7 @@ def crear(esc):
     if tipo == 'texto':
         return texto(ini, fin, esc.get('lineas', [esc['nombre']]))
     if tipo == 'imagen':
-        return imagen(ini, fin, esc['archivo'], esc.get('zoom0', 1.0), esc.get('zoom1', 1.1))
-    if tipo == 'cierre':
-        return cierre(ini, fin)
+        return datos.imagen_marco(esc) if esc.get('marco') else datos.imagen_completa(esc)
+    if tipo in TIPOS_DATOS:
+        return getattr(datos, tipo)(esc)
     return placeholder(ini, fin, esc['id'], esc['nombre'], esc.get('descripcion', ''))

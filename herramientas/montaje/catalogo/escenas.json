@@ -1,0 +1,91 @@
+{
+ "version": 1,
+ "nota": "Tipos de escena que se declaran solo con datos en 06-montaje/escenas.json. Los dibuja animaciones/<estilo>/escenas_base.py (hoy, espacial). Cada tipo lista sus parámetros: requeridos y opcionales. Las claves comunes valen para todos.",
+ "comunes": {
+  "id": "identificador de la escena (E01, E02…); sirve para sustituirla por una función propia con P.registrar('E01', fn)",
+  "nombre": "nombre corto de la escena (sale en la tarjeta placeholder)",
+  "ini": "segundo en que empieza (el tiempo real sale de tiempos.json, no del guion)",
+  "fin": "segundo en que termina",
+  "tipo": "uno de los tipos de abajo (por defecto, placeholder)",
+  "rotulo": "texto del rótulo «Dato verificado» (cadena) o {l1, l2, estilo: dato|calculo, desde, dur, frase}. Aparece abajo a la izquierda sobre la escena",
+  "fuente": "fuente del dato; se usa como segunda línea del rótulo («Fuente: …»)",
+  "fila": "número de fila de 01-guion/verificacion-de-cifras.md que respalda el rótulo (la tubería avisa si no existe)",
+  "credito": "crédito de la imagen (arriba a la derecha) durante toda la escena",
+  "t": "segundo, relativo al inicio de la escena, en que arranca la animación principal (alternativa: frase)",
+  "frase": "comienzo de una frase del guion (de tiempos.json) que marca ese arranque; vale también dentro de cada elemento de una lista (puntos, items, eventos)"
+ },
+ "tipos": {
+  "placeholder": {
+   "descripcion": "Tarjeta con el id, el nombre y la descripción de la escaleta. Es el tipo por defecto y marca una escena pendiente de diseñar.",
+   "requeridos": {},
+   "opcionales": {"descripcion": "texto de la escaleta"},
+   "ejemplo": {"id": "E01", "nombre": "Gancho", "ini": 0, "fin": 8, "tipo": "placeholder", "descripcion": "Escena aún sin diseño"}
+  },
+  "portada": {
+   "descripcion": "Título grande con subtítulo.",
+   "requeridos": {},
+   "opcionales": {"titulo": "texto grande (por defecto, el nombre de la escena)", "subtitulo": "línea ámbar bajo el título"},
+   "ejemplo": {"id": "E01", "nombre": "Portada", "ini": 0, "fin": 8, "tipo": "portada", "titulo": "Nadie estuvo allí", "subtitulo": "La edad del universo"}
+  },
+  "texto": {
+   "descripcion": "Líneas grandes que aparecen una a una (frases cinéticas).",
+   "requeridos": {"lineas": "lista de textos"},
+   "opcionales": {},
+   "ejemplo": {"id": "E02", "nombre": "Frase", "ini": 8, "fin": 16, "tipo": "texto", "lineas": ["Nadie estuvo allí.", "Pero el universo dejó pruebas."]}
+  },
+  "cifra": {
+   "descripcion": "Una cifra grande con su unidad y, debajo, el rótulo «Dato verificado» de la escena (rotulo + fuente + fila).",
+   "requeridos": {"valor": "número o texto (un número se escribe con separador de miles y coma decimal: 13 797)"},
+   "opcionales": {"unidad": "texto bajo la cifra", "etiqueta": "texto sobre la cifra", "detalle": "línea pequeña bajo la unidad", "color": "ambar|hielo|verde|rojo|hueso o [r,g,b]", "eyebrow": "etiqueta pequeña del título", "titulo": "título de la escena", "ayuda": "explicación en lenguaje llano"},
+   "ejemplo": {"id": "E03", "nombre": "La cifra", "ini": 16, "fin": 28, "tipo": "cifra", "valor": 13.797, "unidad": "miles de millones de años", "etiqueta": "Edad del universo según Planck", "detalle": "± 0,023", "rotulo": "Edad del universo (modelo ΛCDM)", "fuente": "Planck 2018 (A&A 641)", "fila": 1}
+  },
+  "comparacion": {
+   "descripcion": "Dos o tres valores lado a lado en tarjetas de cristal.",
+   "requeridos": {"items": "lista de 2 o 3 elementos {rotulo, valor, unidad?, detalle?, color?, t?|frase?}"},
+   "opcionales": {"eyebrow": "etiqueta del título", "titulo": "título de la escena", "separador": "texto entre dos tarjetas (por defecto «vs»; vacío para ocultarlo)", "ayuda": "explicación en lenguaje llano"},
+   "ejemplo": {"id": "E04", "nombre": "Dos medidas", "ini": 28, "fin": 44, "tipo": "comparacion", "titulo": "¿Dicen lo mismo?", "items": [{"rotulo": "Con cefeidas", "valor": 73.04, "unidad": "km/s por megaparsec", "color": "ambar"}, {"rotulo": "Con el fondo cósmico", "valor": 67.4, "unidad": "km/s por megaparsec", "color": "hielo"}], "ayuda": "Una expansión más rápida hoy significa un universo más joven."}
+  },
+  "barras": {
+   "descripcion": "Gráfica de barras horizontales que crecen desde cero, con eje y una línea de explicación.",
+   "requeridos": {"items": "lista de 2 a 8 elementos {rotulo, valor, color?, t?|frase?}"},
+   "opcionales": {"unidad": "lo que mide el eje, en lenguaje llano", "sufijo": "texto tras cada valor (%, km…)", "maximo": "valor al que llega la barra más larga (por defecto, el mayor)", "eyebrow": "etiqueta del título", "titulo": "título de la escena", "ayuda": "explicación en lenguaje llano"},
+   "ejemplo": {"id": "E05", "nombre": "Velocidades", "ini": 44, "fin": 60, "tipo": "barras", "titulo": "Quién va más rápido", "unidad": "kilómetros por segundo", "items": [{"rotulo": "Voyager 1", "valor": 17}, {"rotulo": "Tierra en su órbita", "valor": 29.8, "color": "hielo"}, {"rotulo": "Luz (1 % de su velocidad)", "valor": 3000, "color": "verde"}]}
+  },
+  "linea_tiempo": {
+   "descripcion": "Línea de tiempo horizontal con 2 a 7 hitos equiespaciados (no a escala; lleva la etiqueta «ESQUEMA · SIN ESCALA» salvo que se desactive).",
+   "requeridos": {"eventos": "lista de 2 a 7 elementos {fecha, texto, color?, t?|frase?}"},
+   "opcionales": {"eyebrow": "etiqueta del título", "titulo": "título de la escena", "con_etiqueta_escala": "false para quitar la etiqueta de «sin escala» (solo si los hitos sí están a escala)", "ayuda": "explicación en lenguaje llano"},
+   "ejemplo": {"id": "E06", "nombre": "Cronología", "ini": 60, "fin": 76, "tipo": "linea_tiempo", "titulo": "Cuarenta y cinco años de viaje", "eventos": [{"fecha": "1977", "texto": "Lanzamiento"}, {"fecha": "1979", "texto": "Júpiter"}, {"fecha": "1980", "texto": "Saturno"}, {"fecha": "2012", "texto": "Cruza la heliopausa"}]}
+  },
+  "lista": {
+   "descripcion": "Panel con puntos numerados que se encienden uno a uno al ritmo de la voz.",
+   "requeridos": {"puntos": "lista de 2 a 6 textos, o elementos {texto, t?|frase?}"},
+   "opcionales": {"eyebrow": "etiqueta del título (por defecto, EN ESTE VIDEO)", "titulo": "título del panel", "numerada": "false para usar un check en vez de números"},
+   "ejemplo": {"id": "E07", "nombre": "Hoy veremos", "ini": 76, "fin": 90, "tipo": "lista", "titulo": "Hoy vamos a ver tres cosas", "puntos": ["El primer reloj", "El segundo reloj", "El tercer reloj"]}
+  },
+  "imagen": {
+   "descripcion": "Imagen oficial con zoom lento. A pantalla completa (por defecto) o dentro de un marco redondeado sobre su propio fondo desenfocado (marco). El crédito sale arriba a la derecha.",
+   "requeridos": {"archivo": "nombre del archivo en 05-licencias/originales/"},
+   "opcionales": {"zoom0": "zoom inicial (1 = completa)", "zoom1": "zoom final", "centro0": "[x, y] del centro inicial, de 0 a 1", "centro1": "[x, y] del centro final", "marco": "true para usar el marco redondeado", "pie": "texto bajo la imagen", "credito": "crédito de la imagen (obligatorio por licencia)"},
+   "ejemplo": {"id": "E08", "nombre": "Mapa del fondo cósmico", "ini": 90, "fin": 104, "tipo": "imagen", "archivo": "M01-wmap.jpg", "zoom0": 1.0, "zoom1": 1.15, "centro0": [0.5, 0.5], "centro1": [0.4, 0.5], "marco": true, "pie": "Fondo cósmico de microondas", "credito": "NASA / WMAP Science Team"}
+  },
+  "cita": {
+   "descripcion": "Cita textual con su autor y fuente. Mantenla corta y con comentario propio en el video (regla 2 de políticas).",
+   "requeridos": {"texto": "la cita (se le ponen las comillas « »)", "autor": "quién lo dijo"},
+   "opcionales": {"fuente": "obra, medio y fecha", "eyebrow": "etiqueta del título", "titulo": "título de la escena", "color": "color de acento"},
+   "ejemplo": {"id": "E09", "nombre": "Cita", "ini": 104, "fin": 116, "tipo": "cita", "texto": "Somos una forma en que el cosmos se conoce a sí mismo.", "autor": "Carl Sagan", "fuente": "Cosmos, 1980"}
+  },
+  "mapa": {
+   "descripcion": "Globo terrestre giratorio con lugares numerados y su lista a la derecha.",
+   "requeridos": {"puntos": "lista de 1 a 5 elementos {nombre, lat, lon, detalle?, t?|frase?}"},
+   "opcionales": {"eyebrow": "etiqueta del título", "titulo": "título de la escena", "giro": "grados por segundo (por defecto 4; 0 = quieto)"},
+   "ejemplo": {"id": "E10", "nombre": "Antenas", "ini": 116, "fin": 130, "tipo": "mapa", "titulo": "Tres antenas, una por continente", "puntos": [{"nombre": "Goldstone", "lat": 35.4, "lon": -116.9, "detalle": "California, EE. UU."}, {"nombre": "Madrid", "lat": 40.4, "lon": -4.2, "detalle": "España"}, {"nombre": "Canberra", "lat": -35.4, "lon": 149.0, "detalle": "Australia"}]}
+  },
+  "cierre": {
+   "descripcion": "Pantalla final: título (o lista de fuentes) y los tres botones suscribirse, me gusta y activar la campanita.",
+   "requeridos": {},
+   "opcionales": {"titulo": "texto grande (por defecto, «Gracias por ver»)", "subtitulo": "línea bajo el título", "fuentes": "lista de hasta 8 referencias; si se da, el título pasa a ser «Fuentes»", "mensaje": "línea bajo los botones"},
+   "ejemplo": {"id": "E11", "nombre": "Cierre", "ini": 130, "fin": 145, "tipo": "cierre", "titulo": "Nadie estuvo allí, pero dejó pruebas", "mensaje": "Cada semana, una pregunta, con sus datos y de dónde salen"}
+  }
+ }
+}
