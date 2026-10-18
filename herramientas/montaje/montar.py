@@ -6,17 +6,6 @@ Toma la identidad del video en curso (colores, nombre, logo y fuente) de <canal>
 HE_VIDEO o la carpeta que contiene la carpeta «Montaje» del script que se ejecuta. No tiene escenas propias: las escenas
 viven en cada video (Video NN/Montaje/) o salen de pipeline.py y escenas_base.py.
 """
-Montador automático (librería común; incluye el borrador del primer video).
-
-Genera un MP4 1080p a partir del audio real, las imágenes oficiales ya descargadas y esquemas animados hechos con código.
-Todo lo que sale en pantalla viene de la guía de montaje (07) y la hoja de cifras (01b).
-
-Uso (desde esta carpeta):
-  python montar.py                       -> salida/video-01-borrador-0-2min.mp4 (+ .srt)
-  python montar.py --frame 25.0 f.png    -> guarda solo el fotograma del segundo 25 (para revisar el diseño)
-
-Requisitos: Python 3, Pillow, numpy y ffmpeg en el PATH. Fuentes: Segoe UI de Windows (para el borrador; ver registro F1).
-"""
 import json
 import math
 import os
