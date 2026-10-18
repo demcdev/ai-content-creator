@@ -140,7 +140,7 @@ def sin_seccion(texto, titulo):
 
 # ------------------------------------------------------------------ identidad (canal + video)
 COLORES_DEFECTO = {'BG': [11, 16, 38], 'AMBAR': [242, 184, 75], 'HUESO': [245, 241, 232], 'TIERRA': [96, 158, 255]}
-CLAVES_IDENTIDAD = ('nombre', 'logo', 'fuente', 'voz', 'animacion')
+CLAVES_IDENTIDAD = ('nombre', 'logo', 'fuente', 'voz', 'animacion', 'musica', 'efectos')
 
 
 def _json(ruta):
@@ -157,7 +157,7 @@ def identidad_efectiva(video):
     video = os.path.abspath(video)
     canal = os.path.dirname(video)
     ident = {'nombre': os.path.basename(canal).upper(), 'logo': '', 'fuente': 'inter', 'voz': '', 'animacion': '',
-             'colores': dict(COLORES_DEFECTO)}
+             'musica': {'pistas': []}, 'efectos': {'usar': False}, 'colores': dict(COLORES_DEFECTO)}
     origen = {k: 'defecto' for k in list(ident)}
     c = _json(os.path.join(canal, 'identidad.json'))
     for k in CLAVES_IDENTIDAD:

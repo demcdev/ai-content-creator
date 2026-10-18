@@ -43,7 +43,10 @@ class Proyecto:
         self.nombre = cfg.get('nombre', 'video-completo')
         self.creditos = [tuple(c) for c in cfg.get('creditos', [])]
         self.capitulos = [tuple(c) for c in cfg.get('capitulos', [])]
-        self.musica = cfg.get('musica', {'pistas': [], 'cambio': 0})
+        m = cfg.get('musica', {})
+        self.musica = {'pistas': m.get('pistas') or IDENT['musica'].get('pistas', []), 'cambio': m.get('cambio') or 0}
+        if IDENT['efectos'].get('usar'):
+            print('Aviso: la identidad pide efectos de sonido, que la tubería aún no mezcla; el video lleva solo voz y música.', file=sys.stderr)
         self.audio = cfg.get('audio') or self._buscar_audio()
         self.rotulos = [r for r in (self._rotulo(r) for r in cfg.get('rotulos', [])) if r[1] > r[0]]
         self.subs_quemados = os.environ.get('HE_SUBS', '0') == '1'
@@ -248,7 +251,7 @@ class Proyecto:
             print('Sin música (indica 1 o 2 pistas en montaje.json y guárdalas en {}): el video lleva solo la voz.'.format(carpeta))
             return wav
         d = self.duracion
-        cambio = self.musica.get('cambio', d / 2)
+        cambio = self.musica.get('cambio') or d / 2
         ent = ['-i', wav] + sum((['-i', x] for x in pistas), [])
         if len(pistas) == 1:
             cadena = '[1:a]aresample=48000,aloop=loop=-1:size=2e9,atrim=0:{d:.2f}[m12];'.format(d=d)

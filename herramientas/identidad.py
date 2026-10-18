@@ -11,6 +11,10 @@ Identidad de cada canal (colores, voz, animación, nombre, logo, fuente) y la de
 Archivos: <canal>/identidad.json (la del canal) y <video>/identidad.json ({"base": "canal"} o {"base": "propia", ...lo que cambia}).
 Con base «propia» solo se cambian los valores indicados; el resto sigue siendo el del canal.
 Opciones válidas de --voz: ids de herramientas/voz/voces.json. De --animacion: ids de herramientas/montaje/animaciones.json.
+--fuente: inter, montserrat, space o segoe. --musica: nombres de pista separados por coma («Singularity,Event Horizon»; se buscan en
+Montaje/musica/ de cada video). --efectos: si o no (los efectos de sonido aún no los mezcla la tubería: solo quedan declarados).
+`resumen <canal|video>` imprime una frase con voz, animación, fuente, colores (en hex), música y efectos: es el texto que Claude usa
+al preguntar «¿identidad del canal o propia?». Nunca nombra la marca del canal.
 Claude pregunta «¿identidad del canal o propia?» al crear cada video (regla del CLAUDE.md) y después ejecuta esto.
 No usa IA ni claves.
 """
@@ -29,6 +33,7 @@ def ids(ruta, clave):
     return [x['id'] for x in _json(ruta).get(clave, [])]
 
 
+FUENTES = ['inter', 'montserrat', 'space', 'segoe']
 VOCES = ids(os.path.join(AQUI, 'voz', 'voces.json'), 'voces')
 ANIMACIONES = ids(os.path.join(AQUI, 'montaje', 'animaciones.json'), 'animaciones')
 
@@ -48,6 +53,12 @@ def valores(a):
         v = getattr(a, k, None)
         if v:
             out[k] = v
+    if out.get('fuente') and out['fuente'] not in FUENTES:
+        sys.exit('Fuente «%s» no válida. Opciones: %s' % (out['fuente'], ', '.join(FUENTES)))
+    if getattr(a, 'musica', None):
+        out['musica'] = {'pistas': [x.strip() for x in a.musica.split(',') if x.strip()]}
+    if getattr(a, 'efectos', None):
+        out['efectos'] = {'usar': a.efectos == 'si'}
     if out.get('voz') and out['voz'] not in VOCES:
         sys.exit('Voz «%s» no existe en voces.json. Opciones: %s' % (out['voz'], ', '.join(VOCES)))
     if out.get('animacion') and out['animacion'] not in ANIMACIONES:
@@ -93,24 +104,52 @@ def mostrar(arg):
         print('  %-10s %s' % (k, v))
 
 
+def hexa(rgb):
+    return '#%02X%02X%02X' % tuple(rgb)
+
+
+def resumen(arg):
+    """Frase de la identidad base (la del canal) para la pregunta de «¿canal o propia?»; sin el nombre de la marca."""
+    es_canal = any(d.lower() == arg.strip().lower() for d in os.listdir(CANALES) if not d.startswith('_'))
+    carpeta = buscar_canal(arg) if es_canal else resolver_video(arg)
+    video = carpeta if not es_canal else os.path.join(carpeta, 'Video 00 - resumen')
+    ident, _ = identidad_efectiva(video)
+    base = ident['colores']
+    colores = ', '.join('%s %s' % (n, hexa(base[k])) for n, k in (('fondo', 'BG'), ('acento', 'AMBAR'), ('texto', 'HUESO'), ('apoyo', 'TIERRA')))
+    nombres_voz = {x['id']: x['nombre'] for x in _json(os.path.join(AQUI, 'voz', 'voces.json')).get('voces', [])}
+    nombres_anim = {x['id']: x['nombre'] for x in _json(os.path.join(AQUI, 'montaje', 'animaciones.json')).get('animaciones', [])}
+    voz = nombres_voz.get(ident['voz'], ident['voz']) or 'sin voz definida'
+    anim = nombres_anim.get(ident['animacion'], ident['animacion']) or 'sin animación definida'
+    pistas = ident['musica'].get('pistas', [])
+    musica = 'música: %s' % (', '.join(pistas) if pistas else 'sin pistas definidas')
+    efectos = 'con efectos de sonido' if ident['efectos'].get('usar') else 'sin efectos de sonido'
+    etiqueta = 'los colores propios del video' if (not es_canal and ident['base'] == 'propia') else 'los colores base del canal'
+    return 'Usa la voz %s, la animación %s, la fuente %s, %s (%s), %s y %s.' % (voz, anim, ident['fuente'].capitalize(), etiqueta, colores, musica, efectos)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest='orden', required=True)
-    for nombre in ('mostrar', 'canal', 'video'):
+    for nombre in ('mostrar', 'resumen', 'canal', 'video'):
         p = sub.add_parser(nombre)
         p.add_argument('destino')
-        if nombre != 'mostrar':
+        if nombre not in ('mostrar', 'resumen'):
             p.add_argument('--nombre')
             p.add_argument('--logo')
             p.add_argument('--fuente')
             p.add_argument('--voz')
             p.add_argument('--animacion')
+            p.add_argument('--musica', help='pistas separadas por coma')
+            p.add_argument('--efectos', choices=['si', 'no'])
             p.add_argument('--color', action='append', help='BG=11,16,38 (se puede repetir)')
         if nombre == 'video':
             p.add_argument('--base', choices=['canal', 'propia'], required=True)
     a = ap.parse_args()
     if a.orden == 'mostrar':
         mostrar(a.destino)
+        return 0
+    if a.orden == 'resumen':
+        print(resumen(a.destino))
         return 0
     nuevos = valores(a)
     if a.orden == 'canal':

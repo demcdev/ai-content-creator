@@ -25,5 +25,14 @@
   ]
  },
  "voz": "polly-raul",
- "animacion": "espacial"
+ "animacion": "espacial",
+ "musica": {
+  "pistas": [
+   "Singularity",
+   "Event Horizon"
+  ]
+ },
+ "efectos": {
+  "usar": false
+ }
 }

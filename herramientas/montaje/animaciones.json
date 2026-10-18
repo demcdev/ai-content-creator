@@ -3,7 +3,7 @@
   "animaciones": [
     {
       "id": "espacial",
-      "nombre": "Espacial propio (Hace Eones)",
+      "nombre": "Espacial propio",
       "orden": 1,
       "ofrecer": true,
       "estado": "disponible",

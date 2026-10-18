@@ -10,7 +10,7 @@ Cada canal es una carpeta dentro de `02_canales/`. **Lo global del canal va en s
 | `03 - Politicas y checklist.md` | Checklist de políticas del nicho (lo lee el auditor) |
 | `04 - Modelos de referencia.md` | Canales que se estudian (patrones, no copias) |
 | `05 - Plan de 90 dias.md` | Calendario y metas |
-| `identidad.json` | Identidad del canal: nombre, colores, logo, fuente, **voz** y **animación** (las librerías de montaje la leen; sin logo dibujan un disco ámbar) |
+| `identidad.json` | Identidad del canal: nombre, colores, logo, fuente, **voz**, **animación**, **música** (pistas) y **efectos** de sonido. Las librerías de montaje la leen; sin logo dibujan un disco ámbar; los efectos solo quedan declarados (la tubería aún no los mezcla) |
 | `Video NN - Nombre/` | Un video por carpeta |
 
 ## Un video = una carpeta
