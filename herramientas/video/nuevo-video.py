@@ -50,7 +50,7 @@ DOCS = {
     F_SUBTITULOS: '',
     F_LICENCIAS: '# Registro de licencias · {t}\n\nUna fila por material (imágenes, voz, música, tipografía). Capturas en esta carpeta (`05-licencias/`). Reglas 3 y 6 del proyecto.\n\n| Código | Material | Fuente / ficha | Licencia | Captura | Estado |\n|---|---|---|---|---|---|\n',
     F_METRICAS: '# Métricas y seguimiento · {t}\n\nFechas de revisión: 2–3 días, 7 días, 28 días. Se anota CTR, retención, fuentes de tráfico y qué se cambia.\n\n| Fecha | Vistas | CTR | Retención media | Notas / decisión |\n|---|---|---|---|---|\n',
-    'LEEME.md': '# {t}\n\nCarpeta del video. Una carpeta por etapa, en orden: `01-guion` → `02-revision` → `03-escaleta` → `04-voz` → `05-licencias` → `06-montaje` → `07-miniaturas` → `08-entregables` → `09-publicacion`; `identidad/` guarda la identidad propia del video.\n\nEstado: `python herramientas/video/estado-video.py "<canal>/{n}"` (con `--escribir` lo guarda aquí).\n',
+    'LEEME.md': '# {t}\n\nCarpeta del video. Una carpeta por etapa, en orden: `01-guion` → `02-revision` → `03-escaleta` → `04-voz` → `05-licencias` → `06-montaje` → `07-miniaturas` → `08-entregables` → `09-publicacion`; `identidad/` guarda la identidad propia del video.\n\nSiguiente paso: `python herramientas/canal/canal.py siguiente "<canal>/{n}"`; estado: `python herramientas/canal/canal.py estado "<canal>/{n}"` (con `--escribir` lo guarda aquí).\n',
 }
 CARPETAS = [REVISION, VOZ, MONTAJE, ENTREGABLES, MINIATURAS, GUION, ESCALETA, PUBLICACION, 'identidad',
             LICENCIAS + '/originales', LICENCIAS + '/fichas', LICENCIAS + '/musica', LICENCIAS + '/capturas-musica']
@@ -98,12 +98,9 @@ def principal():
             json.dump({'base': ''}, fh)
     if not os.path.exists(ruta(raiz, F_IDENTIDAD)):
         print('AVISO: el canal no tiene identidad/identidad.json (colores, voz, animación). Defínela antes de seguir: python herramientas/identidad/identidad.py canal "%s" --voz <id> --animacion <id>' % os.path.basename(raiz))
-    rel = os.path.relpath(carpeta, os.path.dirname(HERRAMIENTAS))
     print('Listo:', carpeta)
-    print('Siguiente: identidad del video (Claude pregunta: ¿la del canal o propia?), guion, voz, y luego:')
-    print('  python herramientas/montaje/tuberia/alinear.py "%s"' % rel)
-    print('  python herramientas/video/escaleta-a-escenas.py "%s"' % rel)
-    print('  (cd "%s/06-montaje" && python video.py --frame 60 f.png)' % rel)
+    print('Siguiente paso (hace lo automático y dice qué falta): python herramientas/canal/canal.py siguiente "%s/%d"'
+          % (os.path.basename(raiz), n))
     return 0
 
 

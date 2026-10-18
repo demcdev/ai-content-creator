@@ -11,6 +11,9 @@
 **/06-montaje/cache*/
 **/05-licencias/musica/
 
+# Huellas de los pasos automáticos de canal.py (dependen de las fechas de los archivos de cada máquina)
+**/.estado/huellas.json
+
 # Python y editores
 __pycache__/
 *.pyc

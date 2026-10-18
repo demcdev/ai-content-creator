@@ -9,6 +9,7 @@
   ],
   "excluir_carpetas": [
     ".git",
+    "worktrees",
     "node_modules",
     "__pycache__",
     "_archivo",
