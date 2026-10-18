@@ -82,6 +82,7 @@
   "nombres_permitidos": [
     "LEEME.md",
     "CLAUDE.md",
+    "README.md",
     ".gitignore",
     "SKILL.md"
   ],
