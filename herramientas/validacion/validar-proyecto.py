@@ -32,6 +32,9 @@ import time
 sys.dont_write_bytecode = True
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, '..', '..'))
+# Si el proyecto es un worktree (<principal>/.claude/worktrees/<nombre>), la carpeta principal del repositorio
+_wt = re.match(r'^(.*)[\\/]\.claude[\\/]worktrees[\\/][^\\/]+$', RAIZ)
+PRINCIPAL = _wt.group(1) if _wt else ''
 MEMORIA = os.path.join(os.path.expanduser('~'), '.claude', 'projects', 'C--Users-USUARIO-Desktop-DemcDev-Proyectos-dev-Canal-de-youtube', 'memory')
 CFG = json.load(open(os.path.join(AQUI, 'config.json'), encoding='utf-8'))
 MARCA_IGNORAR = 'validar:ignorar'
@@ -222,6 +225,9 @@ def revisar_md(res, p, memoria=False):
                     destino = p
                 else:
                     destino = os.path.normpath(os.path.join(d, ruta))
+                    if not existe_exacto(destino) and PRINCIPAL and not memoria and not destino.startswith(RAIZ + os.sep):
+                        # en un worktree, un enlace que sale del repositorio se mira desde la carpeta principal
+                        destino = os.path.normpath(os.path.join(PRINCIPAL, os.path.relpath(d, RAIZ), ruta))
                     if not existe_exacto(destino):
                         (res.avi if memoria else res.err)(archivo, n, 'enlace roto: %s' % crudo)
                         continue

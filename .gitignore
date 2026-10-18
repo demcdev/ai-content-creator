@@ -11,6 +11,10 @@
 **/06-montaje/cache*/
 **/05-licencias/musica/
 
+# Estado local regenerable de cada video (caché web y pendientes de verificar-cifras.py)
+**/.estado/cache-web/
+**/.estado/cifras-pendientes.json
+
 # Python y editores
 __pycache__/
 *.pyc

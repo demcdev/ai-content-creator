@@ -4,7 +4,7 @@ En la raíz solo está este `LEEME.md`; cada programa vive en la carpeta de su t
 
 | Carpeta | Qué hace | Programas principales |
 |---|---|---|
-| [video/](video/LEEME.md) | Ciclo de vida de un video | `nuevo-video.py` (crea la carpeta), `estado-video.py` (etapa y siguiente paso), `validar-video.py` (lint del guion), `escaleta-a-escenas.py` |
+| [video/](video/LEEME.md) | Ciclo de vida de un video | `nuevo-video.py` (crea la carpeta), `estado-video.py` (etapa y siguiente paso), `validar-video.py` (lint del guion), `verificar-cifras.py` (cifras contra su tabla, cuentas y fuentes), `escaleta-a-escenas.py` |
 | [identidad/](identidad/LEEME.md) | Identidad de cada canal y de cada video | `identidad.py` |
 | [validacion/](validacion/LEEME.md) | Que nada se rompa al renombrar o editar | `validar-proyecto.py` |
 | [voz/](voz/LEEME.md) | Sintetizador de voz | `voces.py`, `sintetizar*.py/.mjs` |
