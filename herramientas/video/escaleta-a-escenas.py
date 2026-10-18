@@ -4,6 +4,7 @@ Convierte la escaleta técnica de un video en 06-montaje/escenas.json (la lista 
 
   python herramientas/video/escaleta-a-escenas.py "hace-eones/3"
   python herramientas/video/escaleta-a-escenas.py "<canal>/3" --forzar     # sobrescribe un escenas.json existente
+  python herramientas/video/escaleta-a-escenas.py "<canal>/3" --fusionar   # actualiza tiempos y textos, conserva tipo y campos propios
 
 Lee las filas de la parte «escaleta técnica» de `escaleta-audiovisual.md` (no la planilla) con el formato
 `| **E07 · Nombre de la escena** | 03:12–03:40 | descripción | ... |` y deja, por escena:
@@ -36,6 +37,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('video')
     ap.add_argument('--forzar', action='store_true')
+    ap.add_argument('--fusionar', action='store_true', help='rehace nombre, tiempos y descripción desde la escaleta y conserva el resto de campos de cada id')
     a = ap.parse_args()
     carpeta = resolver_video(a.video)
     texto = sin_seccion(leer(ruta(carpeta, F_ESCALETA)), 'Planilla de producción')
@@ -52,11 +54,20 @@ def main():
         sys.exit('No encontré filas de escenas («| **E01 · Nombre** | 00:00–00:30 | ...») en la escaleta técnica.')
     os.makedirs(os.path.join(carpeta, MONTAJE), exist_ok=True)
     destino = os.path.join(carpeta, MONTAJE, 'escenas.json')
-    if os.path.exists(destino) and not a.forzar:
-        sys.exit('Ya existe %s. Usa --forzar para sobrescribirlo.' % destino)
+    conservadas = 0
+    if os.path.exists(destino) and a.fusionar:
+        with open(destino, encoding='utf-8') as f:
+            previas = {e.get('id'): e for e in json.load(f)}
+        for i, e in enumerate(escenas):
+            if e['id'] in previas:
+                escenas[i] = dict(previas[e['id']], **{k: e[k] for k in ('id', 'nombre', 'ini', 'fin', 'descripcion')})
+                conservadas += 1
+    elif os.path.exists(destino) and not a.forzar:
+        sys.exit('Ya existe %s. Usa --fusionar (conserva tipos) o --forzar para sobrescribirlo.' % destino)
     with open(destino, 'w', encoding='utf-8') as f:
         json.dump(escenas, f, ensure_ascii=False, indent=1)
-    print('%d escenas -> %s (de %s a %s)' % (len(escenas), destino, escenas[0]['ini'], escenas[-1]['fin']))
+    print('%d escenas -> %s (de %s a %s)%s' % (len(escenas), destino, escenas[0]['ini'], escenas[-1]['fin'],
+                                             ' · %d ya existían (conservan tipo y campos propios)' % conservadas if a.fusionar else ''))
 
 
 if __name__ == '__main__':

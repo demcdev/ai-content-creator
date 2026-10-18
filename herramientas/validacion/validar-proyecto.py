@@ -32,6 +32,9 @@ import time
 sys.dont_write_bytecode = True
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, '..', '..'))
+# En un worktree de git (.claude/worktrees/<nombre>) los enlaces que salen del proyecto se resuelven contra la copia principal.
+_WT = os.sep + os.path.join('.claude', 'worktrees') + os.sep
+RAIZ_PRINCIPAL = RAIZ.split(_WT)[0] if _WT in RAIZ else RAIZ
 MEMORIA = os.path.join(os.path.expanduser('~'), '.claude', 'projects', 'C--Users-USUARIO-Desktop-DemcDev-Proyectos-dev-Canal-de-youtube', 'memory')
 CFG = json.load(open(os.path.join(AQUI, 'config.json'), encoding='utf-8'))
 MARCA_IGNORAR = 'validar:ignorar'
@@ -222,6 +225,9 @@ def revisar_md(res, p, memoria=False):
                     destino = p
                 else:
                     destino = os.path.normpath(os.path.join(d, ruta))
+                    fuera = os.path.relpath(destino, RAIZ)
+                    if fuera.startswith('..') and RAIZ_PRINCIPAL != RAIZ:
+                        destino = os.path.normpath(os.path.join(RAIZ_PRINCIPAL, fuera))
                     if not existe_exacto(destino):
                         (res.avi if memoria else res.err)(archivo, n, 'enlace roto: %s' % crudo)
                         continue
