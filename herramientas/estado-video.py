@@ -92,7 +92,7 @@ def etapas(carpeta, datos):
     n = filas_datos(seccion_h2(esc, 'Planilla de producción'))
     add('planilla', 'Planilla (sección de la escaleta)', n > 0, '%d filas' % n, 'skill guionista-retencion')
     n = len(archivos(f('Voz'), ('.mp3', '.wav', '.m4a', '.ogg', '.flac')))
-    add('voz', 'Voz', n > 0, '%d audios' % n, 'herramientas de voz')
+    add('voz', 'Voz', n > 0, '%d audios' % n, 'preguntar qué voz (voces.json) y herramientas/voz')
     n = len(archivos(f('Miniaturas'), ('.png', '.jpg', '.jpeg', '.webp'), ignorar_guion_bajo=True))
     add('miniaturas', 'Miniaturas', n > 0, '%d imágenes' % n, 'subagente miniaturas')
     lic = resumen_licencias(leer(f('Registro de licencias.md')))

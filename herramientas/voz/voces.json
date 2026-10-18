@@ -1,0 +1,36 @@
+{
+  "_ayuda": "Voces configuradas del proyecto. Al llegar al paso de voz de un video, Claude debe preguntar cuál usar con estas opciones. Para añadir una voz nueva: agrega una entrada con id, nombre, motor, voz, costo, clave, pasos y notas. En los pasos, {guion} es el Guion.md del video, {voz} su carpeta Voz/ y {video} la carpeta del video.",
+  "voces": [
+    {
+      "id": "google-iapetus",
+      "nombre": "Google Chirp 3 HD · Iapetus (es-US)",
+      "motor": "google",
+      "voz": "es-US-Chirp3-HD-Iapetus",
+      "ritmo": 1.0,
+      "usada_en": ["Hace Eones · Video 01"],
+      "clave": "GOOGLE_TTS_API_KEY (variable de entorno; nunca en un archivo ni en el chat)",
+      "costo": "Gratis hasta 1 000 000 de caracteres al mes; un video gasta unos 6 000 a 12 000",
+      "pasos": [
+        "node herramientas/voz/sintetizar.mjs \"{guion}\" --solo-texto",
+        "node herramientas/voz/sintetizar.mjs \"{guion}\" --salida \"{voz}\""
+      ],
+      "notas": "Pausas con {pausa}, {pausa corta} y {pausa larga}. Sustituciones en herramientas/voz/sustituciones.json y pronunciaciones en pronunciaciones.json. Con --salida guarda ajustes.txt en Voz/."
+    },
+    {
+      "id": "polly-raul",
+      "nombre": "Amazon Polly Long-Form · Raul (es-ES)",
+      "motor": "polly",
+      "voz": "Raul",
+      "idioma": "es-ES",
+      "usada_en": ["Hace Eones · Video 02"],
+      "clave": "AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY y AWS_DEFAULT_REGION (variables de entorno)",
+      "costo": "Gratis 12 meses (500 000 caracteres al mes); después, cerca de 1 USD por video",
+      "pasos": [
+        "node herramientas/voz/preparar-polly.mjs \"{guion}\" --salida \"{voz}/polly\"",
+        "python herramientas/voz/sintetizar-polly.py \"{voz}/polly\" --solo-texto",
+        "python herramientas/voz/sintetizar-polly.py \"{voz}/polly\" --salida \"{voz}/voz-polly.wav\""
+      ],
+      "notas": "El texto se parte en partes (Voz/polly/parte-NN.txt). Para cambios de texto solo de este video, crea Voz/sustituciones-video.json y añade --sustituciones-extra \"{voz}/sustituciones-video.json\" al primer paso. No se clona ni se entrena con el audio de Polly (términos de AWS y regla 19)."
+    }
+  ]
+}
