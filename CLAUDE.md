@@ -43,7 +43,7 @@ Operativas, consultar el detalle cuando el tema aparezca: 10 YPP · 11 strikes �
 | `02_canales/` | Un canal por carpeta (`Hace Eones/`, `Archivo Aracne/`) |
 | `02_canales/<canal>/_archivo/` y `Video NN/_archivo/` | Lo descartado o las versiones anteriores de un video (los scripts las ignoran). Hoy solo existe en el Video 02 |
 | `.claude/agents/` | Subagentes del proyecto (`auditor`, `verificador`) |
-| `herramientas/` | Sirven a todos los canales: `estado-video.py` (etapa y siguiente paso), `validar-video.py` (lint gratis), `nuevo-video.py <canal> <n> "<nombre>"` (crea la carpeta de un video), `respaldar.py` (copia medios y el historial de git fuera del proyecto), `voz/` (sintetizador de voz) y `montaje/` (librerías de render; leen `<canal>/identidad.json`) |
+| `herramientas/` | Sirven a todos los canales: `estado-video.py` (etapa y siguiente paso), `validar-video.py` (lint gratis), `nuevo-video.py <canal> <n> "<nombre>"` (crea la carpeta de un video), `respaldar.py` (copia medios y el historial de git fuera del proyecto), `voz/` (sintetizador de voz) y `escaleta-a-escenas.py` (escaleta → `Montaje/escenas.json`) y `montaje/` (librerías y tubería de render; leen `<canal>/identidad.json`) |
 
 - Un canal nuevo va como carpeta hermana de `Hace Eones/` dentro de `02_canales/`; lo global del canal en su raíz y cada video en su propia carpeta (ver [Estructura-de-un-canal.md](00_contexto/Estructura-de-un-canal.md)).
 - Al mover algo, actualizar también los enlaces.

@@ -14,6 +14,9 @@ Genera un video MP4 1080p a 30 fps a partir de:
 ## Identidad del canal (`identidad.json`)
 Las librerías no llevan marca propia: leen `<canal>/identidad.json` (nombre, colores `BG/AMBAR/HUESO/TIERRA`, `logo` relativo al canal y `fuente`). El canal se deduce de la carpeta del video (`HE_VIDEO`, o la carpeta que contiene `Montaje/` del script que se ejecuta). Sin archivo valen los valores de Hace Eones; sin logo se dibuja un disco ámbar.
 
+## Un video nuevo (tubería común)
+`nuevo-video.py` deja en `Video NN/Montaje/` un `video.py` y un `montaje.json`. Flujo: guion → voz → `alinear.py` (deja `tiempos.json`) → `python herramientas/escaleta-a-escenas.py "<video>"` (deja `escenas.json`) → `python video.py --frame 60 f.png`. Todo lo común vive en `pipeline.py` (fotogramas, rótulos, subtítulos, música, verificación «nada se tapa con nada», render en partes); las escenas pendientes salen como tarjetas de `escenas_base.py` y se reemplazan registrando una función por id. `montaje.json` admite `rotulos` (por frase del guion), `creditos`, `capitulos`, `musica` y `nombre`. Cada video conserva su propio `alinear.py` (el de Polly y el de Google difieren).
+
 ## Video completo (13-oct-2026)
 - `alinear.py` mide los silencios del audio y deja en `tiempos.json` el inicio y el fin de cada una de las **120 frases** del guion (validado a mano en el borrador).
 - `video01.py` dibuja las 28 escenas (fotos oficiales, esquemas animados, rótulos, subtítulos) y renderiza el video completo en **4 procesos en paralelo**:

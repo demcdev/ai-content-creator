@@ -11,10 +11,13 @@ Texto para subtitulos, Registro de licencias, Metricas y seguimiento) y las carp
 Voz, Montaje, Licencias (originales, fichas, musica, capturas-musica), Miniaturas y Entregables.
 No pisa nada: si algo ya existe, lo deja como está.
 """
+import json
 import os
 import re
+import shutil
 import sys
 
+HERRAMIENTAS = os.path.dirname(os.path.abspath(__file__))
 CANALES = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '02_canales'))
 NO_CANAL = set()
 
@@ -59,6 +62,15 @@ def principal():
         if not os.path.exists(ruta):
             with open(ruta, 'w', encoding='utf-8') as fh:
                 fh.write(plantilla.format(t=titulo))
+    plantilla = os.path.join(HERRAMIENTAS, 'montaje', 'plantilla_video.py')
+    destino = os.path.join(carpeta, 'Montaje', 'video.py')
+    if os.path.exists(plantilla) and not os.path.exists(destino):
+        shutil.copyfile(plantilla, destino)
+    cfg = os.path.join(carpeta, 'Montaje', 'montaje.json')
+    if not os.path.exists(cfg):
+        with open(cfg, 'w', encoding='utf-8') as fh:
+            json.dump({'nombre': 'video-%02d-completo' % n, 'rotulos': [], 'creditos': [], 'capitulos': [],
+                       'musica': {'pistas': [], 'cambio': 0}}, fh, ensure_ascii=False, indent=1)
     print('Listo:', carpeta)
     return 0
 
