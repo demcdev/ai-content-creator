@@ -160,21 +160,47 @@ def archivos(carpeta, extensiones, recursivo=True, ignorar_guion_bajo=False):
     return salida
 
 
+def filas_licencias(texto):
+    """Filas de la tabla principal del registro de licencias (la que tiene la columna «Estado»): [(codigo, material, estado, captura)].
+    El estado es el texto de la última celda: ✅ comprobado y guardado, 🔎 leída pero falta captura, ⏳ pendiente, ❌ descartado.
+    «captura» es la celda anterior (dónde está la captura o qué falta)."""
+    filas, en_tabla = [], False
+    for linea in (texto or '').splitlines():
+        s = linea.strip()
+        if not s.startswith('|'):
+            en_tabla = False
+            continue
+        celdas = [c.strip() for c in s.strip('|').split('|')]
+        if not en_tabla:
+            en_tabla = len(celdas) >= 3 and celdas[-1].lower().startswith('estado') and not filas
+            continue
+        if SEPARADOR.match(s) or len(celdas) < 3:
+            continue
+        filas.append((re.sub(r'[*`]', '', celdas[0]), re.sub(r'[*`]', '', celdas[1]), celdas[-1], re.sub(r'[*`]', '', celdas[-2]) if len(celdas) >= 5 else ''))
+    return filas
+
+
 def resumen_licencias(texto):
-    """(filas, listas, pendientes) sumando la tabla «0. Resumen de estado» del registro de licencias."""
+    """(filas, listas, pendientes). Si el registro trae la tabla manual «## 0. Resumen de estado», se suma esa; si no, se cuenta
+    desde la tabla principal por su columna «Estado» (✅ lista, ❌ descartada: no cuenta, el resto pendiente)."""
     if not texto:
         return None
     m = re.search(r'##\s*0\.[^\n]*\n(.*?)(?=\n##\s)', texto, re.S)
-    if not m:
+    if m:
+        filas = listas = pend = 0
+        for linea in m.group(1).splitlines():
+            celdas = [c.strip() for c in linea.strip().strip('|').split('|')]
+            if len(celdas) >= 4 and all(re.fullmatch(r'\d+', c) for c in celdas[1:4]):
+                filas += int(celdas[1])
+                listas += int(celdas[2])
+                pend += int(celdas[3])
+        if filas:
+            return filas, listas, pend
+    activas = [f for f in filas_licencias(texto) if '❌' not in f[2]]
+    if not activas:
         return None
-    filas = listas = pend = 0
-    for linea in m.group(1).splitlines():
-        celdas = [c.strip() for c in linea.strip().strip('|').split('|')]
-        if len(celdas) >= 4 and all(re.fullmatch(r'\d+', c) for c in celdas[1:4]):
-            filas += int(celdas[1])
-            listas += int(celdas[2])
-            pend += int(celdas[3])
-    return filas, listas, pend
+    listas = sum(1 for f in activas if '✅' in f[2])
+    return len(activas), listas, len(activas) - listas
 
 
 def _limites_seccion(texto, titulo):
