@@ -6,7 +6,7 @@ Crea la carpeta de un video nuevo con la estructura estándar de un canal (sirve
 
 El canal debe existir como carpeta dentro de 02_canales/ (no se crea aquí).
 
-Dentro: documentos de partida (Guion, Planilla de produccion, Escaleta audiovisual, Verificacion de cifras, Capitulos y descripcion,
+Dentro: documentos de partida (Guion, Escaleta audiovisual con su planilla, Verificacion de cifras, Capitulos y descripcion,
 Texto para subtitulos, Registro de licencias, Metricas y seguimiento) y las carpetas
 Voz, Montaje, Licencias (originales, fichas, musica, capturas-musica), Miniaturas y Entregables.
 No pisa nada: si algo ya existe, lo deja como está.
@@ -22,8 +22,7 @@ DOCS = {
     'Guion.md': '# {t}\n\n> Estado: borrador · Duración objetivo: 10–12 min\n> Antes de pedir revisión: repasar la [checklist de escritura](../../../00_contexto/Checklist-escritura-guion.md).\n\n## Guion\n\n',
     'Verificacion de cifras.md': '# Verificación de cifras · {t}\n\n| N.º | Dato | Fuente (enlace) | Fecha de consulta | Estado |\n|---|---|---|---|---|\n',
     'Capitulos y descripcion.md': '# Capítulos y descripción · {t}\n\n## Descripción\n\n## Capítulos\n\n## Miniatura (encargo)\nVariantes, texto, imagen base y elegida.\n\n## Fuentes\n\n## Transparencia (voz con IA, imágenes, música)\n',
-    'Planilla de produccion.md': '# Planilla de producción · {t}\n\n> Se hace con la skill `guionista-retencion` a partir del Guion.\n\n| Tiempo / Bloque | Diálogo (locución) | Visual & B-roll | Audio & Tipografía |\n| :--- | :--- | :--- | :--- |\n',
-    'Escaleta audiovisual.md': '# Escaleta audiovisual · {t}\n\n> Se hace con la skill `escaleta-audiovisual` después del guion (`guionista-retencion`) y antes del montaje.\n\n| Escena | Tiempo | Video / Visuales y dirección | Audio, voz y efectos | Origen y licencia |\n| :--- | :--- | :--- | :--- | :--- |\n',
+    'Escaleta audiovisual.md': '# Escaleta audiovisual · {t}\n\n## Planilla de producción (3 columnas)\n\n> Fase 1: se hace con la skill `guionista-retencion` a partir del Guion.\n\n| Tiempo / Bloque | Diálogo (locución) | Visual & B-roll | Audio & Tipografía |\n| :--- | :--- | :--- | :--- |\n\n## 1. Escaleta técnica\n\n> Fase 3: se hace con la skill `escaleta-audiovisual` después del guion y antes del montaje.\n\n| Escena | Tiempo | Video / Visuales y dirección | Audio, voz y efectos | Origen y licencia |\n| :--- | :--- | :--- | :--- | :--- |\n',
     'Texto para subtitulos.txt': '',
     'Registro de licencias.md': '# Registro de licencias · {t}\n\nUna fila por material (imágenes, voz, música, tipografía). Capturas en `Licencias/`. Reglas 3 y 6 del proyecto.\n\n| Código | Material | Fuente / ficha | Licencia | Captura | Estado |\n|---|---|---|---|---|---|\n',
     'Metricas y seguimiento.md': '# Métricas y seguimiento · {t}\n\nFechas de revisión: 2–3 días, 7 días, 28 días. Se anota CTR, retención, fuentes de tráfico y qué se cambia.\n\n| Fecha | Vistas | CTR | Retención media | Notas / decisión |\n|---|---|---|---|---|\n',

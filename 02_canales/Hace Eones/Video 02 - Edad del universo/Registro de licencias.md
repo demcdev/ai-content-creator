@@ -74,7 +74,7 @@ Las dos primeras ya están en `Video 01 - Voyager 1/Licencias/musica/` (no se us
 | **O-7** | Barras de error de los tres relojes y de 67,4 vs 73,04 | ídem | ídem | ☐ |
 | **O-8** | Pantalla de cierre con fuentes | ídem | ídem | ☐ |
 | **O-T** | Miniatura | `Miniaturas/` | Python/Pillow · tipografía F1 | ☐ |
-| **O-G** | Guion y hoja de cifras | `Guion.md`, `Verificacion de cifras.md`, `Planilla de produccion.md` y `versiones anteriores/Guion-v1.md` | Redactado con IA como ayuda y verificado en fuentes primarias | ☐ |
+| **O-G** | Guion y hoja de cifras | `Guion.md`, `Verificacion de cifras.md`, `Escaleta audiovisual.md` y `versiones anteriores/Guion-v1.md` | Redactado con IA como ayuda y verificado en fuentes primarias | ☐ |
 
 ## 6. Declaraciones de IA (D)
 

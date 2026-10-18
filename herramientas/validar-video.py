@@ -18,7 +18,7 @@ import re
 import sys
 
 from _comun import (archivos, consola, filas_datos, leer, resolver_video, resumen_licencias,
-                    tamano)
+                    sin_seccion, tamano)
 
 MARCA_CIFRA = re.compile(r'\[✔[^\]]*\]')          # también [✔ 15; ✔ 25]
 NUMEROS = re.compile(r'\d+')
@@ -156,7 +156,7 @@ def principal():
     # ---- Etapas posteriores -----------------------------------------------------------
     if a.etapa in ('montaje', 'final'):
         esc = leer(os.path.join(carpeta, 'Escaleta audiovisual.md'))
-        if not esc or filas_datos(esc) == 0:
+        if not esc or filas_datos(sin_seccion(esc, 'Planilla de producción')) == 0:
             err('La escaleta audiovisual no tiene escenas.')
         if not archivos(os.path.join(carpeta, 'Voz'), ('.mp3', '.wav', '.m4a', '.ogg', '.flac')):
             err('No hay audio de voz en Voz/.')

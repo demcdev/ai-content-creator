@@ -112,3 +112,27 @@ def resumen_licencias(texto):
             listas += int(celdas[2])
             pend += int(celdas[3])
     return filas, listas, pend
+
+
+def _limites_seccion(texto, titulo):
+    """(líneas, inicio, fin) de la sección «## ...titulo...» hasta el siguiente «## » (sin contar «###»)."""
+    lineas = texto.splitlines()
+    for i, l in enumerate(lineas):
+        if l.startswith('## ') and titulo.lower() in l.lower():
+            j = i + 1
+            while j < len(lineas) and not lineas[j].startswith('## '):
+                j += 1
+            return lineas, i, j
+    return lineas, None, None
+
+
+def seccion_h2(texto, titulo):
+    """Texto de la sección «## ...titulo...» (vacío si no existe)."""
+    lineas, i, j = _limites_seccion(texto or '', titulo)
+    return '\n'.join(lineas[i:j]) if i is not None else ''
+
+
+def sin_seccion(texto, titulo):
+    """El texto sin esa sección."""
+    lineas, i, j = _limites_seccion(texto or '', titulo)
+    return '\n'.join(lineas[:i] + lineas[j:]) if i is not None else (texto or '')

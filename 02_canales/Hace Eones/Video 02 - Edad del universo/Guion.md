@@ -50,7 +50,7 @@
 2. **Pregunta intrigante:** «¿Cómo se mide la edad de algo cuando nadie estuvo allí para ver cómo empezó?»
 3. **Afirmación audaz:** «No hay un reloj que mida la edad del universo. Hay tres. {pausa} Y cuando se afinan, dos de ellos dejan de coincidir.» *(se paga en 9:00 [✔ 11])*
 
-La planilla de 3 columnas (diálogo · visual · audio y tipografía) está en [Planilla de produccion](<Planilla de produccion.md>).
+La planilla de 3 columnas (diálogo · visual · audio y tipografía) está en la sección «Planilla de producción» de [Escaleta audiovisual](<Escaleta audiovisual.md>).
 
 ---
 

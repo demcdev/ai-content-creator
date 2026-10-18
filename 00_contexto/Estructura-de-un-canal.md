@@ -17,8 +17,7 @@ Cada canal es una carpeta dentro de `02_canales/`. **Lo global del canal va en s
 | Dentro | Qué guarda |
 |---|---|
 | `Guion.md` | Guion con marcas de verificación |
-| `Planilla de produccion.md` | Tabla de 3 columnas y 3 variantes de gancho (skill `guionista-retencion`) |
-| `Escaleta audiovisual.md` | Plano por escenas con origen y licencia (skill `escaleta-audiovisual`) |
+| `Escaleta audiovisual.md` | Un solo documento con dos partes: la **Planilla** de 3 columnas (fase 1, skill `guionista-retencion`) y la **escaleta técnica** por escenas con origen y licencia (fase 3, skill `escaleta-audiovisual`) |
 | `Verificacion de cifras.md` | Cada cifra con fuente y fecha |
 | `Revision/` | `Informe auditor-guion.md` e `Informe verificador.md` de los agentes revisores |
 | `Capitulos y descripcion.md` | Descripción, capítulos, fuentes, transparencia |

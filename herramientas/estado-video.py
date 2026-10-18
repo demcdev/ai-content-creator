@@ -25,7 +25,7 @@ import shutil
 import sys
 
 from _comun import (archivos, consola, filas_datos, leer, resolver_video, resumen_licencias, sha,
-                    tamano)
+                    seccion_h2, sin_seccion, tamano)
 
 ROLES_GUION = ('verificador', 'auditor-guion')
 ROL_FINAL = 'auditor-final'
@@ -86,10 +86,11 @@ def etapas(carpeta, datos):
     add('rev-guion', 'Revisión del guion (sellos)', ok, ', '.join('%s: %s' % kv for kv in partes.items()),
         'validar-video.py y luego verificador + auditor')
     add('p-guion', 'Puerta: guion revisado', 'guion' in datos['puertas'], datos['puertas'].get('guion', ''), 'tú: --aprobar guion')
-    n = filas_datos(leer(f('Escaleta audiovisual.md')))
+    esc = leer(f('Escaleta audiovisual.md'))
+    n = filas_datos(sin_seccion(esc, 'Planilla de producción'))
     add('escaleta', 'Escaleta audiovisual', n > 0, '%d escenas' % n, 'skill escaleta-audiovisual')
-    n = filas_datos(leer(f('Planilla de produccion.md')))
-    add('planilla', 'Planilla de producción', n > 0, '%d filas' % n, 'skill guionista-retencion')
+    n = filas_datos(seccion_h2(esc, 'Planilla de producción'))
+    add('planilla', 'Planilla (sección de la escaleta)', n > 0, '%d filas' % n, 'skill guionista-retencion')
     n = len(archivos(f('Voz'), ('.mp3', '.wav', '.m4a', '.ogg', '.flac')))
     add('voz', 'Voz', n > 0, '%d audios' % n, 'herramientas de voz')
     n = len(archivos(f('Miniaturas'), ('.png', '.jpg', '.jpeg', '.webp'), ignorar_guion_bajo=True))
