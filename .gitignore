@@ -13,6 +13,8 @@
 
 # Huellas de los pasos automáticos de canal.py (dependen de las fechas de los archivos de cada máquina)
 **/.estado/huellas.json
+**/.estado/cache-web/
+**/.estado/cifras-pendientes.json
 
 # Python y editores
 __pycache__/
