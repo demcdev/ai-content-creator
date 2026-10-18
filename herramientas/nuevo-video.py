@@ -62,7 +62,7 @@ def principal():
         if not os.path.exists(ruta):
             with open(ruta, 'w', encoding='utf-8') as fh:
                 fh.write(plantilla.format(t=titulo))
-    plantilla = os.path.join(HERRAMIENTAS, 'montaje', 'plantilla_video.py')
+    plantilla = os.path.join(HERRAMIENTAS, 'montaje', 'plantillas', 'plantilla_video.py')
     destino = os.path.join(carpeta, 'Montaje', 'video.py')
     if os.path.exists(plantilla) and not os.path.exists(destino):
         shutil.copyfile(plantilla, destino)
@@ -80,7 +80,7 @@ def principal():
     rel = os.path.relpath(carpeta, os.path.dirname(HERRAMIENTAS))
     print('Listo:', carpeta)
     print('Siguiente: identidad del video (Claude pregunta: ¿la del canal o propia?), guion, voz, y luego:')
-    print('  python herramientas/montaje/alinear.py "%s"' % rel)
+    print('  python herramientas/montaje/tuberia/alinear.py "%s"' % rel)
     print('  python herramientas/escaleta-a-escenas.py "%s"' % rel)
     print('  (cd "%s/Montaje" && python video.py --frame 60 f.png)' % rel)
     return 0

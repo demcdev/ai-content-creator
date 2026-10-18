@@ -1,7 +1,7 @@
 """
 Borrador de los primeros minutos del video 1: la versión inicial del montaje, con las escenas A1 (distancia),
 A2 (trayectoria) y la lista de «cinco cosas» que video01.py reutiliza. Todo lo común (fuentes, utilidades,
-imágenes, fondo) vive en herramientas/montaje/montar.py.
+imágenes, fondo) vive en herramientas/montaje/comun/montar.py.
 
   python borrador.py --frame 25 f.png       un fotograma del borrador
   python borrador.py                        render del borrador (salida/video-01-borrador-0-2min.mp4 y .srt)
@@ -14,7 +14,7 @@ import sys
 import numpy as np
 from PIL import Image, ImageDraw
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', 'herramientas', 'montaje', 'comun')))
 
 from montar import (AMBAR, BG, FONDO, FPS, H, HUESO, NEGRO, NOMBRE, TIERRA, VIDEO, W, aparecer, blk, brillo, clamp, envolver, escena_imagen, lerp, mezcla, neg, pegar, punto, reg, sprite_texto, ss, trocear_texto)  # noqa: E402
 

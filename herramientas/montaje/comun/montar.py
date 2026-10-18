@@ -17,6 +17,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
+MONTAJE = os.path.dirname(AQUI)                      # herramientas/montaje (fuentes/ está aquí)
 W, H, FPS = 1920, 1080, 30
 
 # Carpeta del video en curso: la variable de entorno HE_VIDEO, o si no, la carpeta que contiene la carpeta «Montaje»
@@ -26,7 +27,7 @@ CANAL = os.path.dirname(VIDEO)
 RAIZ = CANAL
 
 # Identidad: la del canal (<canal>/identidad.json) y, si el video declara base «propia», lo que cambie su identidad.json.
-sys.path.insert(0, os.path.dirname(AQUI))
+sys.path.insert(0, os.path.dirname(MONTAJE))      # herramientas/ (para _comun.py)
 from _comun import identidad_efectiva  # noqa: E402
 
 IDENT, _ORIGEN = identidad_efectiva(VIDEO)
@@ -50,7 +51,7 @@ _PESOS = {'light': 300, 'reg': 400, 'bold': 700, 'black': 900}
 def fuente_peso(peso, tam):
     k = (FAMILIA, peso, tam)
     if k not in _fuentes:
-        f = ImageFont.truetype(os.path.join(AQUI, 'fuentes', _VF[FAMILIA]), tam)
+        f = ImageFont.truetype(os.path.join(MONTAJE, 'fuentes', _VF[FAMILIA]), tam)
         vals = []
         for ax in f.get_variation_axes():
             nom = ax['name'] if isinstance(ax['name'], str) else ax['name'].decode()

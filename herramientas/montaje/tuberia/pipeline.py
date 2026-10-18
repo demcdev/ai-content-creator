@@ -21,7 +21,9 @@ from PIL import Image
 from montar import IDENT, FPS, H, NEGRO, W, aparecer, clamp, envolver, reg, sprite_texto, ss, trocear_texto, HUESO, neg
 from ui import _contenido_rotulo, capitulo, credito, rotulo
 
-ANIMACIONES = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'animaciones')
+MONTAJE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(MONTAJE, 'comun'))      # montar, ui, aa
+ANIMACIONES = os.path.join(MONTAJE, 'animaciones')
 
 
 def cargar_estilo(animacion):
@@ -77,7 +79,7 @@ class Proyecto:
 
     # ------------------------------------------------------------------ datos
     def _revisar_animacion(self):
-        ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'animaciones.json')
+        ruta = os.path.join(MONTAJE, 'catalogo', 'animaciones.json')
         catalogo = {a['id']: a for a in _cargar(ruta, {'animaciones': []})['animaciones']}
         if not self.animacion:
             return
@@ -304,7 +306,7 @@ class Proyecto:
         if IDENT['base'] not in ('canal', 'propia'):
             raise SystemExit('Falta elegir la identidad del video (la del canal o una propia): python herramientas/identidad.py video "<video>" --base canal|propia')
         if not self.animacion:
-            raise SystemExit('Ni el canal ni el video tienen animación. Defínela con: python herramientas/identidad.py canal|video "<destino>" --animacion <id> (opciones: python herramientas/montaje/animaciones.py)')
+            raise SystemExit('Ni el canal ni el video tienen animación. Defínela con: python herramientas/identidad.py canal|video "<destino>" --animacion <id> (opciones: python herramientas/montaje/catalogo/animaciones.py)')
         lista = os.path.join(tmp, 'lista.txt')
         final = os.path.join(self.salida, self.nombre + '.mp4')
         if a and a[0] == '--solo-audio':

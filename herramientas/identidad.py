@@ -10,7 +10,7 @@ Identidad de cada canal (colores, voz, animación, nombre, logo, fuente) y la de
 
 Archivos: <canal>/identidad.json (la del canal) y <video>/identidad.json ({"base": "canal"} o {"base": "propia", ...lo que cambia}).
 Con base «propia» solo se cambian los valores indicados; el resto sigue siendo el del canal.
-Opciones válidas de --voz: ids de herramientas/voz/voces.json. De --animacion: ids de herramientas/montaje/animaciones.json.
+Opciones válidas de --voz: ids de herramientas/voz/voces.json. De --animacion: ids de herramientas/montaje/catalogo/animaciones.json.
 --fuente: inter, montserrat o space (las tres con licencia abierta). --musica: nombres de pista separados por coma («Singularity,Event Horizon»; se buscan en
 Montaje/musica/ de cada video). --efectos: si o no (los efectos de sonido aún no los mezcla la tubería: solo quedan declarados).
 `resumen <canal|video>` imprime una frase con voz, animación, fuente, colores (en hex), música y efectos: es el texto que Claude usa
@@ -35,7 +35,7 @@ def ids(ruta, clave):
 
 FUENTES = ['inter', 'montserrat', 'space']
 VOCES = ids(os.path.join(AQUI, 'voz', 'voces.json'), 'voces')
-ANIMACIONES = ids(os.path.join(AQUI, 'montaje', 'animaciones.json'), 'animaciones')
+ANIMACIONES = ids(os.path.join(AQUI, 'montaje', 'catalogo', 'animaciones.json'), 'animaciones')
 
 
 def buscar_canal(nombre):
@@ -117,7 +117,7 @@ def resumen(arg):
     base = ident['colores']
     colores = ', '.join('%s %s' % (n, hexa(base[k])) for n, k in (('fondo', 'BG'), ('acento', 'AMBAR'), ('texto', 'HUESO'), ('apoyo', 'TIERRA')))
     nombres_voz = {x['id']: x['nombre'] for x in _json(os.path.join(AQUI, 'voz', 'voces.json')).get('voces', [])}
-    nombres_anim = {x['id']: x['nombre'] for x in _json(os.path.join(AQUI, 'montaje', 'animaciones.json')).get('animaciones', [])}
+    nombres_anim = {x['id']: x['nombre'] for x in _json(os.path.join(AQUI, 'montaje', 'catalogo', 'animaciones.json')).get('animaciones', [])}
     voz = nombres_voz.get(ident['voz'], ident['voz']) or 'sin voz definida'
     anim = nombres_anim.get(ident['animacion'], ident['animacion']) or 'sin animación definida'
     pistas = ident['musica'].get('pistas', [])

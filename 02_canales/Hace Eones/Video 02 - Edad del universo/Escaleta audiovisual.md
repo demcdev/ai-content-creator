@@ -1,7 +1,7 @@
 # Escaleta audiovisual · Video 2 · ¿Cómo sabemos la edad del universo si nadie estuvo allí?
 
 > Hecha el 14-oct-2026 siguiendo la skill `escaleta-audiovisual` (flujo: guion con `guionista-retencion` → **esta escaleta** → script de montaje). Fuente: [Guion](<Guion.md>) v2, la sección «Planilla de producción» de este documento, [Registro de licencias](<Registro de licencias.md>) y [Verificacion de cifras](<Verificacion de cifras.md>).
-> **Tiempos:** el audio real dura **11:47** (`Voz/video2-raul.wav`). Los tiempos de la tabla son **reales** (14-oct-2026): salen de alinear las 134 frases con los silencios del audio (`herramientas/montaje/alinear.py` → `Montaje/tiempos.json`). Los tiempos de cabecera del guion (por ejemplo «12:15 · Cierre») eran estimados de antes de la voz y **ya no valen**: valen los de esta tabla.
+> **Tiempos:** el audio real dura **11:47** (`Voz/video2-raul.wav`). Los tiempos de la tabla son **reales** (14-oct-2026): salen de alinear las 134 frases con los silencios del audio (`herramientas/montaje/tuberia/alinear.py` → `Montaje/tiempos.json`). Los tiempos de cabecera del guion (por ejemplo «12:15 · Cierre») eran estimados de antes de la voz y **ya no valen**: valen los de esta tabla.
 > **Formato:** 16:9 · animación propia por código + 3 imágenes oficiales con licencia · sin personas, sin filmación, **sin imágenes de IA** (por eso no hay columna de prompts de generación). «Plano» significa encuadre o movimiento de una cámara virtual sobre la animación.
 
 ## Planilla de producción (3 columnas) · Video 2 · ¿Cómo sabemos la edad del universo si nadie estuvo allí?
