@@ -47,6 +47,14 @@ CODIGO = re.compile(r'`([^`\n]+)`')
 CMD = re.compile(r'\b(?:python|node)\s+["\']?((?:herramientas|\.\.)[\w./\\-]*\.(?:py|mjs|js))')
 RE_OBSOLETOS = [(re.compile(o['patron']), o['mensaje']) for o in CFG['obsoletos']]
 EXCLUIR = set(CFG['excluir_carpetas'])
+EXCLUIR_RUTAS = {os.path.normcase(os.path.join(RAIZ, *r.split('/'))) for r in CFG.get('excluir_rutas', [])}
+WORKTREES = os.path.join(RAIZ, '.claude', 'worktrees')
+
+
+def podar(d, dirs, ocultas=False):
+    """Subcarpetas de d que se recorren: sin las excluidas por nombre ni por ruta (p. ej. .claude/worktrees)."""
+    return sorted(x for x in dirs if x not in EXCLUIR and not (ocultas and x.startswith('.'))
+                  and os.path.normcase(os.path.join(d, x)) not in EXCLUIR_RUTAS)
 STD = set(getattr(sys, 'stdlib_module_names', ()))
 
 
@@ -88,7 +96,7 @@ def existe_exacto(ruta):
 
 def recorrer(base=RAIZ):
     for d, dirs, fs in os.walk(base):
-        dirs[:] = sorted(x for x in dirs if x not in EXCLUIR)
+        dirs[:] = podar(d, dirs)
         r = rel(d)
         # la evidencia de licencias conserva sus nombres: solo se revisan su LEEME y su registro
         for f in sorted(fs):
@@ -334,7 +342,7 @@ def py_ok(nombre):
 def revisar_nombres(res):
     libres = set(CFG['carpetas_con_nombres_libres'])
     for d, dirs, fs in os.walk(RAIZ):
-        dirs[:] = sorted(x for x in dirs if x not in EXCLUIR and not x.startswith('.'))
+        dirs[:] = podar(d, dirs, ocultas=True)
         r = rel(d)
         partes = [] if r == '.' else r.split('/')
         if any(x in libres for x in partes):
@@ -466,7 +474,7 @@ def firma():
     """Huella barata del árbol: nombres, tamaños y fechas (detecta ediciones y renombres)."""
     h = []
     for d, dirs, fs in os.walk(RAIZ):
-        dirs[:] = [x for x in dirs if x not in EXCLUIR]
+        dirs[:] = podar(d, dirs)
         for f in fs:
             if f.endswith(('.md', '.py', '.json', '.mjs', '.sh')):
                 p = os.path.join(d, f)
@@ -492,6 +500,34 @@ def vigilar(args):
         time.sleep(2)
 
 
+def worktree_de(ruta):
+    """Raíz del worktree (<principal>/.claude/worktrees/<nombre>) que contiene la ruta, o ''."""
+    if not ruta:
+        return ''
+    a = os.path.normcase(os.path.abspath(ruta))
+    base = os.path.normcase(WORKTREES) + os.sep
+    if not a.startswith(base):
+        return ''
+    return os.path.join(WORKTREES, a[len(base):].split(os.sep)[0])
+
+
+def validar_worktree(wt):
+    """Corre el validador del propio worktree (su rama puede tener otros scripts y documentos)."""
+    script = os.path.join(wt, 'herramientas', 'validacion', 'validar-proyecto.py')
+    if not os.path.exists(script):
+        return 0
+    try:
+        r = subprocess.run([sys.executable, script, '--solo-errores'], cwd=wt, capture_output=True, text=True,
+                           encoding='utf-8', errors='replace', timeout=120)
+    except (OSError, subprocess.TimeoutExpired):
+        return 0
+    if r.returncode:
+        sys.stderr.write(r.stdout + r.stderr)
+        print('\nArregla las referencias rotas antes de seguir (worktree %s).' % os.path.basename(wt), file=sys.stderr)
+        return 2
+    return 0
+
+
 def modo_hook():
     """Hook de Claude Code (PostToolUse): valida si la herramienta tocó archivos del proyecto o movió/borró algo.
     Salida con código 2 y mensaje por stderr = Claude ve el problema y lo corrige."""
@@ -506,12 +542,17 @@ def modo_hook():
         ext = os.path.splitext(ruta)[1].lower()
         if not ruta or ext not in ('.md', '.py', '.json', '.mjs', '.sh') or not os.path.abspath(ruta).startswith(RAIZ):
             return 0
+        donde = ruta
     elif herramienta in ('Bash', 'PowerShell'):
         cmd = entrada.get('command', '')
         if not re.search(r'\b(mv|git\s+mv|git\s+rm|rm|Move-Item|Rename-Item|Remove-Item|move|ren|del|rmdir)\b', cmd):
             return 0
+        donde = datos.get('cwd', '')
     else:
         return 0
+    wt = worktree_de(donde)
+    if wt:  # sesión en un worktree: se valida ese worktree con su propio validador, no la carpeta principal
+        return validar_worktree(wt)
     res = validar()
     if res.errores:
         imprimir(res, salida=sys.stderr)

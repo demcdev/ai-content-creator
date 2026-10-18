@@ -23,6 +23,9 @@
     "cache_papel",
     "musica"
   ],
+  "excluir_rutas": [
+    ".claude/worktrees"
+  ],
   "excluir_archivos_de_validacion": [
     "herramientas/validacion/config.json"
   ],
