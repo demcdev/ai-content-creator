@@ -1,5 +1,5 @@
 """
-Montaje de este video. Se ejecuta desde esta carpeta (Montaje/), con tiempos.json y escenas.json al lado:
+Montaje de este video. Se ejecuta desde esta carpeta (Montaje/), con tiempos.json y escenas.json al lado (tiempos.json: `python herramientas/montaje/alinear.py "<video>"`):
 
   python video.py --frame 60 f.png     un fotograma (segundo 60), para revisar el diseño
   python video.py --verificar          regla «nada se tapa con nada» (rótulos, créditos, capítulos)

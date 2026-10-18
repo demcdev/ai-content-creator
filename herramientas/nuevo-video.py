@@ -71,7 +71,12 @@ def principal():
         with open(cfg, 'w', encoding='utf-8') as fh:
             json.dump({'nombre': 'video-%02d-completo' % n, 'rotulos': [], 'creditos': [], 'capitulos': [],
                        'musica': {'pistas': [], 'cambio': 0}}, fh, ensure_ascii=False, indent=1)
+    rel = os.path.relpath(carpeta, os.path.dirname(HERRAMIENTAS))
     print('Listo:', carpeta)
+    print('Siguiente: guion, voz (Claude pregunta cuál), y luego:')
+    print('  python herramientas/montaje/alinear.py "%s"' % rel)
+    print('  python herramientas/escaleta-a-escenas.py "%s"' % rel)
+    print('  (cd "%s/Montaje" && python video.py --frame 60 f.png)' % rel)
     return 0
 
 
