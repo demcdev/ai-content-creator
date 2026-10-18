@@ -27,3 +27,6 @@ __pycache__/
 .env
 *.key
 .uso-*.json
+
+# Transcripciones crudas de los agentes (pesadas, pueden contener datos sensibles)
+**/.estado/ejecuciones/
