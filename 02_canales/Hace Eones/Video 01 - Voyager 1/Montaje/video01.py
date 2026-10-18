@@ -24,9 +24,10 @@ import globo
 
 from estilo import (FONDO_ULT, Vista, base, bloom, capa_orbitas, dibujar_planeta, etq, hud, linea_glow, panel, txt_glow, _mascara)  # noqa
 from ui import (capitulo, cta, _contenido_rotulo, HIELO, anillo_arco, caja, credito, ease_in, ease_out, etiqueta_esquema, icono_hex, logo, pastilla, rotulo, sl, titulo)  # noqa
-from montar import (AMBAR, AQUI, AUDIO, BG, HUESO, FPS, H, NEGRO, ORIG, TIERRA, W, FONDO, DEGRADADO_INF,  # noqa
-                    a1_distancia, a2_trayectoria, aparecer, blk, brillo, cargar, clamp, disco, dibujar_rotulo, envolver,
-                    escena_imagen, escena_lista, lerp, mezcla, neg, pegar, punto, reg, sprite_texto, ss, trocear_texto)
+from montar import (AMBAR, BG, HUESO, FPS, H, NEGRO, ORIG, TIERRA, W, FONDO, DEGRADADO_INF,  # noqa
+                    aparecer, blk, brillo, cargar, clamp, disco, envolver,
+                    escena_imagen, lerp, mezcla, neg, pegar, punto, reg, sprite_texto, ss, trocear_texto)
+from borrador import AUDIO, a1_distancia, a2_trayectoria, dibujar_rotulo, escena_lista  # noqa: E402  (escenas del primer borrador)
 
 AQUI = os.path.dirname(os.path.abspath(__file__))   # carpeta «Montaje» de este video (tiempos, música, salida)
 

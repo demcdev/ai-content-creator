@@ -3,7 +3,7 @@
 > **Cómo está organizado (13-oct-2026):** aquí quedan solo las **librerías comunes** (`montar.py`, `estilo.py`, `ui.py`, `aa.py`, `globo.py`, `fuentes/`, `datos/`).
 > Los **scripts de cada video** (guion de escenas, tiempos, música, render, miniaturas) viven en la carpeta de ese video: `Video NN - Nombre/Montaje/`. Allí se ejecutan; ellos importan estas librerías solos.
 > Ejemplo, video 1: `Video 01 - <nombre>/Montaje/video01.py`. Los archivos que se citan abajo sin ruta (`video01.py`, `alinear.py`, `miniaturas.py`, `capitulos.py`, `tiempos.json`, `musica/`, `salida/`) están en esa carpeta.
-> Rutas del video en curso: `montar.py` lee `HE_VIDEO` (carpeta del video; por defecto el video 1) para encontrar `Voz/` y `Licencias/originales/`.
+> Rutas del video en curso: `montar.py` lee `HE_VIDEO` (o deduce la carpeta del video desde el script que se ejecuta) para encontrar `Licencias/originales/` y la identidad del canal.
 
 Genera un video MP4 1080p a 30 fps a partir de:
 - el **audio real** del video (`Video NN - Nombre/Voz/`),
@@ -30,11 +30,12 @@ Catálogo de estilos con su estado (`disponible`, `parcial`, `por construir`), p
 - Para cambiar un rótulo, una escena o un tiempo: listas `ROTULOS` y `ESCENAS` en `video01.py`; `T('inicio de la frase')` busca el tiempo de una frase del guion.
 - Si cambias el guion o el audio: regenera el audio, ejecuta `python alinear.py` y revisa que las proporciones sigan bien (hay una lista `CORRECCIONES` para tramos concretos).
 
-## Uso (borrador de 2 minutos)
+## Borrador del video 1
+El borrador de los primeros minutos del video 1 (escenas A1, A2 y la lista de «cinco cosas», que `video01.py` reutiliza) vive en `Video 01 - <nombre>/Montaje/borrador.py`, no aquí:
 ```powershell
-cd "herramientas\montaje"   # el borrador del video 1; necesita HE_VIDEO con la carpeta del video
-python montar.py                          # video completo del borrador -> salida\video-01-borrador-0-2min.mp4 (+ .srt)
-python montar.py --frame 25.0 prueba.png  # solo un fotograma, para revisar el diseño sin renderizar todo
+cd "02_canales\<canal>\Video 01 - <nombre>\Montaje"
+python borrador.py                          # render del borrador -> salida\video-01-borrador-0-2min.mp4 (+ .srt)
+python borrador.py --frame 25.0 prueba.png  # solo un fotograma
 ```
 Requisitos: Python 3, `Pillow`, `numpy` y `ffmpeg` en el PATH. Tipografía: Segoe UI de Windows (**solo para el borrador**; la licencia para video monetizado está sin verificar, fila F1 del registro).
 
@@ -44,7 +45,7 @@ Requisitos: Python 3, `Pillow`, `numpy` y `ffmpeg` en el PATH. Tipografía: Sego
 - Los **tiempos** salen de los silencios del audio (`ffmpeg silencedetect`): cada bloque de subtítulos tiene su inicio y fin medidos.
 
 ## Cómo se ajusta
-- **Tiempos de rótulos:** lista `ROTULOS` en `montar.py` (inicio, fin, línea 1, línea 2, estilo).
+- **Tiempos de rótulos (borrador):** lista `ROTULOS` en `Video 01/Montaje/borrador.py` (inicio, fin, línea 1, línea 2, estilo).
 - **Subtítulos:** lista `BLOQUES` (texto, inicio, fin). El texto debe ser **idéntico al guion**.
 - **Escenas:** lista `ESCENAS` (inicio, fin, función).
 - **Colores y tamaños:** constantes al principio del archivo (azul noche `#0B1026`, ámbar `#F2B84B`, hueso `#F5F1E8`).
