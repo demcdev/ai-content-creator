@@ -4,6 +4,11 @@
 # Los hooks de git deben ir siempre con LF (si no, bash los rechaza).
 .githooks/* text eol=lf
 
+# Subagentes (fuente y copias generadas): siempre LF en cualquier PC, para que el sync y el pre-commit no vean diferencias falsas.
+.agents/subagents/*.md text eol=lf
+.claude/agents/*.md text eol=lf
+.gemini/agents/*.md text eol=lf
+
 # Binarios: nunca se convierten ni se comparan como texto.
 *.png binary
 *.jpg binary

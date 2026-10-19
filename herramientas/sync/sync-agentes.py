@@ -41,7 +41,9 @@ HERRAMIENTAS = {
 def leer_fuente(ruta):
     """Devuelve (datos, cuerpo, salto_de_linea). El cuerpo se copia tal cual a cada destino."""
     crudo = open(ruta, 'rb').read().decode('utf-8')
-    nl = '\r\n' if '\r\n' in crudo else '\n'
+    # Siempre se genera con LF (como se guarda en git), sin importar cómo Windows haya dejado el archivo fuente al
+    # clonar o cambiar de rama (autocrlf). Si no, un checkout con CRLF haría que los archivos generados parezcan distintos.
+    nl = '\n'
     m = re.match(r'---\n(.*?)\n---\n(.*)\Z', crudo.replace('\r\n', '\n'), re.S)
     if not m:
         raise ValueError('debe empezar con un bloque --- ... ---')
@@ -90,7 +92,9 @@ GENERADORES = {'claude': generar_claude, 'gemini': generar_gemini}
 def estado(ruta, contenido):
     if not os.path.exists(ruta):
         return 'nuevo'
-    return 'igual' if open(ruta, 'rb').read() == contenido.encode('utf-8') else 'distinto'
+    # Se comparan sin distinguir CRLF de LF: el archivo del disco puede haberlo convertido Windows al hacer checkout.
+    actual = open(ruta, 'rb').read().replace(b'\r\n', b'\n')
+    return 'igual' if actual == contenido.encode('utf-8') else 'distinto'
 
 
 def archivos(base):

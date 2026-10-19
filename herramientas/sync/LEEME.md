@@ -56,5 +56,6 @@ gemini:
 ## Límites
 
 - En Gemini CLI un subagente no puede llamar a otro.
+- Los archivos generados llevan siempre saltos de línea LF, aunque Windows haya dejado el archivo fuente en CRLF al clonar o cambiar de rama; al comprobar, `--revisar` no distingue CRLF de LF y solo avisa de diferencias de contenido.
 - Un archivo de `.claude/agents/` o `.gemini/agents/` sin fuente se avisa pero no se borra.
 - Para añadir otra herramienta de IA, agregar su generador en `sync-agentes.py` (`GENERADORES`).
